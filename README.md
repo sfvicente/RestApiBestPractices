@@ -7,7 +7,7 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - Introduction to REST
 - REST APIs
-
+- Idempotence
 
 ## Guidelines
 
@@ -18,4 +18,6 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - Sorting
 - Paging
+
+- [Caching](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Caching.md)
 
