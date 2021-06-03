@@ -5,17 +5,17 @@ This project is a collection of best practices and guidelines for REST API desig
 
 ## Fundamentals
 
-Introduction to REST
-REST APIs
+- Introduction to REST
+- REST APIs
 
 
 ## Guidelines
 
-Versioning
-Error Handling
+- Versioning
+- Error Handling
 
 - [Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Filtering.md)
 
-Sorting
-Paging
+- Sorting
+- Paging
 
