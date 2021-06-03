@@ -14,7 +14,8 @@ REST APIs
 Versioning
 Error Handling
 
-Filtering
+- [Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Filtering.md)
+
 Sorting
 Paging
 
