@@ -7,6 +7,7 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - Introduction to REST
 - REST APIs
+- Resources
 - Idempotence
 
 ## Guidelines
