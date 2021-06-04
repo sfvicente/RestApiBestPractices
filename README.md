@@ -22,3 +22,4 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Caching](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Caching.md)
 
+- [Performance](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Performance.md)
