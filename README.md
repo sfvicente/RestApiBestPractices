@@ -10,6 +10,7 @@ This project is a collection of best practices and guidelines for REST API desig
 - Resources
 - Idempotence
 
+
 ## Guidelines
 
 - Versioning
@@ -20,6 +21,9 @@ This project is a collection of best practices and guidelines for REST API desig
 - Sorting
 - Paging
 
+- [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)
+
 - [Caching](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Caching.md)
 
 - [Performance](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Performance.md)
+
