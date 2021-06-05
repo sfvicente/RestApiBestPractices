@@ -29,9 +29,13 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)
 
+- [HTTP Headers](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPHeaders.md)
+
 - [Compatibility](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Compatibility.md)
 
 - [Caching](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Caching.md)
 
 - [Performance](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Performance.md)
+
+
 
