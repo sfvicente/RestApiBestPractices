@@ -16,6 +16,9 @@ This project is a collection of best practices and guidelines for REST API desig
 
 ## Guidelines
 
+- [HTTP Communication](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPCommunication.md)
+
+
 - Versioning
 - Error Handling
 
