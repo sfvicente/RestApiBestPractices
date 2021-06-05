@@ -29,3 +29,15 @@
 // TODO: add description.
 
 <br>
+
+
+## HTTP `HEAD` Method
+<br>
+
+
+### Always use `HEAD` requests to retrieve header information of single resource or a collections of resources.
+
+// TODO: add description.
+
+<br><br>
+
