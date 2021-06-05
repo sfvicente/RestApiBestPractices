@@ -39,3 +39,5 @@ This project is a collection of best practices and guidelines for REST API desig
 
 
 
+
+- [Hypermedia](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Hypermedia.md)
