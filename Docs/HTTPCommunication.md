@@ -19,4 +19,13 @@
 <br>
 
 
-## ...
+## HTTP `DELETE` Method
+
+<br>
+
+
+### Consider generating an HTTP `200` return code on a successful `DELETE` request if the deleted resource is returned after executing the request.
+
+// TODO: add description.
+
+<br>
