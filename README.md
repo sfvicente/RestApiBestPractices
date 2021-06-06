@@ -26,6 +26,8 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Filtering.md)
 
+- [Sorting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Sorting.md)
+
 - Sorting
 - Paging
 
