@@ -31,6 +31,12 @@
 <br>
 
 
+### Prefer generating an HTTP `204` return code on a successful `DELETE` request if no further information is returned after executing the request.
+
+When no content is returned after a delete operation successfully executes, an HTTP status code 204 should be returned. This indicates that the
+process has been successfully handled, however, the body of the response does not contain additional information.
+
+
 ## HTTP `HEAD` Method
 <br>
 
