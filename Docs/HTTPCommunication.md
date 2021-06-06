@@ -37,6 +37,20 @@ When no content is returned after a delete operation successfully executes, an H
 process has been successfully handled, however, the body of the response does not contain additional information.
 
 
+### `DELETE` operations should be idempotent.
+
+Clients should be able to make the same request repeatedly over the same resource, while resulting in the same state.
+
+// TODO: complement description
+
+```http
+// TODO: add examples
+```
+
+See also: Idempotency
+<br><br>
+
+
 ## HTTP `HEAD` Method
 <br>
 
