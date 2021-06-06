@@ -22,6 +22,8 @@ This project is a collection of best practices and guidelines for REST API desig
 - Versioning
 - Error Handling
 
+- [Error Handling](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/ErrorHandling.md)
+
 - [Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Filtering.md)
 
 - Sorting
