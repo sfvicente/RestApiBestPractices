@@ -27,7 +27,6 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Sorting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Sorting.md)
 
-- Sorting
 - Paging
 
 - [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)
