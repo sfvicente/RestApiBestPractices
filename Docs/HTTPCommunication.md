@@ -19,6 +19,18 @@
 <br>
 
 
+### if the resource does not exist, the `GET` request for the individual resources should generate a `404`.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ## HTTP `DELETE` Method
 
 <br>
