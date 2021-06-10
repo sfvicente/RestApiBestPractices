@@ -30,6 +30,18 @@
 <br><br>
 
 
+### `GET` requests for collection resources should return `200` if the collection is empty.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ### `GET` requests on collection resources should provide adequate filter and pagination mechanisms.
 
 // TODO: add description.
