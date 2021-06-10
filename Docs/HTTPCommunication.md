@@ -30,6 +30,18 @@
 <br><br>
 
 
+### `GET` requests on collection resources should provide adequate filter and pagination mechanisms.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: Filtering, Pagination
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
