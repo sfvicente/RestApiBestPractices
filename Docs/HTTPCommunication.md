@@ -107,3 +107,23 @@ See also: Idempotency
 
 <br><br>
 
+
+
+
+## HTTP Status Codes
+<br>
+
+
+### Always use the most specific HTTP status codes for returning information regarding request and error handling.
+
+When returning information to clients regarding request or error handling, the API should use the most specific HTTP status code possible.
+
+// TODO: complement description
+
+```http
+// TODO: add examples
+```
+
+See also: HTTP Status Codes
+<br><br>
+
