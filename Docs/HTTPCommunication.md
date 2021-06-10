@@ -19,7 +19,7 @@
 <br>
 
 
-### if the resource does not exist, the `GET` request for the individual resources should generate a `404`.
+### `GET` requests for individual resources that do not exist should generate a `404`.
 
 // TODO: add description.
 
