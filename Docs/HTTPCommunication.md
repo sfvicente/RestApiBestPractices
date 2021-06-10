@@ -41,6 +41,16 @@
 <br><br>
 
 
+### GET requests for collection resources should return `404` if the collection is missing.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 ### `GET` requests on collection resources should provide adequate filter and pagination mechanisms.
 
