@@ -171,6 +171,17 @@ See also: Idempotency
 <br><br>
 
 
+### Consider using `HEAD` to efficiently lookup whether large resources or collection resources have been updated in conjunction with the `ETag` header.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: Concurrency
+<br><br>
+
 
 
 ## HTTP Status Codes
