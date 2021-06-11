@@ -103,6 +103,17 @@ See also: Filtering, Pagination
 <br><br>
 
 
+### Successful `POST` requests should exceptionally generate a `204` status code with `Location` header if the actual resource is not returned.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
