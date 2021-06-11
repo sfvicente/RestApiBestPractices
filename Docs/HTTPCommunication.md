@@ -81,6 +81,17 @@ See also: Filtering, Pagination
 <br><br>
 
 
+### Successful `POST` requests should generate a `201` status code if resources have been created.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
