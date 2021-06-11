@@ -184,6 +184,23 @@ See also: Concurrency
 
 
 
+## HTTP `OPTIONS` Method
+<br>
+
+
+### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
+
 ## HTTP Status Codes
 <br>
 
