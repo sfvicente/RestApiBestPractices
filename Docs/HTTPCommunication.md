@@ -92,6 +92,17 @@ See also: Filtering, Pagination
 <br><br>
 
 
+### Successful `POST` requests should generate a `202` status code if the request was accepted but has not completed yet.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
