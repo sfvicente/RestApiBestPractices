@@ -65,6 +65,23 @@ See also: Filtering, Pagination
 
 
 
+## HTTP `POST` method
+
+<br>
+
+
+### Successful `POST` requests should generate a `200` status code if resources have been updated.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ## HTTP `DELETE` Method
 
 <br>
