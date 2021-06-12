@@ -154,6 +154,19 @@ Resource IDs should be created and maintained by the API and returned with the r
 <br><br>
 
 
+### Always replace the entire resource addressed by the URL with the representation passed in the payload on a successful `PUT` request.
+
+Subsequent reads of the same resource, will return the exact content that was passed to the server.
+
+// TODO: complement description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
