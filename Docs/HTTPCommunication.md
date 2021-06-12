@@ -143,6 +143,17 @@ Resource IDs should be created and maintained by the API and returned with the r
 <br><br>
 
 
+### `PUT` requests should be robust against non-existence of resources by implicitly creating the resource before updating.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
