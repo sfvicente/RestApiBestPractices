@@ -128,6 +128,22 @@ Resource IDs should be created and maintained by the API and returned with the r
 
 
 
+## HTTP `PUT` Method
+<br>
+
+
+### Always use `PUT` requests to update complete individual or collection resources.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ## HTTP `DELETE` Method
 
 <br>
