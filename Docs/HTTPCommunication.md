@@ -178,6 +178,17 @@ Subsequent reads of the same resource, will return the exact content that was pa
 <br><br>
 
 
+### Successful `PUT` requests should generate a `204` status code if the resource was updated without actual content returned.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `DELETE` Method
 
