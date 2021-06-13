@@ -92,6 +92,18 @@ See also: Filtering, Pagination
 <br><br>
 
 
+### If a `POST` request creates a new resource, consider including the URI of the resource in the `Location` header of the response.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: `Location` Header
+<br><br>
+
+
 ### Successful `POST` requests should generate a `202` status code if the request was accepted but has not completed yet.
 
 // TODO: add description.
