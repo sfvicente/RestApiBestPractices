@@ -293,3 +293,15 @@ See also: HTTP Methods
 <br><br>
 
 
+### Always use HTTP `5XX` return codes for internal errors, when the issue is on the API's side.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
