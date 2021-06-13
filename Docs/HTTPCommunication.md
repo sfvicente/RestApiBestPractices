@@ -280,3 +280,16 @@ When returning information to clients regarding request or error handling, the A
 See also: HTTP Status Codes
 <br><br>
 
+
+### Always use HTTP `4XX` return codes for malformed requests, when the issue is on the client's side.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
