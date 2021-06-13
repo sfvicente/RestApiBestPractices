@@ -104,6 +104,17 @@ See also: `Location` Header
 <br><br>
 
 
+### If a `POST` request creates a new resource, the response body should contain a representation of the resource.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Successful `POST` requests should generate a `202` status code if the request was accepted but has not completed yet.
 
 // TODO: add description.
