@@ -36,3 +36,15 @@ binary image representation.
 
 See also: Binary Resources, Performance
 <br><br>
+
+
+### Consider implementing HTTP `HEAD` requests for large binary resources.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+See also: Binary Resources, Performance
+<br><br>
