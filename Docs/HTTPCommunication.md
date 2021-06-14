@@ -16,6 +16,14 @@
 
 ### Always use `GET` requests to read a single resource or a collection of resources.
 
+
+For retrieving a specific resource:
+
+```http
+GET /comments/:id
+```
+
+
 <br>
 
 
