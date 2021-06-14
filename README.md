@@ -24,7 +24,9 @@ This project is a collection of best practices and guidelines for REST API desig
 - [Organization](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Organization.md) 
 
 
-- [Resources](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Resources.md) 
+- [Resources](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Resources.md)
+
+- [Operations](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Operations.md)
 
 - [HTTP Communication](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPCommunication.md)
 
