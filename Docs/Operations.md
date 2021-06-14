@@ -19,4 +19,20 @@ See also: HTTP Methods
 <br><br>
 
 
-## ...
+## Consider supporting partial responses for larger binary resources
+
+Depending on business requirements, resources may contain larger binary assets. For example, a user profile resource might contain a
+binary image representation.
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Binary Resources, Performance
+<br><br>
