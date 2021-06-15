@@ -39,5 +39,22 @@
 <br><br>
 
 
+### For query parameters, prefer the use of snake case.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## ...
