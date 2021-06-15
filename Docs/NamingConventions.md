@@ -2,8 +2,25 @@
 
 
 ## General
+<br>
 
-...
+
+### For path segments, prefer the use of lowercase words separated with hyphens.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 
 ## ...
