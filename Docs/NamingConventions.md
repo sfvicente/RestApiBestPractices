@@ -5,6 +5,24 @@
 <br>
 
 
+### Resource names should be pluralized.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Resources
+<br><br>
+
+
 ### For path segments, prefer the use of lowercase words.
 
 // TODO: add description
