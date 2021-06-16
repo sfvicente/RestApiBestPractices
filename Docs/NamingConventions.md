@@ -41,6 +41,24 @@ See also: Resources
 <br><br>
 
 
+### Forward slashes should be used to indicate hierarchical relationships.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Path Segments
+<br><br>
+
+
 ### For path segments, prefer the use of lowercase words.
 
 // TODO: add description
