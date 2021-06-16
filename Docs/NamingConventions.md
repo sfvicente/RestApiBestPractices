@@ -46,7 +46,7 @@ See also: Path Segments
 // TODO: add description
 
 ```http
-// TODO: add example
+GET /payment-methods
 ```
 
 // TODO: complement description
