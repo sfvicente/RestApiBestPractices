@@ -92,5 +92,18 @@ See also: Path Segments
 <br><br>
 
 
+### Do not specify or use path variables with empty string values.
 
-## ...
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
