@@ -5,6 +5,24 @@
 <br>
 
 
+### Nouns should be used to represent resources.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Resources
+<br><br>
+
+
 ### Resource names should be pluralized.
 
 // TODO: add description
