@@ -75,5 +75,22 @@ See also: Path Segments
 <br><br>
 
 
+### Do not specify paths with trailing slashes.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## ...
