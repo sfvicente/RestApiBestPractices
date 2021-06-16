@@ -125,3 +125,22 @@ See also: Path Segments
 ```
 
 <br><br>
+
+
+### Query parameters should use conventional naming.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Query Parameters
+<br><br>
+
