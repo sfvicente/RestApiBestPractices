@@ -1,9 +1,26 @@
 # Message Content
 
 
-## General
+## Data Formats
+<br>
 
-...
+
+### Always use JSON as the payload data interchange format.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 
 ## JSON Data
