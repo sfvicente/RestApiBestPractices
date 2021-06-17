@@ -133,7 +133,9 @@ See also: Path Segments
 
 ### Do not specify paths with trailing slashes.
 
-// TODO: add description
+One of the reasons is that adding a trailing slash provides no semantic value.
+
+// TODO: complement description
 
 ```http
 // TODO: add example
