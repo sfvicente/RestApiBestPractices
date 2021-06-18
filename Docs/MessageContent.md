@@ -78,6 +78,21 @@
 <br><br>
 
 
+### Prefer the use of enumerations of named values instead of nullable boolean properties.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+
 ### Array names should be pluralized.
 
 // TODO: add description
