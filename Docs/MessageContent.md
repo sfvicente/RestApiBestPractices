@@ -123,3 +123,22 @@
 ```http
 // TODO: add example
 ```
+
+
+### Do not perform date localization in the API
+
+When localization of dates is required on client applications, it should be performed by those applications not the API.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
