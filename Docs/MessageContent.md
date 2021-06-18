@@ -93,3 +93,18 @@
 ```
 
 <br><br>
+
+
+### Prefer the use of the empty list representation instead of `null` for empty arrays.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
