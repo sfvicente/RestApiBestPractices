@@ -29,3 +29,15 @@ As a general guideline, compress the payload of response messages with gzip, unl
 ```
 
 <br><br>
+
+
+### A server should indicate it is using gzip compression via the `Content-Encoding` header.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
