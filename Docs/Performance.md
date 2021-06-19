@@ -20,6 +20,17 @@ As a general guideline, compress the payload of response messages with gzip, unl
 <br><br>
 
 
+### Do not use compression if the amount of requests being served is so high that compression time becomes a bottleneck.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Even when using compression by default, servers should also support payload without compression.
 
 // TODO: add description.
