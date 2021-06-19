@@ -18,6 +18,17 @@
 <br><br>
 
 
+### Applications should support pagination to limit access to large collections of data items, thus reducing network traffic.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## Compression
 <br>
