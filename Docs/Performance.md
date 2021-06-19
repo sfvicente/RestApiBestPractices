@@ -3,6 +3,22 @@
 <br>
 
 
+## General
+<br>
+
+
+### Applications should be designed and implemented to reduce bandwidth requirements and improve responsiveness.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ## Compression
 <br>
 
