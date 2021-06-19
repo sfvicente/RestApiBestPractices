@@ -18,3 +18,14 @@ As a general guideline, compress the payload of response messages with gzip, unl
 ```
 
 <br><br>
+
+
+### Even when using compression by default, servers should also support payload without compression.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
