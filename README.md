@@ -31,6 +31,8 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [HTTP Communication](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPCommunication.md)
 
+- [HTTP Status Codes](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPStatusCodes.md)
+
 - [Message Content](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/MessageContent.md)
 
 - [Versioning](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Versioning.md)
