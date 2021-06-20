@@ -47,3 +47,20 @@
 <br><br>
 
 
+### Consider using custom headers when services require additional functionality which is exposed via HTTP headers.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
