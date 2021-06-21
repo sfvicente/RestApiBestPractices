@@ -22,5 +22,22 @@
 <br><br>
 
 
+### Avoid using URI based versioning.
 
-## ...
+URI based version is mechanism in which the version number is included in the path when performing requests.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+This type of versioning creates tighter coupling of the components and leads to more complex and error-prone release management procedures.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
