@@ -41,3 +41,20 @@ This type of versioning creates tighter coupling of the components and leads to 
 ```
 
 <br><br>
+
+
+### Prefer the use of media type versioning.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
