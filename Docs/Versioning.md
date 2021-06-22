@@ -96,6 +96,25 @@ Renaming service operations is a breaking change.
 <br><br>
 
 
+### Always increment the version number of services when removing operation parameters.
+
+Removing service operation parameters is a breaking change.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always increment the version number of services when renaming operation parameters.
 
 Renaming a service operation parameters is a breaking change.
