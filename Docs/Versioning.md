@@ -96,6 +96,25 @@ Renaming service operations is a breaking change.
 <br><br>
 
 
+### Always increment the version number of services when renaming operation parameters.
+
+Renaming a service operation parameters is a breaking change.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Avoid using URI based versioning.
 
 URI based version is mechanism in which the version number is included in the path when performing requests.
