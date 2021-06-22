@@ -39,6 +39,25 @@
 <br><br>
 
 
+### Consider incrementing the version number to new major version in response to a future deprecation of services.
+
+By increasing the major version, it notifies clients that services will be deprecated and there will be no future support.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Avoid using URI based versioning.
 
 URI based version is mechanism in which the version number is included in the path when performing requests.
