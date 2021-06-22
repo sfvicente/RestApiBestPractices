@@ -58,6 +58,25 @@ By increasing the major version, it notifies clients that services will be depre
 <br><br>
 
 
+### Always increment the version number of services when removing operations
+
+Removing a service operation is a breaking change.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Avoid using URI based versioning.
 
 URI based version is mechanism in which the version number is included in the path when performing requests.
