@@ -43,7 +43,7 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Sorting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Sorting.md)
 
-- [Paging](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Paging.md)
+- [Pagination](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Pagination.md)
 
 - [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)
 

@@ -1,4 +1,4 @@
-# Paging
+# Pagination
 
 
 ## General
