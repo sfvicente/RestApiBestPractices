@@ -10,7 +10,16 @@
 // TODO: add description
 
 ```http
-// TODO: add example
+GET https://api.myapi.com/orders?$filter=...
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  ...,
+  "value": []
+}
 ```
 
 // TODO: complement description
