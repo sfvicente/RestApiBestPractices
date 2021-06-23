@@ -22,5 +22,21 @@
 <br><br>
 
 
+### Clients of service operations that support partial sets must expect limited result sets of information.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 ## ...
