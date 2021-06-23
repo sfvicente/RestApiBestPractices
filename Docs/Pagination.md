@@ -39,4 +39,22 @@
 <br><br>
 
 
+### Clients of service operations that support partial sets are expected to correctly use pagination to retrieve the entire collection.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
 ## ...
