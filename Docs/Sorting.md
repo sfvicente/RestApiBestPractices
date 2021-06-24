@@ -39,5 +39,23 @@
 <br><br>
 
 
+### Always allow sorting to be combined with the filtering mechanism.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Filtering
+<br><br>
+
+
 
 ## ...
