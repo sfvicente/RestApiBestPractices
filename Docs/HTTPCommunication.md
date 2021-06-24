@@ -253,6 +253,30 @@ See also: Idempotency
 <br><br>
 
 
+
+## HTTP `PATCH` Method
+<br>
+
+
+### Always use `PATCH` requests for updating an existing object incrementally.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
+<br><br>
+
+
+
 ## HTTP `HEAD` Method
 <br>
 
