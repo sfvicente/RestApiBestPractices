@@ -22,6 +22,22 @@
 <br><br>
 
 
+### Service operations should provide JSON as the default encoding.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 ## JSON Data
 <br>
