@@ -283,8 +283,15 @@ References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 
 ### Always use `HEAD` requests to retrieve header information of single resource or a collections of resources.
 
-// TODO: add description.
+The `HEAD` method returns the metadata of an object for a `GET` response. It is an idempotent operation.
 
+// TODO: complement description.
+
+```http
+// TODO: add example
+```
+
+See also: Idempotency
 <br><br>
 
 
