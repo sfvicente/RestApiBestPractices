@@ -29,4 +29,22 @@ By designing the API under this principle, each request becomes an atomic operat
 
 
 
-## ...
+## Consistency
+<br>
+
+
+### URLs should be easily read and constructed by users.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
