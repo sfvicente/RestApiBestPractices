@@ -6,6 +6,17 @@
 
 ### Model the services around domain entities using the standard HTTP methods as operation indicators.
 
+Do not model service operations as actions. Instead, identify the domain entities that are the components of the API model 
+and use the standard HTTP methods to perform the operations on those entities.
+
+For example, do not use the following operation:
+
+// TODO: complement description
+
+```http
+// TODO: add examples
+```
+
 // TODO: add description
 
 ```http
