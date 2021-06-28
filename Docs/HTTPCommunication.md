@@ -158,6 +158,23 @@ Resource IDs should be created and maintained by the API and returned with the r
 <br><br>
 
 
+### Consider designing `POST` operations as idempotent.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 ## HTTP `PUT` Method
 <br>
