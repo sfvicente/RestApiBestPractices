@@ -13,4 +13,21 @@
  resource. The `GET`, `PUT` and `DELETE` methods are idempotent.
 
 
+ ...
+
+
+| Method  | Idempotent? | Safe? |
+|---------|-------------|-------|
+| GET     | Yes         | Yes   |
+| POST    | No          | No    |
+| PUT     | Yes         | No    |
+| DELETE  | Yes         | No    |
+| PATCH   | No          | No    |
+| HEAD    | Yes         | Yes   |
+| OPTIONS | Yes         | Yes   |
+| TRACE   | Yes         | Yes   |
+
 ## ...
+
+
+
