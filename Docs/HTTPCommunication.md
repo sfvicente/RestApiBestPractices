@@ -358,6 +358,22 @@ See also: HTTP Methods
 <br><br>
 
 
+## HTTP 'TRACE' Method
+<br>
+
+
+### Consider using the `TRACE` method to debug or troubleshoot web server connections.
+
+The TRACE method is used to echo the contents of an HTTP Request back to the requester which can be used for debugging purpose at the time of development.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
 
 ## HTTP Status Codes
 <br>
