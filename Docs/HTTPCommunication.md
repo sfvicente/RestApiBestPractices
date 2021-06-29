@@ -348,7 +348,7 @@ See also: Concurrency
 
 ### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint.
 
-// TODO: add description.
+The `OPTIONS` method is used by a client to determine what are the communication options available for a specific resource.
 
 ```http
 // TODO: add example
