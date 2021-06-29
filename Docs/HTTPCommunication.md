@@ -374,6 +374,18 @@ See also: HTTP Methods
 <br><br>
 
 
+### Always disable the `TRACE` method for security reasons, unless specifically required.
+
+It is possible that malicious users, even without priviledges, can abuse the HTTP `TRACE` functionality as it allows access to HTTP headers sensitive information.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
 
 ## HTTP Status Codes
 <br>
