@@ -55,6 +55,8 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [Performance](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Performance.md)
 
+- [Rate Limiting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/RateLimiting.md)
+
 
 
 
