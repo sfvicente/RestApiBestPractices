@@ -18,3 +18,14 @@
 ```
 
 <br><br>
+
+
+### Use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an API endpoint
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
