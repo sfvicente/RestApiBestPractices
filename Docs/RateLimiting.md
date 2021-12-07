@@ -29,3 +29,16 @@
 ```
 
 <br><br>
+
+
+### Use the `X-RateLimit-Remaining` header to communicate the number of requests remaining in the current rate limit window
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
