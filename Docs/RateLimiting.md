@@ -42,3 +42,14 @@
 <br><br>
 
 
+### Use the `X-Rate-Limit-Reset` header to communicate the remaining window before the rate limit resets
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
