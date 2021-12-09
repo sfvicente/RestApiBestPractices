@@ -6,8 +6,8 @@
 ...
 
 
-## ...
-
+## Headers
+<br>
 
 
 ### Use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an API endpoint
