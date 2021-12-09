@@ -9,16 +9,6 @@
 ## ...
 
 
-### Return an HTTP `429 Too Many Requests` status when a rate limit is reached on the API
-
-// TODO: add description.
-
-```http
-// TODO: add example
-```
-
-<br><br>
-
 
 ### Use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an API endpoint
 
@@ -53,3 +43,13 @@
 <br><br>
 
 
+
+### Return an HTTP `429 Too Many Requests` status when a rate limit is reached on the API
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
