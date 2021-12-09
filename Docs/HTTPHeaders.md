@@ -1,5 +1,8 @@
 # HTTP Headers
 
+## General
+<br>
+
 
 ### Consider using standardized headers.
 
