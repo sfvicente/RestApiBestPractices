@@ -43,6 +43,9 @@
 <br><br>
 
 
+## Status Codes
+<br>
+
 
 ### Return an HTTP `429 Too Many Requests` status when a rate limit is reached on the API
 
