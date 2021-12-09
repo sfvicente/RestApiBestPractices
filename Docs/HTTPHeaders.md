@@ -1,4 +1,8 @@
 # HTTP Headers
+HTTP headers are the name or value pairs containing additional information that are transferred between clients and servers
+with HTTP requests or responses.
+<br>
+
 
 ## General
 <br>
