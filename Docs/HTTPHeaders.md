@@ -25,6 +25,10 @@ with HTTP requests or responses.
 <br><br>
 
 
+## `Prefer` Header
+<br>
+
+
 ### Consider supporting the `Prefer` header to handle processing preferences.
 
 // TODO: add description.
