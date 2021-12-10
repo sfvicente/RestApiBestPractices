@@ -13,6 +13,7 @@ REST APIs use a stateless request model.
 
 HTTP requests can occur in any order.
 
+Additional Tags: State Management
 <br><br>
 
 
