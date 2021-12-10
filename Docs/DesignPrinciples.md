@@ -47,4 +47,5 @@ By designing the API under this principle, each request becomes an atomic operat
 // TODO: add example
 ```
 
+Additional Tags: URLs
 <br><br>
