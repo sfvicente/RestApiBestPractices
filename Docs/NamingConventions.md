@@ -111,6 +111,7 @@ See also: Path Segments
 // TODO: add example
 ```
 
+Additional Tags: Query Parameters
 <br><br>
 
 
