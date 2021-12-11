@@ -37,6 +37,7 @@ Additional Tags: Payload, HTTP 400
 // TODO: add example
 ```
 
+Additional Tags: URIs, HTTP 400
 <br><br>
 
 
