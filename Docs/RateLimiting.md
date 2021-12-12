@@ -47,9 +47,11 @@
 <br>
 
 
-### Return an HTTP `429 Too Many Requests` status when a rate limit is reached on the API
+### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached.
 
-// TODO: add description.
+A service must return a limiting signal when the defined limits are reached.
+
+// TODO: complement description.
 
 ```http
 // TODO: add example
