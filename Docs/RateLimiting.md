@@ -53,8 +53,13 @@ A service must return a limiting signal when the defined limits are reached.
 
 // TODO: complement description.
 
+The following example displays the response headers returned for a request when the rate limit for an endpoint has been exceeded:
+
 ```http
-// TODO: add example
+HTTP/1.1 429
+X-Rate-Limit-Limit: 1024
+X-Rate-Limit-Remaining: 0
+X-Rate-Limit-Reset: 1639452294
 ```
 
 <br><br>
