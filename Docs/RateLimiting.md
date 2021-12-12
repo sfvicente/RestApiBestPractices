@@ -36,6 +36,9 @@
 
 // TODO: add description.
 
+When the rate limit is achieved and the application/service receives the error, it can check the `X-Rate-Limit-Reset` HTTP header to
+know when the rate-limiting will reset.
+
 ```http
 // TODO: add example
 ```
