@@ -5,7 +5,7 @@ This project is a collection of best practices and guidelines for REST API desig
 
 ## Fundamentals
 
-- Introduction to REST
+- [Introduction to REST](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Fundamentals/IntroductionREST.md)
 - REST APIs
 
 - [API architectural styles Comparison](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Fundamentals/Comparison.md)
