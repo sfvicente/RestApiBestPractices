@@ -50,7 +50,7 @@ know when the rate-limiting will reset.
 <br>
 
 
-### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached.
+### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
 
 A service must return a limiting signal when the defined limits are reached.
 
