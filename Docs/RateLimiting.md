@@ -66,3 +66,15 @@ X-Rate-Limit-Reset: 1639452294
 ```
 
 <br><br>
+
+
+### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions.
+
+When handling an excessive volume of requests from a single source, such as when a server is under attack, serving every request
+might to be the correct strategy. If a server is forced to respond to each request with an an HTTP `429 Too Many Requests`, it
+could drain available resources and risk overloading the system.
+
+Instead, consider limiting resource usage by dropping connections, temporarily banning IP addresses or other measures.
+
+Additional Tags: Security
+<br><br>
