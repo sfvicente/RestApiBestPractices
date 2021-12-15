@@ -48,7 +48,7 @@ know when the rate-limiting will reset.
 <br><br>
 
 
-## `HTTP 429` Status Code
+## HTTP `429 Too Many Requests` Status Code
 The HTTP `429 Too Many Requests` response status code indicates that a client has sent too many requests within a defined amount of time.
 <br>
 
