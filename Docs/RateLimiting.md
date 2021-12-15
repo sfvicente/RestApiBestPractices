@@ -48,7 +48,7 @@ know when the rate-limiting will reset.
 <br><br>
 
 
-## Status Codes
+## `HTTP 429` Status Code
 <br>
 
 
