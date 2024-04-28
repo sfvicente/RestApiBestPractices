@@ -77,15 +77,19 @@ The HTTP `429 Too Many Requests` response status code indicates that a client ha
 
 A service must return a limiting signal when the defined limits are reached.
 
-// TODO: complement description.
+A 429 Too Many Requests response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
+limit, remaining quota, and when to retry.
+
+This ensures clients are informed of rate limit violations and can adjust their request behavior accordingly.
 
 The following example displays the response headers returned for a request when the rate limit for an endpoint has been exceeded:
 
 ```http
-HTTP/1.1 429
-X-Rate-Limit-Limit: 1024
-X-Rate-Limit-Remaining: 0
-X-Rate-Limit-Reset: 1639452294
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+Retry-After: 3600
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
 ```
 
 <br><br>
@@ -93,11 +97,23 @@ X-Rate-Limit-Reset: 1639452294
 
 ### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions.
 
-When handling an excessive volume of requests from a single source, such as when a server is under attack, serving every request
-might to be the correct strategy. If a server is forced to respond to each request with an an HTTP `429 Too Many Requests`, it
-could drain available resources and risk overloading the system.
+During periods of excessive requests, particularly when under attack, indiscriminately returning `429 Too Many Requests` for each
+request can strain server resources and risk system overload. Instead:
 
-Instead, consider limiting resource usage by dropping connections, temporarily banning IP addresses or other measures.
+- **Implement Resource Management**: Consider dropping connections, temporarily banning IP addresses, or utilizing other measures
+to mitigate the impact of excessive requests
+- **Define Clear Strategies**: Provide specific guidelines on when and how to apply these resource management techniques effectively
+- **Maintain User Experience**: Ensure that legitimate users receive appropriate responses or alternative endpoints during severe
+conditions to maintain a positive user experience.
+
+By adopting these strategies, you can enhance the system's scalability and resilience, protecting against potential attacks while
+maintaining operational stability.
+
+---
+
+In summary, your guideline touches on an important aspect of API and system management under severe conditions. Enhancing it with specific examples and guidelines will provide more actionable advice for implementing effective resource management strategies.
+
+
 
 Additional Tags: Security
 <br><br>
