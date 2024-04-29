@@ -62,7 +62,11 @@ When the rate limit is achieved and the application/service receives the error, 
 know when the rate-limiting will reset.
 
 ```http
-// TODO: add example
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+X-Rate-Limit-Limit: 100
+X-Rate-Limit-Remaining: 0
+X-Rate-Limit-Reset: 3600
 ```
 
 <br><br>
