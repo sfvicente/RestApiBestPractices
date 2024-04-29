@@ -48,7 +48,10 @@ manage their interactions with the API.
 // TODO: add description.
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 88
 ```
 
 <br><br>
