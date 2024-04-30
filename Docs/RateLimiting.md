@@ -1,10 +1,33 @@
 # Rate Limiting
 
-
-## General
 Rate limiting is a technique used to control the number of requests that a client (such as an application or user) can make to an
 API within a defined period of time. The purpose of rate limiting is to protect the API from being overwhelmed by too many requests,
 which can lead to degraded performance, increased latency, or even denial of service.
+
+## General
+
+### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
+
+A service must return a limiting signal when the defined limits are reached.
+
+A 429 Too Many Requests response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
+limit, remaining quota, and when to retry.
+
+This ensures clients are informed of rate limit violations and can adjust their request behavior accordingly.
+
+The following example displays the response headers returned for a request when the rate limit for an endpoint has been exceeded:
+
+```http
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+Retry-After: 3600
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+```
+
+<br><br>
+
+
 
 
 ## HTTP Headers
@@ -81,31 +104,8 @@ X-Rate-Limit-Reset: 3600
 <br><br>
 
 
-## HTTP `429 Too Many Requests` Status Code
-The HTTP `429 Too Many Requests` response status code indicates that a client has sent too many requests within a defined amount of time.
-<br>
 
 
-### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
-
-A service must return a limiting signal when the defined limits are reached.
-
-A 429 Too Many Requests response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
-limit, remaining quota, and when to retry.
-
-This ensures clients are informed of rate limit violations and can adjust their request behavior accordingly.
-
-The following example displays the response headers returned for a request when the rate limit for an endpoint has been exceeded:
-
-```http
-HTTP/1.1 429 Too Many Requests
-Content-Type: application/json
-Retry-After: 3600
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 0
-```
-
-<br><br>
 
 
 ### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions.
