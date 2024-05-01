@@ -48,7 +48,8 @@ endpoint, the API server responds with the `X-RateLimit-Limit` header set to `10
 allowed a maximum of 100 requests within the current hour.
 
 Example Response Headers:
-```
+
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 X-RateLimit-Limit: 100
