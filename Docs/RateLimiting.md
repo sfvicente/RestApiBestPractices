@@ -35,6 +35,17 @@ X-RateLimit-Remaining: 0
 TODO
 
 
+
+## TODO
+
+
+### Use a token bucket or sliding window algorithm for rate limiting.
+
+TODO
+
+
+
+
 ## HTTP Headers
 HTTP headers are the name or value pairs containing additional information that are transferred between clients and servers
 with HTTP requests or responses.
