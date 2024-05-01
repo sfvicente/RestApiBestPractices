@@ -28,6 +28,11 @@ X-RateLimit-Remaining: 0
 <br><br>
 
 
+## Documentation and Communication
+
+### Clearly communicate rate limiting policies to consumers through documentation
+
+TODO
 
 
 ## HTTP Headers
