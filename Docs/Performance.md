@@ -107,10 +107,24 @@ As a general guideline, compress the payload of response messages with gzip, unl
 
 ### A server should indicate it is using gzip compression via the `Content-Encoding` header.
 
-// TODO: add description.
+Servers should indicate the usage of gzip compression for response payloads by including the `Content-Encoding` header
+in HTTP responses. Gzip compression reduces the size of transmitted data, leading to improved network performance and
+reduced bandwidth consumption.
 
+**Request:**
 ```http
-// TODO: add example
+GET /api/data HTTP/1.1
+Host: example.com
+Accept-Encoding: gzip
+```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Encoding: gzip
+
+<gzip-compressed-data>
 ```
 
 <br><br>
