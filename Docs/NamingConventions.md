@@ -5,7 +5,7 @@
 <br>
 
 
-### Represent Resources with Nouns.
+### Use nouns to represent resources.
 
 Resources should be represented using nouns to ensure clarity, consistency, and adherence to REST principles.
 
