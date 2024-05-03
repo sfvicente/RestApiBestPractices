@@ -5,21 +5,26 @@
 <br>
 
 
-### Nouns should be used to represent resources.
+### Represent Resources with Nouns.
 
-// TODO: add description
+Resources should be represented using nouns to ensure clarity, consistency, and adherence to REST principles.
 
+Using nouns to represent resources offers the following advantages:
+- **Semantic Clarity**: Nouns inherently describe entities or objects, making the API endpoints more semantically meaningful.
+- **Consistency**: Uniformly using nouns across API endpoints maintains a predictable structure, simplifying API navigation.
+- **REST Compliance**: Aligns with the REST architectural style, which emphasizes resource-based interactions.
+
+**Endpoint for User Collection (plural noun)**:
 ```http
-// TODO: add example
+GET /api/users HTTP/1.1
 ```
 
-// TODO: complement description
-
+**Endpoint for Individual User Resource (singular noun)**:
 ```http
-// TODO: add example
+GET /api/users/{id} HTTP/1.1
 ```
 
-See also: Resources
+<sub>See also: Resources</sub>
 <br><br>
 
 
