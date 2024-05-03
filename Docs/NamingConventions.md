@@ -30,19 +30,24 @@ GET /api/users/{id} HTTP/1.1
 
 ### Resource names should be pluralized.
 
-// TODO: add description
+Resource names should generally be pluralized to reflect collections of resources. 
 
+Pluralizing resource names offers several benefits:
+- **Consistency**: Pluralizing resource names creates a uniform naming convention across API endpoints, enhancing predictability and ease of use.
+- **Semantic Clarity**: Plural nouns inherently indicate collections of resources, making the API endpoints more descriptive and intuitive.
+- **REST Compliance**: Pluralizing resource names aligns with the standard practice of using plural nouns for representing resource collections in REST APIs.
+
+**Endpoint for Products Collection**:
 ```http
-// TODO: add example
+GET /api/products HTTP/1.1
 ```
 
-// TODO: complement description
-
+**Endpoint for Individual Product Resource**:
 ```http
-// TODO: add example
+GET /api/products/{id} HTTP/1.1
 ```
 
-See also: Resources
+<sub>See also: Resources</sub>
 <br><br>
 
 
