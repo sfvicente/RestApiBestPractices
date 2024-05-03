@@ -14,12 +14,12 @@ Using nouns to represent resources offers the following advantages:
 - **Consistency**: Uniformly using nouns across API endpoints maintains a predictable structure, simplifying API navigation.
 - **REST Compliance**: Aligns with the REST architectural style, which emphasizes resource-based interactions.
 
-**Endpoint for User Collection (plural noun)**:
+**Endpoint for User Collection**:
 ```http
 GET /api/users HTTP/1.1
 ```
 
-**Endpoint for Individual User Resource (singular noun)**:
+**Endpoint for Individual User Resource**:
 ```http
 GET /api/users/{id} HTTP/1.1
 ```
