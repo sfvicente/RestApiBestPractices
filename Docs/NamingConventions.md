@@ -79,7 +79,7 @@ See also: Path Segments
 
 // TODO: complement description
 
-[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) states that URIs are case-sensitive with the exceptopn of the scheme and host elements.
+[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) states that URIs are case-sensitive with the exception of the scheme and host elements.
 
 ```http
 // TODO: add example
