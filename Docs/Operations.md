@@ -22,6 +22,19 @@ intuitive approach to interacting with RESTful APIs.
 <br><br>
 
 
+### Use `GET` for Read Operations
+
+Use the `GET` method to retrieve data or resources from the server. `GET` requests should not have side effects on the server
+and should only be used for retrieving data.
+
+```http
+GET /api/users HTTP/1.1
+```
+
+<sub>See also: HTTP Methods</sub>
+<br><br>
+
+
 ### Consider supporting partial responses for larger binary resources
 
 Depending on business requirements, resources may contain larger binary assets. For example, a user profile resource might contain a
