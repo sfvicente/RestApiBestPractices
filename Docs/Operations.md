@@ -1,5 +1,8 @@
 # Operations
-
+When designing a RESTful API, operations refer to the actions that can be performed on resources exposed by the API. These
+operations are mapped to specific HTTP methods to convey the intent of the client's request and to adhere to the principles
+of the HTTP protocol.
+<br>
 
 ## General
 <br>
