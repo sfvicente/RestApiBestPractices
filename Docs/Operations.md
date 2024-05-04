@@ -35,6 +35,19 @@ GET /api/users HTTP/1.1
 <br><br>
 
 
+### Use `POST` for Create Operations
+
+Use the `POST` method to create new resources on the server. `POST` requests should be used for operations that result in the
+creation of a new resource.
+
+  ```http
+  POST /api/users HTTP/1.1
+  ```
+
+<sub>See also: HTTP Methods</sub>
+<br><br>
+
+
 ### Consider supporting partial responses for larger binary resources
 
 Depending on business requirements, resources may contain larger binary assets. For example, a user profile resource might contain a
