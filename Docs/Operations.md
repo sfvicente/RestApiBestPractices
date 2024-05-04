@@ -7,15 +7,15 @@
 
 ### API operations should be defined in terms of HTTP methods
 
-Use the methods defined by the HTTP protocol to assign semantic meaning to requests.
+API operations should be defined using the appropriate HTTP methods to leverage the semantics and behaviors defined
+by the HTTP protocol. Each HTTP method corresponds to a specific action or intent, providing a standardized and 
+intuitive approach to interacting with RESTful APIs.
 
-// TODO: complement description
+- **Semantic Clarity**: HTTP methods convey the intent of an API request (e.g., retrieving data, creating resources, updating resources, deleting resources) in a clear and standardized manner.
+- **Idempotent and Safe Operations**: HTTP methods like `GET`, `PUT`, and `DELETE` have defined idempotent and safe characteristics, aligning with REST principles.
+- **Uniform Interface**: Leveraging HTTP methods establishes a uniform interface for API endpoints, improving consistency and predictability.
 
-```http
-// TODO: add example
-```
-
-See also: HTTP Methods
+<sub>See also: HTTP Methods</sub>
 <br><br>
 
 
