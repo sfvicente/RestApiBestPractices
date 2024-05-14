@@ -11,7 +11,7 @@ This project is a collection of best practices and guidelines for REST API desig
 
 - [API architectural styles Comparison](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Fundamentals/Comparison.md)
 
-- Resources
+- [Resources](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Fundamentals/Resources.md)
 
 - [HTTP Status Codes](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Fundamentals/HTTPStatusCodes.md)
 
