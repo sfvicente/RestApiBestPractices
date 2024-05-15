@@ -29,11 +29,30 @@ GET /comments/:id
 
 ### `GET` requests for individual resources that do not exist should generate a `404`.
 
-// TODO: add description.
+When a `GET` request is made for an individual resource that is not found on the server, the API should return
+a `404 Not Found` status code. This informs the client that the requested resource does not exist, ensuring clarity
+and consistency in API behavior.
+
+**Example**:
 
 ```http
-// TODO: add example
+GET /articles/123
 ```
+
+- **Request**: Attempts to retrieve the article with ID `123`.
+
+```http
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": "Resource not found",
+  "message": "The requested article with ID '123' does not exist."
+}
+```
+
+- **Response**: The server responds with a `404 Not Found` status code along with a JSON payload providing details
+about the error. This communicates to the client that the requested article could not be found.
 
 <br><br>
 
