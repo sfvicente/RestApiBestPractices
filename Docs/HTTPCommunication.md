@@ -59,11 +59,32 @@ about the error. This communicates to the client that the requested article coul
 
 ### `GET` requests for collection resources should return `200` if the collection is empty.
 
-// TODO: add description.
+When clients make `GET` requests to retrieve a collection of resources, the API should return a `200 OK` status code
+even if the collection is empty. This indicates that the request was successfully processed, and the response body 
+will contain an empty array or object representing the collection.
+
+**Example**:
 
 ```http
-// TODO: add example
+GET /articles
 ```
+
+- **Request**: Retrieves the collection of articles.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "articles": []
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the request was successful. The response
+body contains an empty array (`"articles": []`), indicating that there are no articles in the collection.
+
+Returning a `200` status for an empty collection maintains consistency in API responses and allows clients to differentiate
+between an empty collection and a resource that does not exist.
 
 <br><br>
 
