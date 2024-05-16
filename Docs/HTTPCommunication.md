@@ -91,11 +91,34 @@ between an empty collection and a resource that does not exist.
 
 ### GET requests for collection resources should return `404` if the collection is missing.
 
-// TODO: add description.
+When clients make `GET` requests to retrieve a collection of resources and the requested collection does not exist
+(i.e., it has not been implemented or configured), the API should return a `404 Not Found` status code. This communicates
+to the client that the requested endpoint or resource is not available, distinguishing between an empty collection (which
+should return `200 OK` with an empty response) and a missing or undefined collection.
+
+**Example**:
 
 ```http
-// TODO: add example
+GET /articles
 ```
+
+- **Request**: Attempts to retrieve the collection of articles.
+
+```http
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": "Resource not found",
+  "message": "The requested collection '/articles' does not exist."
+}
+```
+
+- **Response**: The server responds with a `404 Not Found` status code along with a JSON payload providing details about the error. This informs the client that the requested collection (`/articles`) is not available or has not been implemented.
+
+This ensures consistent and meaningful responses for `GET` requests to collection resources, enhancing the clarity and
+reliability of API interactions. This practice helps clients differentiate between different states of resource availability,
+improving overall usability and error handling.
 
 <br><br>
 
