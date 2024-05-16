@@ -143,11 +143,43 @@ See also: Filtering, Pagination
 
 ### Successful `POST` requests should generate a `200` status code if resources have been updated.
 
-// TODO: add description.
+When clients make `POST` requests to create or update resources, the API should return a `200 OK` status code if the
+request was successful and resulted in the modification or creation of resources. This indicates that the operation
+was completed successfully, and the response body may include details about the updated resources.
+
+**Example**:
 
 ```http
-// TODO: add example
+POST /articles
+Content-Type: application/json
+
+{
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
 ```
+
+- **Request**: Creates a new article with the specified title and content.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the `POST` request was successful and the article was created. The response body contains the details of the newly created article, including its `id`, `title`, `content`, `createdAt`, and `updatedAt` timestamps.
+
+Using `200 OK` for successful `POST` requests aligns with HTTP semantics and communicates the successful modification of
+resources to clients. This provides clear and consistent feedback to clients about the outcome of `POST` requests,
+enabling them to handle resource creation or update operations effectively. This practice enhances the usability and
+reliability of your API design.
 
 <br><br>
 
