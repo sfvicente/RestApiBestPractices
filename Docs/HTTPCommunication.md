@@ -288,11 +288,43 @@ Resource IDs should be created and maintained by the API and returned with the r
 
 ### `PUT` requests should be robust against non-existence of resources by implicitly creating the resource before updating.
 
-// TODO: add description.
+When clients make `PUT` requests to update a resource at a specific URI, the API should be robust against the non-existence
+of the resource by implicitly creating it before performing the update. This means that if the resource identified by the
+URI does not already exist, the API should create it based on the provided data in the `PUT` request payload.
+
+**Example**:
 
 ```http
-// TODO: add example
+PUT /articles/123
+Content-Type: application/json
+
+{
+  "title": "Updated Article",
+  "content": "Updated content."
+}
 ```
+
+- **Request**: Attempts to update the article with ID `123`. If the article does not exist, the API should implicitly create it with the provided data.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "Updated Article",
+  "content": "Updated content.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:05:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the `PUT` request was successful. If the article did not exist previously, it is created with the specified `title`, `content`, `createdAt`, and `updatedAt` timestamps. If the article already existed, it is updated with the provided data.
+
+By implementing this guideline, an API provides flexibility and robustness in handling `PUT` requests, allowing clients
+to use the same method for both creating and updating resources at specific URIs. This practice simplifies API usage,
+ensures consistency and predictability in API interactions and improves the overall developer experience. However, note
+that this behavior may vary based on specific use cases and API requirements.
 
 <br><br>
 
