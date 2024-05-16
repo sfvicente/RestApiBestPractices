@@ -401,6 +401,10 @@ See also: Idempotency
 
 
 ## HTTP `PATCH` Method
+The HTTP PATCH method is a request method used to apply partial modifications to a resource on a server. Unlike the PUT
+method, which updates the entire resource, PATCH allows for more fine-grained updates, modifying only the specified parts
+of the resource. This method is not necessarily idempotent, as applying the same patch multiple times can result in
+different outcomes.
 <br>
 
 
