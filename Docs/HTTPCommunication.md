@@ -366,7 +366,9 @@ Subsequent reads of the same resource, will return the exact content that was pa
 
 
 ## HTTP `DELETE` Method
-
+The HTTP DELETE method is a standard HTTP request method used to delete a specified resource on a server. When a client sends a
+DELETE request, it instructs the server to remove the resource identified by the URI. This method is idempotent, meaning that
+multiple identical requests have the same effect as a single request. 
 <br>
 
 
