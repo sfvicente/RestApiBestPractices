@@ -410,17 +410,43 @@ different outcomes.
 
 ### Always use `PATCH` requests for updating an existing object incrementally.
 
-// TODO: add description
+`PATCH` requests are used to apply partial updates to an existing resource. Unlike `PUT` requests, which replace the entire
+resource with the new data, `PATCH` requests allow clients to send only the changes or updates that need to be applied. This
+makes `PATCH` ideal for scenarios where only specific fields of a resource need to be modified without affecting the entire
+resource.
+
+**Example**:
 
 ```http
-// TODO: add example
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "email": "newemail@example.com"
+}
 ```
 
-// TODO: complement description
+- **Request**: Updates the email address of the user with ID `123`. Only the `email` field is provided, indicating that this is the only field to be updated.
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "username": "johndoe",
+  "email": "newemail@example.com",
+  "createdAt": "2023-01-10T08:00:00Z",
+  "updatedAt": "2024-05-15T12:10:00Z"
+}
 ```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the `PATCH` request was successful. The response body contains the updated user resource, showing that only the `email` field was modified, while other fields remain unchanged.
+
+Using `PATCH` for incremental updates ensures efficient use of network resources and minimizes the risk of unintentional
+data loss. It allows for efficient and precise updates to resources, reducing unnecessary data transfer and
+preserving the integrity of existing data. Clients can perform targeted updates without the risk of overwriting
+unintended parts of a resource.
 
 References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 <br><br>
