@@ -137,7 +137,10 @@ See also: Filtering, Pagination
 
 
 ## HTTP `POST` method
-
+The HTTP POST method is a request method used to submit data to be processed by a specified resource on the
+server. It's commonly used when creating new resources or when submitting data to a server that will trigger
+a specific action. Unlike GET requests, which retrieve data, POST requests typically include data in the request
+body, allowing for more complex data transmission.
 <br>
 
 
