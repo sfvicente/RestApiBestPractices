@@ -10,7 +10,9 @@
 
 
 ## HTTP `GET` method
-
+The HTTP GET method is a request method used to retrieve data from a specified resource on the server. It's one of the
+most commonly used HTTP methods and is primarily used for fetching information. When a client sends a GET request to a
+server, it typically includes parameters in the URL to specify the resource to retrieve or query parameters to filter the results.
 <br>
 
 
