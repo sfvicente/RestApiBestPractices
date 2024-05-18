@@ -275,6 +275,10 @@ Resource IDs should be created and maintained by the API and returned with the r
 
 
 ## HTTP `PUT` Method
+The HTTP PUT method is a request method used to update or replace a resource on the server with the representation
+enclosed in the request payload. It's commonly employed when the client intends to update an existing resource or
+create a new one if it doesn't exist. PUT typically replaces the entire resource with the new representation provided
+in the request.
 <br>
 
 
