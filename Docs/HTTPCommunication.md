@@ -191,12 +191,43 @@ reliability of your API design.
 
 ### Successful `POST` requests should generate a `201` status code if resources have been created.
 
-// TODO: add description.
+When clients make `POST` requests to create new resources, the API should return a `201 Created` status code upon
+successful creation. This status code indicates that the request was successful and that a new resource has been 
+created on the server.
+
+**Example**:
 
 ```http
-// TODO: add example
+POST /articles
+Content-Type: application/json
+
+{
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
 ```
 
+- **Request**: Creates a new article with the specified title and content.
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /articles/123
+
+{
+  "id": 123,
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `201 Created` status code, indicating that the `POST` request was successful
+and a new article has been created. The `Location` header provides the URI of the newly created article (`/articles/123`).
+The response body includes the details of the newly created article, such as its `id`, `title`, `content`, and timestamps.
+
+See also: `Location` Header
 <br><br>
 
 
