@@ -1,5 +1,7 @@
 # HTTP Communication
-
+HTTP communication in the context of REST APIs involves using standard HTTP methods, also known as verbs, to perform
+operations on resources identified by URLs. Each HTTP verb provides a specific action, making REST APIs intuitive and
+enabling clear, predictable interactions between clients and servers.
 
 ## General
 
