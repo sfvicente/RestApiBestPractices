@@ -577,6 +577,11 @@ See also: Concurrency
 
 
 ## HTTP `OPTIONS` Method
+The HTTP OPTIONS method is a request method used to describe the communication options available for a specified resource
+or the server as a whole. When a client sends an OPTIONS request, the server responds with the allowed HTTP methods (such as
+GET, POST, PUT, DELETE) that can be performed on the resource. This method is useful for determining the capabilities of a
+server or resource, often used in the context of Cross-Origin Resource Sharing (CORS) to check permitted operations before
+making actual requests.
 <br>
 
 
