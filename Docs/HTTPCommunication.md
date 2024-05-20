@@ -233,11 +233,44 @@ See also: `Location` Header
 
 ### If a `POST` request creates a new resource, consider including the URI of the resource in the `Location` header of the response.
 
-// TODO: add description.
+When a `POST` request successfully creates a new resource, it is a best practice to include the URI of the newly created
+resource in the `Location` header of the response. This provides clients with a direct link to the new resource, allowing
+them to easily access, retrieve, or interact with it. 
+
+**Example**:
 
 ```http
-// TODO: add example
+POST /articles
+Content-Type: application/json
+
+{
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
 ```
+
+- **Request**: Creates a new article with the specified title and content.
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /articles/123
+
+{
+  "id": 123,
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `201 Created` status code, indicating that the `POST` request was successful
+and a new article has been created. The `Location` header provides the URI of the newly created article (`/articles/123`).
+The response body includes the details of the newly created article, such as its `id`, `title`, `content`, and timestamps.
+
+Including the `Location` header improves the usability of the API by giving clients immediate knowledge of the new resource's
+URI, which can be useful for subsequent operations such as `GET`, `PUT`, `PATCH`, or `DELETE` requests on that resource.
 
 See also: `Location` Header
 <br><br>
