@@ -546,6 +546,10 @@ References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 
 
 ## HTTP `HEAD` Method
+The HTTP HEAD method is a request method used to retrieve the headers of a specified resource, without fetching the actual
+body content. When a client sends a HEAD request, the server responds with the same headers it would send for a GET request,
+but without the response body. This method is useful for checking metadata, such as content type and size, or testing if a
+resource exists (via the status code) without downloading the entire resource
 <br>
 
 
