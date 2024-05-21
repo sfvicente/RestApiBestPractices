@@ -598,6 +598,10 @@ See also: HTTP Methods
 
 
 ## HTTP 'TRACE' Method
+The HTTP TRACE method is a request method used for diagnostic purposes, allowing the client to see what is being received
+at the other end of the request chain and to use that data for testing or debugging. When a client sends a TRACE request,
+the server echoes back the received request so the client can see any modifications or additions made by intermediate
+servers. This method helps in identifying potential issues in the request path, such as changes made by proxies.
 <br>
 
 
