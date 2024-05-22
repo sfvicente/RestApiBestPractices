@@ -557,11 +557,51 @@ resource exists (via the status code) without downloading the entire resource
 
 The `HEAD` method returns the metadata of an object for a `GET` response. It is an idempotent operation.
 
-// TODO: complement description.
+The `HEAD` method is used to retrieve the headers of a resource without fetching the actual body. This is useful
+for obtaining metadata about a resource, such as its size, content type, or last modified date, without transferring
+the entire resource representation. Using `HEAD` requests can improve performance and reduce bandwidth usage, 
+particularly when clients only need to check the headers before making decisions about further actions.
+
+**Example**:
+
+#### Example for Single Resource
 
 ```http
-// TODO: add example
+HEAD /articles/123
 ```
+
+- **Request**: Retrieves header information for the article with ID `123`.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 1234
+Last-Modified: Mon, 15 May 2024 12:00:00 GMT
+ETag: "abc123"
+```
+
+- **Response**: The server responds with the headers that describe the article with ID `123`, including `Content-Type`, `Content-Length`, `Last-Modified`, and `ETag`. The response does not include the body of the article.
+
+#### Example for Collection of Resources
+
+```http
+HEAD /articles
+```
+
+- **Request**: Retrieves header information for the collection of articles.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 5678
+Last-Modified: Mon, 15 May 2024 12:00:00 GMT
+ETag: "def456"
+```
+
+- **Response**: The server responds with headers that describe the collection of articles, including `Content-Type`, `Content-Length`, `Last-Modified`, and `ETag`. The response does not include the body of the articles collection.
+
+The response to a `HEAD` request should be identical to that of a corresponding `GET` request, except that it does not contain a
+response body.
 
 See also: Idempotency
 <br><br>
