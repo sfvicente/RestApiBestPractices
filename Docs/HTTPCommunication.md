@@ -20,14 +20,72 @@ server, it typically includes parameters in the URL to specify the resource to r
 
 ### Always use `GET` requests to read a single resource or a collection of resources.
 
+The `GET` method is used to retrieve representations of resources. `GET` requests are used to fetch data
+about a single resource or a collection of resources, and the server responds with the requested data in the body of the
+response. Using `GET` for reading resources ensures that clients can obtain the necessary information without causing any side
+effects on the server.
 
-For retrieving a specific resource:
+**Example**:
+
+#### Example for Single Resource
 
 ```http
-GET /comments/:id
+GET /articles/123
 ```
 
+- **Request**: Retrieves the article with ID `123`.
 
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "An Interesting Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code and the body contains the details of the article with ID `123`, including its `id`, `title`, `content`, `createdAt`, and `updatedAt` timestamps.
+
+#### Example for Collection of Resources
+
+```http
+GET /articles
+```
+
+- **Request**: Retrieves the collection of all articles.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 123,
+    "title": "An Interesting Article",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "createdAt": "2024-05-15T12:00:00Z",
+    "updatedAt": "2024-05-15T12:00:00Z"
+  },
+  {
+    "id": 124,
+    "title": "Another Article",
+    "content": "Vestibulum ante ipsum primis in faucibus orci luctus et.",
+    "createdAt": "2024-05-16T08:00:00Z",
+    "updatedAt": "2024-05-16T08:00:00Z"
+  }
+]
+```
+
+- **Response**: The server responds with a `200 OK` status code and the body contains an array of articles, each with its details such as `id`, `title`, `content`, `createdAt`, and `updatedAt` timestamps.
+
+It is a safe and idempotent HTTP method, meaning it does not alter the state of the resource and repeated requests will produce
+the same result.
+
+See also: Idempotency
 <br>
 
 
