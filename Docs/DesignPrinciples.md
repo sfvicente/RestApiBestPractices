@@ -1,5 +1,5 @@
 # Design Principles
-
+Design Principles are the fundamental guidelines that ensure APIs are well-structured, efficient, and easy to use.
 
 ## General
 
