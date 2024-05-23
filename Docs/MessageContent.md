@@ -1,4 +1,6 @@
 # Message Content
+ Message Content refers to the data included in the body of an HTTP request or response. This content conveys the actual
+ information being transferred between the client and the server.
 
 
 ## Data Formats
