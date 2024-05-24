@@ -26,6 +26,8 @@ with HTTP requests or responses.
 
 
 ## `Prefer` Header
+The Prefer header is an HTTP request header used by clients to indicate their preferred server behaviors in processing
+the request. It allows clients to suggest specific handling instructions without altering the fundamental request semantics.
 <br>
 
 
