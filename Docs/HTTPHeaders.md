@@ -40,6 +40,9 @@ the request. It allows clients to suggest specific handling instructions without
 
 
 ## Custom Headers
+Custom headers in HTTP are non-standard headers used to pass additional information between the client and the
+server. These headers are typically defined by the developer and are used to meet specific application requirements
+that are not covered by standard HTTP headers.
 <br>
 
 
