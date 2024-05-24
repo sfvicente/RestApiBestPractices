@@ -130,3 +130,24 @@ that are not covered by standard HTTP headers.
 
 <br><br>
 
+
+### Keep custom header names concise yet descriptive to enhance readability.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
+
+
