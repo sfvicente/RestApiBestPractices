@@ -114,4 +114,19 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
+### Validate custom header values on both client and server sides to maintain data integrity.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
 
