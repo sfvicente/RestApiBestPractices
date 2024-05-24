@@ -80,3 +80,18 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
+### Prefix custom header names with `X-` for legacy systems or use clear, application-specific names.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
