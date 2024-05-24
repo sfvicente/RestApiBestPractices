@@ -95,3 +95,23 @@ that are not covered by standard HTTP headers.
 ```
 
 <br><br>
+
+
+### Ensure custom headers are well-documented for ease of use and integration.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
