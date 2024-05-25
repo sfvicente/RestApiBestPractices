@@ -183,6 +183,24 @@ See also: Security
 <br><br>
 
 
+### Ensure custom headers comply with security protocols, such as encryption when necessary.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Security
+<br><br>
+
+
 
 
 
