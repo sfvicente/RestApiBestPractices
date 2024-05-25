@@ -165,6 +165,24 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
+### Avoid exposing sensitive information in custom headers to enhance security.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Security
+<br><br>
+
+
 
 
 
