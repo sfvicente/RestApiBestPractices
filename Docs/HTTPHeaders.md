@@ -148,6 +148,23 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
+### Use custom headers to convey metadata that does not fit within the standard headers.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 
 
 
