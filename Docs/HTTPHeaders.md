@@ -201,6 +201,24 @@ See also: Security
 <br><br>
 
 
+### Leverage custom headers for request tracing and logging to improve debugging capabilities.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Security
+<br><br>
+
+
 
 
 
