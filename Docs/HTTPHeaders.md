@@ -253,3 +253,21 @@ See also: compatibility
 
 See also: performance
 <br><br>
+
+
+### Test custom headers thoroughly across different clients and environments to ensure consistency
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: testing
+<br><br>
