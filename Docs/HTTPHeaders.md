@@ -219,6 +219,24 @@ See also: Security
 <br><br>
 
 
+### Implement custom header support in a backward-compatible manner.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: Security
+<br><br>
+
+
 
 
 
