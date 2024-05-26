@@ -237,6 +237,19 @@ See also: Security
 <br><br>
 
 
+### Minimize performance overhead by optimizing the processing of custom headers.
 
+// TODO: add description
 
+```http
+// TODO: add example
+```
 
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: performance
+<br><br>
