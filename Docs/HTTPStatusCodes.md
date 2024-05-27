@@ -5,7 +5,7 @@
 <br>
 
 
-### Prefer the use of standard HTTP status codes.
+### Prefer the use of standard HTTP status codes to represent the outcome of API requests clearly.
 
 // TODO: add description
 
