@@ -289,3 +289,21 @@ See also: testing
 
 See also: testing
 <br><br>
+
+
+### Follow industry standards and best practices for naming and using custom headers to enhance interoperability.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: interoperability
+<br><br>
