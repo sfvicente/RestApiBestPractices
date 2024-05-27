@@ -271,3 +271,21 @@ See also: performance
 
 See also: testing
 <br><br>
+
+
+### Handle errors gracefully when custom headers are missing or malformed.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: testing
+<br><br>
