@@ -94,5 +94,21 @@
 <br><br>
 
 
+### Always return 401 Unauthorized when authentication is required and has failed or not been provided.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 
