@@ -60,6 +60,21 @@
 <br><br>
 
 
+### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
 
 
 
