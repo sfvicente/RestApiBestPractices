@@ -77,7 +77,7 @@
 <br><br>
 
 
-### Always use 400 Bad Request for requests that cannot be processed due to client-side errors.
+### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
 
@@ -94,7 +94,7 @@
 <br><br>
 
 
-### Always return 401 Unauthorized when authentication is required and has failed or not been provided.
+### Always return `401 Unauthorized` when authentication is required and has failed or not been provided.
 
 // TODO: add description
 
