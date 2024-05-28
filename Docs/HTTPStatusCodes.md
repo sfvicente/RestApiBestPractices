@@ -43,4 +43,24 @@
 <br><br>
 
 
+### Always use `201 Created` for successful `POST` requests when a new resource has been created.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
+
+
 
