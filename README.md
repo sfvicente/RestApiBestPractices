@@ -1,4 +1,4 @@
-# REST Api Best Practices
+# REST API Best Practices
 
 This project is a collection of best practices and guidelines for REST API design and development.
 
