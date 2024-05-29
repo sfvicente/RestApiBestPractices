@@ -130,3 +130,18 @@ See also: `security` `authorization`
 <br><br>
 
 
+### Always return `404 Not Found` when a requested resource cannot be found on the server.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
