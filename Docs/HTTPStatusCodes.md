@@ -145,3 +145,20 @@ See also: `security` `authorization`
 ```
 
 <br><br>
+
+
+### Always use `405 Method Not Allowed` when the HTTP method used is not supported by the resource.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
