@@ -162,3 +162,23 @@ See also: `security` `authorization`
 ```
 
 <br><br>
+
+
+### Always return 409 Conflict when a request could not be processed due to a conflict with the current state of the resource.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
+
