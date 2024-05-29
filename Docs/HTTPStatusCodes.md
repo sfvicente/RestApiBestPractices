@@ -112,4 +112,21 @@ See also: `security` `authorization`
 <br><br>
 
 
+### Always use `403 Forbidden` when the client is authenticated but does not have permission to access the resource.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `security` `authorization`
+<br><br>
+
 
