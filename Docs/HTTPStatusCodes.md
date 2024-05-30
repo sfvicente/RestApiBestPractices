@@ -181,4 +181,18 @@ See also: `security` `authorization`
 <br><br>
 
 
+### Always use `410 Gone` for resources that have been permanently removed and will not be available again.
 
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
