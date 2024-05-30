@@ -196,3 +196,20 @@ See also: `security` `authorization`
 ```
 
 <br><br>
+
+
+### Always return `415 Unsupported Media Type` when the content type of the request is not supported by the server.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
