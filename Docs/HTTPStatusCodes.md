@@ -231,3 +231,21 @@ See also: `security` `authorization`
 
 See Also: `rate limiting`
 <br><br>
+
+
+### Always return `500 Internal Server Error` for unexpected server-side errors.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See Also: `rate limiting`
+<br><br>
