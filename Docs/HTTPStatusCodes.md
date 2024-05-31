@@ -213,3 +213,21 @@ See also: `security` `authorization`
 ```
 
 <br><br>
+
+
+### Always use `429 Too Many Requests` to indicate that the user has sent too many requests in a given amount of time.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See Also: `rate limiting`
+<br><br>
