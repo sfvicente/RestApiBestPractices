@@ -22,6 +22,24 @@
 <br><br>
 
 
+### Always provide detailed error messages and codes in the response body to help clients understand and resolve issues.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See Also: `errors` `error handling`
+<br><br>
+
+
 ## Status Codes
 <br>
 
