@@ -249,3 +249,20 @@ See Also: `rate limiting`
 
 See Also: `rate limiting`
 <br><br>
+
+
+### Always use `503 Service Unavailable` when the server is temporarily unable to handle the request, often due to maintenance or overloading.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
