@@ -143,7 +143,7 @@ See Also: `errors` `error handling`
 // TODO: add example
 ```
 
-See also: `security` `authorization`
+See also: `security` `authentication`
 <br><br>
 
 
