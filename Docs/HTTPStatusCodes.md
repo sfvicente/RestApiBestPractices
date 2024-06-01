@@ -22,6 +22,23 @@
 <br><br>
 
 
+### Ensure consistency in status codes across the entire API to avoid confusion.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always provide detailed error messages and codes in the response body to help clients understand and resolve issues.
 
 // TODO: add description
