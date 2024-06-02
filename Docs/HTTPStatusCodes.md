@@ -198,6 +198,23 @@ See Also: `errors` `error handling`
 <br><br>
 
 
+### Always use `302 Found` for temporary redirections when a resource is temporarily available at a different URL.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
