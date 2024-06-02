@@ -181,6 +181,23 @@ See Also: `errors` `error handling`
 <br><br>
 
 
+### Return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
