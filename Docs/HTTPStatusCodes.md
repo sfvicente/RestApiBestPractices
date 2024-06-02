@@ -130,6 +130,23 @@ See Also: `errors` `error handling`
 <br><br>
 
 
+### Always return `206 Partial Content` when serving partial GET requests to support range queries for large resources.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
