@@ -183,7 +183,7 @@ See also: `redirection`
 <br><br>
 
 
-### Return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
+### Always return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
 
 // TODO: add description
 
