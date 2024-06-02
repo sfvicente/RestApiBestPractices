@@ -39,6 +39,23 @@
 <br><br>
 
 
+### Implement appropriate redirection status codes to inform clients when a resource has been relocated.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always provide detailed error messages and codes in the response body to help clients understand and resolve issues.
 
 // TODO: add description
