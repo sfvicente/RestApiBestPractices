@@ -95,6 +95,24 @@ See Also: `errors` `error handling`
 <br><br>
 
 
+### Consider using `202 Accepted` for asynchronous operations where the request has been accepted but processing is not yet complete.
+
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned.
 
 // TODO: add description
