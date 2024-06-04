@@ -217,6 +217,24 @@ See also: `redirection`
 <br><br>
 
 
+### Use `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `redirection`
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
