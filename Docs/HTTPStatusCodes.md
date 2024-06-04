@@ -165,6 +165,10 @@ See Also: `errors` `error handling`
 <br><br>
 
 
+## `3xx` Status Codes
+The `3xx` class of HTTP status codes indicates that further action needs to be taken by the client to complete the
+request. These codes are typically used for redirection, meaning the requested resource has been moved to a different location.
+
 ### Always use `3xx` status codes to clearly indicate redirections.
 
 // TODO: add description
