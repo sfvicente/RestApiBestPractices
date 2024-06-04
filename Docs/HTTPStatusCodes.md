@@ -235,6 +235,24 @@ See also: `redirection`
 <br><br>
 
 
+### Always implement `307 Temporary Redirect` to preserve the original HTTP method while redirecting to a temporary URL.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `redirection`
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
