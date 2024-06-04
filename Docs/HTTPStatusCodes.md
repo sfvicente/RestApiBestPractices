@@ -253,6 +253,24 @@ See also: `redirection`
 <br><br>
 
 
+### Always use `308 Permanent Redirect` to preserve the original HTTP method while redirecting to a permanent URL.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `redirection`
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
