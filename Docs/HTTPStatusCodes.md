@@ -436,6 +436,10 @@ See Also: `rate limiting`
 <br><br>
 
 
+## `5xx` Status Codes
+The 5xx class of HTTP status codes indicates that the server is aware that it has encountered an error or is
+otherwise incapable of performing the request.
+
 ### Always return `500 Internal Server Error` for unexpected server-side errors.
 
 // TODO: add description
