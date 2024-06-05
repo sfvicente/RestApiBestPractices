@@ -276,6 +276,10 @@ See also: `redirection`
 <br><br>
 
 
+## `4xx` Status Codes
+The 4xx class of HTTP status codes indicates that the client seems to have made an error. These codes are meant
+to inform the client about issues with the request.
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
 // TODO: add description
