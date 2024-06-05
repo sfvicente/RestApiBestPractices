@@ -75,7 +75,8 @@ See Also: `errors` `error handling`
 <br><br>
 
 
-## Status Codes
+## `2xx` Status Codes
+The 2xx class of HTTP status codes indicates that the request was successfully received, understood, and accepted.
 <br>
 
 
