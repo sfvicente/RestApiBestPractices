@@ -440,7 +440,8 @@ See Also: `rate limiting`
 The 5xx class of HTTP status codes indicates that the server is aware that it has encountered an error or is
 otherwise incapable of performing the request.
 
-### Always return `500 Internal Server Error` for unexpected server-side errors.
+
+### Always return `500 Internal Server Error` for unexpected server-side issues that do not fall under other specific 5xx categories.
 
 // TODO: add description
 
