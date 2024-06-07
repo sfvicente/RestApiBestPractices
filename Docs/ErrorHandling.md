@@ -18,3 +18,15 @@ Additional Tags: Security
 // TODO: add examples
 
 <br><br>
+
+
+## Always implement proper logging for all 5xx errors to facilitate debugging and improve server reliability.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+<br><br>
+
+
+
