@@ -524,3 +524,6 @@ otherwise incapable of performing the request.
 ```
 
 <br><br>
+
+
+### Always use `505 HTTP Version Not Supported` when the server does not support the HTTP protocol version used in the request.
