@@ -29,4 +29,14 @@ Additional Tags: Security
 <br><br>
 
 
+## Always ensure consistency in `5xx` status codes across the entire API to avoid client confusion.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+<br><br>
+
+
+
 
