@@ -74,3 +74,13 @@ Additional Tags: `retry-after` `headers`
 // TODO: add examples
 
 <br><br>
+
+
+## Always protect sensitive information by ensuring that 5xx error responses do not expose server details.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `security`
+<br><br>
