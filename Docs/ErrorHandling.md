@@ -65,3 +65,12 @@ Additional Tags: `maintenance`
 
 Additional Tags: `retry-after` `headers`
 <br><br>
+
+
+## Always implement robust error handling and recovery mechanisms to minimize the occurrence of `5xx` errors.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+<br><br>
