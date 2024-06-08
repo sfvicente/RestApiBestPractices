@@ -20,7 +20,7 @@ Additional Tags: Security
 <br><br>
 
 
-### Always implement proper logging for all 5xx errors to facilitate debugging and improve server reliability.
+### Always implement proper logging for all `5xx` errors to facilitate debugging and improve server reliability.
 
 // TODO: add descriptions
 
@@ -38,7 +38,7 @@ Additional Tags: Security
 <br><br>
 
 
-### Always monitor server performance and error rates to quickly identify and address issues causing 5xx errors.
+### Always monitor server performance and error rates to quickly identify and address issues causing `5xx` errors.
 
 // TODO: add descriptions
 
@@ -76,7 +76,7 @@ Additional Tags: `retry-after` `headers`
 <br><br>
 
 
-### Always protect sensitive information by ensuring that 5xx error responses do not expose server details.
+### Always protect sensitive information by ensuring that `5xx` error responses do not expose server details.
 
 // TODO: add descriptions
 
