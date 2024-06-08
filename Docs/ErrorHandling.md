@@ -57,3 +57,11 @@ Additional Tags: `maintenance`
 <br><br>
 
 
+## Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `retry-after` `headers`
+<br><br>
