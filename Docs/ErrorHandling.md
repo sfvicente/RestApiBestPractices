@@ -94,3 +94,13 @@ Additional Tags: `security`
 
 Additional Tags: `documentation`
 <br><br>
+
+
+### Always provide support contact information in error responses for critical `5xx` errors to assist clients in resolving issues.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `support`
+<br><br>
