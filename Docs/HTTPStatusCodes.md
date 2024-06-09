@@ -527,3 +527,25 @@ otherwise incapable of performing the request.
 
 
 ### Always use `505 HTTP Version Not Supported` when the server does not support the HTTP protocol version used in the request.
+
+
+
+
+### Always use `511 Network Authentication Required` when the client needs to authenticate to gain network access.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See Also: `authentication`
+<br><br>
+
+
