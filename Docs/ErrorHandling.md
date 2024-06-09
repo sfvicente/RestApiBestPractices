@@ -86,3 +86,11 @@ Additional Tags: `security`
 <br><br>
 
 
+### Always ensure API documentation includes details about common `5xx` errors and suggested client handling strategies.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `documentation`
+<br><br>
