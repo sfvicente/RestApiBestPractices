@@ -114,3 +114,13 @@ Additional Tags: `support`
 
 Additional Tags: `configuration`
 <br><br>
+
+
+### Always implement load balancing and redundancy to reduce the likelihood of `503 Service Unavailable` errors due to server overload.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
+<br><br>
