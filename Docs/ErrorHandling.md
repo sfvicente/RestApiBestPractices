@@ -124,3 +124,13 @@ Additional Tags: `configuration`
 
 Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 <br><br>
+
+
+### Always test server behavior under various failure scenarios to ensure appropriate `5xx` error handling and response.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+<br><br>
+
