@@ -3,9 +3,35 @@
 
 ### Never include information in a response that could be useful for malicious users to attack the API.
 
-// TODO: add descriptions
+To ensure the security of the API, do not expose sensitive information that could be exploited by malicious
+users. This includes avoiding the inclusion of error messages, stack traces, server details, or any internal
+implementation information in API responses. Providing such information can give attackers insights into potential
+vulnerabilities and system configurations, which they can leverage to craft attacks against the API. Instead,
+return generic error messages and log detailed error information on the server side for debugging purposes.
 
-// TODO: add examples
+**Example of an Insecure Response**
+```http
+GET /users/123
+
+{
+  "error": "DatabaseException: Error fetching user data from table 'users' with ID 123",
+  "stackTrace": "at MyApi.Services.UserService.GetUserById(Int32 id) in UserService.cs:line 42\nat MyApi.Controllers.UsersController.GetUser(Int32 id) in UsersController.cs:line 20"
+}
+```
+
+This response includes specific error details and stack traces that reveal the internal workings of the API, such
+as the database structure and code paths.
+
+**Secure Alternative**
+```http
+GET /users/123
+
+{
+  "error": "An unexpected error occurred. Please try again later."
+}
+```
+
+The server responds with a generic error message, providing no information about the underlying system or implementation details.
 
 Additional Tags: Security
 <br><br>
