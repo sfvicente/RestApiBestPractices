@@ -132,5 +132,6 @@ Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 
 // TODO: add examples
 
+Additional Tags: `testing` `5xx` `error handling`
 <br><br>
 
