@@ -99,18 +99,40 @@ The 2xx class of HTTP status codes indicates that the request was successfully r
 
 ### Always use `201 Created` for successful `POST` requests when a new resource has been created.
 
-// TODO: add description
+When a POST request results in the creation of a new resource, the server should respond with a `201 Created` status
+code. This indicates that the request has been fulfilled and has led to the creation of a new resource. The response
+should also include a Location header with the URI of the newly created resource and a representation of the resource
+in the response body, if applicable.
 
+**Request for Creating a New Resource**
 ```http
-// TODO: add example
+POST /articles
+Content-Type: application/json
+
+{
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /articles/123
+
+{
+  "id": 123,
+  "title": "New Article",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:00:00Z"
+}
 ```
 
+Using `201 Created` provides clear feedback to the client that the resource was successfully created and where it can be accessed.
+
+Additional Tags: `location`
 <br><br>
 
 
