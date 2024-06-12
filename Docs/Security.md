@@ -25,5 +25,5 @@ is not recommended.
 // TODO: add example
 ```
 
-See also: Authentication
+See also: `authentication`
 <br><br>
