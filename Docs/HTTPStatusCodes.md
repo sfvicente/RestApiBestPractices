@@ -157,17 +157,29 @@ Additional Tags: `asynchronous operations`
 
 ### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned.
 
-// TODO: add description
+The `204 No Content` status code is used to indicate that a request has been successfully processed, but the 
+server does not need to return any content in the response body. This is commonly used for DELETE requests, where
+a resource is removed, and for PUT requests when an update to a resource is made but there is no need to return
+the updated resource in the response.
 
+**Example Request**
 ```http
-// TODO: add example
+PUT /users/456
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 204 No Content
 ```
+
+Using `204 No Content` provides a clear and efficient way to acknowledge the success of the request while minimizing
+the data sent over the network.
 
 <br><br>
 
