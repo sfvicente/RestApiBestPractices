@@ -186,17 +186,23 @@ the data sent over the network.
 
 ### Always return `206 Partial Content` when serving partial GET requests to support range queries for large resources.
 
-// TODO: add description
+Use the `206 Partial Content` status code to indicate that a GET request has been successfully processed and that the server
+is returning only a part of the resource as specified by the client's `Range` header. This is particularly useful for large
+resources such as files or large datasets, where the client may only need a specific portion of the resource at a time.
 
+**Example Request**
+```http
+GET /documents/largefile.txt
+Range: bytes=1000-1999
+```
+
+**Response**
 ```http
 // TODO: add example
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
+Supporting range queries and returning `206 Partial Content` can improve performance and efficiency by reducing the amount of
+data transferred and allowing clients to request only the necessary portions of a resource.
 
 <br><br>
 
