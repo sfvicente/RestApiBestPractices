@@ -231,17 +231,33 @@ See also: `redirection`
 
 ### Always return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
 
-// TODO: add description
+Use the `301 Moved Permanently` status code to indicate that the requested resource has been permanently moved to a
+new URL. When a client requests a resource that has been relocated, the server responds with a `301 Moved Permanently`
+status code and includes the new URL in the `Location` header. This informs the client that the resource should be
+accessed using the new URL in future requests.
 
+**Example Request**
 ```http
-// TODO: add example
+GET /blog/old-post-url
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 301 Moved Permanently
+Location: http://www.example.com/blog/new-post-url
+Content-Type: text/html
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.example.com/blog/new-post-url">here</a>.</p>
+</body>
+</html>
 ```
+
+Using `301 Moved Permanently` helps maintain the integrity and continuity of the resource access, ensuring that clients
+and search engines update their records to point to the new URL.
 
 <br><br>
 
