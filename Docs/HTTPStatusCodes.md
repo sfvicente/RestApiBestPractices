@@ -264,17 +264,34 @@ and search engines update their records to point to the new URL.
 
 ### Always use `302 Found` for temporary redirections when a resource is temporarily available at a different URL.
 
-// TODO: add description
+Use the `302 Found` status code to indicate that the requested resource is temporarily available at a different URL specified
+in the `Location` header. This tells the client that the resource is temporarily moved and that future requests should still
+use the original URL. The client is expected to make a GET request to the URL provided in the `Location` header to retrieve
+the resource.
 
+**Client Request**
 ```http
-// TODO: add example
+GET /api/products/123
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 302 Found
+Location: http://api.example.com/api/products-temp/123
+Content-Type: application/json
+
+{
+  "message": "The product is temporarily available at a different URL. Please follow the Location header to access it."
+}
 ```
+
+This status code is commonly used for the following scenarios:
+* Temporary Maintenance
+* Temporary Redirects for A/B Testing
+* Load Balancing
+
+Using this status code appropriately, ensures that clients are correctly informed about the temporary availability
+of resources at different URLs, improving the user experience and maintaining proper resource access.
 
 <br><br>
 
