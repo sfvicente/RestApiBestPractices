@@ -279,18 +279,33 @@ and search engines update their records to point to the new URL.
 <br><br>
 
 
-### Use `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL.
+### Consider using `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL.
 
-// TODO: add description
+Use the `303 See Other` status code is used to indicate that the server has successfully processed a POST request, and the
+client should retrieve the resulting resource by making a GET request to the URL specified in the Location header. This
+status code is typically used to prevent the client from resubmitting the same POST request if the user refreshes the page
+or navigates back to it, thereby promoting idempotency and consistency in resource retrieval.
 
+**Example Request**
 ```http
-// TODO: add example
+POST /api/orders
+Content-Type: application/json
+
+{
+  "productId": 123,
+  "quantity": 2
+}
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 303 See Other
+Location: http://api.example.com/api/orders/456
+Content-Type: application/json
+
+{
+  "message": "Order created successfully. Retrieve the order details at the provided URL."
+}
 ```
 
 See also: `redirection`
