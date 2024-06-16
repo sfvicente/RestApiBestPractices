@@ -371,17 +371,42 @@ to inform the client about issues with the request.
 
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
 
-// TODO: add description
+Use the `400 Bad Request` status code to indicate that the server cannot process the request due to a client-side
+error. This could be due to malformed syntax, invalid request message framing, or deceptive request routing. Essentially,
+the server is informing the client that the request cannot be understood or processed because the error lies on the 
+client's side. This status code helps to ensure that the client is aware of the issue and can correct the request before
+attempting again.
 
+**Request**
 ```http
-// TODO: add example
+POST /api/users
+Content-Type: application/json
+
+{
+  "username": "user123",
+  "email": "invalid-email-format"
+}
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Bad Request",
+  "message": "The email address provided is not in a valid format. Please provide a valid email address."
+}
 ```
+
+**Scenarios**
+- Validation Errors: When the client provides invalid data, such as an incorrect email format, missing required fields, or data types that don't match the expected format.
+- Malformed Syntax: When the request syntax is malformed, such as incorrect JSON structure or missing brackets.
+- Invalid Parameters: When query parameters or path variables are invalid or do not meet the required criteria.
+
+This code ensures that clients are properly informed about issues with their requests, allowing them to correct the
+errors and resubmit valid requests. This helps maintain clear communication between the client and server and improves
+the overall reliability of the API.
 
 <br><br>
 
