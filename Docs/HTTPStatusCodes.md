@@ -592,17 +592,41 @@ otherwise incapable of performing the request.
 
 ### Always use `501 Not Implemented` when the server does not support the functionality required to fulfill the request.
 
-// TODO: add description
+Use the `501 Not Implemented` status code to indicate that the server does not support the functionality required to fulfill
+the request. This status code is used when the server recognizes the request method but lacks the ability to fulfill it. It
+tells the client that the server does not support the functionality necessary to process the request. This can happen if 
+the server is missing the feature or if the feature has not been implemented yet.
 
+**Client Request**
 ```http
-// TODO: add example
+PATCH /api/products/123
+Content-Type: application/json
+
+{
+  "price": 19.99
+}
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 501 Not Implemented
+Content-Type: application/json
+
+{
+  "error": "Not Implemented",
+  "message": "The PATCH method is not supported for updating products."
+}
 ```
+
+**Use Case Scenarios**
+- Unsupported HTTP Methods: When the client uses an HTTP method that the server does not support or has not implemented, such as PATCH, TRACE, or CONNECT.
+- Unimplemented Features: When the client requests functionality that has not yet been implemented on the server, even if the request method is recognized.
+- Deprecated Functionality: When a feature has been deprecated and removed from the server, and the server no longer supports the required functionality to fulfill the request.
+
+Using `501 Not Implemented` helps to clearly communicate to the client that the requested functionality is not available on 
+the server. This ensures that clients are informed when the server lacks the functionality to process their request, allowing
+them to adjust their requests accordingly or understand the limitations of the server. This improves the clarity and reliability
+of the API by providing clear feedback about unsupported features.
 
 <br><br>
 
