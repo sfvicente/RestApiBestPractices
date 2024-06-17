@@ -449,17 +449,35 @@ See also: `security` `authorization`
 
 ### Always return `404 Not Found` when a requested resource cannot be found on the server.
 
-// TODO: add description
+Return the `404 Not Found` status code to indicate that the server cannot find the requested resource. This status
+code is used when the resource the client is trying to access does not exist or is not available at the specified
+URL. It informs the client that the resource could not be found, and there is no indication that it will be available
+in the future. Using `404 Not Found` helps to communicate clearly to the client that the resource is not available, and the client should not expect a successful response from the same URL.
 
+**Request**
 ```http
-// TODO: add example
+GET /api/products/999
 ```
 
-// TODO: complement description
-
+**Response**
 ```http
-// TODO: add example
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": "Not Found",
+  "message": "The requested product with ID 999 was not found."
+}
 ```
+
+**Scenarios**
+- Non-Existent Resources: When the client requests a resource that does not exist, such as a product ID that is not in the database.
+- Incorrect URLs: When the client uses an incorrect URL that does not map to any resource on the server.
+- Deleted Resources: When the client requests a resource that has been deleted and is no longer available.
+
+Using `404 Not Found` status code ensures that clients are correctly informed when a resource is not available, allowing
+them to handle the error gracefully. This improves the clarity and reliability of the API by providing clear feedback
+about the availability of resources.
 
 <br><br>
 
