@@ -650,17 +650,37 @@ of the API by providing clear feedback about unsupported features.
 
 ### Always use `503 Service Unavailable` when the server is temporarily unable to handle the request, often due to maintenance or overloading.
 
-// TODO: add description
+Use the `503 Service Unavailable` status code to indicate that the server is temporarily unable to handle the request
+due to maintenance, overloading, or other temporary conditions. This informs the client that the server is currently
+unavailable and that the request should be retried at a later time. It is typically used when the server needs to 
+undergo maintenance or when it is overloaded and cannot process additional requests.
 
+**Client Request**
 ```http
-// TODO: add example
+GET /api/products
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 503 Service Unavailable
+Retry-After: 3600
+Content-Type: application/json
+
+{
+  "error": "Service Unavailable",
+  "message": "The server is currently undergoing maintenance. Please try again later."
+}
 ```
+
+**Use Case Scenarios**
+- Server Maintenance: When the server is temporarily unavailable due to scheduled maintenance activities.
+- Overloaded Servers: When the server cannot handle additional requests due to high traffic or resource limitations.
+- Failover Scenarios: During failover events or when the primary server is temporarily unavailable, and requests are being routed to backup servers.
+
+Using `503 Service Unavailable` helps to communicate to clients that the unavailability is temporary and provides guidance
+on when they can retry their requests. It ensures that clients are informed about temporary server unavailability, allowing
+them to retry their requests at a suitable time. This improves the reliability of the API by managing client expectations
+during periods of maintenance or high load.
 
 <br><br>
 
