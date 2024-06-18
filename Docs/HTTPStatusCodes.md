@@ -631,7 +631,7 @@ of the API by providing clear feedback about unsupported features.
 <br><br>
 
 
-### Return `502 Bad Gateway` when the server, acting as a gateway or proxy, receives an invalid response from an inbound server.
+### Always return `502 Bad Gateway` when the server, acting as a gateway or proxy, receives an invalid response from an inbound server.
 
 // TODO: add description
 
