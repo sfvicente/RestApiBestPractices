@@ -1,5 +1,4 @@
 # Rate Limiting
-
 Rate limiting is a technique used to control the number of requests that a client (such as an application or user) can make to an
 API within a defined period of time. The purpose of rate limiting is to protect the API from being overwhelmed by too many requests,
 which can lead to degraded performance, increased latency, or even denial of service.
