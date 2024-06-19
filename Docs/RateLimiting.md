@@ -87,8 +87,10 @@ Documenting rate limiting policies, you help API consumers understand and adhere
 
 
 
-## TODO
-
+## Implementation
+Focuses on the technical aspects of implementing rate limiting in the API. It covers best practices for choosing and applying
+rate limiting algorithms, such as token bucket and sliding window, to effectively control incoming traffic. By implementing
+these algorithms, you can ensure fair usage, prevent server overload, and maintain optimal performance.
 
 ### Use a token bucket or sliding window algorithm for rate limiting.
 
