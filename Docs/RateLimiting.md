@@ -30,8 +30,60 @@ X-RateLimit-Remaining: 0
 ## Documentation and Communication
 
 ### Clearly communicate rate limiting policies to consumers through documentation
+ 
+ The rate limiting policies should be clearly communicated to API consumers through documentation. This transparency helps
+ consumers understand the limits imposed on their requests, how those limits are calculated, and the appropriate actions
+ to take when limits are reached. Effective communication of rate limiting policies can prevent misuse, improve user experience,
+ and maintain the reliability and performance of the API.
 
-TODO
+ **Documentation Example**:
+
+#### Rate Limiting Policy
+Our API employs rate limiting to ensure fair use and maintain optimal performance for all users. Below are the details of our rate limiting policies:
+
+1. **Rate Limit**: 
+   - Each user can make up to **100 requests per minute**.
+
+2. **Rate Limit Calculation**:
+   - The rate limit is calculated based on the API key or user token associated with each request.
+
+3. **Rate Limit Headers**:
+   - We include the following headers in the API response to help you understand your current rate limit status:
+     - `X-RateLimit-Limit`: The maximum number of requests allowed in the current time window.
+     - `X-RateLimit-Remaining`: The number of requests remaining in the current time window.
+     - `X-RateLimit-Reset`: The time at which the rate limit will reset, in UTC epoch seconds.
+
+4. **Exceeded Rate Limit**:
+   - If you exceed the rate limit, you will receive a `429 Too Many Requests` response with a `Retry-After` header indicating when you can retry your request.
+
+5. **Best Practices**:
+   - Implement exponential backoff and retries in your client application to handle rate limit responses gracefully.
+   - Monitor the rate limit headers to adjust your request rate dynamically and avoid hitting the limits.
+
+**Example Response When Rate Limit Is Exceeded**:
+
+#### Client Request
+```http
+GET /api/products
+```
+#### Server Response
+```http
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+Retry-After: 60
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1627776000
+
+{
+  "error": "Too Many Requests",
+  "message": "You have exceeded the rate limit. Please wait 60 seconds before retrying."
+}
+```
+
+When the client attempts to retrieve a list of products after exceeding the limits of the API, the server responds with a `429 Too Many Requests` status code. The `Retry-After` header indicates that the client should wait 60 seconds before making another request. The response also includes `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset` headers to provide additional information about the rate limit status.
+
+Documenting rate limiting policies, you help API consumers understand and adhere to the usage limits, reducing the likelihood of unintentional rate limit violations and ensuring a smoother, more predictable interaction with the API.
 
 
 
