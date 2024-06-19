@@ -104,7 +104,7 @@ code. This indicates that the request has been fulfilled and has led to the crea
 should also include a Location header with the URI of the newly created resource and a representation of the resource
 in the response body, if applicable.
 
-**Request for Creating a New Resource**
+**Client Request**
 ```http
 POST /articles
 Content-Type: application/json
@@ -115,7 +115,7 @@ Content-Type: application/json
 }
 ```
 
-**Response**
+**Server Response**
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
