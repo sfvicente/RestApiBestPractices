@@ -51,3 +51,14 @@ GET /api/products?category=electronics&price<100
 ```
 
 <br><br>
+
+
+### Always use clear and consistent syntax for filter expressions
+
+// TODO: add description
+
+```http
+GET /api/products?price[lt]=100&price[gt]=10
+```
+
+<br><br>
