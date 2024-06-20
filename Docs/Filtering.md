@@ -62,3 +62,14 @@ GET /api/products?price[lt]=100&price[gt]=10
 ```
 
 <br><br>
+
+
+### Always provide comprehensive documentation listing all available filters, their data types, and usage examples
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+<br><br>
