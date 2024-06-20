@@ -29,3 +29,14 @@ Content-Type: application/json
 ```
 
 <br><br>
+
+
+### Always use query parameters to allow clients to filter resources
+
+// TODO: add description
+
+```http
+GET /api/products?category=electronics
+```
+
+<br><br>
