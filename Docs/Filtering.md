@@ -40,3 +40,14 @@ GET /api/products?category=electronics
 ```
 
 <br><br>
+
+
+### Consider allowing the combination of multiple filter criteria using logical operators
+
+// TODO: add description
+
+```http
+GET /api/products?category=electronics&price<100
+```
+
+<br><br>
