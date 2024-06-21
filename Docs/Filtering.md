@@ -96,3 +96,15 @@ Tags: `performance`
 ```
 
 <br><br>
+
+
+### Always validate and sanitize filter inputs to prevent SQL injection and other security vulnerabilities
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+Tags: `security`
+<br><br>
