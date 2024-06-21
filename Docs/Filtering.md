@@ -85,3 +85,14 @@ GET /api/products?price[lt]=100&price[gt]=10
 
 Tags: `performance`
 <br><br>
+
+
+### Always define and document the default filtering behavior when no filter parameters are specified
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+<br><br>
