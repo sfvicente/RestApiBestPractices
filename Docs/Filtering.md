@@ -73,3 +73,15 @@ GET /api/products?price[lt]=100&price[gt]=10
 ```
 
 <br><br>
+
+
+### Consider limit the number of filter combinations to avoid performance issues
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+Tags: `performance`
+<br><br>
