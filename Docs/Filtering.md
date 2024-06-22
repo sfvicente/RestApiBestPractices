@@ -108,3 +108,15 @@ Tags: `performance`
 
 Tags: `security`
 <br><br>
+
+
+### Consider combining filtering with pagination to manage large datasets
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+Tags: `pagination`
+<br><br>
