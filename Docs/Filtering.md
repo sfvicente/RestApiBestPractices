@@ -122,15 +122,16 @@ Tags: `pagination`
 <br><br>
 
 
-### Consider allowing range queries for numerical and date fields
+### Consider providing sorting options along with filtering
 
 // TODO: add description
 
 **Request**
 ```http
-GET /api/products?price[gte]=10&price[lte]=100
+GET /api/products?category=electronics&sort=price,asc
 ```
 
+Tags: `sorting`
 <br><br>
 
 
