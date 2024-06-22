@@ -115,7 +115,7 @@ Tags: `security`
 // TODO: add description
 
 ```http
-// TODO: add example
+GET /api/products?category=electronics&page=2&size=20
 ```
 
 Tags: `pagination`
