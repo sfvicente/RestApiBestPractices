@@ -147,7 +147,7 @@ Tags: `sorting`
 <br><br>
 
 
-### Always return `400 Bad Request` for invalid filter parameters
+### Always return `200 OK` for successful requests, even if the filtered result set is empty
 
 // TODO: add description
 
@@ -158,3 +158,14 @@ Tags: `sorting`
 
 <br><br>
 
+
+### Always return `400 Bad Request` for invalid filter parameters
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+<br><br>
