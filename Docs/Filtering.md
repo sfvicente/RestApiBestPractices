@@ -169,3 +169,16 @@ Tags: `sorting`
 ```
 
 <br><br>
+
+
+### Consider including metadata such as the total number of filtered items, current page, and page size in the response
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+<br><br>
+
