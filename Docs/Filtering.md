@@ -182,3 +182,16 @@ Tags: `sorting`
 
 <br><br>
 
+
+### Consider allowing case insensitive filtering for string fields to improve usability
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
