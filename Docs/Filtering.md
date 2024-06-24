@@ -195,3 +195,14 @@ Tags: `sorting`
 <br><br>
 
 
+### Consider implementing caching strategies for commonly used filters to enhance performance
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+Tags: `caching`
+<br><br>
