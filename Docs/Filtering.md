@@ -206,3 +206,16 @@ Tags: `sorting`
 
 Tags: `caching`
 <br><br>
+
+
+### Always follow consistent naming conventions for query parameters across the API to improve usability and readability
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+Tags: `naming conventions` `query parameters` `usability` `readability`
+<br><br>
