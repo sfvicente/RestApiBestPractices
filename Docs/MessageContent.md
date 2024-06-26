@@ -162,3 +162,16 @@ When localization of dates is required on client applications, it should be perf
 ```
 
 <br><br>
+
+
+### Always use `Base64` encoding or other appropriate methods to handle binary data within JSON or other text-based formats
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
