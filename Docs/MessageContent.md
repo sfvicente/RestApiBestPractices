@@ -7,6 +7,17 @@
 <br>
 
 
+### Always implement content negotiation using the `Accept` header to allow clients to specify their preferred response format
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use JSON as the payload data interchange format.
 
 // TODO: add description
