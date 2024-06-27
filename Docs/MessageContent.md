@@ -29,6 +29,17 @@
 <br><br>
 
 
+### Always implement data validation and sanitation to ensure that incoming data adheres to expected formats and prevent security vulnerabilities
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use JSON as the payload data interchange format.
 
 // TODO: add description
