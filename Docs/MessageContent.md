@@ -18,6 +18,17 @@
 <br><br>
 
 
+### Consider optimizing the size of the payload by excluding unnecessary data and using efficient data formats
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use JSON as the payload data interchange format.
 
 // TODO: add description
