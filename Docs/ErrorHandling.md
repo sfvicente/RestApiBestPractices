@@ -1,6 +1,9 @@
 # Error Handling
 
 
+## General
+<br>
+
 ### Never include information in a response that could be useful for malicious users to attack the API.
 
 To ensure the security of the API, do not expose sensitive information that could be exploited by malicious
