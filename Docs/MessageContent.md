@@ -100,6 +100,19 @@
 <br>
 
 
+### Consider following camel case naming conventions for JSON property names
+
+e.g., firstName instead of first_name.
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Property names should use snake case.
 
 // TODO: add description
