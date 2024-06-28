@@ -49,6 +49,10 @@ Additional Tags: Security
 <br><br>
 
 
+## Client Errors
+<br>
+
+
 ## Server Errors
 <br>
 
