@@ -3,6 +3,21 @@
  information being transferred between the client and the server.
 
 
+
+## Data Structure
+<br>
+
+### Always maintain consistent data structures across endpoints to ensure predictable responses
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ## Data Formats
 <br>
 
