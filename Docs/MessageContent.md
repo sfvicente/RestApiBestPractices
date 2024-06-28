@@ -40,6 +40,17 @@
 <br><br>
 
 
+### Consider ensuring support for UTF-8 encoding for all text data to handle international characters correctly
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use JSON as the payload data interchange format.
 
 // TODO: add description
