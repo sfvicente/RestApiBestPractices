@@ -51,6 +51,17 @@
 <br><br>
 
 
+### Consider using ISO 8601 format to handle dates and times fields appropriately
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use JSON as the payload data interchange format.
 
 // TODO: add description
