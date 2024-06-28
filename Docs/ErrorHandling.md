@@ -90,16 +90,6 @@ Additional Tags: `maintenance`
 <br><br>
 
 
-### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request.
-
-// TODO: add descriptions
-
-// TODO: add examples
-
-Additional Tags: `retry-after` `headers`
-<br><br>
-
-
 ### Always implement robust error handling and recovery mechanisms to minimize the occurrence of `5xx` errors.
 
 // TODO: add descriptions
@@ -149,6 +139,16 @@ Additional Tags: `configuration`
 <br><br>
 
 
+### Always test server behavior under various failure scenarios to ensure appropriate `5xx` error handling and response.
+
+// TODO: add descriptions
+
+// TODO: add examples
+
+Additional Tags: `testing` `5xx` `error handling`
+<br><br>
+
+
 ### Always implement load balancing and redundancy to reduce the likelihood of `503 Service Unavailable` errors due to server overload.
 
 // TODO: add descriptions
@@ -159,12 +159,12 @@ Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 <br><br>
 
 
-### Always test server behavior under various failure scenarios to ensure appropriate `5xx` error handling and response.
+### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request.
 
 // TODO: add descriptions
 
 // TODO: add examples
 
-Additional Tags: `testing` `5xx` `error handling`
+Additional Tags: `retry-after` `headers`
 <br><br>
 
