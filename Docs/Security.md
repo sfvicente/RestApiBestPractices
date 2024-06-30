@@ -17,7 +17,8 @@ See also: `HTTPS` `Encryption`
 <br><br>
 
 
-## Authentication
+## Authentication and Authorization
+Covers the mechanisms for verifying user identity and controlling access to resources
 <br>
 
 
