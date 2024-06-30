@@ -107,6 +107,17 @@ Tags: `Content-Type`
 <br><br>
 
 
+### Consider allowing clients to request different data formats using the `Accept` header
+
+// TODO: complement description
+
+```http
+// TODO: add example
+such as XML or CSV if needed. 
+```
+
+Tags: `Accept`
+<br><br>
 
 
 ### Service operations should provide JSON as the default encoding.
