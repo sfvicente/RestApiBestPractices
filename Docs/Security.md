@@ -1,7 +1,9 @@
 # Security
 
 
-## General
+## Data Transmission Security
+These guidelines focus on securing data as it travels between the client and server.
+
 
 ...
 
