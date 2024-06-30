@@ -3,9 +3,18 @@
 
 ## Data Transmission Security
 These guidelines focus on securing data as it travels between the client and server.
+<br>
 
+### Always use HTTPS to encrypt data in transit, protecting sensitive information from being intercepted by malicious actors
 
-...
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `HTTPS` `Encryption`
+<br><br>
 
 
 ## Authentication
