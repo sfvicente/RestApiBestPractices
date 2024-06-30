@@ -41,6 +41,11 @@ See also: `authentication`
 <br><br>
 
 
+## Data Exposure and Endpoint Security
+Ensures that the API exposes only necessary data and that endpoints are secured against unauthorized access
+<br>
+
+
 ## Maintenance and Monitoring
 Emphasizes the importance of ongoing security practices
 <br>
