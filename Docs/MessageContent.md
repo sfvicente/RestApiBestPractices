@@ -94,6 +94,21 @@
 <br><br>
 
 
+### Always include the `Content-Type` header in the responses to specify the format of the returned data
+
+// TODO: complement description
+
+```http
+// TODO: add example
+e.g., Content-Type: application/json.
+```
+
+Tags: `Content-Type`
+<br><br>
+
+
+
+
 ### Service operations should provide JSON as the default encoding.
 
 // TODO: add description
