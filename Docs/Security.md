@@ -41,6 +41,11 @@ See also: `authentication`
 <br><br>
 
 
+## Secure Headers
+These guidelines involve using HTTP headers to enhance security.
+<br>
+
+
 ## Data Exposure and Endpoint Security
 Ensures that the API exposes only necessary data and that endpoints are secured against unauthorized access
 <br>
