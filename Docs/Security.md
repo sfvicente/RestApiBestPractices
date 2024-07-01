@@ -45,6 +45,20 @@ See also: `authentication`
 Guidelines that address the validation and sanitation of data exchanged between clients and servers.
 <br>
 
+### Always validate all input data to prevent security vulnerabilities
+
+// TODO: complement description
+// such as SQL injection, cross-site scripting (XSS), and other attacks.
+
+```http
+// TODO: add example
+```
+
+See also: `SQL injection` `cross-site scripting` `XSS`
+<br><br>
+
+
+
 ## Rate Limiting and Abuse Prevention
 These guidelines focus on protecting the API from excessive usage and abuse.
 <br>
