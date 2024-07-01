@@ -41,6 +41,10 @@ See also: `authentication`
 <br><br>
 
 
+## Rate Limiting and Abuse Prevention
+These guidelines focus on protecting the API from excessive usage and abuse.
+<br>
+
 ## Secure Headers
 These guidelines involve using HTTP headers to enhance security.
 <br>
