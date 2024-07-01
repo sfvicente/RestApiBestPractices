@@ -41,6 +41,10 @@ See also: `authentication`
 <br><br>
 
 
+## Input and Output Handling
+Guidelines that address the validation and sanitation of data exchanged between clients and servers.
+<br>
+
 ## Rate Limiting and Abuse Prevention
 These guidelines focus on protecting the API from excessive usage and abuse.
 <br>
