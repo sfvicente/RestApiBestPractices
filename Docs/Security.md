@@ -29,6 +29,18 @@ See also: `HTTPS` `HSTS` `Encryption` `downgrade attack`
 <br><br>
 
 
+### Always protect data at rest by using encryption and secure storage mechanisms for sensitive information
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `data at rest` `Encryption` `storage` `confidentiality`
+<br><br>
+
+
 ## Authentication and Authorization
 Covers the mechanisms for verifying user identity and controlling access to resources
 <br>
