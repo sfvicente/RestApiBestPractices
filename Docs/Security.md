@@ -77,6 +77,18 @@ See also: `authorization` `access controls` `roles` `permissions`
 <br><br>
 
 
+### Always ensure that tokens have a limited lifespan
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `tokens` `expiration`
+<br><br>
+
+
 ## Input and Output Handling
 Guidelines that address the validation and sanitation of data exchanged between clients and servers.
 <br>
