@@ -89,6 +89,18 @@ See also: `tokens` `expiration`
 <br><br>
 
 
+### Always provide mechanisms for revoking tokens if they are compromised
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `tokens` `revocation`
+<br><br>
+
+
 ## Input and Output Handling
 Guidelines that address the validation and sanitation of data exchanged between clients and servers.
 <br>
