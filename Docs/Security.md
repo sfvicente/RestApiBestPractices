@@ -17,6 +17,18 @@ See also: `HTTPS` `Encryption`
 <br><br>
 
 
+### Consider enforcing the use of HTTPS by implementing HSTS to protect against protocol downgrade attacks
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `HTTPS` `HSTS` `Encryption` `downgrade attack`
+<br><br>
+
+
 ## Authentication and Authorization
 Covers the mechanisms for verifying user identity and controlling access to resources
 <br>
