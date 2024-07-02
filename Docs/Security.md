@@ -65,6 +65,18 @@ See also: `authentication`
 <br><br>
 
 
+### Always implement authorization to control access to different resources and actions based on user roles and permissions
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+See also: `authorization` `access controls` `roles` `permissions`
+<br><br>
+
+
 ## Input and Output Handling
 Guidelines that address the validation and sanitation of data exchanged between clients and servers.
 <br>
