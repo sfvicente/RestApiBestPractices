@@ -136,3 +136,15 @@ Ensures that the API exposes only necessary data and that endpoints are secured 
 ## Maintenance and Monitoring
 Emphasizes the importance of ongoing security practices
 <br>
+
+
+### Consider regularly updating dependencies and libraries to protect against known vulnerabilities
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `dependency management` `vulnerabilities`
+<br><br>
