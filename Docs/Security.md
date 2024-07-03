@@ -138,6 +138,18 @@ Emphasizes the importance of ongoing security practices
 <br>
 
 
+### Consider conducting regular security audits and penetration testing to identify and fix vulnerabilities
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `security audit` `penetration testing` `vulnerabilities`
+<br><br>
+
+
 ### Consider regularly updating dependencies and libraries to protect against known vulnerabilities
 
 // TODO: complement description
