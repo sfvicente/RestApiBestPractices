@@ -133,6 +133,18 @@ Ensures that the API exposes only necessary data and that endpoints are secured 
 <br>
 
 
+### Always ensure that all endpoints are secure and follow the principle of least privilege
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `endpoint security` `least privilege`
+<br><br>
+
+
 ### Do not expose unnecessary endpoints
 
 // TODO: complement description
