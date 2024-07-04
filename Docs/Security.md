@@ -133,6 +133,18 @@ Ensures that the API exposes only necessary data and that endpoints are secured 
 <br>
 
 
+### Do not expose unnecessary endpoints
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `data exposure` `endpoint security`
+<br><br>
+
+
 ## Maintenance and Monitoring
 Emphasizes the importance of ongoing security practices
 <br>
