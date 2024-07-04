@@ -145,6 +145,18 @@ Tags: `data exposure`
 <br><br>
 
 
+### Always avoid exposing sensitive information
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `data exposure`
+<br><br>
+
+
 ### Always ensure that all endpoints are secure and follow the principle of least privilege
 
 // TODO: complement description
