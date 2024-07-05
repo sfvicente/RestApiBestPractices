@@ -160,6 +160,18 @@ Tags: `logging` `data exposure`
 <br><br>
 
 
+### Consider reviewing logs regularly
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `logging` `data exposure`
+<br><br>
+
+
 ## Secure Headers
 These guidelines involve using HTTP headers to enhance security.
 <br>
