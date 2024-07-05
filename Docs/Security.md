@@ -123,6 +123,18 @@ See also: `SQL injection` `cross-site scripting` `XSS`
 These guidelines focus on protecting the API from excessive usage and abuse.
 <br>
 
+
+### Consider implementing rate limiting to prevent abuse and protect from denial-of-service (DoS) attacks
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `rate limiting` `denial-of-service` `DoS`
+<br><br>
+
 ## Secure Headers
 These guidelines involve using HTTP headers to enhance security.
 <br>
