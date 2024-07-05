@@ -135,6 +135,19 @@ These guidelines focus on protecting the API from excessive usage and abuse.
 Tags: `rate limiting` `denial-of-service` `DoS`
 <br><br>
 
+
+### Always monitor and log activity to detect and respond to suspicious behavior
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `monitoring` `logging`
+<br><br>
+
+
 ## Secure Headers
 These guidelines involve using HTTP headers to enhance security.
 <br>
