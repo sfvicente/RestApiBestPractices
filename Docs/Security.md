@@ -148,6 +148,18 @@ Tags: `monitoring` `logging`
 <br><br>
 
 
+### Always keep logs secure
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `logging` `data exposure`
+<br><br>
+
+
 ## Secure Headers
 These guidelines involve using HTTP headers to enhance security.
 <br>
