@@ -168,7 +168,7 @@ Tags: `logging` `data exposure`
 // TODO: add example
 ```
 
-Tags: `logging` `data exposure`
+Tags: `logging`
 <br><br>
 
 
