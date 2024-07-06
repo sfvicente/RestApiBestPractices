@@ -118,6 +118,17 @@ See also: `SQL injection` `cross-site scripting` `XSS`
 <br><br>
 
 
+### Always sanitize output data to ensure that it does not contain any sensitive information or malicious content
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `data exposure`
+<br><br>
+
 
 ## Rate Limiting and Abuse Prevention
 These guidelines focus on protecting the API from excessive usage and abuse.
