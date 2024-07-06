@@ -130,6 +130,18 @@ Tags: `data exposure`
 <br><br>
 
 
+### Never expose detailed error messages or stack traces to the client
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `error handling` `error messages` `stack trace` `data exposure`
+<br><br>
+
+
 ## Rate Limiting and Abuse Prevention
 These guidelines focus on protecting the API from excessive usage and abuse.
 <br>
