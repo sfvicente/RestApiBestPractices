@@ -142,6 +142,18 @@ Tags: `error handling` `error messages` `stack trace` `data exposure`
 <br><br>
 
 
+### Always log detailed errors server-side
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Tags: `error handling` `error messages`
+<br><br>
+
+
 ## Rate Limiting and Abuse Prevention
 These guidelines focus on protecting the API from excessive usage and abuse.
 <br>
