@@ -499,6 +499,17 @@ about the availability of resources.
 <br><br>
 
 
+### Always return `406 Not Acceptable` status code when a content negotiation requested format is not supported.
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always return 409 Conflict when a request could not be processed due to a conflict with the current state of the resource.
 
 // TODO: add description
