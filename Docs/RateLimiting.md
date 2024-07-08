@@ -114,10 +114,10 @@ with HTTP requests or responses.
 <br>
 
 
-### Use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an API endpoint
-The X-RateLimit-Limit header should be used to communicate to clients the maximum number of requests permitted for a specific API
+### Always use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an endpoint
+The `X-RateLimit-Limit` header should be used to communicate to clients the maximum number of requests permitted for a specific
 endpoint within a given time period. It helps clients understand their rate limit and adjust their request behavior accordingly to
-avoid hitting rate limits and getting throttled.
+avoid those limits and getting throttled.
 
 **Example**:
 
@@ -125,12 +125,20 @@ Suppose we have an API endpoint `/products` that allows a maximum of 100 request
 endpoint, the API server responds with the `X-RateLimit-Limit` header set to `100`. This indicates to the client that they are 
 allowed a maximum of 100 requests within the current hour.
 
-Example Response Headers:
+**Client Request**
+```http
+GET /api/products
+```
 
+**Server Response**
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 X-RateLimit-Limit: 100
+
+{
+    ...
+}
 ```
 
 In this scenario:
