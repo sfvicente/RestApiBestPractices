@@ -7,21 +7,30 @@ which can lead to degraded performance, increased latency, or even denial of ser
 
 ### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
 
-A service must return a limiting signal when the defined limits are reached.
+A `429 Too Many Requests` response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
+limit, remaining quota, and when to retry. This ensures clients are informed of rate limit violations and can adjust their request behavior
+accordingly.
 
-A 429 Too Many Requests response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
-limit, remaining quota, and when to retry.
+The following example displays the response returned for a request when the rate limit for an endpoint has been exceeded:
 
-This ensures clients are informed of rate limit violations and can adjust their request behavior accordingly.
+**Client Request**
+```http
+GET /api/products
+```
 
-The following example displays the response headers returned for a request when the rate limit for an endpoint has been exceeded:
-
+**Server Response**
 ```http
 HTTP/1.1 429 Too Many Requests
 Content-Type: application/json
-Retry-After: 3600
+Retry-After: 60
 X-RateLimit-Limit: 100
 X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1627776000
+
+{
+  "error": "Too Many Requests",
+  "message": "You have exceeded the rate limit. Please wait 60 seconds before retrying."
+}
 ```
 
 <br><br>
