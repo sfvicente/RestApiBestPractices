@@ -153,13 +153,16 @@ manage their interactions with the API.
 <br><br>
 
 
-### Use the `X-RateLimit-Remaining` header to communicate the number of requests remaining in the current rate limit window
-
+### Consider using the `X-RateLimit-Remaining` header to communicate the number of requests remaining in the current rate limit window
 The `X-RateLimit-Remaining` header informs clients of the number of requests they have remaining within the current rate limit
 window. It allows clients to monitor their request usage and adjust their behavior to stay within the allowed limits.
 
-#### Example:
+**Client Request**
+```http
+GET /api/products
+```
 
+**Server Response**
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -167,8 +170,9 @@ X-RateLimit-Limit: 100
 X-RateLimit-Remaining: 88
 ```
 
-- `X-RateLimit-Limit: 100`: Communicates the maximum number of requests allowed within the rate limit window (100 requests per hour).
-- `X-RateLimit-Remaining: 88`: Informs that the client has 88 requests remaining within the current rate limit window before hitting the limit.
+In this example, the `X-RateLimit-Limit: 100` header communicates that 100 requests is the maximum number of requests allowed within
+the rate limit window. The `X-RateLimit-Remaining: 88` header informs that the client has 88 requests remaining within the current
+rate limit window before hitting the limit.
 
 <br><br>
 
