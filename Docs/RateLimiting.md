@@ -182,6 +182,7 @@ X-Rate-Limit-Remaining: 0
 X-Rate-Limit-Reset: 3600
 ```
 
+Tags: `rate limiting` `X-Rate-Limit-Reset`
 <br><br>
 
 
