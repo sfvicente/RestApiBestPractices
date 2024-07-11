@@ -201,10 +201,9 @@ to mitigate the impact of excessive requests
 - **Maintain User Experience**: Ensure that legitimate users receive appropriate responses or alternative endpoints during severe
 conditions to maintain a positive user experience.
 
-By adopting these strategies, you can enhance the system's scalability and resilience, protecting against potential attacks while
-maintaining operational stability.
+These strategies enhance the system's scalability and resilience, protecting against potential attacks while maintaining operational stability.
 
-Additional Tags: Security
+Additional Tags: `rate limiting` `resource usage` `performance` `HTTP status code` `429 Too Many Requests` `security`
 <br><br>
 
 
