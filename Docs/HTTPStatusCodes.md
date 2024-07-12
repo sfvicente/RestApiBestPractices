@@ -448,18 +448,16 @@ See also: `security` `authorization`
 
 
 ### Always return `404 Not Found` when a requested resource cannot be found on the server.
-
-Return the `404 Not Found` status code to indicate that the server cannot find the requested resource. This status
-code is used when the resource the client is trying to access does not exist or is not available at the specified
+Use the `404 Not Found` when the resource the client is trying to access does not exist or is not available at the specified
 URL. It informs the client that the resource could not be found, and there is no indication that it will be available
-in the future. Using `404 Not Found` helps to communicate clearly to the client that the resource is not available, and the client should not expect a successful response from the same URL.
+in the future.
 
-**Request**
+**Client Request**
 ```http
 GET /api/products/999
 ```
 
-**Response**
+**Server Response**
 ```http
 HTTP/1.1 404 Not Found
 Content-Type: application/json
@@ -476,9 +474,9 @@ Content-Type: application/json
 - Deleted Resources: When the client requests a resource that has been deleted and is no longer available.
 
 Using `404 Not Found` status code ensures that clients are correctly informed when a resource is not available, allowing
-them to handle the error gracefully. This improves the clarity and reliability of the API by providing clear feedback
-about the availability of resources.
+them to handle the error gracefully.
 
+Tags: `status codes` `404` `Not Found`
 <br><br>
 
 
