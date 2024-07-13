@@ -543,19 +543,34 @@ Tags: `status codes` `405` `Method Not Allowed`
 
 
 ### Always use `410 Gone` for resources that have been permanently removed and will not be available again.
+Use the `410 Gone` status code when a resource has been permanently removed from the server and is no longer available. This
+informs the client that the resource once existed but has been intentionally removed and will not be restored.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+GET /api/products/456
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 410 Gone
+Content-Type: application/json
+
+{
+  "error": "Gone",
+  "message": "The requested product with ID 456 has been permanently removed."
+}
 ```
 
+**Scenarios**
+- Permanently Removed Resources: When a resource, such as a product or article, has been permanently deleted from the database and will not be reintroduced.
+- Obsolete Endpoints: When an API endpoint has been permanently removed and clients should not expect it to be available again.
+- Decommissioned Features: When a feature or service has been decommissioned and its resources are no longer accessible.
+
+Using the `410 Gone` status code ensures that clients are correctly informed when a resource has been permanently removed, allowing them
+to handle the situation appropriately, such as updating references or notifying users.
+
+Tags: `status codes` `410` `Gone`
 <br><br>
 
 
