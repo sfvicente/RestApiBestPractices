@@ -481,19 +481,36 @@ Tags: `status codes` `404` `Not Found`
 
 
 ### Always use `405 Method Not Allowed` when the HTTP method used is not supported by the resource.
+Use the 405 Method Not Allowed status code when the client attempts to use an HTTP method that is not supported by the
+resource at the specified URL. This informs the client that the method they used is recognized but not allowed for the
+requested resource.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+DELETE /api/products/123
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 405 Method Not Allowed
+Content-Type: application/json
+Allow: GET, POST
+
+{
+  "error": "Method Not Allowed",
+  "message": "The DELETE method is not allowed for the requested resource."
+}
 ```
 
+**Scenarios**
+- Unsupported HTTP Methods: When the client uses an HTTP method that is not supported for the resource, such as trying to DELETE a resource that only supports GET and POST.
+- Read-Only Resources: When the client attempts to PUT or POST to a resource that is read-only and only supports GET.
+- Restricted Actions: When certain actions (like DELETE or PATCH) are not permitted for specific resources due to business logic or security reasons.
+
+Using the 405 Method Not Allowed status code ensures that clients are correctly informed when they use an unsupported HTTP
+method, helping them to understand and correct their request methods appropriately.
+
+Tags: `status codes` `405` `Method Not Allowed`
 <br><br>
 
 
