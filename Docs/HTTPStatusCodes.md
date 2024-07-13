@@ -762,20 +762,34 @@ during periods of maintenance or high load.
 
 
 ### Always use `511 Network Authentication Required` when the client needs to authenticate to gain network access.
+Use the `511 Network Authentication Required` status code when the client must authenticate to gain access to the network. This
+informs the client that network access is restricted and they must authenticate before proceeding.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+GET /api/data
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 511 Network Authentication Required
+Content-Type: application/json
+
+{
+  "error": "Network Authentication Required",
+  "message": "You must authenticate to gain network access."
+}
 ```
 
-See Also: `authentication`
+**Scenarios**
+- Captive Portals: When clients are accessing the internet through a captive portal and must log in or accept terms before proceeding.
+- Network Access Control: When network policies require authentication before allowing access to resources or services.
+- Subscription Services: When access to network services or resources is restricted to authenticated users, such as subscription-based Wi-Fi hotspots.
+
+Using the `511 Network Authentication Required` status code ensures that clients are correctly informed when network authentication
+is required, enabling them to take the necessary steps to gain access.
+
+Tags: `status codes` `511` `Network Authentication Required` `authentication`
 <br><br>
 
 
