@@ -58,11 +58,26 @@ Additional Tags: Security
 
 
 ### Always implement proper logging for all `5xx` errors to facilitate debugging and improve server reliability.
+Ensure that all `5xx` error responses are properly logged to facilitate debugging and improve server reliability. This helps
+identify issues quickly and enables developers to address and resolve them effectively.
 
-// TODO: add descriptions
+**Scenarios**
+- Server Crashes: When the server encounters a critical issue causing it to crash, logging the error details helps in diagnosing the cause.
+- Resource Exhaustion: When the server runs out of resources such as memory or CPU, logging provides insights into what caused the exhaustion.
+- Configuration Errors: When misconfigurations lead to server errors, logs can help identify and correct the issues.
+- Dependency Failures: When the server depends on external services or databases that fail, logging can pinpoint the failure's origin.
 
-// TODO: add examples
+To implement proper logging:
+- Log the error message, timestamp, and relevant request details (e.g., endpoint, HTTP method, parameters).
+- Include stack traces and error codes in the logs, but avoid exposing them in the client response.
+- Ensure logs are stored in a centralized and secure location, accessible for monitoring and analysis.
+- Use logging frameworks and tools to aggregate and analyze logs for patterns and recurring issues.
+- Regularly review logs to identify and address potential problems before they escalate.
 
+Using proper logging for `5xx` errors ensures that server issues are documented and can be efficiently debugged, ultimately
+improving server reliability and performance.
+
+Tags: `status codes` `5xx` `error handling` `logging` `debugging`
 <br><br>
 
 
