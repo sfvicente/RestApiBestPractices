@@ -104,12 +104,40 @@ Additional Tags: `maintenance`
 
 
 ### Always protect sensitive information by ensuring that `5xx` error responses do not expose server details.
+When returning `5xx` error responses, ensure that the server does not expose sensitive information such as server
+configurations, software versions, or detailed error messages. This protects the server from potential security risks
+by limiting the information available to malicious actors.
 
-// TODO: add descriptions
+**Client Request**
+```http
+GET /api/products
+```
 
-// TODO: add examples
+**Server Response**
+```http
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json
 
-Additional Tags: `security`
+{
+  "error": "Internal Server Error",
+  "message": "An unexpected error occurred on the server. Please try again later."
+}
+```
+
+**Scenarios**
+- Internal Server Errors: When an unexpected condition occurs that prevents the server from fulfilling the request, such as a runtime exception or resource exhaustion.
+- Service Unavailability: When the server is temporarily unable to handle the request due to maintenance or overload, and detailed internal information should not be disclosed.
+- Gateway Issues: When there are issues with the upstream server or gateway that cause the request to fail, ensuring no sensitive information about the backend infrastructure is revealed.
+
+To protect sensitive information:
+- Avoid including stack traces or debug information in the error response.
+- Use generic error messages that do not reveal server configurations or software details.
+- Log detailed error information internally for debugging purposes, but do not expose it to the client.
+
+Using this approach ensures that `5xx` error responses are secure and do not provide attackers with information that could
+be used to exploit the server.
+
+Tags: `status codes` `5xx` `error handling` `security`
 <br><br>
 
 
