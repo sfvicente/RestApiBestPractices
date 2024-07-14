@@ -100,12 +100,25 @@ Tags: `status codes` `5xx` `error handling` `logging` `debugging`
 
 
 ### Always communicate planned maintenance or downtime to clients to minimize the impact of `503 Service Unavailable` errors.
+Ensure that clients are informed about planned maintenance or downtime in advance to minimize the impact of `503 Service Unavailable`
+errors. This helps clients manage their expectations and plan accordingly, reducing frustration and potential disruptions.
 
-// TODO: add descriptions
+**Scenarios**
+- Scheduled Maintenance: When the server is scheduled to be down for updates, upgrades, or routine maintenance.
+- Infrastructure Upgrades: When there are planned improvements to the server or network infrastructure that require downtime.
+- Data Migration: When data migration activities necessitate temporary unavailability of the service.
 
-// TODO: add examples
+To communicate planned maintenance effectively:
+- Notify clients well in advance via multiple channels (e.g., email, dashboard notifications, website announcements).
+- Provide clear start and end times for the maintenance window, including the expected duration.
+- Offer details on the scope and purpose of the maintenance, explaining why it is necessary.
+- Include contact information for client support in case they have questions or need assistance.
+- Update clients promptly if there are changes to the maintenance schedule or unexpected issues arise.
 
-Additional Tags: `maintenance`
+Using this approach ensures that clients are well-informed about planned maintenance, helping them to manage their activities around
+the downtime and reducing the negative impact of `503 Service Unavailable` errors.
+
+Tags: `status codes` `503` `Service Unavailable` `maintenance` `communication`
 <br><br>
 
 
