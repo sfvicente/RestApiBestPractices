@@ -122,20 +122,41 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
-### Prefix custom header names with `X-` for legacy systems or use clear, application-specific names.
+### Consider prefixing custom header names with `X-` for legacy systems or use clear, application-specific names.
+When defining custom headers, use the `X-` prefix for legacy systems or opt for clear, application-specific names. This
+practice helps to avoid conflicts with standard HTTP headers and ensures better clarity and maintainability.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+GET /api/data
+X-Custom-Auth: abc123
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+X-Request-ID: 456def
+
+{
+  "data": "Sample response data"
+}
 ```
 
+**Scenarios**
+- Authentication: When adding a custom header for authentication, such as `X-Custom-Auth`, to pass API keys or tokens in legacy systems.
+- Request Tracking: When using a custom header like `X-Request-ID` to track and correlate requests and responses across different services.
+- Application-Specific Data: When including application-specific information in headers, such as `App-Client-Version` to indicate the version of the client application making the request.
+
+To implement custom headers:
+- Use the `X-` prefix for headers in legacy systems where backward compatibility is essential.
+- For modern applications, prefer clear and descriptive names that reflect their purpose, avoiding the `X-` prefix in line with current best practices.
+- Ensure custom headers do not conflict with standard HTTP headers and are documented for client and server developers.
+
+Using a consistent approach for custom headers ensures clarity, avoids conflicts with standard headers, and maintains compatibility with legacy systems where necessary.
+Tags: `headers` `custom headers` `X- prefix` `legacy systems` `application-specific names`
+
+Let me know if you need any adjustments or additional information!
 <br><br>
 
 
