@@ -194,20 +194,21 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Keep custom header names concise yet descriptive to enhance readability.
+### Consider keeping custom header names concise yet descriptive to enhance readability.
+When defining custom headers, ensure the names are concise yet descriptive to enhance readability and maintainability. This
+helps both developers and systems to understand and handle the headers efficiently.
 
-// TODO: add description
+**Examples**
+- Client Identification: When adding a custom header for client identification, use a name like `Client-ID` that is brief yet clearly indicates its purpose.
+- Request Tracking: When using a custom header for tracking requests, a name like `Request-ID` is short and immediately conveys its function.
+- Feature Flags: When including feature flags or toggles, a name like `Feature-Flag` is both succinct and explanatory.
 
-```http
-// TODO: add example
-```
+To implement concise yet descriptive custom headers:
+- Choose names that are as short as possible while still clearly indicating the header’s purpose.
+- Avoid unnecessary abbreviations that could obscure the header’s meaning.
+- Ensure the header names are consistent across different parts of the application for uniformity.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
+Tags: `headers` `custom headers` `concise` `descriptive` `readability`
 <br><br>
 
 
