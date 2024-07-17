@@ -137,21 +137,48 @@ Additional Tags: `location`
 
 
 ### Consider using `202 Accepted` for asynchronous operations where the request has been accepted but processing is not yet complete.
+Use the `202 Accepted` status code for asynchronous operations to indicate that the request has been accepted for processing, but the
+processing is not yet complete. This informs the client that their request is valid and will be processed, but there will be a delay
+in the final response.
 
-
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+POST /api/orders
+Content-Type: application/json
+
+{
+  "product_id": 123,
+  "quantity": 2
+}
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+
+{
+  "message": "Your order has been accepted and is being processed.",
+  "order_id": 789,
+  "status_url": "/api/orders/789/status"
+}
 ```
 
-Additional Tags: `asynchronous operations`
+**Scenarios**
+- Long-Running Processes: When the server needs time to process the request, such as generating a report or performing data analysis.
+- Background Jobs: When the request triggers a background job or task that will be processed asynchronously.
+- Batch Operations: When the server processes large batches of data, and immediate completion is not feasible.
+
+To implement proper handling of `202 Accepted`:
+- Ensure the client receives a confirmation that their request has been received and will be processed.
+- Provide a way for the client to check the status of their request, such as a `status_url` or status endpoint.
+- Update the client once the processing is complete, either through polling or callbacks.
+- Log the accepted requests and their processing status internally for tracking and debugging purposes.
+
+Using the `202 Accepted` status code appropriately ensures that clients are informed of the acceptance of their request and can track
+its progress, providing a better user experience for operations that require asynchronous processing.
+
+Tags: `status codes` `202` `Accepted` `asynchronous operations` `long-running processes`
 <br><br>
 
 
