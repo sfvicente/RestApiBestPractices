@@ -673,19 +673,41 @@ of the API by providing clear feedback about unsupported features.
 
 
 ### Always return `502 Bad Gateway` when the server, acting as a gateway or proxy, receives an invalid response from an inbound server.
+Use the `502 Bad Gateway` status code when your server, functioning as a gateway or proxy, receives an invalid response from an
+upstream server. This informs the client that the intermediary server encountered an error while trying to fulfill the request from
+another server.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+GET /api/data
 ```
 
-// TODO: complement description
-
+**Server Response**
 ```http
-// TODO: add example
+HTTP/1.1 502 Bad Gateway
+Content-Type: application/json
+
+{
+  "error": "Bad Gateway",
+  "message": "The server received an invalid response from the upstream server."
+}
 ```
 
+**Scenarios**
+- Upstream Server Errors: When the upstream server is down or experiencing issues and sends an invalid response.
+- Network Issues: When network problems between the proxy and the upstream server result in an incomplete or corrupt response.
+- Configuration Errors: When misconfigurations in the proxy or upstream server lead to unexpected or malformed responses.
+
+To implement proper handling of `502 Bad Gateway`:
+- Ensure that the server detects and correctly identifies invalid responses from upstream servers.
+- Provide a clear and generic error message in the response to avoid exposing sensitive internal details.
+- Log the details of the invalid upstream response internally for debugging and monitoring purposes.
+- Monitor upstream server health and performance to proactively address issues that could lead to `502` errors.
+
+Using the `502 Bad Gateway` status code appropriately ensures that clients are informed when intermediary servers encounter issues with upstream
+servers, helping them understand the nature of the problem and manage their requests accordingly.
+
+Tags: `status codes` `502` `Bad Gateway` `proxy` `gateway` `upstream server`
 <br><br>
 
 
