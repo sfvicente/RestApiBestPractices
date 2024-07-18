@@ -6,19 +6,46 @@
 
 
 ### Prefer the use of standard HTTP status codes to represent the outcome of API requests clearly.
+Always use standard HTTP status codes to represent the outcome of API requests, ensuring clarity and consistency. This
+practice helps clients understand the result of their requests based on well-established semantics.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+GET /api/products/123
 ```
 
-// TODO: complement description
-
+**Server Response (Success)**
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "product_id": 123,
+  "name": "Sample Product",
+  "price": 19.99
+}
 ```
 
+**Server Response (Resource Not Found)**
+```http
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": "Not Found",
+  "message": "The requested product with ID 123 was not found."
+}
+```
+
+To implement proper use of standard HTTP status codes:
+- Map each type of API response to the most appropriate standard HTTP status code.
+- Ensure the response body provides additional context and details for errors, helping clients understand and resolve issues.
+- Regularly review and update the status codes used in your API to adhere to best practices and evolving standards.
+
+Using standard HTTP status codes ensures that clients can easily interpret the outcome of their requests, leading to a more
+intuitive and predictable API interaction.
+
+Tags: `status codes` `HTTP` `API design` `standardization` `best practices`
 <br><br>
 
 
