@@ -50,19 +50,54 @@ Tags: `status codes` `HTTP` `API design` `standardization` `best practices`
 
 
 ### Ensure consistency in status codes across the entire API to avoid confusion.
+Use consistent HTTP status codes throughout your API to provide a uniform and predictable experience for clients. Consistency
+helps avoid confusion and ensures that clients can reliably interpret the results of their requests.
 
-// TODO: add description
-
+**Client Request**
 ```http
-// TODO: add example
+POST /api/orders
+Content-Type: application/json
+
+{
+  "product_id": 123,
+  "quantity": 2
+}
 ```
 
-// TODO: complement description
-
+**Server Response (Success)**
 ```http
-// TODO: add example
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "order_id": 789,
+  "product_id": 123,
+  "quantity": 2,
+  "status": "confirmed"
+}
 ```
 
+**Server Response (Validation Error)**
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Bad Request",
+  "message": "The product_id must be a valid integer."
+}
+```
+
+To ensure consistency in status codes:
+- Define and document a set of standard status codes to be used for common scenarios and errors.
+- Implement these standard status codes in a uniform manner across all API endpoints.
+- Review and test your API to ensure that status codes are applied consistently.
+- Educate your development team on the importance of consistent status code usage and provide guidelines for reference.
+
+Ensuring consistency in status codes across your API helps clients predict and understand the behavior of your API, reducing confusion
+and enhancing the overall developer experience.
+
+Tags: `status codes` `consistency` `API design` `standardization` `best practices`
 <br><br>
 
 
