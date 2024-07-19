@@ -194,7 +194,7 @@ Location: /articles/123
 
 Using `201 Created` provides clear feedback to the client that the resource was successfully created and where it can be accessed.
 
-Additional Tags: `location`
+Tags: `status codes` `201` `Created` `POST` `resource creation` `HTTP headers` `Location header`
 <br><br>
 
 
