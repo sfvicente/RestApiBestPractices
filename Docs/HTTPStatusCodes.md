@@ -270,6 +270,7 @@ HTTP/1.1 204 No Content
 Using `204 No Content` provides a clear and efficient way to acknowledge the success of the request while minimizing
 the data sent over the network.
 
+Tags: `status codes` `204` `No Content` `DELETE` `PUT`
 <br><br>
 
 
