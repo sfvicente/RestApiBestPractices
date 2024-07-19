@@ -1,7 +1,7 @@
 # HTTP Status Codes
 
 
-## General
+## General Guidelines
 <br>
 
 
@@ -137,7 +137,7 @@ See Also: `errors` `error handling`
 <br><br>
 
 
-## `2xx` Status Codes
+## `2xx` Status Codes Guidelines
 The 2xx class of HTTP status codes indicates that the request was successfully received, understood, and accepted.
 <br>
 
@@ -296,7 +296,7 @@ data transferred and allowing clients to request only the necessary portions of 
 <br><br>
 
 
-## `3xx` Status Codes
+## `3xx` Status Codes Guidelines
 The `3xx` class of HTTP status codes indicates that further action needs to be taken by the client to complete the
 request. These codes are typically used for redirection, meaning the requested resource has been moved to a different location.
 
@@ -454,7 +454,7 @@ See also: `redirection`
 <br><br>
 
 
-## `4xx` Status Codes
+## `4xx` Status Codes Guidelines
 The 4xx class of HTTP status codes indicates that the client seems to have made an error. These codes are meant
 to inform the client about issues with the request.
 
@@ -698,7 +698,7 @@ See Also: `rate limiting`
 <br><br>
 
 
-## `5xx` Status Codes
+## `5xx` Status Codes Guidelines
 The 5xx class of HTTP status codes indicates that the server is aware that it has encountered an error or is
 otherwise incapable of performing the request.
 
