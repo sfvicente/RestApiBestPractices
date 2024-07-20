@@ -294,6 +294,7 @@ Range: bytes=1000-1999
 Supporting range queries and returning `206 Partial Content` can improve performance and efficiency by reducing the amount of
 data transferred and allowing clients to request only the necessary portions of a resource.
 
+Tags: `status codes` `206` `Partial Content` `GET` `range queries` `large resources` `performance` `efficiency` `HTTP headers` `Range header`
 <br><br>
 
 
