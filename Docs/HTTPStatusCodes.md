@@ -385,6 +385,7 @@ This status code is commonly used for the following scenarios:
 Using this status code appropriately, ensures that clients are correctly informed about the temporary availability
 of resources at different URLs, improving the user experience and maintaining proper resource access.
 
+Tags: `status codes` `302` `Found` `temporary redirection` `HTTP headers` `Location header` `URL redirection` `temporary maintenance` `A/B testing` `load balancing`
 <br><br>
 
 
