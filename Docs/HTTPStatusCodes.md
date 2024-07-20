@@ -350,6 +350,7 @@ Content-Type: text/html
 Using `301 Moved Permanently` helps maintain the integrity and continuity of the resource access, ensuring that clients
 and search engines update their records to point to the new URL.
 
+Tags: `status codes` `301` `Moved Permanently` `resource relocation` `HTTP headers` `Location header` `URL redirection` `SEO` `client redirection`
 <br><br>
 
 
