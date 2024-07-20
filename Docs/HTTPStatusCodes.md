@@ -418,7 +418,7 @@ Content-Type: application/json
 }
 ```
 
-See also: `redirection`
+Tags: `status codes` `303` `See Other` `POST requests` `redirection` `HTTP headers` `Location header` `idempotency` `resource retrieval`
 <br><br>
 
 
