@@ -501,6 +501,7 @@ This code ensures that clients are properly informed about issues with their req
 errors and resubmit valid requests. This helps maintain clear communication between the client and server and improves
 the overall reliability of the API.
 
+Tags: `status codes` `400` `Bad Request` `client-side errors` `validation errors` `malformed syntax` `invalid parameters` `error handling`
 <br><br>
 
 
