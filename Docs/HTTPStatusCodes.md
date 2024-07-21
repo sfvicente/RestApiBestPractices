@@ -570,7 +570,7 @@ Content-Type: application/json
 Using `404 Not Found` status code ensures that clients are correctly informed when a resource is not available, allowing
 them to handle the error gracefully.
 
-Tags: `status codes` `404` `Not Found`
+Tags: `status codes` `404` `Not Found` `non-existent resources` `incorrect URLs` `deleted resources` `error handling` `resource availability`
 <br><br>
 
 
