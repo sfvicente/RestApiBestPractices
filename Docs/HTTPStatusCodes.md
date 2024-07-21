@@ -664,7 +664,7 @@ Content-Type: application/json
 Using the `410 Gone` status code ensures that clients are correctly informed when a resource has been permanently removed, allowing them
 to handle the situation appropriately, such as updating references or notifying users.
 
-Tags: `status codes` `410` `Gone`
+Tags: `status codes` `410` `Gone` `permanently removed resources` `obsolete endpoints` `decommissioned features` `resource removal` `error handling`
 <br><br>
 
 
