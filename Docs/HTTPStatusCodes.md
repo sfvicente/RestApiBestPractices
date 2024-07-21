@@ -604,7 +604,7 @@ Allow: GET, POST
 Using the 405 Method Not Allowed status code ensures that clients are correctly informed when they use an unsupported HTTP
 method, helping them to understand and correct their request methods appropriately.
 
-Tags: `status codes` `405` `Method Not Allowed`
+Tags: `status codes` `405` `Method Not Allowed` `unsupported HTTP methods` `read-only resources` `restricted actions` `error handling`
 <br><br>
 
 
