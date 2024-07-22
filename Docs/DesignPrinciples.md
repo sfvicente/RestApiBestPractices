@@ -6,7 +6,6 @@ Design Principles are the fundamental guidelines that ensure APIs are well-struc
 
 
 ### Never maintain transient state information between requests.
-
 REST APIs use a stateless request model.
 
 // TODO: complement description
@@ -18,7 +17,6 @@ Additional Tags: State Management
 
 
 ### Design operations to be atomic.
-
 Operations should be performed completely or not at all, ensuring that the system remains in a consistent state. An
 atomic operation prevents partial updates that could leave the system in an inconsistent or invalid state if a failure
 occurs during the operation.
