@@ -19,7 +19,6 @@ server, it typically includes parameters in the URL to specify the resource to r
 
 
 ### Always use `GET` requests to read a single resource or a collection of resources.
-
 The `GET` method is used to retrieve representations of resources. `GET` requests are used to fetch data
 about a single resource or a collection of resources, and the server responds with the requested data in the body of the
 response. Using `GET` for reading resources ensures that clients can obtain the necessary information without causing any side
@@ -90,7 +89,6 @@ See also: Idempotency
 
 
 ### `GET` requests for individual resources that do not exist should generate a `404`.
-
 When a `GET` request is made for an individual resource that is not found on the server, the API should return
 a `404 Not Found` status code. This informs the client that the requested resource does not exist, ensuring clarity
 and consistency in API behavior.
@@ -120,7 +118,6 @@ about the error. This communicates to the client that the requested article coul
 
 
 ### `GET` requests for collection resources should return `200` if the collection is empty.
-
 When clients make `GET` requests to retrieve a collection of resources, the API should return a `200 OK` status code
 even if the collection is empty. This indicates that the request was successfully processed, and the response body 
 will contain an empty array or object representing the collection.
@@ -152,7 +149,6 @@ between an empty collection and a resource that does not exist.
 
 
 ### GET requests for collection resources should return `404` if the collection is missing.
-
 When clients make `GET` requests to retrieve a collection of resources and the requested collection does not exist
 (i.e., it has not been implemented or configured), the API should return a `404 Not Found` status code. This communicates
 to the client that the requested endpoint or resource is not available, distinguishing between an empty collection (which
@@ -207,7 +203,6 @@ body, allowing for more complex data transmission.
 
 
 ### Successful `POST` requests should generate a `200` status code if resources have been updated.
-
 When clients make `POST` requests to create or update resources, the API should return a `200 OK` status code if the
 request was successful and resulted in the modification or creation of resources. This indicates that the operation
 was completed successfully, and the response body may include details about the updated resources.
@@ -250,7 +245,6 @@ reliability of your API design.
 
 
 ### Successful `POST` requests should generate a `201` status code if resources have been created.
-
 When clients make `POST` requests to create new resources, the API should return a `201 Created` status code upon
 successful creation. This status code indicates that the request was successful and that a new resource has been 
 created on the server.
@@ -292,7 +286,6 @@ See also: `Location` Header
 
 
 ### If a `POST` request creates a new resource, consider including the URI of the resource in the `Location` header of the response.
-
 When a `POST` request successfully creates a new resource, it is a best practice to include the URI of the newly created
 resource in the `Location` header of the response. This provides clients with a direct link to the new resource, allowing
 them to easily access, retrieve, or interact with it. 
@@ -420,7 +413,6 @@ in the request.
 
 
 ### `PUT` requests should be robust against non-existence of resources by implicitly creating the resource before updating.
-
 When clients make `PUT` requests to update a resource at a specific URI, the API should be robust against the non-existence
 of the resource by implicitly creating it before performing the update. This means that if the resource identified by the
 URI does not already exist, the API should create it based on the provided data in the `PUT` request payload.
@@ -513,13 +505,11 @@ multiple identical requests have the same effect as a single request.
 
 
 ### Prefer generating an HTTP `204` return code on a successful `DELETE` request if no further information is returned after executing the request.
-
 When no content is returned after a delete operation successfully executes, an HTTP status code 204 should be returned. This indicates that the
 process has been successfully handled, however, the body of the response does not contain additional information.
 
 
 ### `DELETE` operations should be idempotent.
-
 Clients should be able to make the same request repeatedly over the same resource, while resulting in the same state.
 
 // TODO: complement description
@@ -542,7 +532,6 @@ different outcomes.
 
 
 ### Always use `PATCH` requests for updating an existing object incrementally.
-
 `PATCH` requests are used to apply partial updates to an existing resource. Unlike `PUT` requests, which replace the entire
 resource with the new data, `PATCH` requests allow clients to send only the changes or updates that need to be applied. This
 makes `PATCH` ideal for scenarios where only specific fields of a resource need to be modified without affecting the entire
@@ -612,7 +601,6 @@ resource exists (via the status code) without downloading the entire resource
 
 
 ### Always use `HEAD` requests to retrieve header information of single resource or a collections of resources.
-
 The `HEAD` method returns the metadata of an object for a `GET` response. It is an idempotent operation.
 
 The `HEAD` method is used to retrieve the headers of a resource without fetching the actual body. This is useful
@@ -688,7 +676,6 @@ making actual requests.
 
 
 ### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint.
-
 The `OPTIONS` method is used by a client to determine what are the communication options available for a specific resource.
 
 ```http
@@ -708,7 +695,6 @@ servers. This method helps in identifying potential issues in the request path, 
 
 
 ### Consider using the `TRACE` method to debug or troubleshoot web server connections.
-
 The TRACE method is used to echo the contents of an HTTP Request back to the requester which can be used for debugging purpose at the time of development.
 
 ```http
@@ -720,7 +706,6 @@ See also: HTTP Methods
 
 
 ### Always disable the `TRACE` method for security reasons, unless specifically required.
-
 It is possible that malicious users, even without priviledges, can abuse the HTTP `TRACE` functionality as it allows access to HTTP headers sensitive information.
 
 ```http
@@ -737,7 +722,6 @@ See also: HTTP Methods
 
 
 ### Always use the most specific HTTP status codes for returning information regarding request and error handling.
-
 When returning information to clients regarding request or error handling, the API should use the most specific HTTP status code possible.
 
 // TODO: complement description
