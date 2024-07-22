@@ -5,7 +5,6 @@
 <br>
 
 ### Never include information in a response that could be useful for malicious users to attack the API.
-
 To ensure the security of the API, do not expose sensitive information that could be exploited by malicious
 users. This includes avoiding the inclusion of error messages, stack traces, server details, or any internal
 implementation information in API responses. Providing such information can give attackers insights into potential
