@@ -19,7 +19,6 @@
 
 
 ### Applications should support pagination to limit access to large collections of data items, thus reducing network traffic.
-
 Applications should support pagination when returning large collections of data to clients in order to enhance performance,
 reduce latency, and manage resource utilization effectively.
 
@@ -106,7 +105,6 @@ As a general guideline, compress the payload of response messages with gzip, unl
 
 
 ### A server should indicate it is using gzip compression via the `Content-Encoding` header.
-
 Servers should indicate the usage of gzip compression for response payloads by including the `Content-Encoding` header
 in HTTP responses. Gzip compression reduces the size of transmitted data, leading to improved network performance and
 reduced bandwidth consumption.
