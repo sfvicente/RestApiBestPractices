@@ -160,7 +160,6 @@ The 2xx class of HTTP status codes indicates that the request was successfully r
 
 
 ### Always use `201 Created` for successful `POST` requests when a new resource has been created.
-
 When a POST request results in the creation of a new resource, the server should respond with a `201 Created` status
 code. This indicates that the request has been fulfilled and has led to the creation of a new resource. The response
 should also include a Location header with the URI of the newly created resource and a representation of the resource
@@ -245,7 +244,6 @@ Tags: `status codes` `202` `Accepted` `asynchronous operations` `long-running pr
 
 
 ### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned.
-
 The `204 No Content` status code is used to indicate that a request has been successfully processed, but the 
 server does not need to return any content in the response body. This is commonly used for DELETE requests, where
 a resource is removed, and for PUT requests when an update to a resource is made but there is no need to return
@@ -275,7 +273,6 @@ Tags: `status codes` `204` `No Content` `DELETE` `PUT`
 
 
 ### Always return `206 Partial Content` when serving partial GET requests to support range queries for large resources.
-
 Use the `206 Partial Content` status code to indicate that a GET request has been successfully processed and that the server
 is returning only a part of the resource as specified by the client's `Range` header. This is particularly useful for large
 resources such as files or large datasets, where the client may only need a specific portion of the resource at a time.
@@ -321,7 +318,6 @@ See also: `redirection`
 
 
 ### Always return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
-
 Use the `301 Moved Permanently` status code to indicate that the requested resource has been permanently moved to a
 new URL. When a client requests a resource that has been relocated, the server responds with a `301 Moved Permanently`
 status code and includes the new URL in the `Location` header. This informs the client that the resource should be
@@ -390,7 +386,6 @@ Tags: `status codes` `302` `Found` `temporary redirection` `HTTP headers` `Locat
 
 
 ### Consider using `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL.
-
 Use the `303 See Other` status code is used to indicate that the server has successfully processed a POST request, and the
 client should retrieve the resulting resource by making a GET request to the URL specified in the Location header. This
 status code is typically used to prevent the client from resubmitting the same POST request if the user refreshes the page
@@ -463,7 +458,6 @@ The 4xx class of HTTP status codes indicates that the client seems to have made 
 to inform the client about issues with the request.
 
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
-
 Use the `400 Bad Request` status code to indicate that the server cannot process the request due to a client-side
 error. This could be due to malformed syntax, invalid request message framing, or deceptive request routing. Essentially,
 the server is informing the client that the request cannot be understood or processed because the error lies on the 
@@ -726,7 +720,6 @@ otherwise incapable of performing the request.
 
 
 ### Always use `501 Not Implemented` when the server does not support the functionality required to fulfill the request.
-
 Use the `501 Not Implemented` status code to indicate that the server does not support the functionality required to fulfill
 the request. This status code is used when the server recognizes the request method but lacks the ability to fulfill it. It
 tells the client that the server does not support the functionality necessary to process the request. This can happen if 
@@ -806,7 +799,6 @@ Tags: `status codes` `502` `Bad Gateway` `proxy` `gateway` `upstream server`
 
 
 ### Always use `503 Service Unavailable` when the server is temporarily unable to handle the request, often due to maintenance or overloading.
-
 Use the `503 Service Unavailable` status code to indicate that the server is temporarily unable to handle the request
 due to maintenance, overloading, or other temporary conditions. This informs the client that the server is currently
 unavailable and that the request should be retried at a later time. It is typically used when the server needs to 
