@@ -6,7 +6,6 @@
 
 
 ### Use nouns to represent resources.
-
 Resources should be represented using nouns to ensure clarity, consistency, and adherence to REST principles.
 
 Using nouns to represent resources offers the following advantages:
@@ -29,7 +28,6 @@ GET /api/users/{id} HTTP/1.1
 
 
 ### Resource names should be pluralized.
-
 Resource names should generally be pluralized to reflect collections of resources. 
 
 Pluralizing resource names offers several benefits:
@@ -143,7 +141,6 @@ Additional Tags: Query Parameters
 
 
 ### Do not specify paths with trailing slashes.
-
 One of the reasons is that adding a trailing slash provides no semantic value.
 
 // TODO: complement description
