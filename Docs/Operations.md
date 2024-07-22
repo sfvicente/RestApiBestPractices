@@ -9,7 +9,6 @@ of the HTTP protocol.
 
 
 ### API operations should be defined in terms of HTTP methods
-
 API operations should be defined using the appropriate HTTP methods to leverage the semantics and behaviors defined
 by the HTTP protocol. Each HTTP method corresponds to a specific action or intent, providing a standardized and 
 intuitive approach to interacting with RESTful APIs.
@@ -23,7 +22,6 @@ intuitive approach to interacting with RESTful APIs.
 
 
 ### Use `GET` for Read Operations
-
 Use the `GET` method to retrieve data or resources from the server. `GET` requests should not have side effects on the server
 and should only be used for retrieving data.
 
@@ -36,7 +34,6 @@ GET /api/users HTTP/1.1
 
 
 ### Use `POST` for Create Operations
-
 Use the `POST` method to create new resources on the server. `POST` requests should be used for operations that result in the
 creation of a new resource.
 
@@ -49,7 +46,6 @@ creation of a new resource.
 
 
 ### Consider supporting partial responses for larger binary resources
-
 Depending on business requirements, resources may contain larger binary assets. For example, a user profile resource might contain a
 binary image representation.
 
