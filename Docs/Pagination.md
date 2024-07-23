@@ -147,3 +147,46 @@ Utilize standard query parameters like `page` and `limit` to allow clients to sp
   // TODO
 
   <br><br>
+
+
+### Consider using pagination tokens for large datasets.
+For large datasets, consider implementing pagination tokens to improve performance and provide a more stable set of results. This
+involves returning a token in the response that the client can use to retrieve the next set of results. Tokens ensure that clients
+receive a stable set of results, even if the underlying data changes between requests.
+
+**Client Request with Pagination Token**
+```http
+GET /api/products?limit=10&cursor=abc123
+```
+
+**Server Response with Pagination Token**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "limit": 10,
+  "nextCursor": "def456",
+  "items": [
+    { "id": 11, "name": "Product 11", "price": 10.99 },
+    { "id": 12, "name": "Product 12", "price": 12.99 },
+    ...
+    { "id": 20, "name": "Product 20", "price": 20.99 }
+  ]
+}
+```
+
+**Scenarios**
+- **Large Collections:** When the collection of resources is large, supporting pagination with tokens prevents overwhelming the client and the server.
+- **Changing Data:** When the dataset is frequently updated, pagination tokens ensure that clients receive a consistent view of the data across multiple requests.
+- **Efficient Pagination:** Tokens can optimize database queries, reducing the load and improving response times.
+
+**Benefits of Pagination Tokens:**
+- **Performance:** More efficient than offset-based pagination for large datasets.
+- **Consistency:** Provides stable results even if the underlying data changes.
+- **Scalability:** Handles large datasets more effectively.
+
+By incorporating pagination tokens, your API can handle large datasets more effectively, providing a better user experience and improved performance.
+
+Tags: `pagination` `pagination tokens` `cursor-based pagination` `query parameters` `large datasets` `performance` `API design` `best practices`
+<br><br>
