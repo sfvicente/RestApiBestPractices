@@ -135,3 +135,15 @@ Tags: `pagination` `filtering` `sorting` `partial sets` `collections` `performan
 
 
 ## ...
+
+
+### Always use query parameters for pagination
+Utilize standard query parameters like `page` and `limit` to allow clients to specify which page of results they want and how many items per page.
+  
+  ```http
+  GET /api/products?page=2&limit=10
+  ```
+
+  // TODO
+
+  <br><br>
