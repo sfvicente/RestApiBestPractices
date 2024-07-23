@@ -1,5 +1,6 @@
 # Pagination
-
+Pagination is a technique used in REST APIs for managing large datasets efficiently. It allows clients to request data in
+smaller, manageable chunks using query parameters, improving performance and user experience.
 
 ## General
 <br>
