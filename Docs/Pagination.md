@@ -186,7 +186,5 @@ Content-Type: application/json
 - **Consistency:** Provides stable results even if the underlying data changes.
 - **Scalability:** Handles large datasets more effectively.
 
-By incorporating pagination tokens, your API can handle large datasets more effectively, providing a better user experience and improved performance.
-
 Tags: `pagination` `pagination tokens` `cursor-based pagination` `query parameters` `large datasets` `performance` `API design` `best practices`
 <br><br>
