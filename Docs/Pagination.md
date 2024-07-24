@@ -139,14 +139,39 @@ Tags: `pagination` `filtering` `sorting` `partial sets` `collections` `performan
 
 
 ### Always use query parameters for pagination
-Utilize standard query parameters like `page` and `limit` to allow clients to specify which page of results they want and how many items per page.
-  
-  ```http
-  GET /api/products?page=2&limit=10
-  ```
+Utilize standard query parameters like `page` and `limit` to allow clients to specify which page of results they want and how many
+items per page. Using query parameters for pagination is preferred because it provides a clear, standardized, and intuitive way for clients to navigate
+large datasets. This method allows for easy specification of pages and limits, facilitating consistent and predictable access to
+data. Additionally, query parameters are part of the URL, making them easily accessible and modifiable, which enhances the user experience
+and simplifies implementation and debugging.
 
-  // TODO
+**Client Request**
+```http
+GET /api/products?page=2&limit=10
+```
 
+**Server Response**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "page": 2,
+  "limit": 10,
+  "totalItems": 50,
+  "totalPages": 5,
+  "items": [
+    { "id": 11, "name": "Product 11", "price": 10.99 },
+    { "id": 12, "name": "Product 12", "price": 12.99 },
+    ...
+    { "id": 20, "name": "Product 20", "price": 20.99 }
+  ]
+}
+```
+
+Alternative techniques, such as embedding pagination details in the request body, can complicate client-server communication and reduce clarity.
+
+Tags: `pagination` `query parameters` `page` `limit` 
 <br><br>
 
 
