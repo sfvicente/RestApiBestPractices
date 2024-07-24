@@ -214,3 +214,46 @@ Content-Type: application/json
 
 Tags: `pagination` `pagination tokens` `cursor-based pagination` `query parameters` `large datasets` `performance` `API design` `best practices`
 <br><br>
+
+
+### Always provide metadata in the responses when using pagination
+Include metadata such as `totalItems`, `totalPages`, `currentPage`, and `itemsPerPage` in the response to help clients understand the
+pagination context. This practice ensures that clients have a clear understanding of the data structure and can navigate large datasets
+more effectively.
+
+**Example Request**
+```http
+GET /api/products?page=2&limit=10
+```
+
+**Example Response**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "totalItems": 50,
+  "totalPages": 5,
+  "currentPage": 2,
+  "itemsPerPage": 10,
+  "items": [
+    { "id": 11, "name": "Product 11", "price": 10.99 },
+    { "id": 12, "name": "Product 12", "price": 12.99 },
+    ...
+    { "id": 20, "name": "Product 20", "price": 20.99 }
+  ]
+}
+```
+
+**Scenarios**
+- **Navigating Data**: Clients can use the metadata to determine how many pages of data are available and which page they are currently on.
+- **User Interface Design**: Helps in creating user interfaces that show pagination controls, total results, and current page indicators.
+- **Optimizing Requests**: Clients can decide if they need to request more data or if they have retrieved all available data based on the metadata.
+
+**Benefits**
+- **Clarity**: Provides a clear structure and context for paginated data.
+- **User Experience**: Enhances the client's ability to navigate through large datasets efficiently.
+- **Efficiency**: Reduces the need for additional requests to determine the size and scope of the dataset.
+
+**Tags:** `pagination` `metadata` `totalItems` `totalPages` `currentPage` `itemsPerPage`
+<br><br>
