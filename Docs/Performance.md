@@ -93,14 +93,58 @@ As a general guideline, compress the payload of response messages with gzip, unl
 <br><br>
 
 
-### Even when using compression by default, servers should also support payload without compression.
+### Consider supporting both compressed and uncompressed payloads even when using compression by default
+When servers use compression by default to reduce payload size and improve performance, they should still support handling requests and
+responses without compression. This ensures compatibility with clients that may not support or prefer compression, providing a more robust
+and flexible API.
 
-// TODO: add description.
-
+**Example Request for Compressed Payload**
 ```http
-// TODO: add example
+GET /api/products
+Accept-Encoding: gzip
 ```
 
+**Example Response with Compressed Payload**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Encoding: gzip
+
+{compressed data}
+```
+
+**Example Request for Uncompressed Payload**
+```http
+GET /api/products
+Accept-Encoding: identity
+```
+
+**Example Response with Uncompressed Payload**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Product 1",
+  "price": 10.99
+  ...
+}
+```
+
+**Scenarios**
+- **Client Incompatibility**: When a client does not support compressed responses and needs uncompressed data.
+- **Debugging and Testing**: When developers need to debug or test responses without dealing with compression.
+- **Network Conditions**: When network conditions or client preferences dictate the use of uncompressed data for faster processing.
+
+**Benefits**
+- **Flexibility**: Supports a wider range of clients with different capabilities and preferences.
+- **Compatibility**: Ensures that all clients, including those that do not support compression, can interact with the API.
+- **Ease of Use**: Simplifies debugging and testing by allowing responses without compression.
+
+By supporting both compressed and uncompressed payloads, APIs become more versatile and accessible, accommodating the needs and preferences of various clients and improving overall compatibility.
+
+**Tags:** `compression` `compatibility` `flexibility` `payload`
 <br><br>
 
 
