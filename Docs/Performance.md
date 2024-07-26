@@ -3,7 +3,7 @@
 <br>
 
 
-## General
+## General Guidelines
 <br>
 
 
@@ -65,7 +65,7 @@ Pagination helps in the following ways:
 
 
 
-## Compression
+## Compression Guidelines
 <br>
 
 
