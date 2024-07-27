@@ -1,5 +1,8 @@
 # HTTP Status Codes
-
+HTTP status codes are are used in REST APIs for communicating the result of client requests. They indicate whether a specific HTTP request
+has been successfully completed and inform the client about the outcome, such as success, redirection, client errors, or server
+errors. Proper use of status codes enhances the clarity and efficiency of client-server interactions, helping developers understand and
+handle different scenarios appropriately.
 
 ## General Guidelines
 <br>
