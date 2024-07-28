@@ -653,14 +653,40 @@ Tags: `status codes` `405` `Method Not Allowed` `unsupported HTTP methods` `read
 <br><br>
 
 
-### Always return `406 Not Acceptable` status code when a content negotiation requested format is not supported.
+### Always return `406 Not Acceptable` status code when a content negotiation requested format is not supported
+Use the `406 Not Acceptable` status code to indicate that the server cannot generate a response that is acceptable
+according to the Accept headers sent in the request. This informs the client that the requested format or media
+type is not supported by the server, and therefore, the server cannot fulfill the request in the requested format.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+GET /api/products
+Host: example.com
+Accept: application/xml
 ```
 
+**Example Response**
+```http
+HTTP/1.1 406 Not Acceptable
+Content-Type: application/json
+
+{
+  "error": "Not Acceptable",
+  "message": "The requested format 'application/xml' is not supported. Please request an acceptable format such as 'application/json'."
+}
+```
+
+**Scenarios**
+- **Unsupported Media Types**: When the client requests a response in a format that the server does not support, such as XML when the server only supports JSON.
+- **Content Negotiation**: When multiple media types are specified in the Accept header, and none of them are supported by the server.
+- **API Versioning**: When the client requests a specific version of the API that the server does not support in the requested format.
+
+**Benefits**
+- **Clear Communication**: Informs clients that their requested format is not supported, allowing them to adjust their Accept headers to a format the server can provide.
+- **Improved Client-Server Interaction**: Helps ensure that clients request data in formats that the server can generate, leading to smoother interactions.
+- **Error Handling**: Provides a specific error status that clients can handle programmatically to request acceptable formats.
+
+**Tags:** `406` `Not Acceptable` `content negotiation` `status codes` `error handling`
 <br><br>
 
 
