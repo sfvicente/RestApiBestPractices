@@ -438,21 +438,45 @@ See also: `redirection`
 <br><br>
 
 
-### Always use `308 Permanent Redirect` to preserve the original HTTP method while redirecting to a permanent URL.
+### Always use `308 Permanent Redirect` to preserve the original HTTP method while redirecting to a permanent URL
+Use the `308 Permanent Redirect` status code to indicate that the requested resource has been permanently moved to
+a new URL, and the client should use this new URL for future requests. Unlike the `301 Moved Permanently` status 
+code, `308 Permanent Redirect` ensures that the original HTTP method and request body are preserved during the
+redirection. This is crucial for maintaining the integrity of non-GET requests, such as POST, PUT, DELETE, etc.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+POST /api/v1/resource
+Host: example.com
+Content-Type: application/json
+
+{
+  "data": "example"
+}
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 308 Permanent Redirect
+Location: http://example.com/api/v2/resource
+Content-Type: application/json
+
+{
+  "message": "The resource has been permanently moved to a new URL. Please use the new URL for future requests."
+}
 ```
 
-See also: `redirection`
+**Scenarios**
+- **API Versioning**: When an API endpoint is moved to a new version, and you want to ensure that POST, PUT, or DELETE requests are correctly redirected to the new version.
+- **Resource Reorganization**: When resources are reorganized and you want to permanently redirect clients to the new structure while preserving the HTTP method.
+- **Permanent URL Changes**: When a resource's URL is permanently changed, and you need to ensure that all types of requests are redirected correctly.
+
+**Benefits**
+- **Method Preservation**: Ensures that the original HTTP method and request body are maintained, preventing unintended changes to the request type.
+- **Clarity for Clients**: Clearly informs clients that the resource has moved permanently and that future requests should use the new URL.
+- **Improved SEO**: Helps search engines update their indexes with the new URL, improving the discoverability of the resource.
+
+**Tags:** `308` `Permanent Redirect` `HTTP method preservation` `status codes` `redirection`
 <br><br>
 
 
