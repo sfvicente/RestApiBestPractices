@@ -420,21 +420,45 @@ Tags: `status codes` `303` `See Other` `POST requests` `redirection` `HTTP heade
 <br><br>
 
 
-### Always implement `307 Temporary Redirect` to preserve the original HTTP method while redirecting to a temporary URL.
+### Always implement `307 Temporary Redirect` to preserve the original HTTP method while redirecting to a temporary URL
+Use the `307 Temporary Redirect` status code to indicate that the requested resource is temporarily available at a 
+different URL, and the client should use the original URL for future requests. Unlike the `302 Found` status
+code, `307 Temporary Redirect` ensures that the original HTTP method and request body are preserved during the 
+redirection. This is crucial for maintaining the integrity of non-GET requests, such as POST, PUT, DELETE, etc.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+POST /api/v1/resource
+Host: example.com
+Content-Type: application/json
+
+{
+  "data": "example"
+}
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 307 Temporary Redirect
+Location: http://example.com/api/temp/resource
+Content-Type: application/json
+
+{
+  "message": "The resource is temporarily available at a different URL. Please use the original URL for future requests."
+}
 ```
 
-See also: `redirection`
+**Scenarios**
+- **Maintenance**: When a resource is temporarily moved due to maintenance, and you want to ensure that POST, PUT, or DELETE requests are correctly redirected to the temporary location.
+- **Load Balancing**: When redirecting traffic to a temporary server to balance the load without changing the original request method.
+- **Temporary Resource Relocation**: When a resource is temporarily relocated and will return to the original URL, ensuring that the original HTTP method is preserved.
+
+**Benefits**
+- **Method Preservation**: Ensures that the original HTTP method and request body are maintained, preventing unintended changes to the request type.
+- **Clarity for Clients**: Clearly informs clients that the resource is temporarily moved and that future requests should use the original URL.
+- **Predictability**: Provides a reliable redirection mechanism that maintains the integrity of the original request method.
+
+**Tags:** `307` `Temporary Redirect` `HTTP method preservation` `status codes` `redirection`
 <br><br>
 
 
