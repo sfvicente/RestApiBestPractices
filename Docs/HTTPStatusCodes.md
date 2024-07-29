@@ -690,20 +690,46 @@ Content-Type: application/json
 <br><br>
 
 
-### Always return 409 Conflict when a request could not be processed due to a conflict with the current state of the resource.
+### Always return `409 Conflict` when a request could not be processed due to a conflict with the current state of the resource
+Use the `409 Conflict` status code to indicate that the request could not be completed because it conflicts with the current
+state of the resource. This informs the client that there is a logical conflict that needs to be resolved before the request
+can be successfully processed.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+PUT /api/products/123
+Host: example.com
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Updated Product Name",
+  "version": 1
+}
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 409 Conflict
+Content-Type: application/json
+
+{
+  "error": "Conflict",
+  "message": "The product with ID 123 could not be updated due to a version conflict. The current version is 2."
+}
 ```
 
+**Scenarios**
+- **Resource Version Conflicts**: When updating a resource with an outdated version, causing a version conflict.
+- **Duplicate Entries**: When attempting to create a resource that would result in a duplicate entry.
+- **Business Logic Conflicts**: When the request violates business rules or constraints, such as booking an already booked appointment slot.
+
+**Benefits**
+- **Clear Error Indication**: Informs clients about conflicts with the current state of the resource, allowing them to resolve the issue.
+- **Conflict Resolution**: Provides specific information about the nature of the conflict, helping clients understand how to correct their requests.
+- **Improved Data Integrity**: Ensures that updates and modifications to resources maintain the integrity and consistency of the data.
+
+**Tags:** `409` `Conflict` `status codes` `error handling` `resource state`
 <br><br>
 
 
