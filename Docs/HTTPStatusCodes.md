@@ -568,21 +568,40 @@ See also: `security` `authentication`
 <br><br>
 
 
-### Always use `403 Forbidden` when the client is authenticated but does not have permission to access the resource.
+### Always use `403 Forbidden` when the client is authenticated but does not have permission to access the resource
+Use the `403 Forbidden` status code to indicate that the server understands the client's request and the client is
+authenticated, but the client does not have the necessary permissions to access the requested resource. This informs
+the client that their identity is recognized, but they do not have the authorization to perform the requested action.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+GET /api/admin/reports
+Host: example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+
+{
+  "error": "Forbidden",
+  "message": "You do not have permission to access this resource."
+}
 ```
 
-See also: `security` `authorization`
+**Scenarios**
+- **Insufficient Permissions**: When an authenticated user attempts to access a resource for which they do not have the necessary permissions, such as an admin-only endpoint.
+- **Role-Based Access Control**: When access control policies restrict certain actions based on the user's role, and the user's role does not permit the requested action.
+- **Resource-Specific Restrictions**: When specific resources have access restrictions that the authenticated user does not meet, such as attempting to modify another user's data.
+
+**Benefits**
+- **Clear Authorization Error**: Clearly indicates to clients that they are authenticated but lack the necessary permissions, differentiating from authentication errors.
+- **Improved Security**: Helps enforce security policies by ensuring that users can only access resources they are authorized to.
+- **Better Client Understanding**: Provides clients with specific feedback about their permission levels, allowing them to understand access limitations.
+
+**Tags:** `403` `Forbidden` `status codes` `security` `authorization` `error handling` `access control`
 <br><br>
 
 
