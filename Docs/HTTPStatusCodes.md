@@ -973,22 +973,41 @@ during periods of maintenance or high load.
 <br><br>
 
 
-### Always use `505 HTTP Version Not Supported` when the server does not support the HTTP protocol version used in the request.
+### Always use `505 HTTP Version Not Supported` when the server does not support the HTTP protocol version used in the request
+Use the `505 HTTP Version Not Supported` status code to indicate that the server does not support the HTTP protocol version
+that was used in the client’s request. This informs the client that the version of HTTP specified in the request is not
+supported by the server, and therefore, the server cannot process the request.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+GET /api/products
+Host: example.com
+HTTP-Version: HTTP/1.0
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 505 HTTP Version Not Supported
+Content-Type: application/json
+
+{
+  "error": "HTTP Version Not Supported",
+  "message": "The HTTP version used in the request is not supported by this server."
+}
 ```
 
+**Scenarios**
+- **Deprecated HTTP Versions**: When the client uses an outdated or deprecated version of HTTP, such as HTTP/1.0, which the server no longer supports.
+- **Incompatible HTTP Versions**: When the client uses a newer version of HTTP, such as HTTP/2, which the server is not yet compatible with.
+- **Protocol Mismatch**: When there is a protocol mismatch between what the client sends and what the server supports, causing incompatibility.
+
+**Benefits**
+- **Clear Protocol Error**: Informs clients about the specific issue related to the HTTP version, allowing them to adjust their requests to a supported version.
+- **Improved Compatibility**: Helps ensure that clients use compatible HTTP versions, promoting smoother communication between clients and servers.
+- **Protocol Upgrade Guidance**: Provides an opportunity to inform clients about supported HTTP versions, encouraging upgrades to more recent and efficient protocols.
+
+**Tags:** `505` `HTTP Version Not Supported` `status codes` `protocol version` `error handling` `compatibility`
 <br><br>
-
 
 
 ### Always use `511 Network Authentication Required` when the client needs to authenticate to gain network access.
