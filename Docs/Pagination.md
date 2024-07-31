@@ -100,20 +100,46 @@ Tags: `pagination` `filtering` `sorting` `partial sets` `collections` `performan
 <br><br>
 
 
-### Clients of service operations that support partial sets must expect limited result sets of information.
+### Clients of service operations that support partial sets must expect limited result sets of information
+Clients interacting with service operations that support partial sets must be prepared to handle responses containing 
+limited subsets of the full dataset. This means clients should anticipate and correctly process partial results rather
+than assuming they have received the entire dataset.
 
-// TODO: add description
-
+**Example Request**
 ```http
-// TODO: add example
+GET /api/products?page=1&limit=10
 ```
 
-// TODO: complement description
-
+**Example Response**
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "totalItems": 50,
+  "totalPages": 5,
+  "currentPage": 1,
+  "itemsPerPage": 10,
+  "products": [
+    { "id": 1, "name": "Product 1", "price": 10.0 },
+    { "id": 2, "name": "Product 2", "price": 12.5 },
+    // ...additional products...
+    { "id": 10, "name": "Product 10", "price": 15.0 }
+  ]
+}
 ```
 
+**Scenarios**
+- **Pagination**: When the service returns paginated data, clients must handle partial datasets and use pagination parameters to retrieve additional data as needed.
+- **Large Datasets**: For services dealing with large datasets, clients should expect to receive a limited number of items per response and handle multiple requests to fetch the complete dataset.
+- **Performance Optimization**: When services limit the amount of data returned to improve performance, clients should be prepared to request further data in a controlled manner.
+
+**Benefits**
+- **Efficient Data Handling**: Ensures clients manage large datasets efficiently by processing and requesting data in smaller chunks.
+- **Improved Performance**: Helps maintain optimal performance and reduce server load by limiting the amount of data processed and transferred in each request.
+- **Clear Communication**: Provides clients with clear information about the dataset limits and the need to handle partial results, promoting better client-server interaction.
+
+**Tags:** `partial sets` `pagination` `limited results` `client expectations` `data handling` `performance optimization`
 <br><br>
 
 
