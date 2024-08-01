@@ -1,5 +1,6 @@
 # Resources
-
+This section focuses on designing and structuring APIs around well-defined domain entities. It emphasizes using standard HTTP
+methods to perform operations on these entities, ensuring a RESTful, consistent, and intuitive API design.
 
 ## General
 
