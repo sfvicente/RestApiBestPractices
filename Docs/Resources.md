@@ -4,27 +4,45 @@
 ## General
 
 
-### Model the services around domain entities using the standard HTTP methods as operation indicators.
+### Always model the services around domain entities using the standard HTTP methods as operation indicators.
+Design your services to revolve around domain entities, using standard HTTP methods to perform operations on those
+entities. Avoid modeling service operations as actions; instead, focus on the domain entities that compose the
+API model, and apply standard HTTP methods to interact with them.
 
-Do not model service operations as actions. Instead, identify the domain entities that are the components of the API model 
-and use the standard HTTP methods to perform the operations on those entities.
-
-For example, do not use the following operation:
-
-// TODO: complement description
-
+**Example Request**
 ```http
-// TODO: add examples
+GET /api/products/123
 ```
 
-// TODO: add description
-
+**Example Response**
 ```http
-// TODO: add examples
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Product Name",
+  "description": "Product Description",
+  "price": 29.99
+}
 ```
 
-See also: HTTP Methods
-<br>
+**Scenarios**
+- **CRUD Operations**: Use standard HTTP methods (GET, POST, PUT, DELETE) to perform Create, Read, Update, and Delete operations on domain entities such as products, users, or orders.
+  - **GET**: Retrieve a resource or a collection of resources.
+  - **POST**: Create a new resource.
+  - **PUT**: Update an existing resource.
+  - **DELETE**: Remove a resource.
+- **Resource-Based Design**: Focus on entities like "products," "users," or "orders" rather than actions like "createProduct" or "deleteUser." This aligns with REST principles and makes the API more intuitive.
+- **Entity Relationships**: Clearly define relationships between entities using appropriate URI structures and standard HTTP methods to navigate and manipulate these relationships.
+
+**Benefits**
+- **RESTful Design**: Promotes adherence to REST principles by using standard HTTP methods to operate on resources, resulting in a more predictable and uniform API.
+- **Clarity and Consistency**: Enhances clarity and consistency in API design by modeling services around entities and using well-defined methods to interact with them.
+- **Simplicity**: Simplifies API usage for clients, as they can rely on standard HTTP methods to perform operations, without needing to understand custom actions or methods.
+
+**Tags:** `domain entities` `HTTP methods` `RESTful design` `API modeling` `resource-based design` `CRUD operations`
+<br><br>
 
 
 ### Design the API to limit the amount of data returned by any single request.
