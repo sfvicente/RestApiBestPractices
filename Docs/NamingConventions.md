@@ -45,7 +45,7 @@ GET /api/products HTTP/1.1
 GET /api/products/{id} HTTP/1.1
 ```
 
-<sub>See also: Resources</sub>
+**Tags:** `resources` `resource naming` `pluralized names` `naming conventions` `REST compliance` `collections`
 <br><br>
 
 
