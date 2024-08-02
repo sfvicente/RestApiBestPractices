@@ -1,5 +1,8 @@
 # Naming Conventions
-
+This section outlines best practices for naming resources and endpoints in a REST API. It emphasizes the importance of 
+consistency, clarity, and adherence to standard conventions to create a predictable and user-friendly API. Proper naming
+conventions enhance the API's readability and usability, making it easier for developers to understand and work with
+the API effectively.
 
 ## General
 <br>
