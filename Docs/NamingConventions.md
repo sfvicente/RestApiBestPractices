@@ -151,20 +151,25 @@ Additional Tags: Query Parameters
 
 
 ### Do not specify paths with trailing slashes.
-One of the reasons is that adding a trailing slash provides no semantic value.
+Avoid using trailing slashes at the end of your API paths. Consistently omitting trailing slashes helps maintain a clean
+and predictable URL structure. Also, adding a trailing slash provides no semantic value.
 
-// TODO: complement description
+**Example Requests:**
+- **Avoid This**:
+    ```http
+    GET /api/products/
+    ```
+- **Preferred**:
+    ```http
+    GET /api/products
+    ```
 
-```http
-// TODO: add example
-```
+**Benefits:**
+- **Consistency**: Prevents discrepancies and confusion about different URLs that may or may not include trailing slashes.
+- **Clarity**: Enhances the readability of URLs by avoiding unnecessary characters.
+- **Avoidance of Redundancy**: Ensures that each URL uniquely identifies a resource without ambiguity.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
+**Tags:** `URL structure` `trailing slashes` `consistency` `clarity`
 <br><br>
 
 
