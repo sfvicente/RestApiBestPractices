@@ -93,20 +93,25 @@ See also: Path Segments
 
 
 ### For path segments, prefer the use of words separated with hyphens.
+When designing API paths, use hyphens to separate words within path segments. This practice improves readability
+and consistency, making it easier for developers to understand and use the API.
 
-// TODO: add description
+**Example Requests:**
+- **Product Categories**:
+    ```http
+    GET /api/product-categories
+    ```
+- **Customer Orders**:
+    ```http
+    GET /api/customer-orders
+    ```
 
-```http
-GET /payment-methods
-```
+**Benefits:**
+- **Readability**: Hyphens improve the readability of URLs by clearly separating words.
+- **SEO Friendly**: Hyphens are preferred in URLs for search engine optimization, as they are more easily interpreted by search engines.
+- **Consistency**: Using hyphens consistently across your API ensures a uniform and predictable URL structure.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
-See also: Path Segments
+**Tags:** `path segments` `URL structure` `hyphens` `readability` `consistency` `SEO friendly`
 <br><br>
 
 
