@@ -50,20 +50,25 @@ GET /api/products/{id} HTTP/1.1
 
 
 ### Forward slashes should be used to indicate hierarchical relationships.
+Use forward slashes (/) in your URL paths to represent hierarchical relationships between resources. This practice
+enhances the clarity and structure of your API, making it more intuitive and easier to navigate. 
 
-// TODO: add description
+**Example Requests:**
+- **Collection of Orders for a Specific Customer**:
+    ```http
+    GET /api/customers/{customerId}/orders
+    ```
+- **Specific Order for a Specific Customer**:
+    ```http
+    GET /api/customers/{customerId}/orders/{orderId}
+    ```
 
-```http
-// TODO: add example
-```
+**Benefits:**
+- **Clarity**: Forward slashes clearly denote parent-child relationships, making it easier to understand how resources are related.
+- **Organization**: This structure helps to logically organize resources, reflecting their natural relationships.
+- **RESTful Design**: Using hierarchical paths aligns with RESTful principles, promoting a consistent and predictable API design.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
-See also: Path Segments
+**Tags:** `resources` `resource organization` `hierarchical relationships` `URL structure`
 <br><br>
 
 
