@@ -137,19 +137,27 @@ Additional Tags: Query Parameters
 
 
 ### Do not specify paths with duplicate slashes.
+Avoid using duplicate slashes in your API paths. Ensuring that paths do not contain consecutive slashes helps maintain
+a clean, reliable, and predictable URL structure.
 
-// TODO: add description
+**Example Requests:**
+- **Avoid This**:
+    ```http
+    GET /api//products
+    GET /api/products//123
+    ```
+- **Preferred**:
+    ```http
+    GET /api/products
+    GET /api/products/123
+    ```
 
-```http
-// TODO: add example
-```
+**Benefits:**
+- **Consistency**: Eliminates discrepancies and potential confusion caused by URLs with varying numbers of slashes.
+- **Readability**: Enhances the readability of URLs by avoiding unnecessary characters.
+- **Error Prevention**: Reduces the risk of errors that may occur due to incorrect parsing or handling of URLs with duplicate slashes.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
+**Tags:** `URL structure` `duplicate slashes` `consistency` `readability` `error prevention`
 <br><br>
 
 
