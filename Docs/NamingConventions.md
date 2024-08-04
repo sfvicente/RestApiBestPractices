@@ -4,7 +4,7 @@ consistency, clarity, and adherence to standard conventions to create a predicta
 conventions enhance the API's readability and usability, making it easier for developers to understand and work with
 the API effectively.
 
-## General
+## General Guidelines
 <br>
 
 
