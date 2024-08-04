@@ -26,7 +26,7 @@ GET /api/users HTTP/1.1
 GET /api/users/{id} HTTP/1.1
 ```
 
-<sub>See also: Resources</sub>
+**Tags:** `naming conventions` `REST principles` `resources` `semantic clarity` `consistency`
 <br><br>
 
 
