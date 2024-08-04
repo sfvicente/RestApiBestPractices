@@ -76,22 +76,32 @@ enhances the clarity and structure of your API, making it more intuitive and eas
 
 
 ### For path segments, prefer the use of lowercase words.
+Use lowercase words for path segments in your API URLs to ensure consistency and to comply with URL standards
+outlined in RFC 3986. Lowercase paths enhance readability and prevent potential issues related to case sensitivity.
 
-// TODO: add description
+**RFC 3986 Compliance:**
+[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt), the standard for Uniform Resource Identifier (URI) syntax, 
+states that URIs are case-sensitive with the exception of the scheme and host elements. It recommends using
+lowercase letters in URLs to avoid ambiguity and maintain consistency.
 
-```http
-// TODO: add example
-```
+**Example Requests:**
+- **Avoid This**:
+    ```http
+    GET /api/Products
+    GET /api/USERS/123
+    ```
+- **Preferred**:
+    ```http
+    GET /api/products
+    GET /api/users/123
+    ```
 
-// TODO: complement description
+**Benefits:**
+- **Consistency**: Promotes uniformity across all API endpoints, making it easier for developers to use and remember.
+- **Readability**: Enhances the readability of URLs by using a standard format.
+- **Avoidance of Case Sensitivity Issues**: Prevents issues that can arise from different interpretations of uppercase and lowercase letters in URLs.
 
-[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) states that URIs are case-sensitive with the exception of the scheme and host elements.
-
-```http
-// TODO: add example
-```
-
-See also: Path Segments
+**Tags:** `path segments` `URL structure` `lowercase paths` `consistency` `readability` `RFC 3986`
 <br><br>
 
 
