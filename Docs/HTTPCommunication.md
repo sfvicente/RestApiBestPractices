@@ -3,7 +3,7 @@ HTTP communication in the context of REST APIs involves using standard HTTP meth
 operations on resources identified by URLs. Each HTTP verb provides a specific action, making REST APIs intuitive and
 enabling clear, predictable interactions between clients and servers.
 
-## General
+## General Guidelines
 
 ...
 
@@ -11,7 +11,7 @@ enabling clear, predictable interactions between clients and servers.
 
 
 
-## HTTP `GET` method
+## HTTP `GET` Method Guidelines
 The HTTP GET method is a request method used to retrieve data from a specified resource on the server. It's one of the
 most commonly used HTTP methods and is primarily used for fetching information. When a client sends a GET request to a
 server, it typically includes parameters in the URL to specify the resource to retrieve or query parameters to filter the results.
@@ -194,7 +194,7 @@ See also: Filtering, Pagination
 
 
 
-## HTTP `POST` method
+## HTTP `POST` Method Guidelines
 The HTTP POST method is a request method used to submit data to be processed by a specified resource on the
 server. It's commonly used when creating new resources or when submitting data to a server that will trigger
 a specific action. Unlike GET requests, which retrieve data, POST requests typically include data in the request
@@ -393,7 +393,7 @@ Resource IDs should be created and maintained by the API and returned with the r
 
 
 
-## HTTP `PUT` Method
+## HTTP `PUT` Method Guidelines
 The HTTP PUT method is a request method used to update or replace a resource on the server with the representation
 enclosed in the request payload. It's commonly employed when the client intends to update an existing resource or
 create a new one if it doesn't exist. PUT typically replaces the entire resource with the new representation provided
@@ -490,7 +490,7 @@ Subsequent reads of the same resource, will return the exact content that was pa
 
 
 
-## HTTP `DELETE` Method
+## HTTP `DELETE` Method Guidelines
 The HTTP DELETE method is a standard HTTP request method used to delete a specified resource on a server. When a client sends a
 DELETE request, it instructs the server to remove the resource identified by the URI. This method is idempotent, meaning that
 multiple identical requests have the same effect as a single request. 
@@ -523,7 +523,7 @@ See also: Idempotency
 
 
 
-## HTTP `PATCH` Method
+## HTTP `PATCH` Method Guidelines
 The HTTP PATCH method is a request method used to apply partial modifications to a resource on a server. Unlike the PUT
 method, which updates the entire resource, PATCH allows for more fine-grained updates, modifying only the specified parts
 of the resource. This method is not necessarily idempotent, as applying the same patch multiple times can result in
@@ -592,7 +592,7 @@ References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 
 
 
-## HTTP `HEAD` Method
+## HTTP `HEAD` Method Guidelines
 The HTTP HEAD method is a request method used to retrieve the headers of a specified resource, without fetching the actual
 body content. When a client sends a HEAD request, the server responds with the same headers it would send for a GET request,
 but without the response body. This method is useful for checking metadata, such as content type and size, or testing if a
@@ -666,7 +666,7 @@ See also: Concurrency
 
 
 
-## HTTP `OPTIONS` Method
+## HTTP `OPTIONS` Method Guidelines
 The HTTP OPTIONS method is a request method used to describe the communication options available for a specified resource
 or the server as a whole. When a client sends an OPTIONS request, the server responds with the allowed HTTP methods (such as
 GET, POST, PUT, DELETE) that can be performed on the resource. This method is useful for determining the capabilities of a
@@ -686,7 +686,7 @@ See also: HTTP Methods
 <br><br>
 
 
-## HTTP 'TRACE' Method
+## HTTP 'TRACE' Method Guidelines
 The HTTP TRACE method is a request method used for diagnostic purposes, allowing the client to see what is being received
 at the other end of the request chain and to use that data for testing or debugging. When a client sends a TRACE request,
 the server echoes back the received request so the client can see any modifications or additions made by intermediate
@@ -717,7 +717,7 @@ See also: HTTP Methods
 
 
 
-## HTTP Status Codes
+## HTTP Status Codes Guidelines
 <br>
 
 
