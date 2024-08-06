@@ -706,13 +706,32 @@ See also: HTTP Methods
 
 
 ### Always disable the `TRACE` method for security reasons, unless specifically required.
-It is possible that malicious users, even without priviledges, can abuse the HTTP `TRACE` functionality as it allows access to HTTP headers sensitive information.
+The HTTP `TRACE` method should be disabled in your API to prevent potential security vulnerabilities. The
+`TRACE` method is primarily used for diagnostic purposes, allowing clients to see the exact request sent to
+the server and the server's response. However, it can be exploited by malicious users to access sensitive
+information in HTTP headers, such as cookies and authentication tokens.
 
+**Security Risks:**
+- **Cross-Site Tracing (XST) Attacks**: Attackers can exploit `TRACE` to steal credentials or session information by tricking the client into sending a request that reveals sensitive data.
+- **Information Leakage**: `TRACE` can expose internal implementation details and HTTP headers that should remain confidential.
+
+**Example Request and Response:**
 ```http
-// TODO: add example
+// Request
+TRACE /api/resource HTTP/1.1
+Host: example.com
+
+// Response (when TRACE is disabled)
+HTTP/1.1 405 Method Not Allowed
+Content-Type: application/json
+
+{
+  "error": "Method Not Allowed",
+  "message": "The TRACE method is disabled for security reasons."
+}
 ```
 
-See also: HTTP Methods
+**Tags:** `security` `HTTP methods` `TRACE` `vulnerability` `best practices`
 <br><br>
 
 
