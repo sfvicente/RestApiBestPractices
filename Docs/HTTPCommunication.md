@@ -695,13 +695,35 @@ servers. This method helps in identifying potential issues in the request path, 
 
 
 ### Consider using the `TRACE` method to debug or troubleshoot web server connections.
-The TRACE method is used to echo the contents of an HTTP Request back to the requester which can be used for debugging purpose at the time of development.
+The `TRACE` method is a useful tool for debugging and troubleshooting web server connections during the development
+phase. It echoes the contents of an HTTP request back to the requester, allowing developers to see the exact request
+received by the server and verify that the server is processing requests correctly.
 
+**Usage Scenario:**
+- **Development and Debugging**: During development, the `TRACE` method can help developers ensure that HTTP requests are being correctly received and processed by the server. It can reveal issues with request formatting, headers, and other request attributes.
+
+**Security Considerations:**
+- **Disable in Production**: While useful in development, the `TRACE` method should be disabled in production environments to prevent potential security risks such as Cross-Site Tracing (XST) attacks.
+
+**Example Request and Response:**
 ```http
-// TODO: add example
+// Request
+TRACE /trace HTTP/1.1
+Host: example.com
+User-Agent: curl/7.64.1
+Accept: */*
+
+// Response
+HTTP/1.1 200 OK
+Content-Type: message/http
+
+TRACE /trace HTTP/1.1
+Host: example.com
+User-Agent: curl/7.64.1
+Accept: */*
 ```
 
-See also: HTTP Methods
+**Tags:** `debugging` `development` `HTTP methods` `TRACE` `troubleshooting` `best practices`
 <br><br>
 
 
