@@ -763,15 +763,48 @@ Content-Type: application/json
 
 
 ### Always use the most specific HTTP status codes for returning information regarding request and error handling.
-When returning information to clients regarding request or error handling, the API should use the most specific HTTP status code possible.
+When returning information to clients regarding request or error handling, the API should use the most specific 
+HTTP status code possible. This practice ensures clear communication between the server and the client, helping
+clients understand the exact nature of the response and how to handle it appropriately.
 
-// TODO: complement description
+**Benefits of Using Specific HTTP Status Codes:**
+- **Clarity**: Specific status codes provide precise information about the outcome of the request, reducing ambiguity.
+- **Troubleshooting**: Clear status codes make it easier to diagnose issues and understand the cause of errors.
+- **Client Handling**: Clients can implement more accurate error handling and responses based on specific status codes.
 
-```http
-// TODO: add examples
-```
+**Examples:**
+- **400 Bad Request**: Use when the request cannot be processed due to client-side errors, such as validation issues.
+  ```http
+  HTTP/1.1 400 Bad Request
+  Content-Type: application/json
 
-See also: HTTP Status Codes
+  {
+    "error": "Bad Request",
+    "message": "Invalid input data"
+  }
+  ```
+- **401 Unauthorized**: Use when authentication is required and has failed or not been provided.
+  ```http
+  HTTP/1.1 401 Unauthorized
+  Content-Type: application/json
+
+  {
+    "error": "Unauthorized",
+    "message": "Authentication required"
+  }
+  ```
+- **404 Not Found**: Use when the requested resource could not be found.
+  ```http
+  HTTP/1.1 404 Not Found
+  Content-Type: application/json
+
+  {
+    "error": "Not Found",
+    "message": "Resource not found"
+  }
+  ```
+
+**Tags:** `HTTP status codes` `error handling` `client communication`
 <br><br>
 
 
