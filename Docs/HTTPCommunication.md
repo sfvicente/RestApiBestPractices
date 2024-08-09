@@ -84,7 +84,7 @@ Content-Type: application/json
 It is a safe and idempotent HTTP method, meaning it does not alter the state of the resource and repeated requests will produce
 the same result.
 
-See also: Idempotency
+Tags: `HTTP methods` `GET` `resource retrieval` `REST API design` `idempotent` `safe operations`
 <br>
 
 
