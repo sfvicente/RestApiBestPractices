@@ -145,6 +145,7 @@ body contains an empty array (`"articles": []`), indicating that there are no ar
 Returning a `200` status for an empty collection maintains consistency in API responses and allows clients to differentiate
 between an empty collection and a resource that does not exist.
 
+Tags: `HTTP methods` `GET` `404 Not Found` `resource retrieval` `collection handling` `error handling` `empty collection` `consistent responses`
 <br><br>
 
 
