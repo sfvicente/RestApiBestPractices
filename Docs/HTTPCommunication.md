@@ -243,6 +243,7 @@ resources to clients. This provides clear and consistent feedback to clients abo
 enabling them to handle resource creation or update operations effectively. This practice enhances the usability and
 reliability of your API design.
 
+Tags: `HTTP methods` `POST` `200 OK` `resource creation` `resource update` `success responses` `resource modification` `API usability` `consistent feedback`
 <br><br>
 
 
