@@ -328,7 +328,7 @@ The response body includes the details of the newly created article, such as its
 Including the `Location` header improves the usability of the API by giving clients immediate knowledge of the new resource's
 URI, which can be useful for subsequent operations such as `GET`, `PUT`, `PATCH`, or `DELETE` requests on that resource.
 
-See also: `Location` Header
+Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` `URI` `API usability` `best practices` `new resource`
 <br><br>
 
 
