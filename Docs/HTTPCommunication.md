@@ -454,6 +454,7 @@ to use the same method for both creating and updating resources at specific URIs
 ensures consistency and predictability in API interactions and improves the overall developer experience. However, note
 that this behavior may vary based on specific use cases and API requirements.
 
+Tags: `HTTP methods` `PUT` `resource creation` `resource update` `idempotence` `API robustness` `resource handling` `developer experience` `best practices`
 <br><br>
 
 
