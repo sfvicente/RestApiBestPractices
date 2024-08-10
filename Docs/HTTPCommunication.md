@@ -284,7 +284,7 @@ Location: /articles/123
 and a new article has been created. The `Location` header provides the URI of the newly created article (`/articles/123`).
 The response body includes the details of the newly created article, such as its `id`, `title`, `content`, and timestamps.
 
-See also: `Location` Header
+Tags: `HTTP methods` `POST` `201 Created` `resource creation` `success responses` `Location header` `new resource` `API usability` `resource management`
 <br><br>
 
 
