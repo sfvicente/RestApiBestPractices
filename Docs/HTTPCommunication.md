@@ -179,6 +179,7 @@ This ensures consistent and meaningful responses for `GET` requests to collectio
 reliability of API interactions. This practice helps clients differentiate between different states of resource availability,
 improving overall usability and error handling.
 
+Tags: `HTTP methods` `GET` `404 Not Found` `collection retrieval` `resource handling` `error handling` `missing resources` `consistent responses`
 <br><br>
 
 
