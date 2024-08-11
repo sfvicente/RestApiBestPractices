@@ -472,12 +472,45 @@ Subsequent reads of the same resource, will return the exact content that was pa
 
 
 ### Successful `PUT` requests should generate a `200` status code if the resource was updated with actual content returned.
+When a `PUT` request is successfully processed and the resource is updated, the API should return a `200 OK` status
+code. This indicates that the update operation was successful, and the response should include the actual content of
+the updated resource. By returning the updated resource in the response body, the API ensures that the client has the
+most recent version of the resource, providing immediate feedback on the changes made.
 
-// TODO: add description.
+Using a `200 OK` status code along with the updated content enhances clarity in the API's communication, confirming
+to the client that the update was performed and allowing them to see the exact state of the resource post-update. This
+practice contributes to better client experience, as it eliminates the need for an additional `GET` request to retrieve
+the updated resource.
 
 ```http
-// TODO: add example
+PUT /articles/123
+Content-Type: application/json
+
+{
+  "title": "Updated Article",
+  "content": "Updated content."
+}
 ```
+
+- **Request**: Attempts to update the article with ID `123`.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "Updated Article",
+  "content": "Updated content.",
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-15T12:10:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code and returns the updated content of the article, including the `id`, `title`, `content`, `createdAt`, and `updatedAt` timestamps.
+
+This approach ensures transparency in API interactions and reduces the likelihood of discrepancies between the client and
+server's understanding of the resource's current state.
 
 <br><br>
 
