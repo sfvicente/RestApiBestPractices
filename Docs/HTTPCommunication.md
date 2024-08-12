@@ -515,13 +515,32 @@ server's understanding of the resource's current state.
 <br><br>
 
 
-### Successful `PUT` requests should generate a `204` status code if the resource was updated without actual content returned.
 
-// TODO: add description.
+### Always return a `204` status code for successful `PUT` requests when the resource is updated without actual content returned.
+When a `PUT` request is made to update a resource and the operation is successful, but there is no need to return any content
+in the response body, the API should return a `204 No Content` status code. This indicates that the request was successfully
+processed, the resource was updated, and there is no additional content to send in the response. This approach is efficient,
+reduces bandwidth usage, and aligns with HTTP standards.
+
+**Example**:
 
 ```http
-// TODO: add example
+PUT /articles/123
+Content-Type: application/json
+
+{
+  "title": "Updated Article",
+  "content": "Updated content."
+}
 ```
+
+- **Request**: Updates the article with ID `123` with the specified title and content.
+
+```http
+HTTP/1.1 204 No Content
+```
+
+- **Response**: The server responds with a `204 No Content` status code, indicating that the article was successfully updated but no further content is returned in the response body.
 
 <br><br>
 
