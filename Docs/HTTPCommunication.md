@@ -554,8 +554,31 @@ multiple identical requests have the same effect as a single request.
 
 
 ### Consider generating an HTTP `200` return code on a successful `DELETE` request if the deleted resource is returned after executing the request.
+When a `DELETE` request is made to remove a resource, and the API is designed to return the details of the deleted resource
+in the response, it is appropriate to return a `200 OK` status code. This informs the client that the resource was successfully
+deleted and provides the relevant resource information as part of the response body.
 
-// TODO: add description.
+**Example**:
+
+```http
+DELETE /articles/123
+```
+
+- **Request**: Deletes the article with ID `123`.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "Deleted Article",
+  "content": "This article has been deleted.",
+  "deletedAt": "2024-05-15T12:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the article was successfully deleted. The response body contains the details of the deleted article, including its `id`, `title`, `content`, and the timestamp of deletion (`deletedAt`).
 
 <br>
 
