@@ -588,7 +588,7 @@ When no content is returned after a delete operation successfully executes, an H
 process has been successfully handled, however, the body of the response does not contain additional information.
 
 
-### `DELETE` operations should be idempotent.
+### Always ensure that `DELETE` operations are idempotent.
 Clients should be able to make the same request repeatedly over the same resource, while resulting in the same state.
 
 // TODO: complement description
