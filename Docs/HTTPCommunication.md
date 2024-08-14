@@ -149,7 +149,7 @@ Tags: `HTTP methods` `GET` `404 Not Found` `resource retrieval` `collection hand
 <br><br>
 
 
-### GET requests for collection resources should return `404` if the collection is missing.
+### Always return a `404 Not Found` status for `GET` requests if the requested collection resource is missing.
 When clients make `GET` requests to retrieve a collection of resources and the requested collection does not exist
 (i.e., it has not been implemented or configured), the API should return a `404 Not Found` status code. This communicates
 to the client that the requested endpoint or resource is not available, distinguishing between an empty collection (which
