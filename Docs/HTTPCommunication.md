@@ -88,7 +88,7 @@ Tags: `HTTP methods` `GET` `resource retrieval` `REST API design` `idempotent` `
 <br>
 
 
-### `GET` requests for individual resources that do not exist should generate a `404`.
+### Always return a `404 Not Found` status for `GET` requests to non-existent individual resources.
 When a `GET` request is made for an individual resource that is not found on the server, the API should return
 a `404 Not Found` status code. This informs the client that the requested resource does not exist, ensuring clarity
 and consistency in API behavior.
