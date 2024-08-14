@@ -183,6 +183,7 @@ Tags: `HTTP methods` `GET` `404 Not Found` `collection retrieval` `resource hand
 <br><br>
 
 
+### Always provide adequate filtering and pagination mechanisms for `GET` requests on collection resources.
 ### `GET` requests on collection resources should provide adequate filter and pagination mechanisms.
 
 // TODO: add description.
