@@ -117,7 +117,7 @@ about the error. This communicates to the client that the requested article coul
 <br><br>
 
 
-### `GET` requests for collection resources should return `200` if the collection is empty.
+### Always return a `200 OK` status for `GET` requests to collection resources, even if the collection is empty.
 When clients make `GET` requests to retrieve a collection of resources, the API should return a `200 OK` status code
 even if the collection is empty. This indicates that the request was successfully processed, and the response body 
 will contain an empty array or object representing the collection.
