@@ -204,7 +204,7 @@ body, allowing for more complex data transmission.
 <br>
 
 
-### Successful `POST` requests should generate a `200` status code if resources have been updated.
+### Always generate a `200` status code for successful `POST` requests when resources have been updated.
 When clients make `POST` requests to create or update resources, the API should return a `200 OK` status code if the
 request was successful and resulted in the modification or creation of resources. This indicates that the operation
 was completed successfully, and the response body may include details about the updated resources.
