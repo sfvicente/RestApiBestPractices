@@ -247,7 +247,7 @@ Tags: `HTTP methods` `POST` `200 OK` `resource creation` `resource update` `succ
 <br><br>
 
 
-### Successful `POST` requests should generate a `201` status code if resources have been created.
+### Always generate a `201 Created` status code for successful `POST` requests when new resources have been created.
 When clients make `POST` requests to create new resources, the API should return a `201 Created` status code upon
 successful creation. This status code indicates that the request was successful and that a new resource has been 
 created on the server.
