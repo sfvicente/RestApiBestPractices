@@ -288,7 +288,7 @@ Tags: `HTTP methods` `POST` `201 Created` `resource creation` `success responses
 <br><br>
 
 
-### If a `POST` request creates a new resource, consider including the URI of the resource in the `Location` header of the response.
+### Always include the URI of the newly created resource in the `Location` header for successful `POST` requests.
 When a `POST` request successfully creates a new resource, it is a best practice to include the URI of the newly created
 resource in the `Location` header of the response. This provides clients with a direct link to the new resource, allowing
 them to easily access, retrieve, or interact with it. 
