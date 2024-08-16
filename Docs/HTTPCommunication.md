@@ -332,7 +332,7 @@ Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` 
 <br><br>
 
 
-### If a `POST` request creates a new resource, the response body should contain a representation of the resource.
+### Always include a representation of the newly created resource in the response body for successful `POST` requests.
 
 // TODO: add description.
 
