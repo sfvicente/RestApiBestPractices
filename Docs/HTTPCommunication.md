@@ -379,18 +379,26 @@ Resource IDs should be created and maintained by the API and returned with the r
 
 
 ### Consider designing `POST` operations as idempotent.
+While the HTTP `POST` method is traditionally used for creating new resources or triggering operations that result
+in a state change, it is often beneficial to design `POST` operations to be idempotent where possible. Idempotency
+ensures that making the same request multiple times will produce the same result, improving reliability and user
+experience.
 
-// TODO: add description
+**Benefits of Idempotent `POST` Operations:**
 
-```http
-// TODO: add example
-```
+- **Consistency**: Clients can safely retry requests without risking unintended side effects, which is especially useful in unreliable network conditions.
+- **Error Handling**: Reduces the complexity of error handling and recovery, as the same request can be retried without concern for duplication or inconsistencies.
+- **Predictability**: Enhances predictability of the API behavior, making it easier for clients to understand and work with the API.
 
-// TODO: complement description
+**Examples of Idempotent `POST` Operations:**
 
-```http
-// TODO: add example
-```
+- **Order Processing**: An API endpoint that processes an order could be designed to be idempotent by ensuring that submitting the same order multiple times has the same effect as submitting it once.
+- **Payment Transactions**: A payment API might handle duplicate requests for the same transaction by ensuring that only one payment is processed, even if the request is sent multiple times.
+
+**Considerations:**
+
+- **Resource Creation**: For resource creation, idempotency might require using a unique identifier or key provided by the client to ensure that multiple submissions do not result in multiple resources being created.
+- **Operation Triggering**: For operations that trigger external processes, careful design is needed to ensure that multiple identical requests do not result in unintended side effects.
 
 <br><br>
 
