@@ -412,13 +412,106 @@ in the request.
 <br>
 
 
-### Always use `PUT` requests to update complete individual or collection resources.
+### Always use `PUT` requests to update complete individual or collection resources
+When updating resources through an API, the `PUT` method should be used to ensure that the operation is clear, consistent,
+and aligns with HTTP semantics. The `PUT` method is designed to update a resource at a specific URI, and it is intended
+for cases where the client sends a complete representation of the resource, whether it is an individual resource or a
+collection.
 
-// TODO: add description.
+**Key Points for Using `PUT` Requests:**
+- **Complete Replacement**: A `PUT` request should contain a full representation of the resource to replace the existing resource at the target URI. If only partial updates are needed, consider using the `PATCH` method instead.
+- **Idempotency**: `PUT` requests are idempotent, meaning that sending the same `PUT` request multiple times will result in the same state on the server. This is crucial for ensuring consistency, especially in environments with unreliable network conditions.
+- **Specificity**: The `PUT` method is specific to the resource identified by the URI. Whether updating an individual resource or a collection, the request should target the exact URI where the resource resides.
 
-```http
-// TODO: add example
-```
+**Examples of `PUT` Requests:**
+
+- **Updating an Individual Resource**: If the client needs to update a user profile, the `PUT` request should include the entire profile data, replacing the existing profile at the specified URI.
+
+  ```http
+  PUT /users/123
+  Content-Type: application/json
+
+  {
+    "id": 123,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30,
+    "address": "123 Elm Street, Springfield"
+  }
+  ```
+
+  - **Request**: The above request updates the user profile for the user with ID `123`. The server will replace the existing user profile data with the data provided in the request.
+
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "id": 123,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30,
+    "address": "123 Elm Street, Springfield",
+    "updatedAt": "2024-08-19T12:00:00Z"
+  }
+  ```
+
+  - **Response**: The server responds with a `200 OK` status code, indicating that the user profile was successfully updated. The response body includes the updated user profile with a timestamp.
+
+- **Updating a Collection**: When updating an entire collection of resources, the `PUT` request should include the complete set of resources that will replace the current collection at the target URI.
+
+  ```http
+  PUT /articles
+  Content-Type: application/json
+
+  [
+    {
+      "id": 101,
+      "title": "First Article",
+      "content": "Content of the first article.",
+      "createdAt": "2024-08-15T12:00:00Z",
+      "updatedAt": "2024-08-19T12:00:00Z"
+    },
+    {
+      "id": 102,
+      "title": "Second Article",
+      "content": "Content of the second article.",
+      "createdAt": "2024-08-16T08:00:00Z",
+      "updatedAt": "2024-08-19T12:00:00Z"
+    }
+  ]
+  ```
+
+  - **Request**: The above request updates the entire collection of articles, replacing the existing collection with the two articles provided in the request.
+
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  [
+    {
+      "id": 101,
+      "title": "First Article",
+      "content": "Content of the first article.",
+      "createdAt": "2024-08-15T12:00:00Z",
+      "updatedAt": "2024-08-19T12:00:00Z"
+    },
+    {
+      "id": 102,
+      "title": "Second Article",
+      "content": "Content of the second article.",
+      "createdAt": "2024-08-16T08:00:00Z",
+      "updatedAt": "2024-08-19T12:00:00Z"
+    }
+  ]
+  ```
+
+  - **Response**: The server responds with a `200 OK` status code, indicating that the collection was successfully updated. The response body includes the updated collection of articles with timestamps.
+
+
+**Considerations:**
+- **Conflict Management**: If a resource does not exist at the specified URI, the server may either create a new resource or return an error, depending on the API design. It is important to define how your API handles such cases.
+- **Data Integrity**: Since `PUT` replaces the resource entirely, clients must ensure that they send a complete and accurate representation of the resource to avoid unintentional data loss.
 
 <br><br>
 
