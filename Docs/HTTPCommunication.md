@@ -689,14 +689,69 @@ When no content is returned after a delete operation successfully executes, an H
 process has been successfully handled, however, the body of the response does not contain additional information.
 
 
-### Always ensure that `DELETE` operations are idempotent.
-Clients should be able to make the same request repeatedly over the same resource, while resulting in the same state.
+Here’s the completed content for the guideline, including the HTTP request examples:
 
-// TODO: complement description
+---
 
-```http
-// TODO: add examples
-```
+### Always ensure that `DELETE` operations are idempotent
+For `DELETE` operations, if a client issues a `DELETE` request for a resource, repeating the request should not cause an
+error or additional changes—the resource should be deleted the first time, and subsequent requests should confirm that
+the resource is already deleted.
+
+**Key Points for Idempotent `DELETE` Operations:**
+
+- **Consistency**: Once a resource is deleted, subsequent `DELETE` requests to the same URI should return a status that indicates the resource is no longer available, rather than attempting to delete it again.
+- **Error Handling**: The server should handle repeated `DELETE` requests gracefully, returning a response that clearly communicates the resource's state without causing unnecessary errors.
+
+**Examples of Idempotent `DELETE` Requests:**
+
+- **Initial `DELETE` Request**: A client issues a `DELETE` request to remove a specific resource.
+
+  ```http
+  DELETE /articles/123
+  HTTP/1.1
+  Host: api.example.com
+  ```
+
+  - **Request**: This request attempts to delete the article with ID `123`.
+
+  ```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+    "message": "Article successfully deleted."
+  }
+  ```
+
+  - **Response**: The server responds with a `200 OK` status code, indicating that the article was successfully deleted. The response body provides confirmation of the deletion.
+
+- **Subsequent `DELETE` Request for the Same Resource**: A client issues the same `DELETE` request after the resource has already been deleted.
+
+  ```http
+  DELETE /articles/123
+  HTTP/1.1
+  Host: api.example.com
+  ```
+
+  - **Request**: This request attempts to delete the same article with ID `123`, which has already been deleted.
+
+  ```http
+  HTTP/1.1 404 Not Found
+  Content-Type: application/json
+
+  {
+    "error": "Resource not found",
+    "message": "The article with ID '123' has already been deleted or does not exist."
+  }
+  ```
+
+  - **Response**: The server responds with a `404 Not Found` status code, indicating that the article with ID `123` no longer exists. The response body informs the client that the resource has already been deleted or was never present.
+
+**Considerations:**
+
+- **Graceful Handling**: Ensure that repeated `DELETE` requests do not cause server errors or unnecessary processing. The response should indicate that the resource is no longer present without causing confusion.
+- **Clear Communication**: Responses should clearly communicate the outcome of the `DELETE` request, whether it was the initial deletion or a subsequent confirmation that the resource no longer exists.
 
 See also: Idempotency
 <br><br>
