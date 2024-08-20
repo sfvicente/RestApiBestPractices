@@ -516,7 +516,7 @@ collection.
 <br><br>
 
 
-### `PUT` requests should be robust against non-existence of resources by implicitly creating the resource before updating.
+### Ensure `PUT` requests handle non-existent resources by implicitly creating them before updating.
 When clients make `PUT` requests to update a resource at a specific URI, the API should be robust against the non-existence
 of the resource by implicitly creating it before performing the update. This means that if the resource identified by the
 URI does not already exist, the API should create it based on the provided data in the `PUT` request payload.
