@@ -364,7 +364,7 @@ Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` 
 <br><br>
 
 
-### When using `POST` requests to create resources, client must not pass the resource ID as a request input.
+### Never pass resource IDs in `POST` requests when creating new resources.
 
 Resource IDs should be created and maintained by the API and returned with the response payload.
 
