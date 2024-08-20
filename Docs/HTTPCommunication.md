@@ -342,8 +342,7 @@ Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` 
 
 <br><br>
 
-
-### Successful `POST` requests should generate a `202` status code if the request was accepted but has not completed yet.
+### Consider returning a `202` status code for successful `POST` requests when the request is accepted but processing is not yet complete.
 
 // TODO: add description.
 
