@@ -572,7 +572,7 @@ Subsequent reads of the same resource, will return the exact content that was pa
 <br><br>
 
 
-### Successful `PUT` requests should generate a `200` status code if the resource was updated with actual content returned.
+### Always return a `200 OK` status for successful `PUT` requests when the updated content is returned.
 When a `PUT` request is successfully processed and the resource is updated, the API should return a `200 OK` status
 code. This indicates that the update operation was successful, and the response should include the actual content of
 the updated resource. By returning the updated resource in the response body, the API ensures that the client has the
