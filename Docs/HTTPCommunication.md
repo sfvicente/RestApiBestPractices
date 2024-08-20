@@ -353,7 +353,7 @@ Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` 
 <br><br>
 
 
-### Successful `POST` requests should exceptionally generate a `204` status code with `Location` header if the actual resource is not returned.
+### Consider generating a `204` status code with a `Location` header for successful `POST` requests when the actual resource is not returned.
 
 // TODO: add description.
 
