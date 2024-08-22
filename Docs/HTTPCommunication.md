@@ -682,6 +682,7 @@ Content-Type: application/json
 
 - **Response**: The server responds with a `200 OK` status code, indicating that the article was successfully deleted. The response body contains the details of the deleted article, including its `id`, `title`, `content`, and the timestamp of deletion (`deletedAt`).
 
+Tags: `HTTP methods` `DELETE` `status codes` `200 OK` `resource deletion`
 <br>
 
 
