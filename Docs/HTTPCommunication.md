@@ -142,9 +142,6 @@ Content-Type: application/json
 - **Response**: The server responds with a `200 OK` status code, indicating that the request was successful. The response
 body contains an empty array (`"articles": []`), indicating that there are no articles in the collection.
 
-Returning a `200` status for an empty collection maintains consistency in API responses and allows clients to differentiate
-between an empty collection and a resource that does not exist.
-
 Tags: `HTTP methods` `GET` `404 Not Found` `resource retrieval` `collection handling` `error handling` `empty collection` `consistent responses`
 <br><br>
 
