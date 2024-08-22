@@ -613,6 +613,7 @@ Content-Type: application/json
 This approach ensures transparency in API interactions and reduces the likelihood of discrepancies between the client and
 server's understanding of the resource's current state.
 
+Tags: `HTTP methods` `PUT` `status codes` `200 OK` `resource updates`
 <br><br>
 
 
