@@ -690,10 +690,14 @@ Tags: `HTTP methods` `DELETE` `status codes` `200 OK` `resource deletion`
 When no content is returned after a delete operation successfully executes, an HTTP status code 204 should be returned. This indicates that the
 process has been successfully handled, however, the body of the response does not contain additional information.
 
+// TODO: complement description
 
-Here’s the completed content for the guideline, including the HTTP request examples:
+```http
+// TODO: add example
+```
 
----
+<br><br>
+
 
 ### Always ensure that `DELETE` operations are idempotent
 For `DELETE` operations, if a client issues a `DELETE` request for a resource, repeating the request should not cause an
