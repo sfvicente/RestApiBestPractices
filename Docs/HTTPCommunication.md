@@ -399,6 +399,7 @@ experience.
 - **Resource Creation**: For resource creation, idempotency might require using a unique identifier or key provided by the client to ensure that multiple submissions do not result in multiple resources being created.
 - **Operation Triggering**: For operations that trigger external processes, careful design is needed to ensure that multiple identical requests do not result in unintended side effects.
 
+Tags: `HTTP methods` `POST` `idempotency` `reliability` `error handling` `consistency` `predictability`
 <br><br>
 
 
