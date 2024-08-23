@@ -813,18 +813,50 @@ References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 
 
 ### Consider designing `PATCH` operations as idempotent.
+While the HTTP `PATCH` method is typically used to apply partial updates to a resource, it is beneficial to 
+design `PATCH` operations to be idempotent whenever possible. An idempotent `PATCH` operation ensures that
+multiple identical requests will have the same effect as a single request. This characteristic is important
+for enhancing the reliability and predictability of an API, especially in environments where network issues
+or client errors may lead to the same request being sent multiple times.
 
-// TODO: add description
+**Benefits of Idempotent `PATCH` Operations:**
+
+- - **Consistency**: Ensures that multiple identical `PATCH` requests will not result in unintended changes to the resource, maintaining the consistency of the resource's state.
+- **Error Handling**: Simplifies error handling and recovery processes, as clients can safely retry requests without concern for creating inconsistencies.
+- **Predictability**: Enhances the predictability of the API's behavior, making it easier for developers to understand and interact with the API effectively.
+
+**Examples of Idempotent `PATCH` Operations:**
+
+Consider a scenario where a user wants to update their profile information, such as their email address:
+
+**Example**:
 
 ```http
-// TODO: add example
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "email": "newemail@example.com"
+}
 ```
 
-// TODO: complement description
+- **Request**: Updates the email address of the user with ID `123`.
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "email": "newemail@example.com",
+  "updatedAt": "2024-05-15T12:10:00Z"
+}
 ```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the `PATCH` request was successful. The response body includes the updated email address and the timestamp of the update.
+
+If the client sends the same `PATCH` request multiple times, the user's email address remains unchanged after the first
+update. The subsequent requests have no additional effect, demonstrating the idempotent nature of the `PATCH` operation.
 
 <br><br>
 
