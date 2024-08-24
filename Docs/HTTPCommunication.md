@@ -946,11 +946,44 @@ making actual requests.
 
 
 ### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint.
-The `OPTIONS` method is used by a client to determine what are the communication options available for a specific resource.
+The `OPTIONS` HTTP method is an important tool that allows clients to query a server to discover the HTTP methods that are
+supported by a specific resource or endpoint. By using an `OPTIONS` request, clients can determine which operations (such
+as `GET`, `POST`, `PUT`, `DELETE`, etc.) are available for a given endpoint, as well as any additional communication options,
+such as CORS (Cross-Origin Resource Sharing) permissions.
+
+**Benefits of Using `OPTIONS` Requests:**
+
+- **Discoverability**: Helps clients understand what operations are allowed or supported for a specific endpoint, making the API more self-explanatory and easier to use.
+- **Error Prevention**: By querying available options before performing a request, clients can prevent errors related to unsupported operations or invalid HTTP methods.
+- **CORS Support**: The `OPTIONS` request is commonly used in CORS preflight requests to determine if the actual request is safe to send. This is particularly important for cross-origin requests in web applications.
+
+**Usage of `OPTIONS` Requests:**
+
+The `OPTIONS` request should be used when a client wants to check the allowed methods for a resource, determine supported
+content types, or find out more about the server's capabilities for a particular endpoint.
+
+**Example of an `OPTIONS` Request:**
+
+Consider a scenario where a client wants to find out what operations are available on the `/articles` endpoint:
 
 ```http
-// TODO: add example
+OPTIONS /articles HTTP/1.1
+Host: api.example.com
 ```
+
+- **Request**: The client sends an `OPTIONS` request to the `/articles` endpoint to determine the supported methods and operations.
+
+**Example Response:**
+
+```http
+HTTP/1.1 200 OK
+Allow: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Content-Type: application/json
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the request was successful. The `Allow` header in the response lists the HTTP methods that are supported for the `/articles` endpoint (`GET`, `POST`, `PUT`, `DELETE`, `OPTIONS`). Additionally, the response may include other headers, such as `Access-Control-Allow-Origin` and `Access-Control-Allow-Methods`, which are important for handling CORS requests.
 
 See also: HTTP Methods
 <br><br>
