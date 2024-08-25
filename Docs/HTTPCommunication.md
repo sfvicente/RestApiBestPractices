@@ -556,17 +556,65 @@ Tags: `HTTP methods` `PUT` `resource creation` `resource update` `idempotence` `
 <br><br>
 
 
-### Always replace the entire resource addressed by the URL with the representation passed in the payload on a successful `PUT` request.
+### Always perform a full resource replacement with the payload on a successful `PUT` request.
+When handling a `PUT` request, the API should replace the entire resource at the specified URL with the data provided
+in the request payload. This ensures that the resource is fully updated according to the client's submission, with any
+missing fields in the payload leading to their corresponding fields in the resource being removed or set to their default
+values. The `PUT` method is intended for complete updates, meaning that the server should ensure that subsequent reads
+of the resource reflect exactly the content sent by the client in the `PUT` request.
 
-Subsequent reads of the same resource, will return the exact content that was passed to the server.
+**Guidelines for Implementing `PUT` Requests:**
 
-// TODO: complement description.
+- **Full Replacement**: The payload should include all necessary fields of the resource. Any field not included will be considered as absent or to be reset.
+- **Idempotence**: `PUT` requests should be idempotent, meaning that making the same `PUT` request multiple times will have the same effect as making it once. The resource's state will not change after the first successful request unless the payload changes.
+- **Validation**: Ensure that the server validates the incoming payload to confirm that it includes all required fields and adheres to the expected schema.
+
+**Example of a `PUT` Request:**
+
+Consider a scenario where a client wants to update an article with ID `123`. The client sends a `PUT` request to update the entire article, providing a full representation of the article in the request payload.
 
 ```http
-// TODO: add example
+PUT /articles/123 HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+
+{
+  "title": "Updated Article Title",
+  "content": "This is the updated content of the article.",
+  "author": "John Doe",
+  "tags": ["update", "PUT", "api"]
+}
 ```
 
-<br><br>
+- **Request**: The client sends a `PUT` request to the `/articles/123` endpoint, providing the updated representation of the article, including the `title`, `content`, `author`, and `tags`.
+
+**Example Response:**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "title": "Updated Article Title",
+  "content": "This is the updated content of the article.",
+  "author": "John Doe",
+  "tags": ["update", "PUT", "api"],
+  "createdAt": "2024-05-15T12:00:00Z",
+  "updatedAt": "2024-05-16T14:00:00Z"
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, confirming that the article was successfully updated. The response body contains the full representation of the updated article, reflecting the exact content that was provided in the request payload.
+
+**Benefits of This Approach:**
+
+- **Consistency**: The state of the resource after a `PUT` request is guaranteed to be consistent with the data provided by the client, eliminating partial updates and potential discrepancies.
+- **Clarity**: Ensures clear and predictable behavior of the API by adhering to the HTTP specification for the `PUT` method, which is defined as a complete replacement of the target resource.
+- **Simplifies Client Logic**: Clients can update a resource without needing to worry about the previous state. They can simply send the full, updated representation of the resource.
+
+- 
+- <br><br>
 
 
 ### Always return a `200 OK` status for successful `PUT` requests when the updated content is returned.
