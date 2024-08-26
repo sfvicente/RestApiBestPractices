@@ -920,6 +920,16 @@ update. The subsequent requests have no additional effect, demonstrating the ide
 <br><br>
 
 
+### Ensure PATCH requests are atomic to maintain data consistency.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
 
 ## HTTP `HEAD` Method Guidelines
 The HTTP HEAD method is a request method used to retrieve the headers of a specified resource, without fetching the actual
