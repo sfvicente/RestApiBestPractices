@@ -882,6 +882,17 @@ References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
 <br><br>
 
 
+### Always return a 204 No Content status code on a successful PATCH request when no response body is included.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Consider designing `PATCH` operations as idempotent.
 While the HTTP `PATCH` method is typically used to apply partial updates to a resource, it is beneficial to 
 design `PATCH` operations to be idempotent whenever possible. An idempotent `PATCH` operation ensures that
