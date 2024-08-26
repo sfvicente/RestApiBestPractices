@@ -931,6 +931,17 @@ update. The subsequent requests have no additional effect, demonstrating the ide
 <br><br>
 
 
+### Implement mechanisms to handle concurrent PATCH modifications.
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ## HTTP `HEAD` Method Guidelines
 The HTTP HEAD method is a request method used to retrieve the headers of a specified resource, without fetching the actual
 body content. When a client sends a HEAD request, the server responds with the same headers it would send for a GET request,
