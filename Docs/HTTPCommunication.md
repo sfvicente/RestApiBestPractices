@@ -817,18 +817,7 @@ different outcomes.
 <br>
 
 
-### Always use PATCH for partial updates to resources.
-
-// TODO: add description.
-
-```http
-// TODO: add example
-```
-
-<br><br>
-
-
-### Always use `PATCH` requests for updating an existing object incrementally.
+### Always use PATCH requests for partial or incremental updates to existing resources.
 `PATCH` requests are used to apply partial updates to an existing resource. Unlike `PUT` requests, which replace the entire
 resource with the new data, `PATCH` requests allow clients to send only the changes or updates that need to be applied. This
 makes `PATCH` ideal for scenarios where only specific fields of a resource need to be modified without affecting the entire
