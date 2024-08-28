@@ -857,6 +857,7 @@ preserving the integrity of existing data. Clients can perform targeted updates 
 unintended parts of a resource.
 
 References: [RFC 5789](https://datatracker.ietf.org/doc/html/rfc5789)
+Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource management` `efficiency` `data integrity` `network optimization`
 <br><br>
 
 
