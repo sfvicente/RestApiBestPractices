@@ -147,7 +147,7 @@ Tags: `sorting`
 <br><br>
 
 
-### Always return `200 OK` for successful requests, even if the filtered result set is empty
+### Always return 200 OK for successful filtered requests, even when the result set is empty.
 When processing a request that involves filtering resources, the server should always return a `200 OK` status code if the
 request is successful, regardless of whether the filtered result set contains any resources. This approach ensures consistency
 in API responses and provides clear feedback to the client that the request was processed successfully without any errors.
