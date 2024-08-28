@@ -148,13 +148,34 @@ Tags: `sorting`
 
 
 ### Always return `200 OK` for successful requests, even if the filtered result set is empty
+When processing a request that involves filtering resources, the server should always return a `200 OK` status code if the
+request is successful, regardless of whether the filtered result set contains any resources. This approach ensures consistency
+in API responses and provides clear feedback to the client that the request was processed successfully without any errors.
 
-// TODO: add description
+Returning a `200 OK` status code for an empty result set distinguishes between an empty but valid response and an error
+condition. An empty result set is a valid outcome for a request where no resources match the specified criteria.
+
+**Example:**
+
+If a client sends a request to retrieve a list of articles filtered by a specific tag, but there are no articles with
+that tag, the server should return a `200 OK` status code with an empty array in the response body.
 
 **Request**
 ```http
-// TODO: add example
+GET /articles?tag=nonexistent-tag
 ```
+
+- **Request**: Attempts to retrieve articles with a specific tag that does not exist in the database.
+
+**Response**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[]
+```
+
+- **Response**: The server responds with a `200 OK` status code, indicating that the request was successful. The response body contains an empty array, signifying that no articles matched the specified tag.
 
 <br><br>
 
