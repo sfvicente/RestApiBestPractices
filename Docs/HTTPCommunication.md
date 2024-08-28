@@ -962,6 +962,7 @@ Content-Type: application/json
 If the client sends the same `PATCH` request multiple times, the user's email address remains unchanged after the first
 update. The subsequent requests have no additional effect, demonstrating the idempotent nature of the `PATCH` operation.
 
+Tags: `HTTP methods` `PATCH` `idempotency` `partial updates` `reliability` `predictability` `error handling` `consistency`
 <br><br>
 
 
