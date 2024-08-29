@@ -181,13 +181,42 @@ Content-Type: application/json
 
 
 ### Always return `400 Bad Request` for invalid filter parameters
+When a client sends a request with filter parameters to an endpoint, the server needs to validate these parameters to ensure
+they are correct and supported. If the filter parameters are invalid, malformed, or not recognized, the server should respond
+with a `400 Bad Request` status code. This indicates to the client that the request was not processed due to incorrect or
+inappropriate input and provides an opportunity to correct the request.
 
-// TODO: add description
+**Key Considerations:**
 
-**Request**
+- **Parameter Validation**: The server should validate all incoming filter parameters to ensure they conform to the expected format, data type, and allowable values.
+- **Error Message**: Along with the `400 Bad Request` status code, the response should include a descriptive error message detailing which filter parameter(s) were invalid and why. This helps clients identify and correct the specific issue with their request.
+- **Consistency**: Consistent handling of invalid parameters across different endpoints makes the API predictable and easier to use, enhancing the overall developer experience.
+
+**Example:**
+
+Consider an API endpoint that allows clients to retrieve a list of articles filtered by a specific date range.
+
+**Request:**
+
 ```http
-// TODO: add example
+GET /articles?startDate=2024-05-01&endDate=not-a-date
 ```
+
+- **Request**: The client attempts to retrieve articles filtered by a date range. However, the `endDate` parameter is not in a valid date format.
+
+**Response:**
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Invalid filter parameter",
+  "message": "The 'endDate' parameter must be a valid date in the format YYYY-MM-DD."
+}
+```
+
+- **Response**: The server responds with a `400 Bad Request` status code, indicating that the request was invalid due to the incorrect `endDate` filter parameter. The response includes a detailed error message explaining the problem with the request.
 
 <br><br>
 
