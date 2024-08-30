@@ -222,13 +222,71 @@ Content-Type: application/json
 
 
 ### Consider including metadata such as the total number of filtered items, current page, and page size in the response
+When designing an API that supports pagination and filtering, it is helpful to include metadata in the response to provide
+additional context about the data being returned. Metadata can include the total number of items that match the filter
+criteria, the current page of results, the size of each page, and other relevant information.
 
-// TODO: add description
+Including metadata such as the total number of filtered items, the current page, and the page size provides several benefits:
 
-**Request**
+- **Improved User Experience**: Clients can present more informative interfaces to users, such as displaying the total number of results and providing pagination controls.
+- **Enhanced Navigation**: Clients can easily calculate the number of pages available and navigate through them, making it easier to retrieve the desired data.
+- **Better Performance Optimization**: Knowing the total number of items and the current page helps clients optimize subsequent requests, particularly when dealing with large datasets.
+
+**Key Considerations:**
+
+- **Total Count**: Include the total number of items that match the filter criteria, even if only a subset of those items is returned in the response.
+- **Pagination Details**: Include details about the current page and the size of each page to help clients understand which portion of the dataset is being viewed.
+- **Consistent Format**: Ensure that metadata is provided in a consistent format across different endpoints, making the API predictable and easier to use.
+
+**Example:**
+
+Consider an API endpoint that returns a paginated list of articles filtered by a specific category.
+
+**Request:**
+
 ```http
-// TODO: add example
+GET /articles?category=technology&page=2&pageSize=10
 ```
+
+- **Request**: The client requests the second page of articles filtered by the "technology" category, with 10 articles per page.
+
+**Response:**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "metadata": {
+    "totalItems": 45,
+    "pageSize": 10,
+    "currentPage": 2,
+    "totalPages": 5
+  },
+  "data": [
+    {
+      "id": 11,
+      "title": "Latest Tech Innovations",
+      "content": "An article about the latest in technology...",
+      "category": "technology",
+      "publishedAt": "2024-05-01T12:00:00Z"
+    },
+    {
+      "id": 12,
+      "title": "AI and the Future",
+      "content": "Discussing the impact of AI on various industries...",
+      "category": "technology",
+      "publishedAt": "2024-05-02T15:30:00Z"
+    }
+    // Additional articles...
+  ]
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code, including metadata that provides information about the total number of items (`totalItems`), the size of each page (`pageSize`), the current page being viewed (`currentPage`), and the total number of pages (`totalPages`). The response also includes the actual data (the list of articles) for the requested page.
+
+This practice enhances the usability of the API by allowing clients to understand the scope of the data and navigate through paginated results efficiently.
+
 
 <br><br>
 
