@@ -20,7 +20,7 @@ This project is a collection of best practices and guidelines for REST API desig
 - [Message Content](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/MessageContent.md)
 - [Versioning](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Versioning.md)
 - [Error Handling](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/ErrorHandling.md)
-- [Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Filtering.md)
+- [Search & Filtering](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/SearchAndFiltering.md)
 - [Sorting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Sorting.md)
 - [Pagination](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Pagination.md)
 - [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)

@@ -1,4 +1,4 @@
-# Filtering
+# Search and Filtering
 
 
 ## General
