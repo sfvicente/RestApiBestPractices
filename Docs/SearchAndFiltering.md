@@ -64,6 +64,17 @@ GET /api/products?category=electronics&price<100
 <br><br>
 
 
+### Always validate search parameters and return 400 Bad Request for invalid or unsupported filters
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Always use clear and consistent syntax for filter expressions
 
 // TODO: add description
