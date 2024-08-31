@@ -291,14 +291,63 @@ This practice enhances the usability of the API by allowing clients to understan
 <br><br>
 
 
-### Consider allowing case insensitive filtering for string fields to improve usability
+### Consider allowing case-insensitive filtering for string fields to improve usability
+When designing endpoints that support filtering based on string fields, it is often beneficial to allow case-insensitive
+filtering. This provides the following advantages:
 
-// TODO: add description
+- **Improved User Experience**: Users do not have to worry about matching the exact case of the data stored on the server. This can lead to a more seamless and frustration-free interaction with the API.
+- **Greater Flexibility**: Allows clients to perform searches without needing to normalize or preprocess user input to match the case of stored data.
+- **Consistency Across Applications**: Case-insensitive filtering ensures that applications consuming the API behave consistently, regardless of how user input is formatted or stored data's case sensitivity.
 
-**Request**
+**Key Considerations:**
+
+- **Performance**: Implementing case-insensitive searches might have performance implications depending on the underlying database or data store.
+- **Locale Sensitivity**: Consider how different locales might affect case conversion and comparison, especially for non-ASCII characters.
+- **Consistency**: Ensure that case-insensitive filtering behavior is consistent across all relevant API endpoints.
+
+**Example:**
+
+Consider an API endpoint that allows clients to filter a list of users by their name. 
+
+**Request:**
+
 ```http
-// TODO: add example
+GET /users?name=John
 ```
+
+- **Request**: The client requests to filter the list of users whose names match "John", regardless of the case (e.g., "John", "john", "JOHN", etc.).
+
+**Response:**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "registeredAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "johnny Appleseed",
+      "email": "johnny@example.com",
+      "registeredAt": "2024-02-10T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "name": "JOHN SMITH",
+      "email": "johnsmith@example.com",
+      "registeredAt": "2024-03-05T09:20:00Z"
+    }
+  ]
+}
+```
+
+- **Response**: The server responds with a `200 OK` status code and returns a list of users whose names match the filter criteria, regardless of the case. The response includes users named "John Doe", "johnny Appleseed", and "JOHN SMITH", demonstrating that the filtering is case-insensitive.
 
 <br><br>
 
