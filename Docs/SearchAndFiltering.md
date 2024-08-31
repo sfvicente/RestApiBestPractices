@@ -374,6 +374,18 @@ Content-Type: application/json
 <br><br>
 
 
+### Never return sensitive data in search results
+
+// TODO: add description
+
+**Request**
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Consider implementing caching strategies for commonly used filters to enhance performance
 
 // TODO: add description
