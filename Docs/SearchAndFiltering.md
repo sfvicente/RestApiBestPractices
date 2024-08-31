@@ -16,7 +16,7 @@
 <br><br>
 
 
-### Always respond with a valid response body and a `200` HTTP status code when filtering is performed on a collection and the result set is empty.
+### Always return a `200 OK` status code for successful search requests, even if the result set is empty
 
 // TODO: add description
 
