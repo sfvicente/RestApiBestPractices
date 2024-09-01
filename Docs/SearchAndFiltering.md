@@ -64,6 +64,17 @@ GET /api/products?category=electronics&price<100
 <br><br>
 
 
+### Consider supporting partial matching and wildcards in search queries
+
+// TODO: add description
+
+```http
+
+```
+
+<br><br>
+
+
 ### Always validate search parameters and return 400 Bad Request for invalid or unsupported filters
 
 // TODO: complement description
