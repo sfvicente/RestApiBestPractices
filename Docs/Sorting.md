@@ -5,6 +5,17 @@
 <br>
 
 
+### Consider allowing clients to specify sort order in search results
+
+// TODO: add description
+
+```http
+// TODO: add example
+```
+
+<br><br>
+
+
 ### Consider allowing results of a collection query to be sorted based on property values.
 
 // TODO: add description
