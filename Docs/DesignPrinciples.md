@@ -136,3 +136,15 @@ See also: atomicity
 
 Additional Tags: URLs
 <br><br>
+
+
+### Always use hyphens to separate words in URLs
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Additional Tags: URLs
+<br><br>
