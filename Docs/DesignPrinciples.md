@@ -148,3 +148,15 @@ Additional Tags: URLs
 
 Additional Tags: URLs
 <br><br>
+
+
+### Always follow a consistent URL structure
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Additional Tags: URLs
+<br><br>
