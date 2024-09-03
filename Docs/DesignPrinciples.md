@@ -186,3 +186,14 @@ Additional Tags: URLs
 <br><br>
 
 
+### Always support human-readable identifiers where possible in URLs
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Additional Tags: URLs
+<br><br>
+
