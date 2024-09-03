@@ -160,3 +160,15 @@ Additional Tags: URLs
 
 Additional Tags: URLs
 <br><br>
+
+
+### Avoid Including Unnecessary Information in URLs
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Additional Tags: URLs
+<br><br>
