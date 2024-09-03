@@ -172,3 +172,17 @@ Additional Tags: URLs
 
 Additional Tags: URLs
 <br><br>
+
+
+### Always use lowercase letters for URLs
+
+// TODO: complement description
+
+```http
+// TODO: add example
+```
+
+Additional Tags: URLs
+<br><br>
+
+
