@@ -128,12 +128,6 @@ See also: atomicity
 // TODO: add example
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
 Additional Tags: URLs
 <br><br>
 
