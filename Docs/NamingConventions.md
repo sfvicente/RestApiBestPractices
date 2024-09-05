@@ -128,19 +128,27 @@ and consistency, making it easier for developers to understand and use the API.
 <br><br>
 
 
-### For query parameters, prefer the use of snake case.
+### Prefer using snake_case for query parameters to improve readability and consistency.
+When defining query parameters for operations, prefer using **snake_case** (lowercase letters with underscores separating words) to improve the
+readability and consistency of the API. This format aligns well with common programming languages that use snake_case for variable names and allows
+for uniformity in naming conventions, making it easier for developers to interact with the API.
 
-// TODO: add description
+Snake_case is easier to read than alternatives like camelCase or kebab-case because underscores provide clear separation between words, especially
+in URLs where spacing isn’t possible. Consistent casing across an API also reduces cognitive load for developers and avoids common issues with case sensitivity.
 
+**Benefits of Using Snake Case for Query Parameters:**
+- **Readability**: Snake_case is easy to scan and interpret, making query parameters self-explanatory.
+- **Consistency**: Sticking to a single naming convention avoids confusion when the API grows, helping developers follow a predictable pattern.
+- **Compatibility**: Many backend frameworks and databases natively support snake_case, making it easier to work with data transformations.
+
+---
+
+**Example: query parameters in snake_case:**
 ```http
-// TODO: add example
+GET /articles?article_id=123&author_name=JohnDoe
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
+The query parameters `article_id` and `author_name` use snake_case, improving readability and maintaining consistency with most programming languages' conventions.
 
 Additional Tags: Query Parameters
 <br><br>
