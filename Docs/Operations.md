@@ -133,13 +133,30 @@ See also: Binary Resources, Performance
 <br><br>
 
 
-### Consider implementing HTTP `HEAD` requests for large binary resources.
+### Consider implementing HTTP `HEAD` requests for large binary resources
+When dealing with large binary resources, such as images, videos, or files, consider implementing support for HTTP `HEAD` requests. The `HEAD` method
+is useful when clients need metadata about a resource, like its size, content type, or last modified date, without downloading the entire file. This
+can help clients decide whether to proceed with a `GET` request, especially for large resources, improving efficiency and reducing unnecessary bandwidth usage.
 
-// TODO: add description
+The `HEAD` request returns the same headers as a `GET` request but without the response body, making it an effective way to retrieve resource information.
+
+**Example:**
 
 ```http
-// TODO: add example
+HEAD /files/video.mp4 HTTP/1.1
+Host: example.com
 ```
+
+- **Request**: The client sends a `HEAD` request to get metadata about the `video.mp4` file.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: video/mp4
+Content-Length: 5000000
+Last-Modified: Wed, 15 May 2024 12:00:00 GMT
+```
+
+- **Response**: The server responds with headers that include the content type (`video/mp4`), the content length (`5000000` bytes), and the last modified date. No body is returned in the response.
 
 See also: Binary Resources, Performance
 <br><br>
