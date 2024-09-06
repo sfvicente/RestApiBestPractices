@@ -21,13 +21,40 @@ intuitive approach to interacting with RESTful APIs.
 <br><br>
 
 
-### Use `GET` for Read Operations
-Use the `GET` method to retrieve data or resources from the server. `GET` requests should not have side effects on the server
-and should only be used for retrieving data.
+### Always use `GET` for retrieving resources without side effects
+The `GET` method should exclusively be used for fetching data or resources from the server. It must be idempotent and free of side effects, meaning
+it should not modify, create, or delete any data on the server. This ensures that clients can safely repeat `GET` requests without concerns about
+changing the state of the resource.
+
+In adherence to REST principles, `GET` operations should be simple and focused solely on reading or retrieving information.
 
 ```http
 GET /api/users HTTP/1.1
+Host: example.com
+Accept: application/json
 ```
+
+- **Request**: Retrieves a list of users from the API.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "username": "janedoe",
+    "email": "jane@example.com"
+  },
+  {
+    "id": 2,
+    "username": "johndoe",
+    "email": "john@example.com"
+  }
+]
+```
+
+- **Response**: The server returns a `200 OK` status code and a JSON array with the user data (`id`, `username`, `email`). This is a basic read-only operation that retrieves data without modifying the server.
 
 <sub>See also: HTTP Methods</sub>
 <br><br>
