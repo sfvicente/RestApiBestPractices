@@ -102,19 +102,32 @@ Location: /api/users/1
 <br><br>
 
 
-### Consider supporting partial responses for larger binary resources
-Depending on business requirements, resources may contain larger binary assets. For example, a user profile resource might contain a
-binary image representation.
+### Consider supporting partial responses for large binary resources
+When handling larger binary resources, such as images or videos, consider implementing support for partial responses using the `Range` header. This
+allows clients to request specific portions of a resource, improving performance and reducing bandwidth usage. It is particularly useful when
+downloading large files, streaming content, or when network reliability is a concern.
+
+Supporting partial responses ensures that large resources can be retrieved incrementally, minimizing the load on both the client and server.
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /files/video.mp4 HTTP/1.1
+Host: example.com
+Range: bytes=0-999
 ```
 
-// TODO: complement description
+- **Request**: The client requests the first 1000 bytes (from byte 0 to 999) of the file `video.mp4`.
 
 ```http
-// TODO: add example
+HTTP/1.1 206 Partial Content
+Content-Type: video/mp4
+Content-Range: bytes 0-999/5000000
+
+(binary data)
 ```
+
+- **Response**: The server responds with a `206 Partial Content` status code, indicating that the requested range of the resource is being returned. The `Content-Range` header specifies which portion of the resource is included, and the total size of the file (`5000000` bytes).
 
 See also: Binary Resources, Performance
 <br><br>
