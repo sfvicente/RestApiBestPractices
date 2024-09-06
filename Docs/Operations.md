@@ -60,13 +60,43 @@ Content-Type: application/json
 <br><br>
 
 
-### Use `POST` for Create Operations
-Use the `POST` method to create new resources on the server. `POST` requests should be used for operations that result in the
-creation of a new resource.
+### Always use `POST` for creating new resources
+Use the `POST` method to create new resources on the server. `POST` requests are designed for operations where the client submits data that
+the server uses to generate new resources. These requests should be non-idempotent, meaning each request results in the creation of a new
+resource, even if the data is identical to previous submissions. 
 
-  ```http
-  POST /api/users HTTP/1.1
-  ```
+A `POST` request typically returns a `201 Created` status code, along with a `Location` header containing the URI of the newly created
+resource. The response body may include a representation of the resource itself.
+
+**Example:**
+
+```http
+POST /api/users HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{
+  "username": "janedoe",
+  "email": "jane@example.com"
+}
+```
+
+- **Request**: Creates a new user with the provided `username` and `email`.
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /api/users/1
+
+{
+  "id": 1,
+  "username": "janedoe",
+  "email": "jane@example.com",
+  "createdAt": "2024-09-06T12:00:00Z"
+}
+```
+
+- **Response**: The server returns a `201 Created` status code and the `Location` header pointing to the new resource’s URI (`/api/users/1`). The response body contains the newly created user data, including the `id` and `createdAt` timestamp.
 
 <sub>See also: HTTP Methods</sub>
 <br><br>
