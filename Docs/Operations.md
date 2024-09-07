@@ -158,5 +158,5 @@ Last-Modified: Wed, 15 May 2024 12:00:00 GMT
 
 - **Response**: The server responds with headers that include the content type (`video/mp4`), the content length (`5000000` bytes), and the last modified date. No body is returned in the response.
 
-See also: Binary Resources, Performance
+Tags: `HTTP methods` `HEAD` `binary resources` `metadata` `performance optimization` `content length` `file handling` `large resources` `efficiency`
 <br><br>
