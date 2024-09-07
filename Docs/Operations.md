@@ -129,7 +129,7 @@ Content-Range: bytes 0-999/5000000
 
 - **Response**: The server responds with a `206 Partial Content` status code, indicating that the requested range of the resource is being returned. The `Content-Range` header specifies which portion of the resource is included, and the total size of the file (`5000000` bytes).
 
-See also: Binary Resources, Performance
+Tags: `HTTP methods` `Range header` `partial responses` `binary resources` `large files` `performance optimization` `bandwidth efficiency` `file streaming` `incremental loading`
 <br><br>
 
 
