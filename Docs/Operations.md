@@ -56,7 +56,7 @@ Content-Type: application/json
 
 - **Response**: The server returns a `200 OK` status code and a JSON array with the user data (`id`, `username`, `email`). This is a basic read-only operation that retrieves data without modifying the server.
 
-<sub>See also: HTTP Methods</sub>
+Tags: `HTTP methods` `GET` `idempotency` `read-only` `side effects` `data retrieval` `200 OK` `safe methods`
 <br><br>
 
 
