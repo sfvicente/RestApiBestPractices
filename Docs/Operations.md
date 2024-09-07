@@ -98,7 +98,7 @@ Location: /api/users/1
 
 - **Response**: The server returns a `201 Created` status code and the `Location` header pointing to the new resource’s URI (`/api/users/1`). The response body contains the newly created user data, including the `id` and `createdAt` timestamp.
 
-<sub>See also: HTTP Methods</sub>
+Tags: `HTTP methods` `POST` `resource creation` `non-idempotent` `201 Created` `Location header` `response body`
 <br><br>
 
 
