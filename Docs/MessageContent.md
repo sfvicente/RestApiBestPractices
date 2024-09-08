@@ -120,19 +120,45 @@ Tags: `Accept`
 <br><br>
 
 
-### Service operations should provide JSON as the default encoding.
+### Always provide JSON as the default response format
+To ensure consistency, interoperability, and ease of use, services should always provide JSON as the default encoding format for data
+exchange. JSON is lightweight, human-readable, and widely supported across different programming languages, making it an ideal choice
+for modern web APIs. By adopting JSON as the default response format, services offer a standardized and familiar structure for developers
+interacting with the API.
 
-// TODO: add description
+While supporting multiple formats such as XML or YAML can be useful in certain cases, JSON should be the default due to its simplicity
+and efficiency. If a client requires a different response format, the API should allow negotiation via the `Accept` header, but JSON
+remains the fallback option.
+
+**Example**:
 
 ```http
-// TODO: add example
+GET /api/users HTTP/1.1
+Host: example.com
+Accept: application/json
 ```
 
-// TODO: complement description
+- **Request**: The client requests a list of users in JSON format.
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "username": "janedoe",
+    "email": "jane@example.com"
+  },
+  {
+    "id": 2,
+    "username": "johndoe",
+    "email": "john@example.com"
+  }
+]
 ```
+
+- **Response**: The server responds with a `200 OK` status code and provides the user data in JSON format, the default encoding. 
 
 <br><br>
 
