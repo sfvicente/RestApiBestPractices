@@ -178,11 +178,42 @@ Additional Tags: `documentation`
 <br><br>
 
 
-### Always provide support contact information in error responses for critical `5xx` errors to assist clients in resolving issues.
+### Always include support contact information in critical `5xx` error responses
+For critical server-side errors that result in `5xx` status codes, provide meaningful feedback to clients, including support contact
+information. This helps clients quickly report issues and get assistance in resolving problems, especially when the error indicates
+a significant server failure. 
 
-// TODO: add descriptions
+By including a support email or URL in the error response, you offer a clear path for clients to seek help. This is particularly
+important for high-impact scenarios, where the client is dependent on the service’s uptime and availability. 
 
-// TODO: add examples
+Providing support information demonstrates a commitment to reliable service and helps clients avoid frustration when encountering
+unexpected errors.
+
+**Example**:
+
+```http
+GET /api/orders HTTP/1.1
+Host: example.com
+```
+
+- **Request**: The client makes a request that results in a critical server error.
+
+```http
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json
+
+{
+  "error": "Internal Server Error",
+  "message": "An unexpected error occurred while processing your request.",
+  "timestamp": "2024-09-06T12:00:00Z",
+  "support": {
+    "email": "support@example.com",
+    "url": "https://example.com/support"
+  }
+}
+```
+
+- **Response**: The server responds with a `500 Internal Server Error`, including a descriptive error message and support contact information (email and support URL) to assist the client in resolving the issue.
 
 Additional Tags: `support`
 <br><br>
