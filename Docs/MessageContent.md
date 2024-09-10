@@ -160,6 +160,7 @@ Content-Type: application/json
 
 - **Response**: The server responds with a `200 OK` status code and provides the user data in JSON format, the default encoding. 
 
+Tags: `response format` `JSON` `content negotiation` `interoperability` `default behavior` `data exchange`
 <br><br>
 
 
