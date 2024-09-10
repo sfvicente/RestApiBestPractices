@@ -301,12 +301,42 @@ When localization of dates is required on client applications, it should be perf
 
 
 ### Always use `Base64` encoding or other appropriate methods to handle binary data within JSON or other text-based formats
+Methods like `Base64` encoding should be used when transmitting binary data, such as images or files, in APIs. Since JSON is text-based
+and doesn’t natively support binary data, encoding the binary content into `Base64` converts it into a text format that can be safely
+transmitted within JSON payloads or other text-based formats.
 
-// TODO: complement description
+While `Base64` encoding is the most commonly used approach, alternative methods such as `hexadecimal` encoding can also be appropriate
+depending on the context. The goal is to ensure data integrity during transmission and avoid potential issues that arise from attempting
+to send raw binary data in formats that are not designed for it.
+
+Using encoding techniques like `Base64` allows APIs to handle binary data efficiently while adhering to the constraints of text-based formats.
+
+**Example:**
 
 ```http
-// TODO: add example
+POST /api/upload-image HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{
+  "filename": "image.png",
+  "filedata": "iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAADhdbDkAA..."
+}
 ```
+
+- **Request**: In this example, the `filedata` field contains a `Base64`-encoded version of an image file (`image.png`). The binary image data is converted to `Base64` to be safely transmitted in the JSON payload.
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "message": "Image uploaded successfully",
+  "fileUrl": "https://example.com/images/1"
+}
+```
+
+- **Response**: The server processes the `Base64`-encoded image data and returns a success message, along with the URL of the uploaded image.
 
 <br><br>
 
