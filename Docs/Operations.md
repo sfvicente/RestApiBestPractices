@@ -17,7 +17,7 @@ intuitive approach to interacting with RESTful APIs.
 - **Idempotent and Safe Operations**: HTTP methods like `GET`, `PUT`, and `DELETE` have defined idempotent and safe characteristics, aligning with REST principles.
 - **Uniform Interface**: Leveraging HTTP methods establishes a uniform interface for API endpoints, improving consistency and predictability.
 
-<sub>See also: HTTP Methods</sub>
+Tags: `HTTP methods` `design principles` `semantic clarity` `idempotent operations` `safe operations` `uniform interface` `standardized interactions`
 <br><br>
 
 
