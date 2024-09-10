@@ -8,7 +8,7 @@ of the HTTP protocol.
 <br>
 
 
-### API operations should be defined in terms of HTTP methods
+### Always define API operations using the appropriate HTTP methods
 API operations should be defined using the appropriate HTTP methods to leverage the semantics and behaviors defined
 by the HTTP protocol. Each HTTP method corresponds to a specific action or intent, providing a standardized and 
 intuitive approach to interacting with RESTful APIs.
