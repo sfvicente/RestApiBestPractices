@@ -7,7 +7,7 @@
 <br>
 
 
-### Applications should be designed and implemented to reduce bandwidth requirements and improve responsiveness.
+### Always design applications to minimize bandwidth usage and enhance responsiveness
 
 // TODO: add description.
 
