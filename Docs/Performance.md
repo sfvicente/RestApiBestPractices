@@ -18,7 +18,7 @@
 <br><br>
 
 
-### Applications should support pagination to limit access to large collections of data items, thus reducing network traffic.
+### Always implement pagination to efficiently manage large data collections and minimize network traffic
 Applications should support pagination when returning large collections of data to clients in order to enhance performance,
 reduce latency, and manage resource utilization effectively.
 
