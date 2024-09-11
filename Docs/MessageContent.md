@@ -181,7 +181,7 @@ e.g., firstName instead of first_name.
 <br><br>
 
 
-### Property names should use snake case.
+### Consider using snake case for property names
 
 // TODO: add description
 
