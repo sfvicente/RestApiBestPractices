@@ -82,7 +82,7 @@ As a general guideline, compress the payload of response messages with gzip, unl
 <br><br>
 
 
-### Do not use compression if the amount of requests being served is so high that compression time becomes a bottleneck.
+### Do not use compression if the amount of requests being served is so high that compression time becomes a bottleneck
 
 // TODO: add description.
 
@@ -148,7 +148,7 @@ By supporting both compressed and uncompressed payloads, APIs become more versat
 <br><br>
 
 
-### A server should indicate it is using gzip compression via the `Content-Encoding` header.
+### A server should indicate it is using gzip compression via the `Content-Encoding` header
 Servers should indicate the usage of gzip compression for response payloads by including the `Content-Encoding` header in HTTP
 responses. Gzip compression reduces the size of transmitted data, leading to improved network performance and reduced bandwidth
 consumption. This header informs clients that the response is compressed, allowing them to properly decompress the data.
