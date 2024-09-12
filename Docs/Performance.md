@@ -150,7 +150,7 @@ By supporting both compressed and uncompressed payloads, APIs become more versat
 <br><br>
 
 
-### A server should indicate it is using gzip compression via the `Content-Encoding` header
+### Always indicate gzip compression using the `Content-Encoding` header
 Servers should indicate the usage of gzip compression for response payloads by including the `Content-Encoding` header in HTTP
 responses. Gzip compression reduces the size of transmitted data, leading to improved network performance and reduced bandwidth
 consumption. This header informs clients that the response is compressed, allowing them to properly decompress the data.
