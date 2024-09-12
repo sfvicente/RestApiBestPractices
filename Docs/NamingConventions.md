@@ -75,7 +75,7 @@ enhances the clarity and structure of your API, making it more intuitive and eas
 <br><br>
 
 
-### For path segments, prefer the use of lowercase words.
+### Prefer the use of lowercase words for path segments
 Use lowercase words for path segments in your API URLs to ensure consistency and to comply with URL standards
 outlined in RFC 3986. Lowercase paths enhance readability and prevent potential issues related to case sensitivity.
 
