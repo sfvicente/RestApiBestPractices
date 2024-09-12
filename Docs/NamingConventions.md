@@ -8,7 +8,7 @@ the API effectively.
 <br>
 
 
-### Use nouns to represent resources.
+### Always use nouns to represent resources
 Resources should be represented using nouns to ensure clarity, consistency, and adherence to REST principles.
 
 Using nouns to represent resources offers the following advantages:
