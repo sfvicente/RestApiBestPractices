@@ -46,7 +46,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Design the API to limit the amount of data returned by any single request.
+### Always design API operations to limit the amount of data returned in a single response
 
 // TODO: add description
 
