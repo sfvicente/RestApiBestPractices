@@ -30,7 +30,7 @@ GET /api/users/{id} HTTP/1.1
 <br><br>
 
 
-### Resource names should be pluralized.
+### Always pluralize resource names
 Resource names should generally be pluralized to reflect collections of resources. 
 
 Pluralizing resource names offers several benefits:
