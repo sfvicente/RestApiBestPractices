@@ -5,7 +5,7 @@ methods to perform operations on these entities, ensuring a RESTful, consistent,
 ## General
 
 
-### Always model the services around domain entities using the standard HTTP methods as operation indicators.
+### Always model the services around domain entities using the standard HTTP methods as operation indicators
 Design your services to revolve around domain entities, using standard HTTP methods to perform operations on those
 entities. Avoid modeling service operations as actions; instead, focus on the domain entities that compose the
 API model, and apply standard HTTP methods to interact with them.
