@@ -95,14 +95,29 @@
 
 
 ### Always include the `Content-Type` header in the responses to specify the format of the returned data
+The `Content-Type` header in HTTP responses informs the client about the format of the returned data, allowing proper
+interpretation. This header specifies the media type (MIME type) of the response body, such as `application/json` for
+JSON data or `text/html` for HTML.
 
-// TODO: complement description
+Always setting the `Content-Type` ensures that clients can correctly process the response, avoiding potential errors or
+misinterpretations. It's particularly important in APIs where different response formats may be supported, or where the
+client needs to parse the response in a specific way.
+
+**Example:**
 
 ```http
-// TODO: add example
-e.g., Content-Type: application/json.
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "username": "janedoe",
+  "email": "jane@example.com"
+}
 ```
 
+- **Response**: The server includes the `Content-Type: application/json` header, indicating the data is formatted in JSON. The client will use this information to correctly parse the returned user data.
+- 
 Tags: `Content-Type`
 <br><br>
 
