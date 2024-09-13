@@ -117,7 +117,7 @@ Content-Type: application/json
 ```
 
 - **Response**: The server includes the `Content-Type: application/json` header, indicating the data is formatted in JSON. The client will use this information to correctly parse the returned user data.
-- 
+
 Tags: `Content-Type`
 <br><br>
 
