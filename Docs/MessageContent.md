@@ -23,12 +23,43 @@
 
 
 ### Always implement content negotiation using the `Accept` header to allow clients to specify their preferred response format
+Content negotiation allows clients to specify the desired format for the response data using the `Accept` header. This ensures that
+the server can dynamically return the response in the format requested by the client, such as `application/json`, `application/xml`,
+or `text/plain`. If the server supports multiple formats, it can respond with the best match based on the `Accept` header values
+provided by the client.
 
-// TODO: complement description
+Implementing content negotiation improves flexibility, allowing the same API to serve different clients with varying format
+requirements, while maintaining consistent behavior.
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /api/users HTTP/1.1
+Host: example.com
+Accept: application/json
 ```
+
+- **Request**: The client requests a list of users in JSON format by specifying `Accept: application/json`.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "username": "janedoe",
+    "email": "jane@example.com"
+  },
+  {
+    "id": 2,
+    "username": "johndoe",
+    "email": "john@example.com"
+  }
+]
+```
+
+- **Response**: The server responds with the requested JSON data and includes the `Content-Type: application/json` header to indicate the format of the response.
 
 <br><br>
 
