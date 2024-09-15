@@ -61,6 +61,7 @@ Content-Type: application/json
 
 - **Response**: The server responds with the requested JSON data and includes the `Content-Type: application/json` header to indicate the format of the response.
 
+Tags: `Content Negotiation` `Accept Header` `Response Format` `HTTP Headers` `Flexible Responses` `Client Preferences`
 <br><br>
 
 
