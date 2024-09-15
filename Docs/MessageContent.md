@@ -149,7 +149,7 @@ Content-Type: application/json
 
 - **Response**: The server includes the `Content-Type: application/json` header, indicating the data is formatted in JSON. The client will use this information to correctly parse the returned user data.
 
-Tags: `Content-Type`
+Tags: `Content-Type Header` `Response Format` `MIME Type` `HTTP Headers` `Data Interpretation` `Client-Server Communication` `JSON`
 <br><br>
 
 
@@ -384,6 +384,7 @@ Content-Type: application/json
 
 - **Response**: The server processes the `Base64`-encoded image data and returns a success message, along with the URL of the uploaded image.
 
+Tags: `Base64 Encoding` `Binary Data Handling` `JSON` `Text-Based Formats` `Data Transmission` `Encoding Methods` `File Upload` `Data Integrity`
 <br><br>
 
 
