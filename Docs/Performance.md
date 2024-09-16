@@ -84,13 +84,23 @@ As a general guideline, compress the payload of response messages with gzip, unl
 <br><br>
 
 
-### Do not use compression if the amount of requests being served is so high that compression time becomes a bottleneck
+### Avoid using compression when high request volume causes performance bottlenecks
+Compression can reduce the size of response payloads, improving bandwidth usage and reducing transmission time. However, in high-traffic
+environments where the number of requests is extremely high, the time spent compressing data can become a performance bottleneck. In such
+cases, the cost of compressing responses may outweigh the benefits of reduced payload size, leading to increased latency and reduced server
+throughput.
 
-// TODO: add description.
+If the server's CPU resources are constrained or the overhead of compression significantly delays response times, it may be better to serve
+uncompressed data to ensure faster processing and response delivery.
 
-```http
-// TODO: add example
-```
+**Considerations:**
+- **CPU Overhead**: Compression requires processing power. In high-load scenarios, this could lead to resource exhaustion.
+- **Latency**: The time spent compressing data may increase the total response time, especially for smaller payloads that don't benefit much from compression.
+- **Server Load**: When request volume is high, prioritizing fast response times over compression can help maintain system performance.
+
+**Alternatives:**
+- **Selective Compression**: Compress only large payloads where the compression benefits are more substantial, while avoiding compression for small responses.
+- **Offloading Compression**: Use dedicated hardware or proxies for compression if compression is required and request volume is high.
 
 <br><br>
 
