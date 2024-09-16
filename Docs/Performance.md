@@ -72,14 +72,38 @@ Tags: `Pagination` `Data Collection Management` `Performance Optimization` `Reso
 
 
 ### Consider compressing response payloads before sending them to the client
+When sending large response payloads to clients, consider applying compression to reduce the size of the data transmitted
+over the network. Compression can significantly improve performance by lowering network latency and reducing bandwidth usage,
+especially for APIs serving large JSON responses, files, or other data-heavy resources. However, it's important to evaluate
+the trade-offs between compression time and the performance improvements based on the payload size and server capacity.
 
-As a general guideline, compress the payload of response messages with gzip, unless there are requirements not to do it.
+The most commonly used compression formats are `gzip` and `deflate`, which can be easily implemented using the `Content-Encoding`
+header. Clients capable of handling compressed responses should indicate their support via the `Accept-Encoding` header.
 
-// TODO: complement description.
-
+**Example Request with Compression Support:**
 ```http
-// TODO: add example
+GET /api/data
+Accept-Encoding: gzip, deflate
 ```
+
+**Example Compressed Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Encoding: gzip
+
+{compressed data}
+```
+
+**Benefits:**
+- **Reduced Bandwidth Usage**: Compression decreases the size of data sent over the network, minimizing bandwidth consumption.
+- **Improved Performance**: Reducing the payload size leads to faster data transmission and quicker response times.
+- **Optimized User Experience**: Clients experience faster load times, improving the perceived performance of the API.
+
+**Scenarios for Use:**
+- **Large JSON Responses**: When sending large sets of data, like lists of records or detailed resource representations.
+- **File Transfers**: When serving large files such as images or documents.
+- **APIs with High Traffic**: When network latency is a concern due to heavy usage or limited bandwidth.
 
 <br><br>
 
