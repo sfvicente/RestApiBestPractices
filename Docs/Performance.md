@@ -10,12 +10,16 @@ and high traffic loads more effectively, providing faster, more scalable, and re
 
 
 ### Always design applications to minimize bandwidth usage and enhance responsiveness
+Optimizing bandwidth usage and response times during API design helps maintain efficient client-server communication. By minimizing
+the size of data sent over the network and improving response times, you can enhance the overall performance of your application,
+reduce costs, and create a better user experience, particularly for clients with limited network capacity or mobile devices.
 
-// TODO: add description.
-
-```http
-// TODO: add example
-```
+To achieve this, several strategies can be applied:
+- **Data Compression**: Compress large payloads using formats like `gzip` or `deflate` to reduce the amount of data transferred over the network.
+- **Pagination and Filtering**: Limit the amount of data returned in a single request by implementing pagination, or allow clients to specify filters to reduce the size of the response.
+- **Efficient Data Formats**: Use lightweight data formats such as JSON or binary formats like `Protobuf` where appropriate, instead of larger or more verbose formats.
+- **Caching**: Implement client-side and server-side caching strategies to avoid sending redundant data over the network, reducing bandwidth consumption.
+- **Selective Field Requests**: Allow clients to request only the fields they need in a response, rather than sending full resource representations (e.g., using query parameters to specify fields).
 
 <br><br>
 
