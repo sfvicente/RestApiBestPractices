@@ -184,7 +184,7 @@ Content-Type: application/json
 
 By supporting both compressed and uncompressed payloads, APIs become more versatile and accessible, accommodating the needs and preferences of various clients and improving overall compatibility.
 
-**Tags:** `compression` `compatibility` `flexibility` `payload`
+Tags: `compression` `compatibility` `flexibility` `payload`
 <br><br>
 
 
