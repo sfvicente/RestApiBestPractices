@@ -139,7 +139,7 @@ Content-Type: application/json
 - **Improved Performance**: Helps maintain optimal performance and reduce server load by limiting the amount of data processed and transferred in each request.
 - **Clear Communication**: Provides clients with clear information about the dataset limits and the need to handle partial results, promoting better client-server interaction.
 
-**Tags:** `partial sets` `pagination` `limited results` `client expectations` `data handling` `performance optimization`
+Tags: `partial sets` `pagination` `limited results` `client expectations` `data handling` `performance optimization`
 <br><br>
 
 
@@ -281,5 +281,5 @@ Content-Type: application/json
 - **User Experience**: Enhances the client's ability to navigate through large datasets efficiently.
 - **Efficiency**: Reduces the need for additional requests to determine the size and scope of the dataset.
 
-**Tags:** `pagination` `metadata` `totalItems` `totalPages` `currentPage` `itemsPerPage`
+Tags: `pagination` `metadata` `totalItems` `totalPages` `currentPage` `itemsPerPage`
 <br><br>
