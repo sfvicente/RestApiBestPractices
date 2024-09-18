@@ -238,7 +238,7 @@ Content-Type: application/json
 - **Consistency:** Provides stable results even if the underlying data changes.
 - **Scalability:** Handles large datasets more effectively.
 
-Tags: `pagination` `pagination tokens` `cursor-based pagination` `query parameters` `large datasets` `performance` `API design` `best practices`
+Tags: `pagination` `pagination tokens` `cursor-based pagination` `query parameters` `large datasets` `performance`
 <br><br>
 
 
