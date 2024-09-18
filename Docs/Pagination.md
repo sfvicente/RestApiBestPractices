@@ -6,7 +6,7 @@ smaller, manageable chunks using query parameters, improving performance and use
 <br>
 
 
-### Consider supporting partial sets on service operations that return collections.
+### Consider supporting partial sets on service operations that return collections
 When designing API endpoints that return collections of resources, consider supporting partial sets to improve performance and
 efficiency. This involves implementing pagination, filtering, and sorting mechanisms to allow clients to request and process
 manageable chunks of data.
@@ -143,7 +143,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Clients of service operations that support partial sets are expected to correctly use pagination to retrieve the entire collection.
+### Clients of service operations that support partial sets are expected to correctly use pagination to retrieve the entire collection
 
 // TODO: add description
 
@@ -201,7 +201,7 @@ Tags: `pagination` `query parameters` `page` `limit`
 <br><br>
 
 
-### Consider using pagination tokens for large datasets.
+### Consider using pagination tokens for large datasets
 For large datasets, consider implementing pagination tokens to improve performance and provide a more stable set of results. This
 involves returning a token in the response that the client can use to retrieve the next set of results. Tokens ensure that clients
 receive a stable set of results, even if the underlying data changes between requests.
