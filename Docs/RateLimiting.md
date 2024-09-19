@@ -5,7 +5,7 @@ which can lead to degraded performance, increased latency, or even denial of ser
 
 ## General Guidelines
 
-### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
+### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions
 A `429 Too Many Requests` response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
 limit, remaining quota, and when to retry. 
 accordingly.
@@ -98,7 +98,7 @@ Documenting rate limiting policies, you help API consumers understand and adhere
 
 ## Implementation Guidelines
 
-### Use a token bucket or sliding window algorithm for rate limiting.
+### Use a token bucket or sliding window algorithm for rate limiting
 
 TODO
 
@@ -184,7 +184,7 @@ Tags: `rate limiting` `X-Rate-Limit-Reset`
 
 
 
-### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions.
+### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions
 During periods of excessive requests, particularly when under attack, indiscriminately returning `429 Too Many Requests` for each
 request can strain server resources and risk system overload. Instead:
 
