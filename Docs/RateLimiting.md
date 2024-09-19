@@ -40,9 +40,9 @@ Tags: `rate limiting` `HTTP status code` `429 Too Many Requests`
 
 ### Clearly communicate rate limiting policies to consumers through documentation
 The rate limiting policies should be clearly communicated to API consumers through documentation. This transparency helps
- consumers understand the limits imposed on their requests, how those limits are calculated, and the appropriate actions
- to take when limits are reached. Effective communication of rate limiting policies can prevent misuse, improve user experience,
- and maintain the reliability and performance of the API.
+consumers understand the limits imposed on their requests, how those limits are calculated, and the appropriate actions
+to take when limits are reached. Effective communication of rate limiting policies can prevent misuse, improve user experience,
+and maintain the reliability and performance of the API.
 
  **Documentation Example**:
 
@@ -89,9 +89,11 @@ X-RateLimit-Reset: 1627776000
 }
 ```
 
-When the client attempts to retrieve a list of products after exceeding the limits of the API, the server responds with a `429 Too Many Requests` status code. The `Retry-After` header indicates that the client should wait 60 seconds before making another request. The response also includes `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset` headers to provide additional information about the rate limit status.
+When the client attempts to retrieve a list of products after exceeding the limits of the API, the server responds with
+a `429 Too Many Requests` status code. The `Retry-After` header indicates that the client should wait 60 seconds before 
+making another request. The response also includes `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset`
+headers to provide additional information about the rate limit status.
 
-Documenting rate limiting policies, you help API consumers understand and adhere to the usage limits, reducing the likelihood of unintentional rate limit violations and ensuring a smoother, more predictable interaction with the API.
 <br><br>
 
 
