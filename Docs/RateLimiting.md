@@ -196,7 +196,7 @@ conditions to maintain a positive user experience.
 
 These strategies enhance the system's scalability and resilience, protecting against potential attacks while maintaining operational stability.
 
-Additional Tags: `rate limiting` `resource usage` `performance` `HTTP status code` `429 Too Many Requests` `security`
+Tags: `rate limiting` `resource usage` `performance` `HTTP status code` `429 Too Many Requests` `security`
 <br><br>
 
 
