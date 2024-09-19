@@ -3,7 +3,7 @@ Rate limiting is a technique used to control the number of requests that a clien
 API within a defined period of time. The purpose of rate limiting is to protect the API from being overwhelmed by too many requests,
 which can lead to degraded performance, increased latency, or even denial of service.
 
-## General
+## General Guidelines
 
 ### Always return an HTTP `429 Too Many Requests` response when a rate limit is reached under normal conditions.
 A `429 Too Many Requests` response should be returned when clients exceed the defined rate limits, accompanied by headers indicating the
@@ -37,7 +37,7 @@ Tags: `rate limiting` `HTTP status code` `429 Too Many Requests`
 <br><br>
 
 
-## Documentation and Communication
+## Documentation and Communication Guidelines
 
 ### Clearly communicate rate limiting policies to consumers through documentation
 The rate limiting policies should be clearly communicated to API consumers through documentation. This transparency helps
@@ -96,10 +96,7 @@ Documenting rate limiting policies, you help API consumers understand and adhere
 <br><br>
 
 
-## Implementation
-Focuses on the technical aspects of implementing rate limiting in the API. It covers best practices for choosing and applying
-rate limiting algorithms, such as token bucket and sliding window, to effectively control incoming traffic. By implementing
-these algorithms, you can ensure fair usage, prevent server overload, and maintain optimal performance.
+## Implementation Guidelines
 
 ### Use a token bucket or sliding window algorithm for rate limiting.
 
@@ -108,11 +105,7 @@ TODO
 
 
 
-## HTTP Headers
-HTTP headers are the name or value pairs containing additional information that are transferred between clients and servers
-with HTTP requests or responses.
-<br>
-
+## HTTP Headers Guidelines
 
 ### Always use the `X-RateLimit-Limit` header to communicate the maximum number of requests permitted for an endpoint
 The `X-RateLimit-Limit` header should be used to communicate to clients the maximum number of requests permitted for a specific
@@ -208,11 +201,7 @@ Additional Tags: `rate limiting` `resource usage` `performance` `HTTP status cod
 
 
 
-## Reliability and User Experience
-Aaddresses strategies for maintaining the reliability of the service and ensuring a positive user experience, even under
-constraints such as rate limiting. It includes best practices for graceful degradation, ensuring that essential functionality
-remains available during high traffic periods or when rate limits are enforced. These strategies help to minimize disruptions
-and maintain a high level of service quality.
+## Reliability and User Experience Guidelines
 
 ### Implement graceful degradation strategies to ensure essential functionality remains available during rate limit enforcement
 
