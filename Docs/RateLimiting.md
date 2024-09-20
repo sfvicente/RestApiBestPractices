@@ -205,7 +205,28 @@ Tags: `rate limiting` `resource usage` `performance` `HTTP status code` `429 Too
 ## Reliability and User Experience Guidelines
 
 ### Implement graceful degradation strategies to ensure essential functionality remains available during rate limit enforcement
+Rather than cutting off all service access once a rate limit is reached, gracefully reduce non-critical features or data returned while
+keeping essential operations available. This ensures clients can still access vital parts of the service, even when restricted by rate limits.
 
-TODO
+**Approaches:**
+- **Prioritize Critical Endpoints**: Allow certain API operations, like login or account management, to remain accessible even after rate limits on less essential endpoints are enforced.
+- **Return Reduced Data Sets**: Instead of fully blocking responses, return partial or simplified responses to reduce load while keeping clients informed.
+- **Provide Meaningful Error Messages**: Inform clients clearly when rate limits are exceeded and indicate when they can resume full access, along with ways to stay within the limits.
+
+**Example:**
+
+```http
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+
+{
+  "error": "Rate limit exceeded. Essential functions remain available. Please wait 30 seconds before making additional requests."
+}
+```
+
+**Benefits:**
+- **Continuity**: Critical functionality remains accessible, preserving the user experience.
+- **Transparency**: Clients are informed of the limitations and can adjust their behavior accordingly.
+- **Load Management**: Gradual enforcement of rate limits helps balance server load without abrupt service disruptions.
 
 <br><br>
