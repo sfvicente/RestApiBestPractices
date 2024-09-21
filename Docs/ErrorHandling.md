@@ -241,7 +241,9 @@ Content-Type: application/json
 
 - **Response**: The server responds with a `500 Internal Server Error`, including a descriptive error message and support contact information (email and support URL) to assist the client in resolving the issue.
 
-Additional Tags: `support`
+Here are the tags formatted as requested:
+
+Tags: `error handling` `5xx errors` `server failures` `critical errors` `support information` `client assistance` `reliability` `uptime and availability` `error response structure` `service continuity`
 <br><br>
 
 
