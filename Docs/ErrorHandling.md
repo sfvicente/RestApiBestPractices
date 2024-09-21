@@ -39,11 +39,37 @@ Additional Tags: Security
 <br><br>
 
 
-### Always provide clear and informative error messages in the response body to help clients understand the nature of server errors.
+### Always provide clear and informative error messages in the response body to help clients understand the nature of server errors
+When an API encounters an error, the server should always return clear, concise, and actionable error messages in the response body. These
+messages should provide enough detail to help clients understand the issue and take corrective action. The response should include key
+information, such as the HTTP status code, a human-readable message, and, where appropriate, a more specific error code or documentation
+link for further guidance.
 
-// TODO: add descriptions
+**Error Message Elements:**
+- **HTTP Status Code**: A standard code representing the type of error (e.g., 400 for bad requests, 500 for internal server errors).
+- **Message**: A clear and concise description of what went wrong.
+- **Error Code (Optional)**: A unique code that clients can reference for specific error types.
+- **Documentation Links (Optional)**: URLs or references to more detailed explanations or troubleshooting steps.
 
-// TODO: add examples
+**Example:**
+
+```http
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": {
+    "code": 404,
+    "message": "The requested resource was not found",
+    "details": "Ensure the URL is correct or refer to the API documentation."
+  }
+}
+```
+
+**Benefits:**
+- **Improved Client Understanding**: Clients can quickly identify the nature of the error and adjust their requests accordingly.
+- **Faster Debugging**: Clear error messages help developers diagnose and resolve issues efficiently.
+- **Enhanced API Usability**: Informative errors make the API more predictable and user-friendly, reducing friction during integration.
 
 <br><br>
 
