@@ -135,6 +135,8 @@ allowed a maximum of 100 requests within the current minute.
 
 The client can use this information to implement rate limiting on their side, ensuring they don't exceed the allowed number of
 requests and risk being throttled by the server.
+
+Tags: `rate limiting` `X-RateLimit-Limit` `request limits` `response headers` `client communication` `performance` `developer experience` `rate limit enforcement`
 <br><br>
 
 
