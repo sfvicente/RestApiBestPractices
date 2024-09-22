@@ -94,6 +94,7 @@ a `429 Too Many Requests` status code. The `Retry-After` header indicates that t
 making another request. The response also includes `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset`
 headers to provide additional information about the rate limit status.
 
+Tags: `rate limiting` `documentation` `request limits` `429 Too Many Requests` `retry strategies` `client communication` `performance` `rate limit headers` `developer experience`
 <br><br>
 
 
