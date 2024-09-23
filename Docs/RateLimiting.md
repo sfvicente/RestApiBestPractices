@@ -161,7 +161,7 @@ In this example, the `X-RateLimit-Limit: 100` header communicates that 100 reque
 the rate limit window. The `X-RateLimit-Remaining: 88` header informs that the client has 88 requests remaining within the current
 rate limit window before hitting the limit.
 
-Tags: `rate limiting` `X-RateLimit-Remaining`
+Tags: `rate limiting` `X-RateLimit-Remaining` `response headers`
 <br><br>
 
 
