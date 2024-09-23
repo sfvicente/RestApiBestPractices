@@ -227,4 +227,5 @@ Content-Type: application/json
 - **Transparency**: Clients are informed of the limitations and can adjust their behavior accordingly.
 - **Load Management**: Gradual enforcement of rate limits helps balance server load without abrupt service disruptions.
 
+- Tags: `rate limiting` `graceful degradation` `critical functionality` `load management` `partial responses` `error handling` `user experience` `performance` `client communication`
 <br><br>
