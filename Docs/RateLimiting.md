@@ -184,10 +184,6 @@ Tags: `rate limiting` `X-Rate-Limit-Reset`
 <br><br>
 
 
-
-
-
-
 ### Consider limiting resource usage instead of returning an HTTP `429 Too Many Requests` under severe conditions
 During periods of excessive requests, particularly when under attack, indiscriminately returning `429 Too Many Requests` for each
 request can strain server resources and risk system overload. Instead:
@@ -202,7 +198,6 @@ These strategies enhance the system's scalability and resilience, protecting aga
 
 Tags: `rate limiting` `resource usage` `performance` `HTTP status code` `429 Too Many Requests` `security`
 <br><br>
-
 
 
 ## Reliability and User Experience Guidelines
