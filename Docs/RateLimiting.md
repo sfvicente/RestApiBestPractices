@@ -166,12 +166,14 @@ Tags: `rate limiting` `X-RateLimit-Remaining` `response headers`
 
 
 ### Use the `X-Rate-Limit-Reset` header to communicate the remaining window before the rate limit resets
+The `X-Rate-Limit-Reset` header informs clients when the current rate limit window will reset. This helps clients understand
+how long they need to wait before they can resume making requests at the normal rate. The header typically returns a timestamp
+(in UTC) or a time value (in seconds) indicating when the rate limit will reset.
 
-// TODO: add description.
+When the rate limit is exceeded, clients can use the information in this header to implement retries or adjust their request
+patterns accordingly, improving the efficiency of their interactions with the API and reducing unnecessary server load.
 
-When the rate limit is achieved and the application/service receives the error, it can check the `X-Rate-Limit-Reset` HTTP header to
-know when the rate-limiting will reset.
-
+**Example:**
 ```http
 HTTP/1.1 429 Too Many Requests
 Content-Type: application/json
@@ -180,7 +182,14 @@ X-Rate-Limit-Remaining: 0
 X-Rate-Limit-Reset: 3600
 ```
 
-Tags: `rate limiting` `X-Rate-Limit-Reset` `response headers`
+- **Explanation**: The `X-Rate-Limit-Reset: 3600` header indicates that the rate limit will reset in 3600 seconds (or 1 hour). This informs the client that they need to wait an hour before making additional requests.
+
+**Benefits:**
+- **Improved Client Experience**: Clients know exactly when they can resume normal activity, reducing frustration.
+- **Optimized Retry Logic**: Helps clients implement smart retry strategies, avoiding unnecessary requests during the wait period.
+- **Transparent Communication**: Ensures the API is clear about its rate limiting policies and resets.
+
+Tags: `rate limiting` `X-Rate-Limit-Reset` `response headers` `retry logic` `client experience`
 <br><br>
 
 
