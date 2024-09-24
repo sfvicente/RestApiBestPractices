@@ -165,7 +165,7 @@ Tags: `rate limiting` `X-RateLimit-Remaining` `response headers`
 <br><br>
 
 
-### Use the `X-Rate-Limit-Reset` header to communicate the remaining window before the rate limit resets
+### Always use the X-Rate-Limit-Reset header to indicate when the rate limit will reset
 The `X-Rate-Limit-Reset` header informs clients when the current rate limit window will reset. This helps clients understand
 how long they need to wait before they can resume making requests at the normal rate. The header typically returns a timestamp
 (in UTC) or a time value (in seconds) indicating when the rate limit will reset.
