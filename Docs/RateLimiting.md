@@ -100,7 +100,7 @@ Tags: `rate limiting` `documentation` `request limits` `429 Too Many Requests` `
 
 ## Implementation Guidelines
 
-### Use a token bucket or sliding window algorithm for rate limiting
+### Always implement rate limiting using token bucket or sliding window algorithms to balance fairness and efficiency
 
 TODO
 
