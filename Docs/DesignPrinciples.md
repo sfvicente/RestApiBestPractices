@@ -6,11 +6,22 @@ Design Principles are the fundamental guidelines that ensure APIs are well-struc
 
 
 ### Never maintain transient state information between requests
-REST APIs use a stateless request model.
+REST APIs use a stateless request model, meaning that each request from a client to the server must contain all the information
+needed to understand and process it. The server should not store any state information between requests that is specific to a
+user session or transaction.
 
-// TODO: complement description
+Maintaining state between requests can lead to inconsistencies, scalability issues, and increased complexity. If state needs to
+be maintained, it should be sent explicitly by the client in each request (e.g., using tokens or session identifiers) or persisted
+in a database, rather than being kept in the server's memory.
 
-HTTP requests can occur in any order.
+HTTP requests can occur in any order, and the server should be able to handle each one independently, without relying on any prior
+or future requests. This ensures better scalability, load distribution, and fault tolerance.
+
+**Example of Stateless Design**:
+- When a client logs in, it sends credentials, and the server responds with a token. The client sends this token in each subsequent request to maintain authentication without the server needing to remember the login state.
+
+Maintaining a stateless architecture improves reliability, simplifies debugging, and enables horizontal scaling, as no session
+information is tied to a particular server instance.
 
 Additional Tags: State Management
 <br><br>
