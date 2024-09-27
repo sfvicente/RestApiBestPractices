@@ -144,12 +144,23 @@ Additional Tags: URLs
 
 
 ### Always use hyphens to separate words in URLs
+When designing URLs for, always use hyphens (`-`) to separate words in order to improve readability and SEO. Hyphens are the
+preferred delimiter in URLs, as they are more readable by both humans and search engines. Avoid using underscores (`_`), as
+they are less intuitive and can be harder to distinguish in certain fonts.
 
-// TODO: complement description
+**Key Points:**
+- Hyphens make URLs more legible for users.
+- Search engines treat hyphens as word separators, improving searchability.
+- Avoid underscores, as they are often not treated as word separators in search engine indexing and are less visually apparent.
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /api/users/account-settings HTTP/1.1
+Host: example.com
 ```
+
+In this example, `account-settings` is easier to read than `accountsettings` or `account_settings`.
 
 Additional Tags: URLs
 <br><br>
