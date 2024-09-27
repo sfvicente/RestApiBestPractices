@@ -167,12 +167,26 @@ Additional Tags: URLs
 
 
 ### Always follow a consistent URL structure
+Maintaining a consistent URL structure improves clarity, predictability, and simplifies interactions with the API. A
+well-structured URL pattern makes an API easier to understand, navigate, and maintain. It also helps developers
+intuitively know how to access resources, improving developer experience and reducing errors.
 
-// TODO: complement description
+**Key Points:**
+- **Use predictable patterns**: Ensure similar resources are structured similarly (e.g., `/users/{id}` for user-related endpoints).
+- **Maintain resource hierarchy**: Reflect the relationship between resources in the URLs (e.g., `/users/{id}/orders` for orders belonging to a specific user).
+- **Avoid mixing nouns and verbs**: Focus on nouns in your URLs to represent resources, while verbs should be expressed in HTTP methods (e.g., `GET /orders` rather than `GET /fetchOrders`).
+- **Use plural nouns**: Always use plural nouns for collections (e.g., `/users`, `/products`), and singular for individual resources (e.g., `/users/{id}`).
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /api/users/123/orders HTTP/1.1
+Host: example.com
 ```
+
+In this example:
+- `/users/123/orders` indicates that we are retrieving orders for a specific user (`123`).
+- Consistent, hierarchical URL structure makes it clear how resources relate to each other.
 
 Additional Tags: URLs
 <br><br>
