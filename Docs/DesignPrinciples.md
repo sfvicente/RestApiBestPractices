@@ -192,7 +192,7 @@ Additional Tags: URLs
 <br><br>
 
 
-### Avoid Including Unnecessary Information in URLs
+### Avoid including unnecessary information in URLs
 
 // TODO: complement description
 
