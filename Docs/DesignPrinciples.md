@@ -205,12 +205,20 @@ Additional Tags: URLs
 
 
 ### Always use lowercase letters for URLs
+URLs should always be written in lowercase to ensure consistency and avoid potential issues with case sensitivity. Many
+servers, especially those based on Linux, treat URLs as case-sensitive, meaning that `/API/Users` and `/api/users` would
+be considered different resources. By using lowercase letters consistently, you can prevent unexpected behavior and ensure
+uniform access to resources.
 
-// TODO: complement description
+This approach enhances predictability, making it easier for clients to interact with your API without confusion or errors
+due to case discrepancies.
 
 ```http
-// TODO: add example
+GET /api/users HTTP/1.1
+Host: example.com
 ```
+
+In the above example, the URL uses lowercase letters, ensuring that it works across all servers without issues related to case sensitivity.
 
 Additional Tags: URLs
 <br><br>
