@@ -193,12 +193,27 @@ Additional Tags: URLs
 
 
 ### Avoid including unnecessary information in URLs
+When designing URLs for an API, avoid adding redundant or irrelevant data that does not directly contribute to identifying
+the resource. Keeping URLs concise and focused helps improve readability, usability, and maintainability. Extra information
+can lead to confusion, make the API harder to use, and complicate future changes.
 
-// TODO: complement description
+Redundant parameters, user session details, or unnecessary metadata should be omitted from the URL, and only essential
+identifiers and resource paths should be included.
 
+**Example of a bad URL:**
 ```http
-// TODO: add example
+GET /api/v1/products/12345/details/extra/unused-info
 ```
+
+**Improved URL:**
+```http
+GET /api/v1/products/12345
+```
+
+**Benefits:**
+- **Simplifies API calls**: Clients can more easily understand and interact with clean, concise URLs.
+- **Improves future scalability**: Reduces complexity when making changes to the API or resource structure.
+- **Enhances security**: Minimizes the exposure of sensitive or irrelevant information in URLs.
 
 Additional Tags: URLs
 <br><br>
