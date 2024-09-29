@@ -131,7 +131,7 @@ Tags: `atomic operations` `consistency` `data integrity` `rollback` `transaction
 <br>
 
 
-### URLs should be easily read and constructed by users
+### Always design URLs to be easily readable and user-friendly
 
 // TODO: add description
 
