@@ -132,11 +132,24 @@ Tags: `atomic operations` `consistency` `data integrity` `rollback` `transaction
 
 
 ### Always design URLs to be easily readable and user-friendly
+URLs should be simple, intuitive, and easy for users to read and understand. This includes using clear, descriptive terms, avoiding
+overly complex structures, and ensuring that the URL paths follow logical naming conventions. The easier a URL is to read, the easier
+it is for users and developers to navigate and work with the API.
 
-// TODO: add description
+**Best Practices:**
+- **Use meaningful resource names**: URLs should reflect the nature of the resource.
+- **Keep URLs short and simple**: Avoid deep nesting or unnecessary complexity.
+- **Use hyphens instead of underscores**: Hyphens are more readable in web browsers.
+- **Avoid unnecessary parameters or clutter**: Keep the query strings and path variables minimal.
 
+**Example of a complex URL:**
 ```http
-// TODO: add example
+GET /api/v1/getTheListOfAllAvailableProductsOnSale
+```
+
+**Improved user-friendly URL:**
+```http
+GET /api/v1/products/sale
 ```
 
 Additional Tags: URLs
