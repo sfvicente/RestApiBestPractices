@@ -240,12 +240,25 @@ Additional Tags: URLs
 
 
 ### Always support human-readable identifiers where possible in URLs
+Whenever possible, URLs should include human-readable identifiers to make them more intuitive and easier for users to understand. Instead
+of relying solely on numeric IDs or UUIDs, incorporating meaningful, readable names or slugs into URLs can improve clarity and usability
+for both developers and users interacting with the API. Human-readable identifiers help provide context, making it easier to identify
+resources at a glance.
 
-// TODO: complement description
-
+**Example of a URL with non-readable identifiers:**
 ```http
-// TODO: add example
+GET /api/v1/products/12345
 ```
+
+**Improved URL with human-readable identifiers:**
+```http
+GET /api/v1/products/laptop-dell-xps-13
+```
+
+**Benefits:**
+- **Improves usability**: Easier for users to interpret and navigate URLs.
+- **SEO-friendly**: Human-readable URLs can contribute to search engine optimization (SEO) for web-based APIs.
+- **Contextual clarity**: Provides more context in the URL, making it easier to understand the resource being accessed.
 
 Additional Tags: URLs
 <br><br>
