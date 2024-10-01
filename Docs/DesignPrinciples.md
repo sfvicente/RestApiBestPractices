@@ -175,7 +175,7 @@ Host: example.com
 
 In this example, `account-settings` is easier to read than `accountsettings` or `account_settings`.
 
-Additional Tags: URLs
+Tags: `URL design` `hyphens` `readability` `SEO` `word separators` `underscores` `search engines`
 <br><br>
 
 
