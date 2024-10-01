@@ -23,7 +23,7 @@ or future requests. This ensures better scalability, load distribution, and faul
 Maintaining a stateless architecture improves reliability, simplifies debugging, and enables horizontal scaling, as no session
 information is tied to a particular server instance.
 
-Additional Tags: State Management
+Tags: `stateless` `session management` `scalability` `stateless architecture` `HTTP` `tokens` `server` `requests`
 <br><br>
 
 
@@ -152,7 +152,7 @@ GET /api/v1/getTheListOfAllAvailableProductsOnSale
 GET /api/v1/products/sale
 ```
 
-Additional Tags: URLs
+Tags: `URL design` `readability` `user-friendly` `naming conventions` `hyphens` `resource names` `simplicity`
 <br><br>
 
 
