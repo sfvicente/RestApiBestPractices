@@ -273,6 +273,6 @@ GET /api/v1/products/laptop-dell-xps-13
 - **SEO-friendly**: Human-readable URLs can contribute to search engine optimization (SEO) for web-based APIs.
 - **Contextual clarity**: Provides more context in the URL, making it easier to understand the resource being accessed.
 
-Additional Tags: URLs
+Tags: `URL design` `human-readable identifiers` `readability` `usability` `SEO` `resource identification` `contextual clarity`
 <br><br>
 
