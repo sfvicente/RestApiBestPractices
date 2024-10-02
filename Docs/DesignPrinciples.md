@@ -248,7 +248,7 @@ Host: example.com
 
 In the above example, the URL uses lowercase letters, ensuring that it works across all servers without issues related to case sensitivity.
 
-Additional Tags: URLs
+Tags: `URL design` `lowercase letters` `consistency` `case sensitivity` `predictability` `resource access`
 <br><br>
 
 
