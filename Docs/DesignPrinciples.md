@@ -201,7 +201,7 @@ In this example:
 - `/users/123/orders` indicates that we are retrieving orders for a specific user (`123`).
 - Consistent, hierarchical URL structure makes it clear how resources relate to each other.
 
-Additional Tags: URLs
+Tags: `URL structure` `hierarchical URLs` `resource hierarchy` `consistent design` `plural nouns` `developer experience` `readability`
 <br><br>
 
 
