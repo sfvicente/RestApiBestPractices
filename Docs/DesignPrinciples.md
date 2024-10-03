@@ -228,7 +228,7 @@ GET /api/v1/products/12345
 - **Improves future scalability**: Reduces complexity when making changes to the API or resource structure.
 - **Enhances security**: Minimizes the exposure of sensitive or irrelevant information in URLs.
 
-Additional Tags: URLs
+Tags: `URL design` `readability` `usability` `maintainability` `redundant information` `security` `scalability`
 <br><br>
 
 
