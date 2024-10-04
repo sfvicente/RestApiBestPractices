@@ -229,19 +229,33 @@ Tags: `headers` `custom headers` `concise` `descriptive` `readability`
 <br><br>
 
 
-### Avoid exposing sensitive information in custom headers to enhance security.
+### Avoid exposing sensitive information in custom headers to enhance security
+Custom headers should never contain sensitive information, such as API keys, authentication tokens, or personally
+identifiable information (PII). Exposing this data in headers increases the risk of security vulnerabilities, as
+headers can be intercepted or logged unintentionally. Instead, sensitive information should be handled securely
+through other mechanisms, such as encryption or secure token-based authentication.
 
-// TODO: add description
+**Best Practices:**
+- **Use secure tokens**: Securely store tokens (e.g., JWTs) and avoid sending raw sensitive data.
+- **Minimize data exposure**: Only send the information absolutely necessary for the operation.
+- **Encrypt data**: Use HTTPS to encrypt header content in transit, especially for sensitive details.
 
+**Example of an insecure custom header:**
 ```http
-// TODO: add example
+GET /api/orders HTTP/1.1
+Host: example.com
+X-User-Password: myplaintextpassword
 ```
 
-// TODO: complement description
-
+**Improved version:**
 ```http
-// TODO: add example
+GET /api/orders HTTP/1.1
+Host: example.com
+Authorization: Bearer <secure_token>
 ```
+
+In this improved example, the custom header no longer exposes sensitive data. Instead, a secure token
+is used for authentication, ensuring better protection against interception.
 
 See also: Security
 <br><br>
