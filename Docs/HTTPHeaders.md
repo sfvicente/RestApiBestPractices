@@ -4,7 +4,7 @@ with HTTP requests or responses.
 <br>
 
 
-## General
+## General Guidelines
 <br>
 
 
@@ -25,7 +25,7 @@ with HTTP requests or responses.
 <br><br>
 
 
-## `Prefer` Header
+## `Prefer` Header Guidelines
 The Prefer header is an HTTP request header used by clients to indicate their preferred server behaviors in processing
 the request. It allows clients to suggest specific handling instructions without altering the fundamental request semantics.
 <br>
@@ -81,7 +81,7 @@ Tags: `headers` `Prefer` `processing preferences` `flexibility`
 <br><br>
 
 
-## Custom Headers
+## Custom Headers Guidelines
 Custom headers in HTTP are non-standard headers used to pass additional information between the client and the
 server. These headers are typically defined by the developer and are used to meet specific application requirements
 that are not covered by standard HTTP headers.
