@@ -8,7 +8,7 @@ with HTTP requests or responses.
 <br>
 
 
-### Consider using standardized headers.
+### Consider using standardized headers
 
 // TODO: add description
 
@@ -31,7 +31,7 @@ the request. It allows clients to suggest specific handling instructions without
 <br>
 
 
-### Consider supporting the `Prefer` header to handle processing preferences.
+### Consider supporting the `Prefer` header to handle processing preferences
 Implement support for the `Prefer` header to allow clients to indicate their processing preferences. This enhances flexibility and
 responsiveness by enabling the server to tailor its behavior based on client requirements.
 
@@ -88,7 +88,7 @@ that are not covered by standard HTTP headers.
 <br>
 
 
-### Do not require custom headers for operating basic functionality of an API.
+### Do not require custom headers for operating basic functionality of an API
 
 // TODO: add description
 
@@ -105,7 +105,7 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
-### Consider using custom headers when services require additional functionality which is exposed via HTTP headers.
+### Consider using custom headers when services require additional functionality which is exposed via HTTP headers
 
 // TODO: add description
 
@@ -122,7 +122,7 @@ that are not covered by standard HTTP headers.
 <br><br>
 
 
-### Consider prefixing custom header names with `X-` for legacy systems or use clear, application-specific names.
+### Consider prefixing custom header names with `X-` for legacy systems or use clear, application-specific names
 When defining custom headers, use the `X-` prefix for legacy systems or opt for clear, application-specific names. This
 practice helps to avoid conflicts with standard HTTP headers and ensures better clarity and maintainability.
 
@@ -160,7 +160,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Ensure custom headers are well-documented for ease of use and integration.
+### Ensure custom headers are well-documented for ease of use and integration
 
 // TODO: add description
 
@@ -177,7 +177,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Validate custom header values on both client and server sides to maintain data integrity.
+### Validate custom header values on both client and server sides to maintain data integrity
 
 // TODO: add description
 
@@ -194,7 +194,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Consider keeping custom header names concise yet descriptive to enhance readability.
+### Consider keeping custom header names concise yet descriptive to enhance readability
 When defining custom headers, ensure the names are concise yet descriptive to enhance readability and maintainability. This
 helps both developers and systems to understand and handle the headers efficiently.
 
@@ -212,7 +212,7 @@ Tags: `headers` `custom headers` `concise` `descriptive` `readability`
 <br><br>
 
 
-### Use custom headers to convey metadata that does not fit within the standard headers.
+### Use custom headers to convey metadata that does not fit within the standard headers
 
 // TODO: add description
 
@@ -261,7 +261,7 @@ See also: Security
 <br><br>
 
 
-### Ensure custom headers comply with security protocols, such as encryption when necessary.
+### Ensure custom headers comply with security protocols, such as encryption when necessary
 
 // TODO: add description
 
@@ -279,7 +279,7 @@ See also: Security
 <br><br>
 
 
-### Leverage custom headers for request tracing and logging to improve debugging capabilities.
+### Leverage custom headers for request tracing and logging to improve debugging capabilities
 
 // TODO: add description
 
@@ -297,7 +297,7 @@ See also: Security
 <br><br>
 
 
-### Implement custom header support in a backward-compatible manner.
+### Implement custom header support in a backward-compatible manner
 
 // TODO: add description
 
@@ -315,7 +315,7 @@ See also: compatibility
 <br><br>
 
 
-### Minimize performance overhead by optimizing the processing of custom headers.
+### Minimize performance overhead by optimizing the processing of custom headers
 
 // TODO: add description
 
@@ -351,7 +351,7 @@ See also: testing
 <br><br>
 
 
-### Handle errors gracefully when custom headers are missing or malformed.
+### Handle errors gracefully when custom headers are missing or malformed
 
 // TODO: add description
 
@@ -369,7 +369,7 @@ See also: `error handling`
 <br><br>
 
 
-### Follow industry standards and best practices for naming and using custom headers to enhance interoperability.
+### Follow industry standards and best practices for naming and using custom headers to enhance interoperability
 
 // TODO: add description
 
