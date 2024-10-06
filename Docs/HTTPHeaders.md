@@ -366,18 +366,39 @@ See also: testing
 
 
 ### Handle errors gracefully when custom headers are missing or malformed
+When designing APIs that rely on custom headers, it's important to handle errors gracefully if those headers are missing
+or malformed. Instead of failing unexpectedly, the API should provide meaningful error messages or default behavior to help
+clients understand what went wrong and how to fix it. Avoid terminating requests abruptly or returning generic error
+messages that lack context.
 
-// TODO: add description
+**Best Practices:**
+- **Return clear error messages**: When a custom header is required but missing or malformed, respond with a detailed message that describes the problem and how the client can correct it.
+- **Use appropriate status codes**: Use HTTP status codes like `400 Bad Request` for malformed headers and `412 Precondition Failed` if a required header is absent.
+- **Fallback to defaults**: If possible, use a fallback behavior when a custom header is missing, ensuring the API continues functioning without crashing.
 
+**Example of handling missing or malformed custom headers:**
+
+Missing custom header:
 ```http
-// TODO: add example
+HTTP/1.1 412 Precondition Failed
+Content-Type: application/json
+
+{
+  "error": "Missing required custom header: X-Custom-Auth. Please provide the header for authentication."
+}
 ```
 
-// TODO: complement description
-
+Malformed custom header:
 ```http
-// TODO: add example
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Invalid value for custom header: X-Custom-Filter. Expected format: [keyword], got: [123]."
+}
 ```
+
+In this example, the server gracefully handles errors by providing clear messages about the issues with the custom headers and offering guidance to correct the request.
 
 See also: `error handling`
 <br><br>
