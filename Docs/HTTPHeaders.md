@@ -298,18 +298,32 @@ See also: Security
 
 
 ### Implement custom header support in a backward-compatible manner
+It is important to ensure backward compatibility, when adding custom headers, to avoid breaking existing clients. Custom headers
+should be optional and their absence should not affect the functionality of the API for clients that do not support them. This ensures
+a smooth transition when introducing new features or improvements, while still maintaining support for older versions of clients.
 
-// TODO: add description
+**Best Practices:**
+- **Gracefully handle missing headers**: Ensure that the API functions correctly even when custom headers are not present.
+- **Document custom headers**: Clearly document the custom headers and how they can enhance API functionality without making them mandatory.
+- **Version the API carefully**: If necessary, use API versioning when introducing new custom headers, but ensure clients not sending those headers still receive valid responses.
 
+**Example of backward-compatible custom header usage:**
+
+Without the custom header:
 ```http
-// TODO: add example
+GET /api/products HTTP/1.1
+Host: example.com
 ```
 
-// TODO: complement description
-
+With the custom header (optional):
 ```http
-// TODO: add example
+GET /api/products HTTP/1.1
+Host: example.com
+X-Custom-Filter: featured
 ```
+
+In this example, the API works without the `X-Custom-Filter` header, but clients can choose to use it for enhanced functionality (e.g.,
+filtering for featured products) without breaking compatibility.
 
 See also: compatibility
 <br><br>
