@@ -194,7 +194,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Consider keeping custom header names concise yet descriptive to enhance readability
+### Prefer concise and descriptive names for custom headers to enhance readability
 When defining custom headers, ensure the names are concise yet descriptive to enhance readability and maintainability. This
 helps both developers and systems to understand and handle the headers efficiently.
 
