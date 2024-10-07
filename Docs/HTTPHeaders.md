@@ -88,7 +88,7 @@ that are not covered by standard HTTP headers.
 <br>
 
 
-### Do not require custom headers for operating basic functionality of an API
+### Avoid requiring custom headers for basic API functionality
 
 // TODO: add description
 
