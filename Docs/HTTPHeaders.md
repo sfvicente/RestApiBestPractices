@@ -177,7 +177,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Validate custom header values on both client and server sides to maintain data integrity
+### Always validate custom header values on both client and server sides to ensure data integrity
 
 // TODO: add description
 
