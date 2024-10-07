@@ -160,7 +160,7 @@ Let me know if you need any adjustments or additional information!
 <br><br>
 
 
-### Ensure custom headers are well-documented for ease of use and integration
+### ### Always document custom headers clearly to simplify integration and usageEnsure custom headers are well-documented for ease of use and integration
 
 // TODO: add description
 
