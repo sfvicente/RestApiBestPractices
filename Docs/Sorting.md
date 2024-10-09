@@ -6,13 +6,26 @@
 
 
 ### Consider allowing clients to specify sort order in search results
+Enabling clients to specify the sort order of search results can significantly enhance the usability and flexibility
+of an API. By providing options for sorting, clients can retrieve data in a manner that best suits their needs, making
+it easier to find relevant information quickly.
 
-// TODO: add description
+When clients can dictate the sorting criteria, they can prioritize the data that is most important to them, whether
+it’s by relevance, date, name, or any other relevant attribute. This feature can improve user satisfaction and streamline
+the development process by reducing the need for additional post-processing on the client side.
 
+**Key Points:**
+- **Enhances user experience**: Allowing sort order customization can lead to a more intuitive and efficient interaction with the API.
+- **Supports diverse use cases**: Different clients may have varying requirements for how they want data presented.
+- **Improves performance**: Sorting at the server level can reduce the amount of data processing needed on the client side.
+
+**Example of a search request with sort order:**
 ```http
-// TODO: add example
+GET /api/v1/products?sort=price_desc
 ```
 
+In this example, the client requests a list of products sorted by price in descending order. By supporting such query parameters,
+the API becomes more flexible and tailored to user preferences.
 <br><br>
 
 
