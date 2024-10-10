@@ -1,7 +1,7 @@
 # Sorting
 
 
-## General
+## General Guidelines
 <br>
 
 
