@@ -2,7 +2,7 @@
 This section focuses on designing and structuring APIs around well-defined domain entities. It emphasizes using standard HTTP
 methods to perform operations on these entities, ensuring a RESTful, consistent, and intuitive API design.
 
-## General
+## General Guidelines
 
 
 ### Always model the services around domain entities using the standard HTTP methods as operation indicators
