@@ -1,7 +1,7 @@
 # Compatibility
 
 
-## General
+## General Guidelines
 <br>
 
 
