@@ -1,7 +1,7 @@
 # Organization
 
 
-## General
+## General Guidelines
 <br>
 
 
