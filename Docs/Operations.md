@@ -4,7 +4,7 @@ operations are mapped to specific HTTP methods to convey the intent of the clien
 of the HTTP protocol.
 <br>
 
-## General
+## General Guidelines
 <br>
 
 
