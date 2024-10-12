@@ -1,7 +1,7 @@
 # Error Handling
 
 
-## General
+## General Guidelines
 <br>
 
 ### Never include information in a response that could be useful for malicious users to attack the API
@@ -74,11 +74,11 @@ Content-Type: application/json
 <br><br>
 
 
-## Client Errors
+## Client Errors Guidelines
 <br>
 
 
-## Server Errors
+## Server Errors Guidelines
 <br>
 
 
