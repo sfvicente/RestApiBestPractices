@@ -8,7 +8,7 @@ handle different scenarios appropriately.
 <br>
 
 
-### Prefer the use of standard HTTP status codes to represent the outcome of API requests clearly.
+### Prefer the use of standard HTTP status codes to represent the outcome of API requests clearly
 Always use standard HTTP status codes to represent the outcome of API requests, ensuring clarity and consistency. This
 practice helps clients understand the result of their requests based on well-established semantics.
 
@@ -52,7 +52,7 @@ Tags: `status codes` `HTTP` `API design` `standardization` `best practices`
 <br><br>
 
 
-### Ensure consistency in status codes across the entire API to avoid confusion.
+### Ensure consistency in status codes across the entire API to avoid confusion
 Use consistent HTTP status codes throughout your API to provide a uniform and predictable experience for clients. Consistency
 helps avoid confusion and ensures that clients can reliably interpret the results of their requests.
 
@@ -104,7 +104,7 @@ Tags: `status codes` `consistency` `API design` `standardization` `best practice
 <br><br>
 
 
-### Implement appropriate redirection status codes to inform clients when a resource has been relocated.
+### Implement appropriate redirection status codes to inform clients when a resource has been relocated
 
 // TODO: add description
 
@@ -122,7 +122,7 @@ See also: `redirection`
 <br><br>
 
 
-### Always provide detailed error messages and codes in the response body to help clients understand and resolve issues.
+### Always provide detailed error messages and codes in the response body to help clients understand and resolve issues
 
 // TODO: add description
 
@@ -145,7 +145,7 @@ The 2xx class of HTTP status codes indicates that the request was successfully r
 <br>
 
 
-### Always return `200 OK` for successful `GET`, `PUT`, or `DELETE` requests that include a response body.
+### Always return `200 OK` for successful `GET`, `PUT`, or `DELETE` requests that include a response body
 
 // TODO: add description
 
@@ -162,7 +162,7 @@ The 2xx class of HTTP status codes indicates that the request was successfully r
 <br><br>
 
 
-### Always use `201 Created` for successful `POST` requests when a new resource has been created.
+### Always use `201 Created` for successful `POST` requests when a new resource has been created
 When a POST request results in the creation of a new resource, the server should respond with a `201 Created` status
 code. This indicates that the request has been fulfilled and has led to the creation of a new resource. The response
 should also include a Location header with the URI of the newly created resource and a representation of the resource
@@ -200,7 +200,7 @@ Tags: `status codes` `201` `Created` `POST` `resource creation` `HTTP headers` `
 <br><br>
 
 
-### Consider using `202 Accepted` for asynchronous operations where the request has been accepted but processing is not yet complete.
+### Consider using `202 Accepted` for asynchronous operations where the request has been accepted but processing is not yet complete
 Use the `202 Accepted` status code for asynchronous operations to indicate that the request has been accepted for processing, but the
 processing is not yet complete. This informs the client that their request is valid and will be processed, but there will be a delay
 in the final response.
@@ -246,7 +246,7 @@ Tags: `status codes` `202` `Accepted` `asynchronous operations` `long-running pr
 <br><br>
 
 
-### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned.
+### Always return `204 No Content` for successful `DELETE` requests or `PUT` requests when no content is returned
 The `204 No Content` status code is used to indicate that a request has been successfully processed, but the 
 server does not need to return any content in the response body. This is commonly used for DELETE requests, where
 a resource is removed, and for PUT requests when an update to a resource is made but there is no need to return
@@ -275,7 +275,7 @@ Tags: `status codes` `204` `No Content` `DELETE` `PUT`
 <br><br>
 
 
-### Always return `206 Partial Content` when serving partial GET requests to support range queries for large resources.
+### Always return `206 Partial Content` when serving partial GET requests to support range queries for large resources
 Use the `206 Partial Content` status code to indicate that a GET request has been successfully processed and that the server
 is returning only a part of the resource as specified by the client's `Range` header. This is particularly useful for large
 resources such as files or large datasets, where the client may only need a specific portion of the resource at a time.
@@ -302,7 +302,7 @@ Tags: `status codes` `206` `Partial Content` `GET` `range queries` `large resour
 The `3xx` class of HTTP status codes indicates that further action needs to be taken by the client to complete the
 request. These codes are typically used for redirection, meaning the requested resource has been moved to a different location.
 
-### Always use `3xx` status codes to clearly indicate redirections.
+### Always use `3xx` status codes to clearly indicate redirections
 
 // TODO: add description
 
@@ -320,7 +320,7 @@ See also: `redirection`
 <br><br>
 
 
-### Always return `301 Moved Permanently` when a resource has been permanently relocated to a new URL.
+### Always return `301 Moved Permanently` when a resource has been permanently relocated to a new URL
 Use the `301 Moved Permanently` status code to indicate that the requested resource has been permanently moved to a
 new URL. When a client requests a resource that has been relocated, the server responds with a `301 Moved Permanently`
 status code and includes the new URL in the `Location` header. This informs the client that the resource should be
@@ -353,7 +353,7 @@ Tags: `status codes` `301` `Moved Permanently` `resource relocation` `HTTP heade
 <br><br>
 
 
-### Always use `302 Found` for temporary redirections when a resource is temporarily available at a different URL.
+### Always use `302 Found` for temporary redirections when a resource is temporarily available at a different URL
 
 Use the `302 Found` status code to indicate that the requested resource is temporarily available at a different URL specified
 in the `Location` header. This tells the client that the resource is temporarily moved and that future requests should still
@@ -388,7 +388,7 @@ Tags: `status codes` `302` `Found` `temporary redirection` `HTTP headers` `Locat
 <br><br>
 
 
-### Consider using `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL.
+### Consider using `303 See Other` to redirect after a POST request, directing the client to retrieve the resource at a different URL
 Use the `303 See Other` status code is used to indicate that the server has successfully processed a POST request, and the
 client should retrieve the resulting resource by making a GET request to the URL specified in the Location header. This
 status code is typically used to prevent the client from resubmitting the same POST request if the user refreshes the page
@@ -508,7 +508,7 @@ Content-Type: application/json
 The 4xx class of HTTP status codes indicates that the client seems to have made an error. These codes are meant
 to inform the client about issues with the request.
 
-### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors.
+### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors
 Use the `400 Bad Request` status code to indicate that the server cannot process the request due to a client-side
 error. This could be due to malformed syntax, invalid request message framing, or deceptive request routing. Essentially,
 the server is informing the client that the request cannot be understood or processed because the error lies on the 
@@ -550,7 +550,7 @@ Tags: `status codes` `400` `Bad Request` `client-side errors` `validation errors
 <br><br>
 
 
-### Always return `401 Unauthorized` when authentication is required and has failed or not been provided.
+### Always return `401 Unauthorized` when authentication is required and has failed or not been provided
 
 // TODO: add description
 
@@ -605,7 +605,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Always return `404 Not Found` when a requested resource cannot be found on the server.
+### Always return `404 Not Found` when a requested resource cannot be found on the server
 Use the `404 Not Found` when the resource the client is trying to access does not exist or is not available at the specified
 URL. It informs the client that the resource could not be found, and there is no indication that it will be available
 in the future.
@@ -638,7 +638,7 @@ Tags: `status codes` `404` `Not Found` `non-existent resources` `incorrect URLs`
 <br><br>
 
 
-### Always use `405 Method Not Allowed` when the HTTP method used is not supported by the resource.
+### Always use `405 Method Not Allowed` when the HTTP method used is not supported by the resource
 Use the 405 Method Not Allowed status code when the client attempts to use an HTTP method that is not supported by the
 resource at the specified URL. This informs the client that the method they used is recognized but not allowed for the
 requested resource.
@@ -752,7 +752,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Always use `410 Gone` for resources that have been permanently removed and will not be available again.
+### Always use `410 Gone` for resources that have been permanently removed and will not be available again
 Use the `410 Gone` status code when a resource has been permanently removed from the server and is no longer available. This
 informs the client that the resource once existed but has been intentionally removed and will not be restored.
 
@@ -784,7 +784,7 @@ Tags: `status codes` `410` `Gone` `permanently removed resources` `obsolete endp
 <br><br>
 
 
-### Always return `415 Unsupported Media Type` when the content type of the request is not supported by the server.
+### Always return `415 Unsupported Media Type` when the content type of the request is not supported by the server
 
 // TODO: add description
 
@@ -801,7 +801,7 @@ Tags: `status codes` `410` `Gone` `permanently removed resources` `obsolete endp
 <br><br>
 
 
-### Always use `429 Too Many Requests` to indicate that the user has sent too many requests in a given amount of time.
+### Always use `429 Too Many Requests` to indicate that the user has sent too many requests in a given amount of time
 
 // TODO: add description
 
@@ -824,7 +824,7 @@ The 5xx class of HTTP status codes indicates that the server is aware that it ha
 otherwise incapable of performing the request.
 
 
-### Always return `500 Internal Server Error` for unexpected server-side issues that do not fall under other specific 5xx categories.
+### Always return `500 Internal Server Error` for unexpected server-side issues that do not fall under other specific 5xx categories
 
 // TODO: add description
 
@@ -841,7 +841,7 @@ otherwise incapable of performing the request.
 <br><br>
 
 
-### Always use `501 Not Implemented` when the server does not support the functionality required to fulfill the request.
+### Always use `501 Not Implemented` when the server does not support the functionality required to fulfill the request
 Use the `501 Not Implemented` status code to indicate that the server does not support the functionality required to fulfill
 the request. This status code is used when the server recognizes the request method but lacks the ability to fulfill it. It
 tells the client that the server does not support the functionality necessary to process the request. This can happen if 
@@ -881,7 +881,7 @@ of the API by providing clear feedback about unsupported features.
 <br><br>
 
 
-### Always return `502 Bad Gateway` when the server, acting as a gateway or proxy, receives an invalid response from an inbound server.
+### Always return `502 Bad Gateway` when the server, acting as a gateway or proxy, receives an invalid response from an inbound server
 Use the `502 Bad Gateway` status code when your server, functioning as a gateway or proxy, receives an invalid response from an
 upstream server. This informs the client that the intermediary server encountered an error while trying to fulfill the request from
 another server.
@@ -920,7 +920,7 @@ Tags: `status codes` `502` `Bad Gateway` `proxy` `gateway` `upstream server`
 <br><br>
 
 
-### Always use `503 Service Unavailable` when the server is temporarily unable to handle the request, often due to maintenance or overloading.
+### Always use `503 Service Unavailable` when the server is temporarily unable to handle the request, often due to maintenance or overloading
 Use the `503 Service Unavailable` status code to indicate that the server is temporarily unable to handle the request
 due to maintenance, overloading, or other temporary conditions. This informs the client that the server is currently
 unavailable and that the request should be retried at a later time. It is typically used when the server needs to 
@@ -956,7 +956,7 @@ during periods of maintenance or high load.
 <br><br>
 
 
-### Always return `504 Gateway Timeout` when the server, acting as a gateway or proxy, does not receive a timely response from an upstream server.
+### Always return `504 Gateway Timeout` when the server, acting as a gateway or proxy, does not receive a timely response from an upstream server
 
 // TODO: add description
 
@@ -1010,7 +1010,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Always use `511 Network Authentication Required` when the client needs to authenticate to gain network access.
+### Always use `511 Network Authentication Required` when the client needs to authenticate to gain network access
 Use the `511 Network Authentication Required` status code when the client must authenticate to gain access to the network. This
 informs the client that network access is restricted and they must authenticate before proceeding.
 
