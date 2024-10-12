@@ -4,7 +4,7 @@
 ## General
 <br>
 
-### Never include information in a response that could be useful for malicious users to attack the API.
+### Never include information in a response that could be useful for malicious users to attack the API
 To ensure the security of the API, do not expose sensitive information that could be exploited by malicious
 users. This includes avoiding the inclusion of error messages, stack traces, server details, or any internal
 implementation information in API responses. Providing such information can give attackers insights into potential
@@ -82,7 +82,7 @@ Content-Type: application/json
 <br>
 
 
-### Always implement proper logging for all `5xx` errors to facilitate debugging and improve server reliability.
+### Always implement proper logging for all `5xx` errors to facilitate debugging and improve server reliability
 Ensure that all `5xx` error responses are properly logged to facilitate debugging and improve server reliability. This helps
 identify issues quickly and enables developers to address and resolve them effectively.
 
@@ -106,7 +106,7 @@ Tags: `status codes` `5xx` `error handling` `logging` `debugging`
 <br><br>
 
 
-### Always ensure consistency in `5xx` status codes across the entire API to avoid client confusion.
+### Always ensure consistency in `5xx` status codes across the entire API to avoid client confusion
 
 // TODO: add descriptions
 
@@ -115,7 +115,7 @@ Tags: `status codes` `5xx` `error handling` `logging` `debugging`
 <br><br>
 
 
-### Always monitor server performance and error rates to quickly identify and address issues causing `5xx` errors.
+### Always monitor server performance and error rates to quickly identify and address issues causing `5xx` errors
 
 // TODO: add descriptions
 
@@ -124,7 +124,7 @@ Tags: `status codes` `5xx` `error handling` `logging` `debugging`
 <br><br>
 
 
-### Always communicate planned maintenance or downtime to clients to minimize the impact of `503 Service Unavailable` errors.
+### Always communicate planned maintenance or downtime to clients to minimize the impact of `503 Service Unavailable` errors
 Ensure that clients are informed about planned maintenance or downtime in advance to minimize the impact of `503 Service Unavailable`
 errors. This helps clients manage their expectations and plan accordingly, reducing frustration and potential disruptions.
 
@@ -147,7 +147,7 @@ Tags: `status codes` `503` `Service Unavailable` `maintenance` `communication`
 <br><br>
 
 
-### Always implement robust error handling and recovery mechanisms to minimize the occurrence of `5xx` errors.
+### Always implement robust error handling and recovery mechanisms to minimize the occurrence of `5xx` errors
 
 // TODO: add descriptions
 
@@ -156,7 +156,7 @@ Tags: `status codes` `503` `Service Unavailable` `maintenance` `communication`
 <br><br>
 
 
-### Always protect sensitive information by ensuring that `5xx` error responses do not expose server details.
+### Always protect sensitive information by ensuring that `5xx` error responses do not expose server details
 When returning `5xx` error responses, ensure that the server does not expose sensitive information such as server
 configurations, software versions, or detailed error messages. This protects the server from potential security risks
 by limiting the information available to malicious actors.
@@ -194,7 +194,7 @@ Tags: `status codes` `5xx` `error handling` `security`
 <br><br>
 
 
-### Always ensure API documentation includes details about common `5xx` errors and suggested client handling strategies.
+### Always ensure API documentation includes details about common `5xx` errors and suggested client handling strategies
 
 // TODO: add descriptions
 
@@ -247,7 +247,7 @@ Tags: `error handling` `5xx errors` `server failures` `critical errors` `support
 <br><br>
 
 
-### Always regularly review and update server-side code and configurations to prevent common causes of `5xx` errors.
+### Always regularly review and update server-side code and configurations to prevent common causes of `5xx` errors
 
 // TODO: add descriptions
 
@@ -257,7 +257,7 @@ Additional Tags: `configuration`
 <br><br>
 
 
-### Always test server behavior under various failure scenarios to ensure appropriate `5xx` error handling and response.
+### Always test server behavior under various failure scenarios to ensure appropriate `5xx` error handling and response
 
 // TODO: add descriptions
 
@@ -267,7 +267,7 @@ Additional Tags: `testing` `5xx` `error handling`
 <br><br>
 
 
-### Always implement load balancing and redundancy to reduce the likelihood of `503 Service Unavailable` errors due to server overload.
+### Always implement load balancing and redundancy to reduce the likelihood of `503 Service Unavailable` errors due to server overload
 
 // TODO: add descriptions
 
@@ -277,7 +277,7 @@ Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 <br><br>
 
 
-### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request.
+### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request
 
 // TODO: add descriptions
 
