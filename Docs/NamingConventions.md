@@ -52,7 +52,7 @@ GET /api/products/{id} HTTP/1.1
 <br><br>
 
 
-### Forward slashes should be used to indicate hierarchical relationships.
+### Forward slashes should be used to indicate hierarchical relationships
 Use forward slashes (/) in your URL paths to represent hierarchical relationships between resources. This practice
 enhances the clarity and structure of your API, making it more intuitive and easier to navigate. 
 
@@ -105,7 +105,7 @@ lowercase letters in URLs to avoid ambiguity and maintain consistency.
 <br><br>
 
 
-### For path segments, prefer the use of words separated with hyphens.
+### For path segments, prefer the use of words separated with hyphens
 When designing API paths, use hyphens to separate words within path segments. This practice improves readability
 and consistency, making it easier for developers to understand and use the API.
 
@@ -128,7 +128,7 @@ and consistency, making it easier for developers to understand and use the API.
 <br><br>
 
 
-### Prefer using snake_case for query parameters to improve readability and consistency.
+### Prefer using snake_case for query parameters to improve readability and consistency
 When defining query parameters for operations, prefer using **snake_case** (lowercase letters with underscores separating words) to improve the
 readability and consistency of the API. This format aligns well with common programming languages that use snake_case for variable names and allows
 for uniformity in naming conventions, making it easier for developers to interact with the API.
@@ -154,7 +154,7 @@ Additional Tags: Query Parameters
 <br><br>
 
 
-### Do not specify paths with duplicate slashes.
+### Do not specify paths with duplicate slashes
 Avoid using duplicate slashes in your API paths. Ensuring that paths do not contain consecutive slashes helps maintain
 a clean, reliable, and predictable URL structure.
 
@@ -179,7 +179,7 @@ a clean, reliable, and predictable URL structure.
 <br><br>
 
 
-### Do not specify paths with trailing slashes.
+### Do not specify paths with trailing slashes
 Avoid using trailing slashes at the end of your API paths. Consistently omitting trailing slashes helps maintain a clean
 and predictable URL structure. Also, adding a trailing slash provides no semantic value.
 
@@ -202,7 +202,7 @@ and predictable URL structure. Also, adding a trailing slash provides no semanti
 <br><br>
 
 
-### Do not specify or use path variables with empty string values.
+### Do not specify or use path variables with empty string values
 
 // TODO: add description
 
@@ -219,7 +219,7 @@ and predictable URL structure. Also, adding a trailing slash provides no semanti
 <br><br>
 
 
-### Query parameters should use conventional naming.
+### Query parameters should use conventional naming
 
 // TODO: add description
 
