@@ -49,19 +49,36 @@ Additional Tags: Payload, HTTP 400
 <br><br>
 
 
-### Avoid ignoring unknown input fields in the URI by returning an error with an HTTP 400 status code.
+### Avoid ignoring unknown input fields in the URI by returning an error with an HTTP 400 status code
+To ensure that API requests are accurately formed and to prevent unexpected behavior, avoid silently accepting unknown fields
+in the URI. Instead, return an HTTP `400 Bad Request` status code to clearly indicate that the request contains invalid or
+unexpected parameters. This approach improves clarity and helps clients understand when their requests do not meet the API’s
+expected format.
 
-// TODO: add description
+Validating the structure of the URI and rejecting any unknown fields ensures consistency, enhances security, and reduces
+potential errors caused by incorrect parameters.
 
+**Key Points:**
+- **Promotes consistency**: Ensures that only recognized fields are processed by the API.
+- **Improves error detection**: Clients are informed when they provide invalid parameters, helping them correct requests faster.
+- **Enhances security**: Prevents the potential misuse of unanticipated or undefined URI fields.
+
+**Example of an invalid request with unknown fields in the URI:**
 ```http
-// TODO: add example
+GET /api/v1/users/123/profile/unexpectedField
 ```
 
-// TODO: complement description
-
+**Response:**
 ```http
-// TODO: add example
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Unknown URI field: unexpectedField"
+}
 ```
+
+In this example, the API rejects the request due to the presence of an unrecognized field (`unexpectedField`) in the URI and returns an error message to the client.
 
 Additional Tags: URIs, HTTP 400
 <br><br>
