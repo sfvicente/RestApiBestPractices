@@ -58,7 +58,7 @@ See also: Paging
 <br>
 
 
-### Consider using a nested URI structure if a sub-resource is only accessible via its parent resource and may not exist without the parent resource.
+### Consider using a nested URI structure if a sub-resource is only accessible via its parent resource and may not exist without the parent resource
 Use a nested URI structure to represent the relationship between parent and sub-resources when the sub-resource cannot
 exist independently of the parent resource. This approach helps clearly define the hierarchical relationship and enhances
 the readability and organization of the API.
