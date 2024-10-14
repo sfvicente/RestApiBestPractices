@@ -146,18 +146,35 @@ The 2xx class of HTTP status codes indicates that the request was successfully r
 
 
 ### Always return `200 OK` for successful `GET`, `PUT`, or `DELETE` requests that include a response body
+For successful `GET`, `PUT`, or `DELETE` requests where the server returns a response body, always use the HTTP status code `200 OK`. This
+status code indicates that the request was processed successfully and the server is returning a valid response body containing the requested
+resource or relevant data. Consistently using `200 OK` helps clients understand that their requests were executed as expected.
 
-// TODO: add description
+**Key Points:**
+- **Indicates success**: `200 OK` signifies that the request was successful and the resource has been retrieved or modified.
+- **Used with response bodies**: Only return `200 OK` if there is a body in the response, providing context for the result of the operation.
+- **Improves API clarity**: Ensures that the status code matches the nature of the successful response.
 
+**Example of a successful `GET` request with a response body:**
 ```http
-// TODO: add example
+GET /api/v1/users/123/profile HTTP/1.1
+Host: example.com
 ```
 
-// TODO: complement description
-
+**Response:**
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "John Doe",
+  "email": "johndoe@example.com"
+}
 ```
+
+In this example, the API successfully returns the requested user profile with the `200 OK` status, along with the response body
+containing the user’s details. This makes it clear that the request was processed without errors.
 
 <br><br>
 
