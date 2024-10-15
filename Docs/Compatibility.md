@@ -45,7 +45,7 @@ Content-Type: application/json
 
 In this example, the API rejects the request and returns an error message indicating that an unknown field was provided.
 
-Additional Tags: Payload, HTTP 400
+Tags: `validation`, `error handling`, `security`, `HTTP 400 bad request`, `data integrity`, `payload validation`, `client feedback`, `input validation`, `schema compliance`, `error response`
 <br><br>
 
 
