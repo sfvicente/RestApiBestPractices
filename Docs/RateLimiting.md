@@ -101,8 +101,16 @@ Tags: `rate limiting` `documentation` `request limits` `429 Too Many Requests` `
 ## Implementation Guidelines
 
 ### Always implement rate limiting using token bucket or sliding window algorithms to balance fairness and efficiency
+To effectively manage traffic and balance both fairness and efficiency, always implement rate limiting using proven algorithms
+like **token bucket** or **sliding window**.
 
-TODO
+- **Token bucket algorithm**: In this approach, tokens are added to a "bucket" at a constant rate, allowing users to make requests as long as they have available tokens. When tokens are exhausted, further requests are throttled until new tokens are added. This ensures a flexible balance between burst traffic and sustained rate limits.
+
+- **Sliding window algorithm**: This method smooths out traffic bursts by tracking requests over a rolling window of time. It allows users to maintain a consistent number of requests within a defined period, while providing flexibility for minor traffic spikes. This approach is particularly effective for evenly distributing resource usage without abrupt rate-limit enforcement.
+
+Both algorithms help maintain **API availability**, ensure **fair usage** across clients, and prevent **overloading** the system. By
+adopting a rate-limiting strategy that balances user fairness and system performance, APIs can manage traffic more effectively and
+avoid unintended service disruptions.
 
 <br><br>
 
