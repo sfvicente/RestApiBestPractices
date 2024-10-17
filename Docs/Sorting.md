@@ -55,7 +55,7 @@ In this example, the client requests a list of products sorted by `price` in asc
 <br><br>
 
 
-### Always sort `null` values as less than values which are not `null`.
+### Always sort `null` values as less than values which are not `null`
 
 // TODO: add description
 
@@ -72,7 +72,7 @@ In this example, the client requests a list of products sorted by `price` in asc
 <br><br>
 
 
-### Always allow sorting to be combined with the filtering mechanism.
+### Always allow sorting to be combined with the filtering mechanism
 
 // TODO: add description
 
