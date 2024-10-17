@@ -66,7 +66,7 @@ Pagination helps in the following ways:
 - **Resource Management**: Limits the strain on server resources by fetching and processing data in smaller batches.
 - **Improved User Experience**: Enables clients to navigate through large datasets efficiently.
 
-Tags: `Pagination` `Data Collection Management` `Performance Optimization` `Resource Efficiency` `Network Traffic` `User Experience` `Response Structure`
+Tags: `pagination` `data collection management` `performance optimization` `resource efficiency` `network traffic` `user experience` `response structure`
 <br><br>
 
 
