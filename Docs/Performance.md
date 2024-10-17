@@ -221,7 +221,7 @@ Content-Encoding: gzip
 
 Using the `Content-Encoding` header to indicate gzip compression helps ensure that clients can correctly interpret and decompress the response, maintaining the integrity and usability of the transmitted data.
 
-Tags: `Compression` `Payload Management` `Performance` `Client Compatibility` `Accept-Encoding` `Content-Encoding` `Debugging` `Network Efficiency` `Response Handling`
+Tags: `compression` `payload management` `performance` `client compatibility` `accept-encoding` `content-encoding` `debugging` `network efficiency` `response handling`
 <br><br>
 
 
