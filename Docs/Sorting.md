@@ -29,19 +29,28 @@ the API becomes more flexible and tailored to user preferences.
 <br><br>
 
 
-### Consider allowing results of a collection query to be sorted based on property values.
+### Consider allowing results of a collection query to be sorted based on property values
+To enhance flexibility and user experience, consider enabling clients to sort the results of a collection query based on specific
+property values. Allowing sorting by one or more fields (such as name, date, or price) provides users with greater control over the
+data returned, making it easier to retrieve and work with the most relevant information.
 
-// TODO: add description
+Supporting sorting can be especially useful in large datasets where users may want to see results in a specific order, such as
+alphabetical listings or by recent activity. It's important to provide clear documentation on which fields are available for sorting
+and to handle invalid sorting parameters gracefully, returning an appropriate error message if needed.
+
+**Best Practices:**
+- Use query parameters to specify the sort field and direction (e.g., ascending or descending).
+- Allow sorting on multiple fields if relevant to the data model.
+- Ensure the default sort order is logical and predictable.
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /api/v1/products?sort=price&order=asc HTTP/1.1
+Host: example.com
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
+In this example, the client requests a list of products sorted by `price` in ascending order, enabling a more tailored response for their needs.
 
 <br><br>
 
