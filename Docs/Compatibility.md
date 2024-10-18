@@ -1,5 +1,7 @@
 # Compatibility
-
+This section outlines best practices to ensure backward and forward compatibility when evolving an API. Following these guidelines helps
+prevent breaking changes, maintain seamless integration with existing clients, and ensure that new features can be introduced without
+disrupting the current user base. This promotes a stable and reliable API experience, fostering long-term adoption and ease of maintenance.
 
 ## General Guidelines
 <br>
