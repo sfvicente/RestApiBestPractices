@@ -82,9 +82,8 @@ Content-Type: application/json
 
 In this example, the API rejects the request due to the presence of an unrecognized field (`unexpectedField`) in the URI and returns an error message to the client.
 
-Additional Tags: URIs, HTTP 400
+Tags: `error-handling`, `http-400`, `uri-validation`, `input-validation`, `client-feedback`, `api-security`, `consistency`, `unknown-fields`
 <br><br>
-
 
 
 ## ...
