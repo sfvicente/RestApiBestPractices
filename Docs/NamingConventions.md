@@ -220,18 +220,28 @@ and predictable URL structure. Also, adding a trailing slash provides no semanti
 
 
 ### Query parameters should use conventional naming
+When defining query parameters for an API, it's important to follow conventional and widely accepted naming practices
+to improve clarity, ease of use, and consistency across client implementations. Using common names and formats helps
+developers understand the purpose of each parameter quickly and avoids confusion.
 
-// TODO: add description
+**Best Practices for Query Parameters:**
+- **Use lowercase letters**: Keep query parameter names in lowercase to avoid case sensitivity issues.
+- **Use underscores or hyphens consistently**: Choose one delimiter style and apply it across all parameters (e.g., `page_size` or `page-size`).
+- **Avoid abbreviations**: Ensure that parameter names are fully descriptive to convey their meaning clearly.
+- **Stick to common terms**: Use conventional terms such as `limit`, `page`, `sort`, `filter`, etc., where applicable.
+
+By following these guidelines, you can make your API more intuitive for developers and easier to maintain.
+
+**Example:**
 
 ```http
-// TODO: add example
+GET /api/v1/products?limit=10&page=2&sort=price
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
+In this example:
+- `limit` specifies the number of products to return.
+- `page` indicates the current page of results.
+- `sort` allows sorting by a specific attribute, in this case, `price`.
 
 See also: Query Parameters
 <br><br>
