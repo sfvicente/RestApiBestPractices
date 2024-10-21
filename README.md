@@ -11,7 +11,6 @@ This project is a collection of best practices and guidelines for REST API desig
 
 ## Guidelines
 - [Design Principles](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DesignPrinciples.md) 
-- [Organization](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Organization.md) 
 - [Naming Conventions](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/NamingConventions.md)
 - [Resources](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Resources.md)
 - [Operations](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Operations.md)
