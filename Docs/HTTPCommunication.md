@@ -329,15 +329,46 @@ Tags: `HTTP methods` `POST` `Location header` `resource creation` `201 Created` 
 <br><br>
 
 
-### Always include a representation of the newly created resource in the response body for successful `POST` requests.
+### Always include a representation of the newly created resource in the response body for successful `POST` requests
+When a `POST` request is successful, it is best practice to include a full representation of the newly created resource in the
+response body. This provides immediate feedback to the client, confirming that the resource was created correctly and allowing
+the client to interact with the resource without needing to make an additional request to retrieve its details.
 
-// TODO: add description.
+**Benefits:**
+- **Immediate feedback**: The client gets the full resource details right away, ensuring that the creation process was successful.
+- **Simplifies interactions**: Clients do not need to make an extra `GET` request to fetch the resource.
+- **Reduces latency**: Improves overall API efficiency by bundling the creation confirmation with the resource details in a single step.
+
+**Example:**
 
 ```http
-// TODO: add example
+POST /api/v1/products
+Content-Type: application/json
+
+{
+  "name": "Laptop Dell XPS 13",
+  "price": 1200,
+  "category": "Electronics"
+}
 ```
 
+**Response:**
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": 12345,
+  "name": "Laptop Dell XPS 13",
+  "price": 1200,
+  "category": "Electronics",
+  "createdAt": "2024-10-21T10:30:00Z"
+}
+```
+
+In this example, the response body includes a full representation of the newly created product, making it immediately available to the client.
 <br><br>
+
 
 ### Consider returning a `202` status code for successful `POST` requests when the request is accepted but processing is not yet complete.
 
