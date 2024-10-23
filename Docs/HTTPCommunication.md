@@ -370,13 +370,42 @@ In this example, the response body includes a full representation of the newly c
 <br><br>
 
 
-### Consider returning a `202` status code for successful `POST` requests when the request is accepted but processing is not yet complete.
+### Consider returning a `202` status code for successful `POST` requests when the request is accepted but processing is not yet complete
+For `POST` requests where the processing of the request may take additional time, it’s recommended to return a `202 Accepted` status code,
+indicating that the request has been received but is not yet complete. This approach signals to the client that processing will continue
+asynchronously, allowing them to proceed without waiting for the operation to finish.
 
-// TODO: add description.
+**Benefits:**
+- **Clear client expectations**: Notifies clients that their request is accepted but will complete in the background.
+- **Improves performance**: Frees clients from waiting on a lengthy process to complete synchronously.
+- **Enhanced scalability**: Facilitates handling of long-running tasks without impacting server availability or blocking requests.
+
+**Example:**
 
 ```http
-// TODO: add example
+POST /api/v1/reports
+Content-Type: application/json
+
+{
+  "type": "annual",
+  "year": 2024
+}
 ```
+
+**Response:**
+```http
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+
+{
+  "status": "Processing started",
+  "message": "The report is being generated. You will be notified upon completion.",
+  "reportId": "abc123"
+}
+```
+
+In this example, the server acknowledges the report generation request with a `202 Accepted` status and provides a message
+to the client, indicating that the process has started but is not yet complete.
 
 <br><br>
 
