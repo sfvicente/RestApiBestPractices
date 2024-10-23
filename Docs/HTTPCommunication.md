@@ -18,7 +18,7 @@ server, it typically includes parameters in the URL to specify the resource to r
 <br>
 
 
-### Always use `GET` requests to read a single resource or a collection of resources.
+### Always use `GET` requests to read a single resource or a collection of resources
 The `GET` method is used to retrieve representations of resources. `GET` requests are used to fetch data
 about a single resource or a collection of resources, and the server responds with the requested data in the body of the
 response. Using `GET` for reading resources ensures that clients can obtain the necessary information without causing any side
@@ -88,7 +88,7 @@ Tags: `HTTP methods` `GET` `resource retrieval` `REST API design` `idempotent` `
 <br>
 
 
-### Always return a `404 Not Found` status for `GET` requests to non-existent individual resources.
+### Always return a `404 Not Found` status for `GET` requests to non-existent individual resources
 When a `GET` request is made for an individual resource that is not found on the server, the API should return
 a `404 Not Found` status code. This informs the client that the requested resource does not exist, ensuring clarity
 and consistency in API behavior.
@@ -117,7 +117,7 @@ about the error. This communicates to the client that the requested article coul
 <br><br>
 
 
-### Always return a `200 OK` status for `GET` requests to collection resources, even if the collection is empty.
+### Always return a `200 OK` status for `GET` requests to collection resources, even if the collection is empty
 When clients make `GET` requests to retrieve a collection of resources, the API should return a `200 OK` status code
 even if the collection is empty. This indicates that the request was successfully processed, and the response body 
 will contain an empty array or object representing the collection.
@@ -146,7 +146,7 @@ Tags: `HTTP methods` `GET` `404 Not Found` `resource retrieval` `collection hand
 <br><br>
 
 
-### Always return a `404 Not Found` status for `GET` requests if the requested collection resource is missing.
+### Always return a `404 Not Found` status for `GET` requests if the requested collection resource is missing
 When clients make `GET` requests to retrieve a collection of resources and the requested collection does not exist
 (i.e., it has not been implemented or configured), the API should return a `404 Not Found` status code. This communicates
 to the client that the requested endpoint or resource is not available, distinguishing between an empty collection (which
@@ -180,7 +180,7 @@ Tags: `HTTP methods` `GET` `404 Not Found` `collection retrieval` `resource hand
 <br><br>
 
 
-### Always provide adequate filtering and pagination mechanisms for `GET` requests on collection resources.
+### Always provide adequate filtering and pagination mechanisms for `GET` requests on collection resources
 
 // TODO: add description.
 
@@ -201,7 +201,7 @@ body, allowing for more complex data transmission.
 <br>
 
 
-### Always generate a `200` status code for successful `POST` requests when resources have been updated.
+### Always generate a `200` status code for successful `POST` requests when resources have been updated
 When clients make `POST` requests to create or update resources, the API should return a `200 OK` status code if the
 request was successful and resulted in the modification or creation of resources. This indicates that the operation
 was completed successfully, and the response body may include details about the updated resources.
@@ -244,7 +244,7 @@ Tags: `HTTP methods` `POST` `200 OK` `resource creation` `resource update` `succ
 <br><br>
 
 
-### Always generate a `201 Created` status code for successful `POST` requests when new resources have been created.
+### Always generate a `201 Created` status code for successful `POST` requests when new resources have been created
 When clients make `POST` requests to create new resources, the API should return a `201 Created` status code upon
 successful creation. This status code indicates that the request was successful and that a new resource has been 
 created on the server.
@@ -285,7 +285,7 @@ Tags: `HTTP methods` `POST` `201 Created` `resource creation` `success responses
 <br><br>
 
 
-### Always include the URI of the newly created resource in the `Location` header for successful `POST` requests.
+### Always include the URI of the newly created resource in the `Location` header for successful `POST` requests
 When a `POST` request successfully creates a new resource, it is a best practice to include the URI of the newly created
 resource in the `Location` header of the response. This provides clients with a direct link to the new resource, allowing
 them to easily access, retrieve, or interact with it. 
@@ -410,7 +410,7 @@ to the client, indicating that the process has started but is not yet complete.
 <br><br>
 
 
-### Consider generating a `204` status code with a `Location` header for successful `POST` requests when the actual resource is not returned.
+### Consider generating a `204` status code with a `Location` header for successful `POST` requests when the actual resource is not returned
 
 // TODO: add description.
 
@@ -421,7 +421,7 @@ to the client, indicating that the process has started but is not yet complete.
 <br><br>
 
 
-### Never pass resource IDs in `POST` requests when creating new resources.
+### Never pass resource IDs in `POST` requests when creating new resources
 
 Resource IDs should be created and maintained by the API and returned with the response payload.
 
@@ -434,7 +434,7 @@ Resource IDs should be created and maintained by the API and returned with the r
 <br><br>
 
 
-### Consider designing `POST` operations as idempotent.
+### Consider designing `POST` operations as idempotent
 While the HTTP `POST` method is traditionally used for creating new resources or triggering operations that result
 in a state change, it is often beneficial to design `POST` operations to be idempotent where possible. Idempotency
 ensures that making the same request multiple times will produce the same result, improving reliability and user
@@ -573,7 +573,7 @@ collection.
 <br><br>
 
 
-### Ensure `PUT` requests handle non-existent resources by implicitly creating them before updating.
+### Ensure `PUT` requests handle non-existent resources by implicitly creating them before updating
 When clients make `PUT` requests to update a resource at a specific URI, the API should be robust against the non-existence
 of the resource by implicitly creating it before performing the update. This means that if the resource identified by the
 URI does not already exist, the API should create it based on the provided data in the `PUT` request payload.
@@ -616,7 +616,7 @@ Tags: `HTTP methods` `PUT` `resource creation` `resource update` `idempotence` `
 <br><br>
 
 
-### Always perform a full resource replacement with the payload on a successful `PUT` request.
+### Always perform a full resource replacement with the payload on a successful `PUT` request
 When handling a `PUT` request, the API should replace the entire resource at the specified URL with the data provided
 in the request payload. This ensures that the resource is fully updated according to the client's submission, with any
 missing fields in the payload leading to their corresponding fields in the resource being removed or set to their default
@@ -677,7 +677,7 @@ Content-Type: application/json
 - <br><br>
 
 
-### Always return a `200 OK` status for successful `PUT` requests when the updated content is returned.
+### Always return a `200 OK` status for successful `PUT` requests when the updated content is returned
 When a `PUT` request is successfully processed and the resource is updated, the API should return a `200 OK` status
 code. This indicates that the update operation was successful, and the response should include the actual content of
 the updated resource. By returning the updated resource in the response body, the API ensures that the client has the
@@ -723,7 +723,7 @@ Tags: `HTTP methods` `PUT` `status codes` `200 OK` `resource updates`
 
 
 
-### Always return a `204` status code for successful `PUT` requests when the resource is updated without actual content returned.
+### Always return a `204` status code for successful `PUT` requests when the resource is updated without actual content returned
 When a `PUT` request is made to update a resource and the operation is successful, but there is no need to return any content
 in the response body, the API should return a `204 No Content` status code. This indicates that the request was successfully
 processed, the resource was updated, and there is no additional content to send in the response. This approach is efficient,
@@ -760,7 +760,7 @@ multiple identical requests have the same effect as a single request.
 <br>
 
 
-### Consider generating an HTTP `200` return code on a successful `DELETE` request if the deleted resource is returned after executing the request.
+### Consider generating an HTTP `200` return code on a successful `DELETE` request if the deleted resource is returned after executing the request
 When a `DELETE` request is made to remove a resource, and the API is designed to return the details of the deleted resource
 in the response, it is appropriate to return a `200 OK` status code. This informs the client that the resource was successfully
 deleted and provides the relevant resource information as part of the response body.
@@ -791,7 +791,7 @@ Tags: `HTTP methods` `DELETE` `status codes` `200 OK` `resource deletion`
 <br>
 
 
-### Prefer generating an HTTP `204` return code on a successful `DELETE` request if no further information is returned after executing the request.
+### Prefer generating an HTTP `204` return code on a successful `DELETE` request if no further information is returned after executing the request
 When no content is returned after a delete operation successfully executes, an HTTP status code 204 should be returned. This indicates that the
 process has been successfully handled, however, the body of the response does not contain additional information.
 
@@ -877,7 +877,7 @@ different outcomes.
 <br>
 
 
-### Always use PATCH requests for partial or incremental updates to existing resources.
+### Always use PATCH requests for partial or incremental updates to existing resources
 `PATCH` requests are used to apply partial updates to an existing resource. Unlike `PUT` requests, which replace the entire
 resource with the new data, `PATCH` requests allow clients to send only the changes or updates that need to be applied. This
 makes `PATCH` ideal for scenarios where only specific fields of a resource need to be modified without affecting the entire
@@ -921,7 +921,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Always return a 200 OK status code on a successful PATCH request when the updated resource is included in the response body.
+### Always return a 200 OK status code on a successful PATCH request when the updated resource is included in the response body
 
 // TODO: add description.
 
@@ -932,7 +932,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Always return a 204 No Content status code on a successful PATCH request when no response body is included.
+### Always return a 204 No Content status code on a successful PATCH request when no response body is included
 
 // TODO: add description.
 
@@ -943,7 +943,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Always return a 400 Bad Request status code for malformed PATCH requests.
+### Always return a 400 Bad Request status code for malformed PATCH requests
 
 // TODO: add description.
 
@@ -954,7 +954,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Always return a 422 Unprocessable Entity status code for semantically incorrect PATCH requests.
+### Always return a 422 Unprocessable Entity status code for semantically incorrect PATCH requests
 
 // TODO: add description.
 
@@ -965,7 +965,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Consider using JSON Patch for implementing PATCH requests to perform partial updates on resources.
+### Consider using JSON Patch for implementing PATCH requests to perform partial updates on resources
 
 // TODO: add description.
 
@@ -976,7 +976,7 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 <br><br>
 
 
-### Consider designing `PATCH` operations as idempotent.
+### Consider designing `PATCH` operations as idempotent
 While the HTTP `PATCH` method is typically used to apply partial updates to a resource, it is beneficial to 
 design `PATCH` operations to be idempotent whenever possible. An idempotent `PATCH` operation ensures that
 multiple identical requests will have the same effect as a single request. This characteristic is important
@@ -1026,7 +1026,7 @@ Tags: `HTTP methods` `PATCH` `idempotency` `partial updates` `reliability` `pred
 <br><br>
 
 
-### Ensure PATCH requests are atomic to maintain data consistency.
+### Ensure PATCH requests are atomic to maintain data consistency
 
 // TODO: add description.
 
@@ -1037,7 +1037,7 @@ Tags: `HTTP methods` `PATCH` `idempotency` `partial updates` `reliability` `pred
 <br><br>
 
 
-### Implement mechanisms to handle concurrent PATCH modifications.
+### Implement mechanisms to handle concurrent PATCH modifications
 
 // TODO: add description.
 
@@ -1056,7 +1056,7 @@ resource exists (via the status code) without downloading the entire resource
 <br>
 
 
-### Always use `HEAD` requests to retrieve header information of single resource or a collections of resources.
+### Always use `HEAD` requests to retrieve header information of single resource or a collections of resources
 The `HEAD` method returns the metadata of an object for a `GET` response. It is an idempotent operation.
 
 The `HEAD` method is used to retrieve the headers of a resource without fetching the actual body. This is useful
@@ -1109,7 +1109,7 @@ See also: Idempotency
 <br><br>
 
 
-### Consider using `HEAD` to efficiently lookup whether large resources or collection resources have been updated in conjunction with the `ETag` header.
+### Consider using `HEAD` to efficiently lookup whether large resources or collection resources have been updated in conjunction with the `ETag` header
 
 // TODO: add description.
 
@@ -1131,7 +1131,7 @@ making actual requests.
 <br>
 
 
-### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint.
+### Always use `OPTIONS` requests to inspect the available operations of a specific endpoint
 The `OPTIONS` HTTP method is an important tool that allows clients to query a server to discover the HTTP methods that are
 supported by a specific resource or endpoint. By using an `OPTIONS` request, clients can determine which operations (such
 as `GET`, `POST`, `PUT`, `DELETE`, etc.) are available for a given endpoint, as well as any additional communication options,
@@ -1183,7 +1183,7 @@ servers. This method helps in identifying potential issues in the request path, 
 <br>
 
 
-### Consider using the `TRACE` method to debug or troubleshoot web server connections.
+### Consider using the `TRACE` method to debug or troubleshoot web server connections
 The `TRACE` method is a useful tool for debugging and troubleshooting web server connections during the development
 phase. It echoes the contents of an HTTP request back to the requester, allowing developers to see the exact request
 received by the server and verify that the server is processing requests correctly.
@@ -1216,7 +1216,7 @@ Accept: */*
 <br><br>
 
 
-### Always disable the `TRACE` method for security reasons, unless specifically required.
+### Always disable the `TRACE` method for security reasons, unless specifically required
 The HTTP `TRACE` method should be disabled in your API to prevent potential security vulnerabilities. The
 `TRACE` method is primarily used for diagnostic purposes, allowing clients to see the exact request sent to
 the server and the server's response. However, it can be exploited by malicious users to access sensitive
@@ -1251,7 +1251,7 @@ Content-Type: application/json
 <br>
 
 
-### Always use the most specific HTTP status codes for returning information regarding request and error handling.
+### Always use the most specific HTTP status codes for returning information regarding request and error handling
 When returning information to clients regarding request or error handling, the API should use the most specific 
 HTTP status code possible. This practice ensures clear communication between the server and the client, helping
 clients understand the exact nature of the response and how to handle it appropriately.
@@ -1297,7 +1297,7 @@ clients understand the exact nature of the response and how to handle it appropr
 <br><br>
 
 
-### Always use HTTP `4XX` return codes for malformed requests, when the issue is on the client's side.
+### Always use HTTP `4XX` return codes for malformed requests, when the issue is on the client's side
 HTTP `4XX` status codes should always be used to indicate that a request is malformed or cannot be processed due
 to issues on the client's side. These status codes inform the client that the server has understood the request,
 but it cannot process it due to client-related errors. 
@@ -1322,7 +1322,7 @@ but it cannot process it due to client-related errors.
 <br><br>
 
 
-### Consider using an HTTP `429` return code when a client breaks a request rate limit.
+### Consider using an HTTP `429` return code when a client breaks a request rate limit
 
 // TODO: add description.
 
@@ -1334,7 +1334,7 @@ See also: HTTP Methods
 <br><br>
 
 
-### Always use HTTP `5XX` return codes for internal errors, when the issue is on the API's side.
+### Always use HTTP `5XX` return codes for internal errors, when the issue is on the API's side
 
 // TODO: add description.
 
