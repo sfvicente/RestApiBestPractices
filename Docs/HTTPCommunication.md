@@ -966,12 +966,44 @@ Tags: `HTTP methods` `PATCH` `partial updates` `incremental updates` `resource m
 
 
 ### Consider using JSON Patch for implementing PATCH requests to perform partial updates on resources
+To enable efficient partial updates to resources, consider using JSON Patch, a standardized format defined
+in [RFC 6902](https://datatracker.ietf.org/doc/html/rfc6902), for `PATCH` requests. JSON Patch specifies a
+concise and clear method for updating specific parts of a resource, allowing for operations like `add`,
+`remove`, `replace`, and more. By leveraging JSON Patch, you can streamline updates without requiring clients
+to send a full representation of the resource.
 
-// TODO: add description.
+**Benefits:**
+- **Reduces payload size**: Clients only send the specific updates, which can lower bandwidth usage.
+- **Improves flexibility**: Allows clients to perform various types of updates in one request.
+- **Standardizes update format**: Simplifies implementation by using a well-defined format for partial updates.
+
+**Example Request Using JSON Patch:**
 
 ```http
-// TODO: add example
+PATCH /api/v1/users/123
+Content-Type: application/json-patch+json
+
+[
+  { "op": "replace", "path": "/email", "value": "new.email@example.com" },
+  { "op": "add", "path": "/phoneNumber", "value": "+1234567890" }
+]
 ```
+
+**Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "123",
+  "name": "John Doe",
+  "email": "new.email@example.com",
+  "phoneNumber": "+1234567890"
+}
+```
+
+In this example, the client uses JSON Patch to update only the email and add a phone number. The server responds with the
+updated resource, confirming that the specified changes were applied.
 
 <br><br>
 
