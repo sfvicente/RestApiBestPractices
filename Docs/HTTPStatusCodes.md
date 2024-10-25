@@ -52,6 +52,52 @@ Tags: `status codes` `HTTP` `API design` `standardization` `best practices`
 <br><br>
 
 
+### Always use the most specific HTTP status codes for returning information regarding request and error handling
+When returning information to clients regarding request or error handling, the API should use the most specific 
+HTTP status code possible. This practice ensures clear communication between the server and the client, helping
+clients understand the exact nature of the response and how to handle it appropriately.
+
+**Benefits of Using Specific HTTP Status Codes:**
+- **Clarity**: Specific status codes provide precise information about the outcome of the request, reducing ambiguity.
+- **Troubleshooting**: Clear status codes make it easier to diagnose issues and understand the cause of errors.
+- **Client Handling**: Clients can implement more accurate error handling and responses based on specific status codes.
+
+**Examples:**
+- **400 Bad Request**: Use when the request cannot be processed due to client-side errors, such as validation issues.
+  ```http
+  HTTP/1.1 400 Bad Request
+  Content-Type: application/json
+
+  {
+    "error": "Bad Request",
+    "message": "Invalid input data"
+  }
+  ```
+- **401 Unauthorized**: Use when authentication is required and has failed or not been provided.
+  ```http
+  HTTP/1.1 401 Unauthorized
+  Content-Type: application/json
+
+  {
+    "error": "Unauthorized",
+    "message": "Authentication required"
+  }
+  ```
+- **404 Not Found**: Use when the requested resource could not be found.
+  ```http
+  HTTP/1.1 404 Not Found
+  Content-Type: application/json
+
+  {
+    "error": "Not Found",
+    "message": "Resource not found"
+  }
+  ```
+
+**Tags:** `HTTP status codes` `error handling` `client communication`
+<br><br>
+
+
 ### Ensure consistency in status codes across the entire API to avoid confusion
 Use consistent HTTP status codes throughout your API to provide a uniform and predictable experience for clients. Consistency
 helps avoid confusion and ensures that clients can reliably interpret the results of their requests.
@@ -525,6 +571,34 @@ Content-Type: application/json
 The 4xx class of HTTP status codes indicates that the client seems to have made an error. These codes are meant
 to inform the client about issues with the request.
 
+
+
+
+### Always use HTTP `4XX` return codes for malformed requests, when the issue is on the client's side
+HTTP `4XX` status codes should always be used to indicate that a request is malformed or cannot be processed due
+to issues on the client's side. These status codes inform the client that the server has understood the request,
+but it cannot process it due to client-related errors. 
+
+**Key Points for Using `4XX` Status Codes:**
+
+- **Client-Side Errors:** `4XX` status codes are specifically designed to signal issues that originate from the client's side, such as invalid input data, unauthorized access attempts, or requests for non-existent resources.
+  
+- **Error Clarification:** Each `4XX` status code provides specific information about the type of client-side error, helping clients quickly identify and rectify the issue.
+
+- **Common `4XX` Codes:**
+  - **400 Bad Request**: Indicates that the server cannot process the request due to malformed syntax, invalid input data, or other client-side issues.
+  - **401 Unauthorized**: Signals that authentication is required and has failed or is not provided.
+  - **403 Forbidden**: Indicates that the client is authenticated but does not have permission to access the requested resource.
+  - **404 Not Found**: Used when the requested resource cannot be found on the server.
+  - **409 Conflict**: Indicates that the request could not be processed due to a conflict with the current state of the resource.
+
+**Benefits:**
+- **Clear Communication:** Using the appropriate `4XX` status code ensures that the client is clearly informed about the specific nature of the error, which helps in understanding and resolving the issue.
+- **Enhanced Client-Side Handling:** Precise status codes enable the client to implement more effective error handling and user notifications, improving the overall user experience.
+
+<br><br>
+
+
 ### Always use `400 Bad Request` for requests that cannot be processed due to client-side errors
 Use the `400 Bad Request` status code to indicate that the server cannot process the request due to a client-side
 error. This could be due to malformed syntax, invalid request message framing, or deceptive request routing. Essentially,
@@ -836,9 +910,33 @@ See Also: `rate limiting`
 <br><br>
 
 
+### Consider using an HTTP `429` return code when a client breaks a request rate limit
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
+
+
 ## `5xx` Status Codes Guidelines
 The 5xx class of HTTP status codes indicates that the server is aware that it has encountered an error or is
 otherwise incapable of performing the request.
+
+
+### Always use HTTP `5XX` return codes for internal errors, when the issue is on the API's side
+
+// TODO: add description.
+
+```http
+// TODO: add example
+```
+
+See also: HTTP Methods
+<br><br>
 
 
 ### Always return `500 Internal Server Error` for unexpected server-side issues that do not fall under other specific 5xx categories
