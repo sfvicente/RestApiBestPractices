@@ -5,13 +5,46 @@
 <br>
 
 
-### Always support pagination for search results
+### Always Support Pagination for Search Results
+Implement pagination in all search result responses to enhance performance and usability, especially when dealing
+with large datasets. Pagination divides the data into manageable chunks, reducing server load and improving response
+times for clients. Additionally, paginated results improve the user experience by allowing clients to fetch data
+progressively rather than retrieving an overwhelming amount of data in a single request.
 
-// TODO: add description
+**Benefits:**
+- **Improves performance**: Reduces the volume of data sent in each response, lowering server and client processing times.
+- **Enhances user experience**: Allows users to load more data on demand, rather than overwhelming them with all results at once.
+- **Supports scalability**: Optimizes server resources for handling large datasets efficiently.
 
+**Example of a Paginated Request:**
 ```http
-// TODO: add example
+GET /api/v1/products?search=laptop&page=2&limit=10
 ```
+
+In this request:
+- `page=2` specifies the page of results.
+- `limit=10` restricts the results to 10 items per page.
+
+**Example Response:**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "page": 2,
+  "limit": 10,
+  "totalResults": 75,
+  "totalPages": 8,
+  "data": [
+    { "id": "11", "name": "Laptop Model A", "price": 900 },
+    { "id": "12", "name": "Laptop Model B", "price": 1100 },
+    ...
+  ]
+}
+```
+
+In this example, the response includes metadata on the total results and pages, as well as the requested data items for
+page 2, giving clients clear insight into pagination status and available results.
 
 <br><br>
 
