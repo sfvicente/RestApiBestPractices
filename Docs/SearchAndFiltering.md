@@ -5,7 +5,7 @@
 <br>
 
 
-### Always Support Pagination for Search Results
+### Always support pagination for search results
 Implement pagination in all search result responses to enhance performance and usability, especially when dealing
 with large datasets. Pagination divides the data into manageable chunks, reducing server load and improving response
 times for clients. Additionally, paginated results improve the user experience by allowing clients to fetch data
