@@ -422,14 +422,43 @@ to the client, indicating that the process has started but is not yet complete.
 
 
 ### Never pass resource IDs in `POST` requests when creating new resources
+To ensure consistency and maintain a clear separation of client and server responsibilities, avoid including resource IDs
+in `POST` requests for resource creation. Instead, the API should automatically generate resource IDs, maintaining control
+over resource identifiers and returning them in the response payload. This approach simplifies client requests, reduces
+the potential for conflicts, and ensures a reliable, unique ID generation process.
 
-Resource IDs should be created and maintained by the API and returned with the response payload.
+If the client were to specify an ID, it could lead to duplicate or conflicting resource entries. By letting the server assign
+IDs, you ensure a standardized, cohesive way of managing resources.
 
-// TODO: complement description.
+**Key Points:**
+- **Server-controlled IDs**: Ensures unique, consistent IDs across resources, preventing potential conflicts.
+- **Simplifies client requests**: Reduces complexity for clients, allowing them to avoid handling ID logic.
+- **Consistency in API responses**: IDs generated and managed by the server are included in the response, ensuring clarity for clients.
 
+**Example of a `POST` request without an ID:**
 ```http
-// TODO: add example
+POST /api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
 ```
+
+**Response:**
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": "12345",
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
+```
+
+In this example, the server generates the `id` field upon resource creation and returns it in the response payload, keeping ID assignment entirely within the server’s control.
 
 <br><br>
 
