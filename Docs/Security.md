@@ -18,12 +18,29 @@ See also: `HTTPS` `Encryption`
 
 
 ### Consider enforcing the use of HTTPS by implementing HSTS to protect against protocol downgrade attacks
+To strengthen security and ensure encrypted communication between clients and servers, consider enforcing HTTPS by implementing
+HTTP Strict Transport Security (HSTS). HSTS is a web security policy mechanism that forces web browsers to interact with your
+server over HTTPS only, effectively preventing protocol downgrade attacks and protecting against man-in-the-middle attacks. By
+enforcing HTTPS, you provide a secure environment for transmitting sensitive data and ensure clients always connect over a
+secure protocol.
 
-// TODO: complement description
+When a client accesses the server for the first time over HTTPS, the server can include an HSTS header in the response,
+instructing the client to only use HTTPS for all future requests.
 
+**Key Points:**
+- **Prevents protocol downgrade**: Eliminates the risk of clients unintentionally using an insecure HTTP connection.
+- **Protects against man-in-the-middle attacks**: Keeps all client-server communication encrypted.
+- **Enforces secure connection**: Ensures all users access resources over HTTPS, improving overall API security.
+
+**Example of setting an HSTS header in a response:**
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+Strict-Transport-Security: max-age=31536000; includeSubDomains
 ```
+
+In this example, the `Strict-Transport-Security` header tells the client to only connect over HTTPS for the next 31536000
+seconds (1 year). The `includeSubDomains` directive applies this policy to all subdomains, ensuring secure access across the entire domain.
 
 See also: `HTTPS` `HSTS` `Encryption` `downgrade attack`
 <br><br>
