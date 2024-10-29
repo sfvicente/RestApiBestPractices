@@ -47,12 +47,19 @@ See also: `HTTPS` `HSTS` `Encryption` `downgrade attack`
 
 
 ### Always protect data at rest by using encryption and secure storage mechanisms for sensitive information
+To safeguard sensitive data stored on servers, databases, or backups, always employ encryption and secure storage mechanisms
+for data at rest. Encrypting sensitive information ensures that even if unauthorized access occurs, the data remains unreadable
+without the encryption key. Additionally, storing data in secure, restricted environments further reduces the risk of exposure
+or tampering.
 
-// TODO: complement description
+Sensitive information, such as personally identifiable information (PII), financial data, or authentication tokens, should be
+encrypted using strong, industry-standard algorithms (e.g., AES-256). Implementing access control policies around the storage
+environment further enhances security by ensuring that only authorized personnel can access this data.
 
-```http
-// TODO: add example
-```
+**Key Points:**
+- **Ensures data privacy**: Protects sensitive information from unauthorized access.
+- **Reduces risk of exposure**: Encryption renders data unreadable without the necessary decryption keys.
+- **Strengthens compliance**: Meets regulatory requirements for data security and privacy, such as GDPR or HIPAA.
 
 See also: `data at rest` `Encryption` `storage` `confidentiality`
 <br><br>
