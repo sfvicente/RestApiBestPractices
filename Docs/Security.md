@@ -6,12 +6,30 @@ These guidelines focus on securing data as it travels between the client and ser
 <br>
 
 ### Always use HTTPS to encrypt data in transit and protect against interception
+Use HTTPS as a secure protocol to encrypt data sent between clients and servers, ensuring that sensitive information
+cannot be intercepted by unauthorized parties. HTTPS provides encryption over the network, preventing malicious actors
+from intercepting, reading, or tampering with data transmitted in requests and responses. This encryption is especially
+critical for protecting sensitive information, such as passwords, financial details, and personal data, that may
+otherwise be vulnerable to interception during transit.
 
-// TODO: complement description
+For security best practices, implement HTTPS with TLS (Transport Layer Security), and keep TLS certificates updated to
+maintain the integrity of encrypted connections. By enforcing HTTPS for all connections, you improve client confidence
+and prevent data from being compromised.
 
+**Key Points:**
+- **Protects data in transit**: Ensures sensitive information remains encrypted and secure while traveling over the network.
+- **Prevents interception**: Encrypts communications, making it extremely difficult for attackers to intercept or alter data.
+- **Improves trust**: HTTPS signals to users that their data is safe, increasing their confidence in interacting with the API.
+
+**Example of an HTTPS request:**
 ```http
-// TODO: add example
+GET /api/v1/account HTTP/1.1
+Host: example.com
+Protocol: HTTPS
 ```
+
+In this example, all data sent and received is encrypted over HTTPS, protecting sensitive information from being exposed to
+unauthorized parties during transit.
 
 See also: `HTTPS` `Encryption`
 <br><br>
