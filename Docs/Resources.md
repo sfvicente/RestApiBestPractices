@@ -47,12 +47,27 @@ Content-Type: application/json
 
 
 ### Always design API operations to limit the amount of data returned in a single response
+Design API operations to control and restrict the data volume returned in a single response, ensuring optimized performance
+and usability. Limiting response data can prevent performance issues and excessive memory usage, which are critical when
+dealing with large datasets or handling requests on devices with limited resources. This approach also reduces network
+latency, improving the efficiency of client-server interactions.
 
-// TODO: add description
+Techniques such as pagination, field selection, and maximum size limits help control data volume and offer clients
+flexibility to retrieve only the necessary information. This results in faster response times and prevents overloading
+clients with irrelevant data.
 
+**Key Points:**
+- **Improves performance**: Reduces processing time and bandwidth usage by limiting the data size.
+- **Enhances usability**: Provides clients with only relevant data, which simplifies handling and processing on the client side.
+- **Scales efficiently**: Helps manage server resources, especially under high loads or with large datasets.
+
+**Example with pagination parameters to limit response data:**
 ```http
-// TODO: add examples
+GET /api/v1/products?limit=10&page=2
 ```
+
+In this example, the API request limits the response to 10 products per page, improving performance and enabling clients
+to retrieve data in manageable chunks.
 
 See also: Paging
 <br>
