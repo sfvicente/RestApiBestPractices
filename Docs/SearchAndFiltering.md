@@ -98,12 +98,27 @@ GET /api/products?category=electronics&price<100
 
 
 ### Consider supporting partial matching and wildcards in search queries
+Enhance search functionality by supporting partial matching and wildcard characters to improve flexibility and user
+experience. By allowing partial matches and wildcard symbols, the API can accommodate varied search needs, helping
+users find relevant data even when exact matches aren’t available or when they have incomplete information. This
+approach broadens search capabilities, making the API more adaptable and user-friendly.
 
-// TODO: add description
+Partial matching enables clients to retrieve items with names or identifiers that match part of the search term,
+while wildcards can allow for more advanced and flexible search patterns. Supporting these options makes the API
+easier to use in applications where users may need more nuanced or exploratory search features.
 
+**Key Points:**
+- **Improves search flexibility**: Users can find relevant results even if they do not know exact names or spellings.
+- **Enhances user experience**: Supports diverse user needs, such as prefix, suffix, or substring searches.
+- **Expands search capabilities**: Adds value to applications requiring robust or advanced search functionality.
+
+**Example with partial matching and wildcard parameters:**
 ```http
-
+GET /api/v1/products?search=lap*&match=partial
 ```
+
+In this example, the search query uses a wildcard `*` to return results that include any products beginning with
+“lap.” Partial matching helps retrieve relevant items based on incomplete or approximate search input.
 
 <br><br>
 
