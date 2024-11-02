@@ -56,19 +56,39 @@ In this example, the client requests a list of products sorted by `price` in asc
 
 
 ### Always sort `null` values as less than values which are not `null`
+To ensure consistent sorting and predictable client responses, always sort `null` values to appear before non-`null`
+values in any API results where sorting applies. This practice provides a clear ordering standard and prevents
+unexpected results when `null` values are present in the dataset.
 
-// TODO: add description
-
-```http
-// TODO: add example
-```
-
-// TODO: complement description
+**Example Scenario**
 
 ```http
-// TODO: add example
+GET /api/products?sort=price
 ```
 
+**Expected Response**
+
+Given products with prices `[null, 5.99, null, 15.49, 7.00]`, the server response would sort the prices with `null` values appearing first:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  { "id": 1, "name": "Product A", "price": null },
+  { "id": 2, "name": "Product B", "price": null },
+  { "id": 3, "name": "Product C", "price": 5.99 },
+  { "id": 4, "name": "Product D", "price": 7.00 },
+  { "id": 5, "name": "Product E", "price": 15.49 }
+]
+```
+
+**Benefits**
+- **Consistency:** Keeps API responses uniform, regardless of client.
+- **Predictability:** Helps clients handle `null` values consistently, especially in ordered or paginated responses.
+- **Compatibility:** Commonly aligns with SQL and database sorting defaults, making backend integration straightforward.
+
+**Tags**: sorting, `null` values, ordering
 <br><br>
 
 
