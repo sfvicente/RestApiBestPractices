@@ -278,10 +278,37 @@ Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 
 
 ### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request
+When responding with a `503 Service Unavailable` status, include a `Retry-After` header to indicate when clients may try their
+request again. This helps clients handle temporary service unavailability gracefully, reducing unnecessary request retries and
+load on the server.
 
-// TODO: add descriptions
+**Client Request**
 
-// TODO: add examples
+```http
+GET /api/orders
+```
+
+**Server Response**
+
+```http
+HTTP/1.1 503 Service Unavailable
+Content-Type: application/json
+Retry-After: 120
+
+{
+  "error": "Service Unavailable",
+  "message": "The server is currently unable to handle the request. Please retry after 120 seconds."
+}
+```
+
+**Scenarios**
+- **Scheduled Maintenance:** When the server is down temporarily for updates or maintenance.
+- **High Server Load:** When the server is overwhelmed and cannot process additional requests immediately.
+- **Service Dependencies:** When the server relies on an external service that is momentarily unavailable.
+
+The `Retry-After` header can be set in seconds (e.g., `Retry-After: 120`) or as an HTTP date (e.g., `Retry-After: Wed, 21 Oct 2024 07:28:00 GMT`) to indicate when the client should attempt the request again. This provides clients with clear guidance, minimizing retries during service disruptions.
+
+**Tags**: status codes, `503 Service Unavailable`, `Retry-After` header, rate limiting
 
 Additional Tags: `retry-after` `headers`
 <br><br>
