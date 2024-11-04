@@ -124,13 +124,37 @@ In this example, the search query uses a wildcard `*` to return results that inc
 
 
 ### Always validate search parameters and return 400 Bad Request for invalid or unsupported filters
+Validate all search parameters to ensure they are correctly formatted and supported. If a client submits invalid
+or unsupported filters, return a `400 Bad Request` response, making it clear why the request failed. This helps
+clients correct their requests without causing unnecessary server load.
 
-// TODO: complement description
+**Client Request**
 
 ```http
-// TODO: add example
+GET /api/products?price=cheap&category=42
 ```
 
+**Server Response**
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Bad Request",
+  "message": "Invalid search parameter: 'price' must be a numeric value."
+}
+```
+
+**Scenarios**
+- **Invalid Parameter Values:** When the client uses a parameter in an incorrect format, such as a string for a numeric field.
+- **Unsupported Filters:** When the client includes filters not recognized by the API.
+- **Missing Required Filters:** When certain filters are necessary for the request to succeed but are missing or malformed.
+
+By returning a `400 Bad Request` status code and a clear error message, the API helps clients troubleshoot issues with
+their requests and ensures only valid queries are processed.
+
+**Tags**: validation, `400 Bad Request`, search parameters, error handling
 <br><br>
 
 
