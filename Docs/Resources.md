@@ -46,7 +46,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Always design API operations to limit the amount of data returned in a single response
+### Always limit the amount of data returned in a single API response
 Design API operations to control and restrict the data volume returned in a single response, ensuring optimized performance
 and usability. Limiting response data can prevent performance issues and excessive memory usage, which are critical when
 dealing with large datasets or handling requests on devices with limited resources. This approach also reduces network
