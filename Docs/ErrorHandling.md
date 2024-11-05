@@ -277,7 +277,7 @@ Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 <br><br>
 
 
-### Always use appropriate `retry-after` headers with `503` responses to inform clients when to retry the request
+### Always use appropriate `Retry-After` headers with `503` responses to inform clients when to retry
 When responding with a `503 Service Unavailable` status, include a `Retry-After` header to indicate when clients may try their
 request again. This helps clients handle temporary service unavailability gracefully, reducing unnecessary request retries and
 load on the server.
