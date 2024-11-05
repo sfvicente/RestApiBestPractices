@@ -123,7 +123,7 @@ In this example, the search query uses a wildcard `*` to return results that inc
 <br><br>
 
 
-### Always validate search parameters and return 400 Bad Request for invalid or unsupported filters
+### Always validate search parameters and return `400 Bad Request` for invalid or unsupported filters
 Validate all search parameters to ensure they are correctly formatted and supported. If a client submits invalid
 or unsupported filters, return a `400 Bad Request` response, making it clear why the request failed. This helps
 clients correct their requests without causing unnecessary server load.
