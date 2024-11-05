@@ -55,7 +55,7 @@ In this example, the client requests a list of products sorted by `price` in asc
 <br><br>
 
 
-### Always sort `null` values as less than values which are not `null`
+### Always sort `null` values as less than non-`null` values
 To ensure consistent sorting and predictable client responses, always sort `null` values to appear before non-`null`
 values in any API results where sorting applies. This practice provides a clear ordering standard and prevents
 unexpected results when `null` values are present in the dataset.
