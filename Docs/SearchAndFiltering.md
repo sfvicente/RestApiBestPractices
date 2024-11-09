@@ -181,14 +181,40 @@ GET /api/products?price[lt]=100&price[gt]=10
 
 
 ### Consider limit the number of filter combinations to avoid performance issues
+Restricting the number of filter combinations helps maintain API performance and prevents excessive query
+complexity. Overly complex filters can degrade response times, increase server load, and may result in timeout
+errors. Defining limits on filter combinations ensures that the API remains responsive and scalable under heavy use.
 
-// TODO: add description
+**Guideline**
+- Set a maximum number of filters or combinations per request (e.g., up to 3 filters).
+- Return an error if the request exceeds the allowed limit, informing the client to simplify their query.
+
+**Client Request**
 
 ```http
-// TODO: add example
+GET /api/products?category=electronics&price_min=100&price_max=500&brand=XYZ&rating=4&color=blue
 ```
 
-Tags: `performance`
+**Server Response**
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Bad Request",
+  "message": "Too many filters applied. Please reduce the number of filter parameters."
+}
+```
+
+**Scenarios**
+- **Complex Filtering:** When a client applies excessive filters, increasing query processing time.
+- **Database Load Reduction:** Limiting filters helps reduce complex joins or scans on large datasets.
+- **Optimized Caching:** Simplifying filter combinations enables better cache utilization, improving response times.
+
+This approach balances flexibility for clients with reliable server performance, ensuring efficient and manageable query processing.
+
+Tags: `search` `filters` `performance` `400 Bad Request`
 <br><br>
 
 
