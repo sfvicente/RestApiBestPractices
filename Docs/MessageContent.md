@@ -8,13 +8,64 @@
 <br>
 
 ### Always maintain consistent data structures across endpoints to ensure predictable responses
+Maintaining consistent data structures across all endpoints enhances the predictability of API responses, making it
+easier for clients to consume data reliably. This consistency reduces parsing errors, simplifies client code, and
+ensures that similar resources or entities follow the same structure regardless of the endpoint.
 
-// TODO: complement description
+**Guideline**
+- Use the same field names, data types, and nesting structures across endpoints when representing similar data.
+- Avoid introducing different field names or formats for the same entity type, even if used in different contexts.
+
+**Client Requests**
 
 ```http
-// TODO: add example
+GET /api/products/123
 ```
 
+```http
+GET /api/orders/456
+```
+
+**Server Responses**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+// Product Response
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99,
+  "availability": "In Stock"
+}
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+// Order Response with consistent structure for product info
+{
+  "id": 456,
+  "status": "Shipped",
+  "products": [
+    {
+      "id": 123,
+      "name": "Product A",
+      "price": 29.99,
+      "quantity": 1
+    }
+  ]
+}
+```
+
+**Scenarios**
+- **Unified Entity Representation:** Ensures that, for example, a `product` object is identical across different endpoints (e.g., product listings and order details).
+- **Improved Client Parsing:** Reduces the need for custom parsing logic, as clients can reuse code for similar data structures.
+- **Reduced Errors:** Consistency in naming and formatting minimizes confusion and errors when integrating new endpoints or features.
+
+Tags: data structure consistency, response predictability, API design
 <br><br>
 
 
