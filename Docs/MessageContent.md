@@ -117,13 +117,39 @@ Tags: `Content Negotiation` `Accept Header` `Response Format` `HTTP Headers` `Fl
 
 
 ### Consider optimizing the size of the payload by excluding unnecessary data and using efficient data formats
+Minimizing payload size improves API performance by reducing bandwidth usage and response times. This can be achieved
+by excluding redundant or unnecessary data fields and using efficient data formats like JSON or gzip compression. Smaller
+payloads also benefit mobile or low-bandwidth clients.
 
-// TODO: complement description
+- **Selective Fields:** Allow clients to request specific fields using query parameters (e.g., `fields` or `select`).  
+- **Efficient Formats:** Use compressed data formats (e.g., gzip) or lean formats (e.g., JSON) for serialization or optimise structures for frequently accessed large datasets.
+- **Remove Redundancy:** Exclude verbose metadata, unused fields, or unnecessary nested structures.
+
+**Client Request**
 
 ```http
-// TODO: add example
+GET /api/products/123?fields=id,name,price
 ```
 
+**Server Response**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99
+}
+```
+
+**Scenarios**
+- **Reduced Fields:** An API for listing products excludes full descriptions and reviews by default, only adding them when explicitly requested.  
+- **Paginated Results:** Truncate responses to manageable sizes for paginated endpoints.  
+- **Batch Compression:** Compress large datasets (e.g., logs or analytics) for efficient transmission.  
+
+**Tags**: payload optimization, data formats, efficient APIs, performance improvement
 <br><br>
 
 
