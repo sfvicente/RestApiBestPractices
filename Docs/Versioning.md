@@ -6,19 +6,59 @@
 
 
 ### Always increment the version number of services in response to any breaking application change.
+When a breaking change is introduced to an API, incrementing the version number ensures backward compatibility and allows
+clients to continue using previous versions without disruption. This practice provides a clear separation between incompatible
+versions, enabling smooth transitions and effective lifecycle management.
 
-// TODO: add description
+- Use semantic versioning (`v1`, `v2`, etc.) in the API URL or headers for clear identification of versions.
+- Treat changes to the data structure, endpoint behaviour, or error formats as breaking changes requiring a version increment.
+- Maintain documentation for all active versions to support clients still using older versions.
+
+**Client Request to v1**
 
 ```http
-// TODO: add example
+GET /api/v1/products/123
 ```
 
-// TODO: complement description
+**Server Response from v1**
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99
+}
 ```
 
+**Client Request to v2 (Breaking Change Introduced)**
+
+```http
+GET /api/v2/products/123
+```
+
+**Server Response from v2**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "productId": 123,
+  "productName": "Product A",
+  "cost": 29.99,
+  "currency": "USD"
+}
+```
+
+**Scenarios**
+- **Structural Changes:** Renaming fields or changing the data format (e.g., `price` becomes `cost`).
+- **Endpoint Changes:** Modifying or removing endpoints (e.g., merging `/products` and `/inventory` into `/items`).
+- **Behavioural Changes:** Altering how an endpoint processes requests or handles errors.
+
+**Tags**: versioning, breaking changes, API lifecycle, backward compatibility
 <br><br>
 
 
