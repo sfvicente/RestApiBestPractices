@@ -5,7 +5,7 @@
 <br>
 
 
-### Always increment the version number of services in response to any breaking application change.
+### Always increment the version number of services in response to any breaking application change
 When a breaking change is introduced to an API, incrementing the version number ensures backward compatibility and allows
 clients to continue using previous versions without disruption. This practice provides a clear separation between incompatible
 versions, enabling smooth transitions and effective lifecycle management.
@@ -62,7 +62,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Consider incrementing the version number of services in response to nonbreaking changes.
+### Consider incrementing the version number of services in response to nonbreaking changes
 
 // TODO: add description
 
@@ -79,7 +79,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Consider incrementing the version number to new major version in response to a future deprecation of services.
+### Consider incrementing the version number to new major version in response to a future deprecation of services
 
 By increasing the major version, it notifies clients that services will be deprecated and there will be no future support.
 
@@ -136,7 +136,7 @@ Renaming service operations is a breaking change.
 <br><br>
 
 
-### Always increment the version number of services when removing operation parameters.
+### Always increment the version number of services when removing operation parameters
 
 Removing service operation parameters is a breaking change.
 
@@ -155,7 +155,7 @@ Removing service operation parameters is a breaking change.
 <br><br>
 
 
-### Always increment the version number of services when renaming operation parameters.
+### Always increment the version number of services when renaming operation parameters
 
 Renaming a service operation parameters is a breaking change.
 
@@ -174,7 +174,7 @@ Renaming a service operation parameters is a breaking change.
 <br><br>
 
 
-### Always increment the version number of services when there are changes in the behavior of an existing service operations.
+### Always increment the version number of services when there are changes in the behavior of an existing service operations
 
 A change in the behavior of existing service operations is a breaking change.
 
@@ -193,7 +193,7 @@ A change in the behavior of existing service operations is a breaking change.
 <br><br>
 
 
-### Always increment the version number of services when there are changes in error codes of existing service operations.
+### Always increment the version number of services when there are changes in error codes of existing service operations
 
 A change in error codes of existing service operations is a breaking change.
 
@@ -212,7 +212,7 @@ A change in error codes of existing service operations is a breaking change.
 <br><br>
 
 
-### Always increment the version number of services when there are changes in fault contracts of existing service operations.
+### Always increment the version number of services when there are changes in fault contracts of existing service operations
 
 A change in fault contracts of existing service operations is a breaking change.
 
@@ -231,7 +231,7 @@ A change in fault contracts of existing service operations is a breaking change.
 <br><br>
 
 
-### Avoid using URI based versioning.
+### Avoid using URI based versioning
 
 URI based version is mechanism in which the version number is included in the path when performing requests.
 
@@ -252,7 +252,7 @@ This type of versioning creates tighter coupling of the components and leads to 
 <br><br>
 
 
-### Prefer the use of media type versioning.
+### Prefer the use of media type versioning
 
 // TODO: add description
 
