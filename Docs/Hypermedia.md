@@ -1,5 +1,8 @@
 # Hypermedia
-
+Hypermedia is a key feature of REST that enables APIs to guide clients dynamically by including links, actions, and
+metadata in responses. It allows clients to navigate resources, perform operations, and discover related endpoints
+without relying solely on hardcoded URLs or external documentation. By embedding contextual links and controls, 
+hypermedia ensures flexibility, enhances discoverability, and promotes decoupling between client and server.
 
 ## General
 
