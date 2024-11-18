@@ -232,23 +232,48 @@ A change in fault contracts of existing service operations is a breaking change.
 
 
 ### Avoid using URI based versioning
+URI-based versioning involves embedding the version number directly in the API's path (e.g., `/api/v1/resource`). While
+simple to implement, this approach introduces several challenges in API maintenance, client-server decoupling, and
+scalability. It often results in tighter coupling between components and more complex release management.
 
-URI based version is mechanism in which the version number is included in the path when performing requests.
+- **Promote Header-Based Versioning**: Use headers (e.g., `Accept`) for version negotiation to decouple versioning from resource identifiers and simplify URI structures.  
+- **Avoid Hardcoding Versions**: Avoid locking version numbers into the URI structure, as this can lead to redundancy and confusion when maintaining multiple versions.  
+- **Ensure Backward Compatibility**: Use strategies that allow incremental changes without requiring constant updates to resource paths.
 
-// TODO: complement description
-
-```http
-// TODO: add example
-```
-
-This type of versioning creates tighter coupling of the components and leads to more complex and error-prone release management procedures.
-
-// TODO: complement description
+**Client Request with URI-Based Versioning**
 
 ```http
-// TODO: add example
+GET /api/v1/products/123
 ```
 
+**Client Request with Header-Based Versioning**
+
+```http
+GET /api/products/123
+Accept: application/vnd.myapi.v1+json
+```
+
+**Server Response**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/vnd.myapi.v1+json
+
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99
+}
+```
+
+**Scenarios**
+- **Multiple Coexisting Versions**: URI-based versioning requires maintaining distinct endpoints for each version, complicating routing logic and documentation.  
+- **Client Migration Challenges**: Changes to URI paths force clients to update hardcoded dependencies, increasing the risk of errors.  
+- **Loss of Resource Identity**: Embedding versions in URIs reduces the clarity of resource identification, especially for dynamic linking and hypermedia APIs.
+
+Avoiding URI-based versioning enhances flexibility and consistency, enabling APIs to evolve seamlessly while maintaining a clean and predictable URI structure.
+
+**Tags**: API versioning, URI design, backward compatibility, header-based versioning, REST best practices  
 <br><br>
 
 
