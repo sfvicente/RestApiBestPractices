@@ -1,5 +1,7 @@
 # Data Formats
-
+The **Data Formats** section focuses on standardizing how data is represented and transmitted in APIs to ensure
+consistency, efficiency, and interoperability. It includes guidelines on default formats like JSON, efficient
+encoding practices, and techniques for minimizing payload size to optimise performance and enhance client compatibility.
 
 ## General
 
