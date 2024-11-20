@@ -1,5 +1,7 @@
 # Caching
-
+The **Caching** section provides best practices for managing the storage and retrieval of API responses to improve
+performance, reduce latency, and optimise server resources. It includes strategies for setting cache directives,
+distinguishing between public and private caches, and maintaining data freshness while ensuring security.
 
 ## General
 
