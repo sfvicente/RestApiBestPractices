@@ -1,5 +1,7 @@
 # Versioning
-
+The **Versioning** section provides strategies for managing changes to APIs over time without disrupting existing
+clients. It includes guidelines for version negotiation, maintaining backward compatibility, and adopting best
+practices to handle breaking changes effectively while ensuring a smooth evolution of services.
 
 ## General
 <br>
