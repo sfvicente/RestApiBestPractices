@@ -1,5 +1,7 @@
 # Design Principles
-Design Principles are the fundamental guidelines that ensure APIs are well-structured, efficient, and easy to use.
+The **Design Principles** section outlines foundational guidelines for building robust, scalable, and user-friendly
+APIs. It covers key principles like consistency, simplicity, predictability, and adherence to RESTful standards,
+ensuring APIs are intuitive, maintainable, and aligned with client needs.
 
 ## General Guidelines
 
