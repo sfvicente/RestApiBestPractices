@@ -24,6 +24,52 @@ distinguishing between public and private caches, and maintaining data freshness
 ## Enable Client-Side Caching for Static Resources
 
 ## Invalidate Cached Data When Resources Change
+Cached data must be invalidated promptly when the underlying resource changes to ensure clients always receive
+up-to-date information. Failing to invalidate stale caches can lead to inconsistencies, incorrect data, and a
+poor user experience.
+
+- **Leverage Cache Invalidation Headers**: Use headers like `ETag` and `Last-Modified` to inform caches of the resource’s current state and allow efficient validation.  
+- **Invalidate Proactively**: When updating or deleting resources, send invalidation instructions to caches (e.g., using `Cache-Control: no-cache` or `max-age=0`).  
+- **Support Resource Purging**: Implement mechanisms for purging or updating specific cached resources in shared caches (e.g., CDNs) when changes occur.
+
+**Client Request with Cache Validation**
+
+```http
+GET /api/products/123
+If-None-Match: "e12345"
+```
+
+**Server Response When Resource Has Changed**
+
+```http
+HTTP/1.1 200 OK
+ETag: "e67890"
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Updated Product",
+  "price": 49.99
+}
+```
+
+**Server Response When Resource Has Not Changed**
+
+```http
+HTTP/1.1 304 Not Modified
+ETag: "e12345"
+```
+
+**Scenarios**  
+- **Resource Updates**: When a product or user profile is updated, invalidate or update cached data immediately to reflect the change.  
+- **Resource Deletions**: Remove the cache entry for a deleted resource to prevent serving stale data.  
+- **Dynamic Content**: Use short `max-age` values or validation headers for frequently changing data to minimise stale cache risks.  
+
+Proper cache invalidation ensures consistency and reliability while balancing performance and data accuracy.
+
+**Tags**: cache invalidation, ETag, cache control, data consistency, REST best practices
+<br><br>
+
 
 ## Distinguish Between Public and Private Caches Using Cache Directives
 Properly distinguishing between public and private caches ensures that cached data is stored and served
