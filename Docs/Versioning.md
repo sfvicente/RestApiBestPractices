@@ -65,19 +65,46 @@ Content-Type: application/json
 
 
 ### Consider incrementing the version number of services in response to nonbreaking changes
+Incrementing the version number for non-breaking changes can help clients differentiate between API versions while
+ensuring they always have access to the latest features. Although not always mandatory, this practice can provide
+clarity and transparency, especially when introducing enhancements or optional fields.
 
-// TODO: add description
+- **Use Minor or Patch Versions**: Increment the minor (e.g., `v1.1`) or patch version (e.g., `v1.0.1`) to signal non-breaking updates, such as added fields, new optional parameters, or improved functionality.  
+- **Ensure Backward Compatibility**: Guarantee that existing clients can continue using the API without modifications after a version increment.  
+- **Communicate Updates Clearly**: Use documentation and changelogs to inform clients about the enhancements in the new version.  
+
+**Client Request to Updated API**
 
 ```http
-// TODO: add example
+GET /api/products
+Accept: application/vnd.myapi.v1.1+json
 ```
 
-// TODO: complement description
+**Server Response with Additional Non-Breaking Field**
 
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/vnd.myapi.v1.1+json
+
+[
+  {
+    "id": 123,
+    "name": "Product A",
+    "price": 29.99,
+    "discount": 5.00
+  }
+]
 ```
 
+**Scenarios**  
+- **Adding Fields**: Introduce optional response fields without impacting existing clients.  
+- **Enhanced Query Options**: Provide new optional query parameters to extend search or filtering capabilities.  
+- **Improved Functionality**: Optimize existing endpoints or add non-disruptive features for better usability.  
+
+Incrementing the version number for non-breaking changes ensures clarity in version history and smooth adoption of enhancements
+while maintaining backward compatibility.
+
+**Tags**: API versioning, minor updates, backward compatibility, REST best practices
 <br><br>
 
 
