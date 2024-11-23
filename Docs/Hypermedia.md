@@ -70,6 +70,57 @@ Using `rel` attributes standardizes link purpose across APIs, improving usabilit
 
 
 ## Support Pagination with Hypermedia Controls (e.g., `next`, `prev`)
+Hypermedia controls for pagination, such as `next` and `prev` links, simplify navigating through large datasets
+by embedding navigation metadata directly in the response. This approach enhances usability and ensures clients
+can dynamically follow links without hardcoding pagination logic.
+
+- **Include `next` and `prev` Links**: Embed `next` and `prev` URLs in the response body to guide clients through paginated results.  
+- **Use `self` Links for Context**: Provide a `self` link to identify the current page and its parameters.  
+- **Return Metadata**: Include additional pagination metadata (e.g., `totalItems`, `page`, `pageSize`) to help clients display navigation controls.  
+- **Ensure Consistency**: Use the same pagination scheme across all endpoints to maintain predictability.
+
+**Client Request**
+
+```http
+GET /api/products?page=2&pageSize=5
+```
+
+**Server Response with Hypermedia Controls**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "page": 2,
+  "pageSize": 5,
+  "totalItems": 50,
+  "totalPages": 10,
+  "items": [
+    { "id": 6, "name": "Product F", "price": 19.99 },
+    { "id": 7, "name": "Product G", "price": 29.99 },
+    { "id": 8, "name": "Product H", "price": 39.99 },
+    { "id": 9, "name": "Product I", "price": 49.99 },
+    { "id": 10, "name": "Product J", "price": 59.99 }
+  ],
+  "_links": {
+    "self": "/api/products?page=2&pageSize=5",
+    "next": "/api/products?page=3&pageSize=5",
+    "prev": "/api/products?page=1&pageSize=5"
+  }
+}
+```
+
+**Scenarios**  
+- **Paged Lists**: Use hypermedia controls for APIs returning large datasets (e.g., product lists, user directories).  
+- **Dynamic Navigation**: Allow clients to follow links without prior knowledge of pagination logic.  
+- **Flexible Clients**: Enhance client implementations by providing all necessary metadata for navigation and display.
+
+Embedding hypermedia controls in pagination ensures intuitive navigation and simplifies client implementation while adhering to REST principles.
+
+**Tags**: pagination, hypermedia, REST navigation, page links, usability
+<br><br>
+
 
 ## Provide Forms or Templates for Actionable Resources
 
