@@ -14,6 +14,47 @@ hypermedia ensures flexibility, enhances discoverability, and promotes decouplin
 ## Use HATEOAS to Provide Navigation Links in Responses
 
 ## Include Self Links (`_self`) to Identify Resource Locations
+Providing a `_self` link in API responses helps clients identify the canonical URL for the returned resource. This
+ensures clarity, supports hypermedia-driven interactions, and allows clients to make further requests to the
+resource without relying on hardcoded paths.
+
+- **Always Include a `_self` Link**: Embed a `_self` link in every resource representation to indicate the resource's location.  
+- **Use Absolute URLs When Possible**: Include full URLs in `_self` links to simplify client-side construction and avoid ambiguity.  
+- **Keep Links Up-to-Date**: Ensure `_self` links accurately reflect the current location or state of the resource, even after updates or moves.  
+- **Support Discoverability**: Use `_self` links to enable clients to dynamically discover and interact with resources without prior knowledge of the API structure.  
+
+**Client Request**
+
+```http
+GET /api/products/123
+```
+
+**Server Response with `_self` Link**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99,
+  "_links": {
+    "self": "/api/products/123"
+  }
+}
+```
+
+**Scenarios**  
+- **Resource Identification**: Use `_self` links to provide the exact URL for accessing or modifying the resource.  
+- **Dynamic APIs**: In APIs with frequently changing structures, `_self` links allow clients to adapt to changes without hardcoding paths.  
+- **Inter-resource Linking**: Include `_self` links when embedding related resources to clarify relationships and navigation paths.
+
+Adding `_self` links in API responses ensures that resource locations are explicit and easily accessible, enhancing usability and maintainability.
+
+**Tags**: hypermedia, `_self` link, resource location, REST discoverability, API usability
+<br><br>
+
 
 ## Provide Contextual Links for Related Resources
 
