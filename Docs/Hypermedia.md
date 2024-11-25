@@ -168,6 +168,56 @@ Embedding hypermedia controls in pagination ensures intuitive navigation and sim
 ## Document Hypermedia Controls and Link Relations Clearly
 
 ## Embed Links for Optional Operations Based on User Roles or State
+Including links for optional operations, tailored to user roles or the resource state, enables clients to discover
+context-sensitive actions dynamically. This approach adheres to HATEOAS principles, simplifying API interactions
+and reducing hardcoded logic on the client side.
+
+- **Role-Specific Links**: Provide links for operations that are available only to specific user roles (e.g., admin-only actions).  
+- **State-Dependent Links**: Embed links based on the resource's current state (e.g., a `complete` action for an order that is still pending).  
+- **Clear Link Documentation**: Use descriptive `rel` attributes to clarify the purpose of each link.  
+- **Omit Unavailable Links**: Avoid including links for actions the client cannot perform, reducing confusion and error-prone requests.  
+
+**Client Request**
+
+```http
+GET /api/orders/456
+```
+
+**Server Response with Role and State-Based Links**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 456,
+  "status": "pending",
+  "items": [
+    { "id": 1, "name": "Widget A", "quantity": 2 },
+    { "id": 2, "name": "Widget B", "quantity": 1 }
+  ],
+  "_links": {
+    "self": "/api/orders/456",
+    "approve": "/api/orders/456/approve",
+    "cancel": "/api/orders/456/cancel"
+  }
+}
+```
+
+In this example:  
+- The `approve` link is available because the order is `pending`.  
+- A `ship` link might appear only after the order is approved.
+
+**Scenarios**  
+- **Role-Based Operations**: Admins may see links to delete or archive resources, while standard users see only view or edit links.  
+- **State-Specific Actions**: Dynamic links based on resource states guide the client to permissible actions, such as canceling an active order or completing a draft.  
+- **Dynamic Permission Handling**: Links reflect real-time access permissions, ensuring client-side logic aligns with server-side policies.  
+
+Embedding context-sensitive links simplifies client integration, minimizes errors, and creates a dynamic, adaptive API experience.
+
+**Tags**: hypermedia, optional links, user roles, resource state, dynamic actions, HATEOAS principles
+<br><br>
+
 
 ## Design Consistent Hypermedia Responses Across Endpoints
 
