@@ -222,3 +222,82 @@ Embedding context-sensitive links simplifies client integration, minimizes error
 ## Design Consistent Hypermedia Responses Across Endpoints
 
 ## Use Standard Media Types for Hypermedia (e.g., HAL, JSON:API)
+Adopting standard media types like HAL or JSON:API for hypermedia APIs promotes consistency, interoperability, and
+ease of use. These formats define conventions for structuring resources and embedding links, enabling clients to
+navigate and interact with APIs effectively.
+
+- **Choose a Standard**: Select a hypermedia format like HAL (Hypertext Application Language) or JSON:API to structure API responses consistently.  
+- **Embed Links and Metadata**: Use standard properties (e.g., `_links` in HAL or `links` in JSON:API) to include navigational links and related metadata.  
+- **Follow Specification Rules**: Ensure your API adheres strictly to the chosen media type’s specifications for compatibility with libraries and tools.  
+- **Simplify Client Development**: Leverage client libraries built for standard media types to reduce implementation complexity and errors.  
+
+**Example Using HAL**
+
+**Client Request**
+
+```http
+GET /api/products/123
+```
+
+**Server Response in HAL Format**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/hal+json
+
+{
+  "id": 123,
+  "name": "Product A",
+  "price": 29.99,
+  "_links": {
+    "self": { "href": "/api/products/123" },
+    "category": { "href": "/api/categories/456" }
+  }
+}
+```
+
+**Example Using JSON:API**
+
+**Client Request**
+
+```http
+GET /api/products/123
+```
+
+**Server Response in JSON:API Format**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/vnd.api+json
+
+{
+  "data": {
+    "type": "products",
+    "id": "123",
+    "attributes": {
+      "name": "Product A",
+      "price": 29.99
+    },
+    "links": {
+      "self": "/api/products/123"
+    },
+    "relationships": {
+      "category": {
+        "links": {
+          "related": "/api/categories/456"
+        }
+      }
+    }
+  }
+}
+```
+
+**Scenarios**  
+- **Navigable APIs**: Use standard media types to simplify client navigation across related resources.  
+- **Third-Party Integrations**: Ensure compatibility with existing libraries and frameworks built for standard formats.  
+- **Reduced Documentation Burden**: Clients familiar with the media type can use your API without needing extensive custom documentation.  
+
+By leveraging standard media types, APIs become more predictable, reusable, and easier to integrate, aligning with industry best practices.
+
+**Tags**: hypermedia, media types, HAL, JSON:API, consistency, interoperability, REST standards
+<br><br>
