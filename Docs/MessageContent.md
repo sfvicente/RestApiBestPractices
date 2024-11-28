@@ -186,7 +186,7 @@ Content-Type: application/json
 <br><br>
 
 
-### Always use JSON as the payload data interchange format.
+### Always use JSON as the payload data interchange format
 
 // TODO: add description
 
@@ -322,7 +322,7 @@ e.g., firstName instead of first_name.
 <br><br>
 
 
-### Object names should be singular.
+### Object names should be singular
 When defining objects in JSON data or message content, using singular names ensures clarity and
 consistency. Singular naming reinforces the concept that each object represents a single instance
 or entity, making the structure easier to understand and work with.
@@ -378,7 +378,7 @@ By using singular names for JSON objects, you ensure the API content remains cle
 <br><br>
 
 
-### Do not use `null` for boolean properties.
+### Do not use `null` for boolean properties
 
 // TODO: add description
 
@@ -395,7 +395,7 @@ By using singular names for JSON objects, you ensure the API content remains cle
 <br><br>
 
 
-### Prefer the use of enumerations of named values instead of nullable boolean properties.
+### Prefer the use of enumerations of named values instead of nullable boolean properties
 
 // TODO: add description
 
@@ -410,7 +410,7 @@ By using singular names for JSON objects, you ensure the API content remains cle
 ```
 
 
-### Array names should be pluralized.
+### Array names should be pluralized
 
 // TODO: add description
 
@@ -427,7 +427,7 @@ By using singular names for JSON objects, you ensure the API content remains cle
 <br><br>
 
 
-### Prefer the use of the empty list representation instead of `null` for empty arrays.
+### Prefer the use of the empty list representation instead of `null` for empty arrays
 
 // TODO: add description
 
