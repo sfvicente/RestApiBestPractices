@@ -323,19 +323,58 @@ e.g., firstName instead of first_name.
 
 
 ### Object names should be singular.
+When defining objects in JSON data or message content, using singular names ensures clarity and
+consistency. Singular naming reinforces the concept that each object represents a single instance
+or entity, making the structure easier to understand and work with.
 
-// TODO: add description
+- **Singular Naming for Object Keys**: Use singular names for JSON object keys to reflect individual entities.  
+- **Avoid Plural Keys for Single Entities**: Plural naming may suggest collections, leading to confusion.  
+- **Consistency in Data Structures**: Apply this rule uniformly across all responses and request payloads.  
 
-```http
-// TODO: add example
+**Example**
+
+**Correct: Singular Object Names**
+
+```json
+{
+  "user": {
+    "id": 123,
+    "name": "Alice",
+    "email": "alice@example.com"
+  },
+  "order": {
+    "id": 456,
+    "total": 99.99
+  }
+}
 ```
 
-// TODO: complement description
+**Incorrect: Plural Object Names for Single Entities**
 
-```http
-// TODO: add example
+```json
+{
+  "users": {
+    "id": 123,
+    "name": "Alice",
+    "email": "alice@example.com"
+  },
+  "orders": {
+    "id": 456,
+    "total": 99.99
+  }
+}
 ```
 
+**Scenarios**  
+- **Nested Data Structures**: Singular object names are particularly important in nested data to avoid ambiguity.  
+- **Interoperability**: Consistent naming conventions make it easier for clients to understand and use the API.  
+
+**Cautions**  
+- **Collections of Objects**: Use plural names only when the object explicitly represents a collection (e.g., an array of resources). For example, `users` could refer to a list of user objects.  
+
+By using singular names for JSON objects, you ensure the API content remains clear, intuitive, and aligned with best practices for data representation.
+
+**Tags**: JSON structure, naming conventions, singular, message consistency, data clarity
 <br><br>
 
 
