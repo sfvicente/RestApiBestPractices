@@ -128,21 +128,62 @@ By increasing the major version, it notifies clients that services will be depre
 
 
 ### Always increment the version number of services when removing operations
+Removing a service operation is considered a breaking change because clients relying on the removed
+operation will encounter failures. Incrementing the version number ensures clear communication of these
+changes to clients and enables them to adapt their integrations accordingly.
 
-Removing a service operation is a breaking change.
+- **Treat Removal as a Breaking Change**: Any removal of an operation from a service constitutes a significant change that necessitates versioning.  
+- **Increment the Version Number**: Update the version number to indicate the new state of the API and ensure backward compatibility is not implied.  
+- **Communicate Clearly**: Notify clients about the removal in advance, providing a timeline and alternative approaches, if available.  
 
-// TODO: complement description
+**Example**
+
+**Version 1: Operation Available**
 
 ```http
-// TODO: add example
+GET /api/v1/orders/123
 ```
 
-// TODO: complement description
+**Response**
+
+```json
+{
+  "id": 123,
+  "status": "shipped",
+  "total": 49.99
+}
+```
+
+**Version 2: Operation Removed**
 
 ```http
-// TODO: add example
+GET /api/v2/orders/123
 ```
 
+**Response**
+
+```http
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": "Not Found",
+  "message": "The requested operation is no longer supported in this version."
+}
+```
+
+**Scenarios**  
+- **Deprecated Operations**: Before removing an operation, mark it as deprecated in prior versions, and include clear warnings in the API documentation.  
+- **Client Updates**: Allow clients adequate time to transition to the updated API version.  
+- **Backward Compatibility**: Retain the older API version for a defined period to avoid disrupting existing clients.  
+
+**Cautions**  
+- **Breaking Client Applications**: Removing operations without clear communication and proper versioning can lead to failed integrations.  
+- **Versioning Overhead**: Frequent breaking changes can complicate version management and increase client maintenance costs.  
+
+By incrementing the version number when removing operations, you ensure transparency and maintain trust with API consumers, while safeguarding against unintended disruptions.
+
+**Tags**: versioning, breaking changes, service evolution, client communication, API lifecycle management
 <br><br>
 
 
