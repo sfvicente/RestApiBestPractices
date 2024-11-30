@@ -396,18 +396,56 @@ By using singular names for JSON objects, you ensure the API content remains cle
 
 
 ### Prefer the use of enumerations of named values instead of nullable boolean properties
+Using enumerations of named values in JSON message content or data structures enhances clarity and expressiveness
+compared to nullable boolean properties. Enumerations provide a clearer context for potential states, reducing
+ambiguity and improving the readability and maintainability of the API.
 
-// TODO: add description
+- **Enumerations Over Nullable Booleans**: Replace nullable boolean properties with enumerations to represent all possible states explicitly.  
+- **Clarity in States**: Enumerations avoid confusion over the meaning of `null` or missing values.  
+- **Expandability**: Enumerations are easier to extend when new states are needed.  
 
-```http
-// TODO: add example
+**Example**
+
+**Preferred: Enumeration of Named Values**
+
+```json
+{
+  "order": {
+    "id": 123,
+    "status": "pending" 
+  }
+}
 ```
 
-// TODO: complement description
+Here, `status` uses an enumeration (`"pending"`, `"shipped"`, `"delivered"`) to represent the state of the order.
 
-```http
-// TODO: add example
+**Avoid: Nullable Boolean**
+
+```json
+{
+  "order": {
+    "id": 123,
+    "isPending": true,
+    "isShipped": null,
+    "isDelivered": null
+  }
+}
 ```
+
+Nullable boolean values are harder to interpret, especially when multiple related flags exist.
+
+**Scenarios**  
+- **State Representation**: For fields representing a resource's state or condition, enumerations convey meaning more effectively than booleans.  
+- **Validation and Documentation**: Enumerations allow for well-defined, restricted sets of values, making validation simpler and documentation clearer.  
+
+**Cautions**  
+- **Overly Broad Enumerations**: Ensure enumerations are concise and meaningful; overly broad sets can introduce complexity.  
+- **Backward Compatibility**: When extending enumerations with new values, maintain backward compatibility with existing clients.  
+
+By adopting enumerations for named values, APIs become more intuitive and robust, reducing potential misunderstandings and simplifying integration for clients.
+
+**Tags**: JSON design, enumerations, boolean properties, state representation, API clarity.
+<br><br>
 
 
 ### Array names should be pluralized
