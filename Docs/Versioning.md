@@ -207,21 +207,64 @@ Renaming service operations is a breaking change.
 
 
 ### Always increment the version number of services when removing operation parameters
+Removing operation parameters is considered a breaking change because it alters the expected interface between the client
+and the server. Clients relying on the removed parameters may encounter errors or unexpected behaviour. Incrementing the
+version number communicates this change effectively, allowing clients to adapt accordingly.
 
-Removing service operation parameters is a breaking change.
+- **Treat Parameter Removal as a Breaking Change**: Removing parameters changes the API's contract and impacts client integrations.  
+- **Increment the Version Number**: Update the version number whenever operation parameters are removed to signal the change explicitly.  
+- **Communicate in Advance**: Provide clear deprecation warnings and migration guidance for clients before removing parameters.  
 
-// TODO: complement description
+**Example**
+
+**Version 1: Parameter Available**
 
 ```http
-// TODO: add example
+GET /api/v1/orders?includeItems=true
 ```
 
-// TODO: complement description
+**Response**
+
+```json
+{
+  "id": 123,
+  "status": "shipped",
+  "items": [
+    { "name": "Book", "quantity": 1 },
+    { "name": "Pen", "quantity": 3 }
+  ]
+}
+```
+
+**Version 2: Parameter Removed**
 
 ```http
-// TODO: add example
+GET /api/v2/orders
 ```
 
+**Response**
+
+```json
+{
+  "id": 123,
+  "status": "shipped"
+}
+```
+
+Here, the `includeItems` parameter was removed, and the response no longer includes the `items` array.
+
+**Scenarios**  
+- **Deprecated Parameters**: Before removing a parameter, mark it as deprecated in the earlier version and provide clear documentation of the upcoming change.  
+- **Client Adaptation**: Allow sufficient time for clients to transition to the updated API version.  
+- **Backward Compatibility**: Retain the older version of the API for a defined period to prevent disruptions for existing clients.  
+
+**Cautions**  
+- **Client Disruption**: Removing parameters without versioning or communication can break existing integrations.  
+- **Migration Complexity**: Ensure that alternatives for removed parameters are documented and easy for clients to implement.  
+
+Incrementing the version number when removing parameters ensures a transparent API evolution process, reducing integration risks and maintaining trust with consumers.
+
+**Tags**: versioning, breaking changes, parameter removal, API contract, client communication.
 <br><br>
 
 
