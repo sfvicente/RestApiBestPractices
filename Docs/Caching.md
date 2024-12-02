@@ -133,7 +133,7 @@ Proper use of cache directives ensures APIs leverage caching benefits without co
 <br><br>
 
 
-## Set Vary Headers for Content Negotiation and Dynamic Responses
+## Set `Vary` headers for content negotiation
 Use the `Vary` header to indicate which request headers influence the response content during content
 negotiation. This ensures that caches and intermediaries correctly store and serve responses tailored
 to client preferences.
