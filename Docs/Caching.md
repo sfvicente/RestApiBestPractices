@@ -134,6 +134,49 @@ Proper use of cache directives ensures APIs leverage caching benefits without co
 
 
 ## Set Vary Headers for Content Negotiation and Dynamic Responses
+Use the `Vary` header to indicate which request headers influence the response content during content
+negotiation. This ensures that caches and intermediaries correctly store and serve responses tailored
+to client preferences.
+
+- **Content Type**: Include `Accept` in the `Vary` header when the response format depends on the client's preferred media type (e.g., JSON or XML).  
+- **Language**: Use `Vary: Accept-Language` when providing responses in multiple languages.  
+- **Compression**: Specify `Vary: Accept-Encoding` to signal different compressed versions of the response.  
+
+**Example**
+
+**Client Request**
+
+```http
+GET /api/products/123
+Accept: application/xml
+```
+
+**Response**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Vary: Accept
+
+<product>
+  <id>123</id>
+  <name>Laptop</name>
+  <price>999.99</price>
+</product>
+```
+
+**Scenarios**  
+- Serving JSON or XML responses based on `Accept`.  
+- Localising responses using `Accept-Language`.  
+- Delivering compressed responses based on `Accept-Encoding`.  
+
+**Cautions**  
+- Avoid listing unnecessary headers in `Vary`, as this can reduce caching efficiency.  
+- Test responses across varying header values to ensure the correct behaviour.  
+
+**Tags**: caching, content negotiation, vary header, HTTP headers.  
+<br><br>
+
 
 ## Cache Busting Techniques for Versioned Resources
 
