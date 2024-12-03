@@ -73,7 +73,7 @@ Proper cache invalidation ensures consistency and reliability while balancing pe
 <br><br>
 
 
-## Distinguish Between Public and Private Caches Using Cache Directives
+## Always distinguish between public and private caches using cache directives
 Properly distinguishing between public and private caches ensures that cached data is stored and served
 appropriately, maintaining both performance and security. Cache directives like `public` and `private`
 help control where responses can be cached, preventing sensitive information from being exposed to
