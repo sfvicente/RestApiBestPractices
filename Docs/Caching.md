@@ -180,6 +180,51 @@ Vary: Accept
 <br><br>
 
 
+### Always set `Vary` headers for dynamic responses
+
+When generating dynamic responses that depend on headers like `Authorization` or custom headers, use the `Vary` header to ensure caches do not inadvertently serve incorrect content to clients.
+
+**Guideline**  
+- **Authentication and Personalisation**: Include `Authorization` in the `Vary` header for APIs serving personalised or role-specific content.  
+- **Custom Headers**: Add any custom request headers that influence the response to the `Vary` header.  
+
+**Example**
+
+**Client Request**
+
+```http
+GET /api/products/123
+Authorization: Bearer <token>
+```
+
+**Response**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Vary: Authorization
+
+{
+  "id": 123,
+  "name": "Laptop",
+  "price": 999.99,
+  "discount": 100.00
+}
+```
+
+**Scenarios**  
+- Dynamic pricing or discounts based on user roles.  
+- User-specific content or access control using `Authorization` headers.  
+- Responses varying by custom client-specific headers.  
+
+**Cautions**  
+- Overuse of `Vary` for dynamic responses can lead to cache fragmentation.  
+- Validate the headers listed in `Vary` to ensure accurate and efficient caching behaviour.  
+
+**Tags**: caching, dynamic responses, vary header, HTTP headers.  
+<br><br>
+
+
 ## Cache Busting Techniques for Versioned Resources
 
 ## Document Caching Strategies for Each Endpoint
