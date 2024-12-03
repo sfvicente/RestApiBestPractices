@@ -19,7 +19,9 @@ distinguishing between public and private caches, and maintaining data freshness
 
 ## Leverage 304 Not Modified Responses to Save Bandwidth
 
-## Avoid Caching for Sensitive or Dynamic Data
+## Avoid caching for sensitive data
+
+## Avoid caching for dynamic data
 
 ## Enable Client-Side Caching for Static Resources
 
