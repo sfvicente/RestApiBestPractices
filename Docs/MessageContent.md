@@ -379,19 +379,45 @@ By using singular names for JSON objects, you ensure the API content remains cle
 
 
 ### Do not use `null` for boolean properties
+In JSON message content, avoid using `null` as a value for boolean properties. Booleans should represent
+definitive `true` or `false` states, ensuring clarity and reducing ambiguity for clients consuming the API.
 
-// TODO: add description
+- **Clarity of Meaning**: Boolean properties inherently represent binary states and should not include a third "unknown" or `null` value.  
+- **Use Enums for Ambiguity**: If a property can have more than two states, such as "true," "false," and "unknown," replace the boolean with an enumeration for better readability and flexibility.  
+- **Default Values**: Use explicit `true` or `false` values instead of `null` when the state is known or defaultable.  
 
-```http
-// TODO: add example
+**Examples**
+
+**Incorrect**: Using `null` for a boolean property  
+```json
+{
+  "isAvailable": null
+}
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
+**Correct**: Using explicit boolean values  
+```json
+{
+  "isAvailable": false
+}
 ```
 
+**Alternative**: Using an enumeration for multiple states  
+```json
+{
+  "availabilityStatus": "unknown"  // "available", "unavailable", or "unknown"
+}
+```
+
+**Scenarios**  
+- **Ambiguous States**: Replacing `null` booleans with enums ensures clarity when a state cannot be determined.  
+- **Default Values**: When a boolean can default to `false` (e.g., "isActive"), avoid `null`.  
+
+**Cautions**  
+- **Parsing Issues**: Some JSON parsers or consumers may misinterpret `null` for booleans, causing unexpected errors.  
+- **Validation Complexity**: Avoiding `null` simplifies validation logic for both the server and client.  
+
+**Tags**: JSON message content, boolean properties, null values, enumerations.
 <br><br>
 
 
