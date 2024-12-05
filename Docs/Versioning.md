@@ -391,17 +391,41 @@ Avoiding URI-based versioning enhances flexibility and consistency, enabling API
 
 
 ### Prefer using media type versioning for flexibility and clean URIs
+When implementing API versioning, favour media type versioning by embedding the version information in
+the `Content-Type` or `Accept` headers. This approach ensures cleaner URIs, better alignment with REST
+principles, and improved flexibility in handling multiple versions of resources.
 
-// TODO: add description
+- **Header-Based Versioning**: Specify the API version within the media type (e.g., `application/vnd.example.v2+json`).  
+- **Backward Compatibility**: Allow clients to request specific versions using the `Accept` header without altering the URI structure.  
+- **Simplified URI Management**: Keep URIs consistent across versions to reduce complexity and maintain a more predictable API structure.  
 
+**Examples**
+
+**Client Request for a Specific Version**  
 ```http
-// TODO: add example
+GET /api/products/123
+Accept: application/vnd.example.v2+json
 ```
 
-// TODO: complement description
-
+**Response for Requested Version**  
 ```http
-// TODO: add example
+HTTP/1.1 200 OK
+Content-Type: application/vnd.example.v2+json
+
+{
+  "id": 123,
+  "name": "Laptop",
+  "price": 999.99
+}
 ```
 
+**Scenarios**  
+- **Incremental Changes**: Introducing new fields or formats without breaking older clients.  
+- **Deprecation of Older Versions**: Gradually phasing out older versions while allowing clients to migrate at their own pace.  
+
+**Cautions**  
+- **Documentation Complexity**: Clearly document media types and their corresponding versions to avoid client confusion.  
+- **Middleware Support**: Ensure that your server middleware or frameworks can correctly interpret versioned media types.  
+
+**Tags**: versioning, media types, content negotiation, REST best practices.  
 <br><br>
