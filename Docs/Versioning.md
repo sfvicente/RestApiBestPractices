@@ -390,7 +390,7 @@ Avoiding URI-based versioning enhances flexibility and consistency, enabling API
 <br><br>
 
 
-### Prefer the use of media type versioning
+### Prefer using media type versioning for flexibility and clean URIs
 
 // TODO: add description
 
