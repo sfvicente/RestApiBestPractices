@@ -509,21 +509,39 @@ By adopting enumerations for named values, APIs become more intuitive and robust
 
 
 ### Do not perform date localization in the API
+APIs should avoid localizing dates and times. Instead, they should provide standardized formats (e.g., ISO 8601)
+and let client applications handle localization based on the user's context. This approach ensures consistency,
+simplifies server-side logic, and supports a broader range of client-side customizations.  
 
-When localization of dates is required on client applications, it should be performed by those applications not the API.
+- **Standardized Format**: Always return dates and times in a universally recognized format, such as ISO 8601 (e.g., `2024-12-01T12:00:00Z` for UTC).  
+- **Client Responsibility**: Allow client applications to format and localize dates based on user preferences, time zones, or regional settings.  
+- **Avoid Ambiguity**: Do not include localized date strings or region-specific formats in API responses.  
 
-// TODO: add description
+**Examples**  
 
-```http
-// TODO: add example
-```
+**Incorrect**: Localizing dates on the server  
+```json
+{
+  "eventDate": "01-Dec-2024, 12:00 PM IST" // Locale-specific format
+}
+```  
 
-// TODO: complement description
+**Correct**: Returning standardized date formats  
+```json
+{
+  "eventDate": "2024-12-01T12:00:00Z" // ISO 8601 in UTC
+}
+```  
 
-```http
-// TODO: add example
-```
+**Scenarios**  
+- **Global Applications**: APIs serving clients in multiple regions should avoid server-side localization to prevent inconsistencies.  
+- **User-Specific Localization**: Clients can format the date appropriately for their user's language or time zone (e.g., using libraries like `Intl.DateTimeFormat` in JavaScript).  
 
+**Cautions**  
+- **Parsing Errors**: Localized strings can cause parsing issues in client applications due to differences in regional formats.  
+- **Time Zone Handling**: Clearly indicate whether the date is in UTC or a specific time zone to avoid misinterpretations.  
+
+**Tags**: JSON message content, date localization, ISO 8601, time zone handling.  
 <br><br>
 
 
