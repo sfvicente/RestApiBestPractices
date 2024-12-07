@@ -119,6 +119,49 @@ Supporting additional formats like XML only when necessary balances modern best 
 
 
 ## Clearly Specify the Response Format Using Content-Type Headers
+APIs must explicitly indicate the format of the response body by using the `Content-Type` header. This ensures
+that clients can correctly interpret the data format, reducing errors and enhancing compatibility between clients and servers.  
+
+- **Set the `Content-Type` Header**: Always include the `Content-Type` header in responses to specify the media type of the response body (e.g., `application/json` for JSON).  
+- **Match the Response Body**: Ensure the value of the `Content-Type` header aligns with the actual format of the response payload.  
+- **Use Standard Media Types**: Stick to widely accepted MIME types such as `application/json`, `application/xml`, or others appropriate for the API.  
+
+**Examples**  
+
+**Correct**: Explicitly specifying `Content-Type`  
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Laptop",
+  "price": 999.99
+}
+```  
+
+**Incorrect**: Missing or mismatched `Content-Type`  
+```http
+HTTP/1.1 200 OK
+
+{
+  "id": 123,
+  "name": "Laptop",
+  "price": 999.99
+}
+```  
+
+**Scenarios**  
+- **Dynamic Responses**: When an endpoint supports multiple response formats, use `Content-Type` to indicate the specific format returned.  
+- **Error Responses**: Include the `Content-Type` header even in error responses to maintain consistency.  
+
+**Cautions**  
+- **Omissions**: Missing or incorrect `Content-Type` headers can lead to parsing errors or unexpected client behaviour.  
+- **Non-Standard Types**: Avoid using custom MIME types unless absolutely necessary and well-documented.  
+
+**Tags**: content negotiation, content-type, response headers, JSON, XML.  
+<br><br>
+
 
 ## Standardize Date and Time Fields Using ISO 8601
 Date and time fields in REST APIs should follow the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
