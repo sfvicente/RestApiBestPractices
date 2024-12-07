@@ -118,7 +118,7 @@ Supporting additional formats like XML only when necessary balances modern best 
 <br><br>
 
 
-## Clearly Specify the Response Format Using Content-Type Headers
+## Always clearly specify the response format using content-type headers
 APIs must explicitly indicate the format of the response body by using the `Content-Type` header. This ensures
 that clients can correctly interpret the data format, reducing errors and enhancing compatibility between clients and servers.  
 
