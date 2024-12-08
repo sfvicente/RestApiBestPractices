@@ -228,3 +228,39 @@ Vary: Authorization
 ## Cache Busting Techniques for Versioned Resources
 
 ## Document Caching Strategies for Each Endpoint
+Clearly document the caching strategies applied to each API endpoint to help clients understand how data is
+stored, retrieved, and updated. Proper documentation allows developers to optimise client-side caching, reduce
+unnecessary network requests, and ensure data freshness.  
+
+- **Define Caching Headers**: Clearly state the caching headers used (`Cache-Control`, `Expires`, `ETag`, etc.) and their intended behaviour.  
+- **Indicate Variability**: Highlight if and how caching depends on request parameters (e.g., query strings) or user roles.  
+- **Explain Expiry Policies**: Describe when cached data will expire and under what conditions clients should revalidate the cache.  
+- **State Exceptions**: Specify endpoints where caching is explicitly disabled and explain the rationale.  
+
+**Example**  
+
+**Caching Enabled**  
+```http
+GET /api/products
+Cache-Control: max-age=3600, public
+ETag: "v1-products-12345"
+```  
+In this case, the products list is cached for 1 hour (3600 seconds) and revalidated with the provided ETag.  
+
+**Caching Disabled**  
+```http
+GET /api/orders
+Cache-Control: no-store
+```  
+Here, order data is considered sensitive and is not cached by either public or private caches.  
+
+**Scenarios**  
+- **Public Resources**: Document how long resources like product catalogs or static data can be cached.  
+- **User-Specific Data**: Highlight caching differences for data unique to authenticated users (e.g., user profiles).  
+- **Dynamic Content**: Explain how frequently-changing data should be handled with appropriate caching policies.  
+
+**Cautions**  
+- **Undocumented Strategies**: Lack of documentation can lead to inefficient client implementations, stale data, or redundant API calls.  
+- **Inconsistent Practices**: Ensure all endpoints follow the documented caching strategies to avoid unexpected behaviour.  
+
+**Tags**: caching, documentation, cache-control, ETag, expires.  
