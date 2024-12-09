@@ -268,11 +268,54 @@ Additional Tags: `testing` `5xx` `error handling`
 
 
 ### Always implement load balancing and redundancy to reduce the likelihood of `503 Service Unavailable` errors due to server overload
+Implement load balancing and redundancy across your infrastructure to minimise the risk of `503 Service Unavailable` responses
+caused by server overload or failure. Properly distributed workloads and failover mechanisms ensure higher availability and better
+performance for clients.  
 
-// TODO: add descriptions
+- **Distribute Workloads**: Use load balancers to evenly distribute traffic among servers or containers, preventing individual servers from becoming overwhelmed.  
+- **Add Redundancy**: Ensure that multiple servers or nodes are available to handle requests in case of failure or maintenance.  
+- **Health Checks**: Configure health checks to detect unresponsive or failing servers and automatically remove them from the load balancer's rotation.  
+- **Auto-Scaling**: Implement auto-scaling to add or remove server instances based on traffic patterns or resource usage.  
 
-// TODO: add examples
+**Example**  
 
+1. **Load Balancer Configuration**  
+```yaml
+load_balancer:
+  type: application
+  targets:
+    - server1.example.com
+    - server2.example.com
+    - server3.example.com
+health_check:
+  path: /health
+  interval: 30s
+  timeout: 5s
+```  
+
+2. **503 Service Unavailable Response**  
+If all servers are temporarily overloaded:  
+```http
+HTTP/1.1 503 Service Unavailable
+Retry-After: 120
+Content-Type: application/json
+
+{
+  "error": "Service Unavailable",
+  "message": "The server is currently overloaded. Please try again in 2 minutes."
+}
+```  
+
+**Scenarios**  
+- **Traffic Spikes**: Load balancers can distribute sudden surges in traffic, such as during sales or promotions, across multiple servers.  
+- **Server Failures**: Redundant servers can handle requests if one or more servers go offline unexpectedly.  
+- **Routine Maintenance**: Load balancers can redirect traffic from servers undergoing updates or maintenance to ensure continuity.  
+
+**Cautions**  
+- **Single Points of Failure**: Ensure the load balancer itself is redundant to avoid creating a new bottleneck.  
+- **Misconfigured Balancing**: Improperly set up load balancers can lead to uneven traffic distribution and underutilised resources.  
+
+**Tags**: load balancing, redundancy, service availability, auto-scaling, failover.  
 Additional Tags: `load balancy` `redundancy` `503` `service unavailable`
 <br><br>
 
