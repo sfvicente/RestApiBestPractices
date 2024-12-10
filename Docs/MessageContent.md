@@ -492,19 +492,42 @@ By adopting enumerations for named values, APIs become more intuitive and robust
 
 
 ### Prefer the use of the empty list representation instead of `null` for empty arrays
+When representing empty collections in JSON data, always use an empty array (`[]`) rather than `null`. This approach
+promotes consistency and avoids ambiguity in the interpretation of the data.  
 
-// TODO: add description
+- **Use `[]` for Empty Arrays**: Ensure that any field representing a collection defaults to an empty array if no data is present, instead of assigning `null`.  
+- **Avoid Ambiguity**: Using `null` can imply that the field is missing or undefined, leading to potential misinterpretation by clients.  
+- **Consistent Type Handling**: Clients consuming the API can always expect an array, simplifying client-side validation and processing.  
 
-```http
-// TODO: add example
-```
+**Examples**  
 
-// TODO: complement description
+1. **Correct Representation**  
+```json
+{
+  "items": []
+}
+```  
 
-```http
-// TODO: add example
-```
+2. **Incorrect Representation**  
+```json
+{
+  "items": null
+}
+```  
 
+**Scenarios**  
+- **No Data Available**: When a query returns no results, such as a user with no associated orders or a product with no reviews, use an empty array to represent the absence of data.  
+- **Predefined Collections**: For API responses that always include specific fields representing collections, default to an empty array when the collection has no elements.  
+
+**Benefits**  
+- **Simplified Client Logic**: Clients can uniformly treat all array fields as iterable, even when they are empty, reducing error handling.  
+- **Avoids Misinterpretation**: Differentiates between "no items available" (`[]`) and "field is missing or undefined" (`null`).  
+
+**Cautions**  
+- **Schema Validation**: Ensure that your API's data schema explicitly defines array types to enforce consistent behavior.  
+- **Backward Compatibility**: If existing APIs use `null` for empty arrays, transitioning to empty arrays may require careful coordination to avoid breaking changes.  
+
+**Tags**: json consistency, empty collections, null values, api response formatting.  
 <br><br>
 
 
