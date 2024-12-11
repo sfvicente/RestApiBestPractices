@@ -15,7 +15,7 @@ distinguishing between public and private caches, and maintaining data freshness
 
 ## Use ETags for Conditional Requests and Cache Validation
 
-## Implement Proper Expiry with the Expires Header
+## Always define resource expiry using the `expires` header
 Use the `Expires` header to communicate the precise expiration time of cached resources, ensuring that clients
 and intermediaries know when to treat cached data as stale. This facilitates efficient caching and prevents serving
 outdated content.  
