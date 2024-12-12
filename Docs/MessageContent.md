@@ -475,19 +475,48 @@ By adopting enumerations for named values, APIs become more intuitive and robust
 
 
 ### Array names should be pluralized
+When representing arrays in JSON message content, ensure the property names are pluralized. This practice enhances
+readability and clarity by accurately reflecting the data structure as a collection of multiple items.  
 
-// TODO: add description
+- **Pluralize Array Property Names**: Use plural nouns to describe properties containing arrays, indicating that the data represents a collection.  
+- **Avoid Ambiguity**: Singular names can cause confusion, as they may imply a single object rather than a list.  
 
-```http
-// TODO: add example
+**Examples**  
+
+1. **Correct Usage**  
+```json
+{
+  "products": [
+    { "id": 1, "name": "Laptop" },
+    { "id": 2, "name": "Phone" }
+  ]
+}
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
+2. **Incorrect Usage**  
+```json
+{
+  "product": [
+    { "id": 1, "name": "Laptop" },
+    { "id": 2, "name": "Phone" }
+  ]
+}
 ```
 
+**Scenarios**  
+- **Resource Collections**: Use pluralized names for endpoints returning multiple items, such as `users`, `orders`, or `products`.  
+- **Nested Arrays**: Apply the same principle to nested properties within a larger JSON structure.  
+
+**Benefits**  
+- **Improved Readability**: Clearly communicates that the property represents a collection.  
+- **Consistency**: Ensures uniformity across API responses and aligns with common best practices.  
+- **Ease of Parsing**: Helps client developers anticipate and handle arrays correctly.  
+
+**Cautions**  
+- **Avoid Unnecessary Pluralization**: Only pluralize properties that are explicitly arrays. Do not pluralize singular objects or other data types.  
+- **Maintain Consistency**: Ensure pluralized naming conventions are applied consistently across all endpoints and responses.  
+
+**Tags**: json conventions, array naming, message structure, api design.  
 <br><br>
 
 
