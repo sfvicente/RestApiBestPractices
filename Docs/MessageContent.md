@@ -293,15 +293,50 @@ Tags: `response format` `JSON` `content negotiation` `interoperability` `default
 
 
 ### Consider following camel case naming conventions for JSON property names
+Using camel case for JSON property names helps maintain consistency, improves readability, and aligns
+with common naming conventions in many programming languages and frameworks. This convention makes it
+easier for developers to work with API responses and reduces friction when mapping JSON data to application objects.
 
-e.g., firstName instead of first_name.
+- **Use Lowercase for the First Letter**: Begin property names with a lowercase letter.  
+- **Capitalize Each Subsequent Word**: Capitalize the first letter of subsequent words to improve readability.  
+- **Avoid Underscores and Dashes**: Use camel case instead of snake case (`snake_case`) or kebab case (`kebab-case`).  
 
-// TODO: complement description
+**Examples**  
 
-```http
-// TODO: add example
+1. **Correct Usage**  
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "1990-01-01",
+  "isVerified": true
+}
 ```
 
+2. **Incorrect Usage**  
+```json
+{
+  "First_Name": "John",
+  "last-name": "Doe",
+  "DateOfBirth": "1990-01-01",
+  "Is_Verified": true
+}
+```
+
+**Scenarios**  
+- **Interoperability**: Camel case aligns with JavaScript, Java, and many other programming languages, minimizing transformation steps in client applications.  
+- **Framework Standards**: Many frameworks and libraries expect camel case JSON data (e.g., JavaScript’s default object property conventions).  
+
+**Benefits**  
+- **Consistency**: Promotes a uniform style across APIs, making them predictable and easier to consume.  
+- **Readability**: Increases clarity and reduces the chance of misinterpretation.  
+- **Ease of Mapping**: Simplifies integration with modern programming languages that prefer camel case.  
+
+**Cautions**  
+- **Legacy Systems**: If interacting with systems that use different conventions, ensure proper transformation.  
+- **Cultural Sensitivity**: Avoid overly complex or language-specific property names that might introduce confusion.  
+
+**Tags**: json, camel case, property naming, consistency, interoperability.  
 <br><br>
 
 
