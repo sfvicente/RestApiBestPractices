@@ -108,6 +108,57 @@ Adding `_self` links in API responses ensures that resource locations are explic
 
 
 ## Provide Contextual Links for Related Resources
+Contextual links in hypermedia responses enhance the usability and navigability of APIs by including links
+to relevant resources. These links help clients discover and interact with related data or operations without
+relying on hardcoded logic or external documentation.  
+
+- **Identify Relevant Relationships**: Include links to resources that have logical or functional connections to the current resource, such as parent, child, or sibling relationships.  
+- **Use Meaningful `rel` Attributes**: Clearly describe the purpose of each link using standard or custom `rel` attributes (e.g., `related`, `parent`, `child`, `collection`).  
+- **Include Links Based on Context**: Dynamically determine which links to include based on the resource's state, user roles, or other contextual factors.  
+
+**Examples**  
+
+1. **Correct Usage**  
+```json
+{
+  "id": 45,
+  "title": "API Design Principles",
+  "author": "Jane Doe",
+  "links": [
+    { "rel": "self", "href": "/articles/45" },
+    { "rel": "author", "href": "/users/12" },
+    { "rel": "related", "href": "/categories/api-design" }
+  ]
+}
+```
+
+2. **Incorrect Usage**  
+```json
+{
+  "id": 45,
+  "title": "API Design Principles",
+  "author": "Jane Doe"
+}
+```
+
+**Scenarios**  
+- **Parent-Child Relationships**: A blog post response should link to its author and category.  
+- **Resource Aggregation**: A collection response should link to individual resources within the collection.  
+- **Cross-Entity Connections**: A user profile should link to their orders, reviews, or related activity.  
+
+**Benefits**  
+- **Discoverability**: Clients can discover related resources without additional requests or assumptions.  
+- **Dynamic Adaptability**: Allows APIs to evolve while minimizing disruption, as clients dynamically follow provided links.  
+- **Improved Efficiency**: Reduces the need for separate API calls to retrieve relationships.  
+
+**Cautions**  
+- **Avoid Redundancy**: Do not include links that can be trivially derived or are already part of the resource path.  
+- **Consistent Implementation**: Ensure similar resources consistently provide the same contextual links.  
+- **Scalability**: Balance the number of links to avoid overly large responses that degrade performance.  
+
+**Tags**: hypermedia, contextual links, related resources, discoverability, restful design.  
+<br><br>
+
 
 ## Use Link Relations (e.g., `rel`) to Describe Link Purposes
 Link relations (`rel` attributes) describe the purpose of a hyperlink in an API response, providing clients with
