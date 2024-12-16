@@ -217,6 +217,50 @@ integration with clients and systems worldwide.
 ## Use Arrays or Objects Consistently for Collections
 
 ## Document Supported Data Formats for Each Endpoint
+Clearly documenting the supported data formats for each endpoint ensures that API consumers understand
+how to send requests and interpret responses. This transparency reduces implementation errors, improves
+developer experience, and promotes interoperability.  
+
+**Guideline**  
+- **List Supported Formats in API Documentation**: Include all acceptable request and response formats for each endpoint, such as JSON, XML, or others.  
+- **Specify Default Formats**: Clearly indicate the default format if none is explicitly requested by the client.  
+- **Provide Content Negotiation Details**: Explain how clients can request specific formats using headers like `Accept` or `Content-Type`.  
+
+**Examples**  
+
+1. **API Documentation Snippet**  
+```plaintext
+Endpoint: GET /users  
+Supported Formats:  
+- Request: JSON (`application/json`)  
+- Response: JSON (`application/json`)  
+Default Format: JSON  
+To request an XML response, include the header `Accept: application/xml`.
+```  
+
+2. **Header Example for Requesting Formats**  
+```http
+GET /users HTTP/1.1  
+Host: api.example.com  
+Accept: application/json  
+```
+
+**Scenarios**  
+- **Multi-Format Support**: If the API supports multiple formats, document which endpoints accept or return specific formats.  
+- **Backward Compatibility**: Clearly outline how older clients using deprecated formats will be handled.  
+
+**Benefits**  
+- **Transparency**: Reduces ambiguity and sets clear expectations for API consumers.  
+- **Error Reduction**: Minimizes issues caused by unsupported or incorrectly formatted requests.  
+- **Improved Developer Experience**: Makes it easier for developers to integrate and test API interactions.  
+
+**Cautions**  
+- **Format Proliferation**: Avoid supporting too many formats unless necessary, as this can complicate maintenance.  
+- **Documentation Accuracy**: Keep documentation up to date as formats evolve or change.  
+
+**Tags**: api documentation, content negotiation, data formats, supported formats, developer experience.  
+<br><br>
+
 
 ## Validate Input Data Against a Schema (e.g., JSON Schema)
 
