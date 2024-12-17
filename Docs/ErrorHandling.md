@@ -1,5 +1,9 @@
 # Error Handling
-
+The Error Handling section of the guidelines focuses on best practices for managing and responding to errors
+in a predictable and consistent manner. Proper error handling ensures that clients are informed when issues occur,
+enabling them to handle failures appropriately. The guidelines emphasize using standardized status codes, providing
+meaningful error messages, and ensuring that error responses do not expose sensitive information. This approach helps
+improve the reliability and security of the API, leading to a better user experience and easier debugging for both developers and users.
 
 ## General Guidelines
 <br>
