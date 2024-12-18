@@ -232,15 +232,57 @@ Tags: `Content-Type Header` `Response Format` `MIME Type` `HTTP Headers` `Data I
 
 
 ### Consider allowing clients to request different data formats using the `Accept` header
+APIs can support flexibility by allowing clients to specify their preferred data format through the `Accept` header
+in HTTP requests. This approach enables APIs to serve multiple formats (e.g., JSON, XML, or CSV) without requiring
+separate endpoints for each format.
 
-// TODO: complement description
+Allowing clients to specify their preferred data format improves interoperability and supports diverse client
+requirements. It is particularly useful in scenarios where clients may have varying capabilities or preferences,
+such as older systems needing XML or modern applications relying on JSON. However, limiting the supported formats
+to those with clear use cases avoids unnecessary complexity.
 
+**Client request**
 ```http
-// TODO: add example
-such as XML or CSV if needed. 
+GET /api/reports HTTP/1.1
+Host: api.example.com
+Accept: application/json
 ```
 
-Tags: `Accept`
+**Server response (JSON)**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "reportId": 123,
+  "title": "Sales Report",
+  "summary": "A detailed summary of sales data."
+}
+```
+
+**Client request**
+```http
+GET /api/reports HTTP/1.1
+Host: api.example.com
+Accept: application/xml
+```
+
+**Server response (XML)**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml
+
+<report>
+  <reportId>123</reportId>
+  <title>Sales Report</title>
+  <summary>A detailed summary of sales data.</summary>
+</report>
+```
+
+- Clearly document the supported media types for each endpoint.
+- Respond with a `406 Not Acceptable` status code if the requested format is not supported.
+- Default to a widely accepted format like JSON if the `Accept` header is missing.
+- Use content negotiation mechanisms efficiently to align with client preferences.
 <br><br>
 
 
