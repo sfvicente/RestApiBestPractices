@@ -326,21 +326,42 @@ A change in error codes of existing service operations is a breaking change.
 
 
 ### Always increment the version number of services when there are changes in fault contracts of existing service operations
+Changes to fault contracts, such as modifying error codes, altering error message structures, or adding/removing error types
+for an existing service operation, constitute breaking changes. These updates require incrementing the service version to
+ensure client applications remain functional without unexpected errors.
 
-A change in fault contracts of existing service operations is a breaking change.
+Fault contracts define the error-handling expectations for clients interacting with your service. Any changes to these
+contracts can disrupt client-side error processing and lead to unexpected behaviour. Incrementing the version number
+provides a clear indication of the update and allows clients to adapt at their own pace.
 
-// TODO: complement description
-
-```http
-// TODO: add example
+**Original fault contract**
+```json
+{
+  "errorCode": "ERR001",
+  "message": "Invalid request."
+}
 ```
 
-// TODO: complement description
-
-```http
-// TODO: add example
+**Modified fault contract (breaking change)**
+```json
+{
+  "error": {
+    "code": "ERR001",
+    "message": "Invalid request.",
+    "details": "The 'id' field is required."
+  }
+}
 ```
 
+**Versioned endpoint examples**
+- `/v1/resource` (uses the original fault contract)
+- `/v2/resource` (uses the updated fault contract)
+
+**Recommendations**
+- Carefully assess the impact of fault contract changes on existing clients.
+- Document fault contract changes clearly in version release notes.
+- Provide ample time for clients to transition to the updated version.
+- Ensure the older service version continues to support existing fault contracts for backward compatibility, as feasible.
 <br><br>
 
 
