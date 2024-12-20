@@ -215,6 +215,58 @@ integration with clients and systems worldwide.
 ## Minimize Payload Size by Avoiding Unnecessary Fields
 
 ## Use Arrays or Objects Consistently for Collections
+When representing collections in your API responses, maintain consistency by choosing either arrays
+or objects to structure the data. This ensures predictable responses and reduces client-side complexity
+when processing collections.
+
+Inconsistent use of arrays and objects can confuse clients and complicate the deserialization process. A
+uniform approach enables better usability and prevents ambiguity in the data structure.
+
+**Inconsistent representation**
+```json
+// Object for a single item
+{
+  "user": {
+    "id": 1,
+    "name": "John Doe"
+  }
+}
+
+// Array for multiple items
+{
+  "users": [
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Doe" }
+  ]
+}
+```
+
+**Consistent representation (using arrays for collections)**
+```json
+{
+  "users": [
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Doe" }
+  ]
+}
+```
+
+**Consistent representation (using objects for collections)**
+```json
+{
+  "users": {
+    "1": { "name": "John Doe" },
+    "2": { "name": "Jane Doe" }
+  }
+}
+```
+
+**Recommendations**
+- Use arrays when the collection has no inherent key-value relationships and order is important.
+- Use objects when each item in the collection can be uniquely identified by a key, such as an ID.
+- Clearly document the chosen format in your API specification to avoid client-side confusion.
+<br><br>
+
 
 ## Document Supported Data Formats for Each Endpoint
 Clearly documenting the supported data formats for each endpoint ensures that API consumers understand
