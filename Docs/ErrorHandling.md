@@ -199,10 +199,30 @@ Tags: `status codes` `5xx` `error handling` `security`
 
 
 ### Always ensure API documentation includes details about common `5xx` errors and suggested client handling strategies
+Comprehensive API documentation must cover common server-side error scenarios (`5xx` status codes) and provide
+guidance on how clients should handle such errors. This ensures developers can build resilient applications that
+gracefully manage server-side failures.
 
-// TODO: add descriptions
+Server-side errors can occur unexpectedly due to various issues, such as service outages or internal exceptions. By
+documenting common `5xx` errors and suggested recovery strategies, API consumers can implement robust error-handling
+mechanisms, improving user experience and system stability.
 
-// TODO: add examples
+**Documented `5xx` error example**
+```markdown
+### Error: 500 Internal Server Error
+- **Description**: An unexpected error occurred on the server.
+- **Client Handling Strategy**: Retry the request with exponential backoff. If the issue persists, contact support with the request ID.
+
+### Error: 503 Service Unavailable
+- **Description**: The server is temporarily overloaded or under maintenance.
+- **Client Handling Strategy**: Inspect the `Retry-After` header for retry guidance. Avoid retrying too frequently to prevent additional load.
+```
+
+**Recommendations**
+- List common `5xx` errors, such as `500 Internal Server Error` and `503 Service Unavailable`, with clear descriptions of their causes.
+- Provide actionable handling strategies for each error, such as retry mechanisms, fallback actions, or user notifications.
+- Include examples of error responses in the documentation to help clients simulate and test their handling logic.
+- Update the documentation regularly as new error scenarios are identified.
 
 Additional Tags: `documentation`
 <br><br>
