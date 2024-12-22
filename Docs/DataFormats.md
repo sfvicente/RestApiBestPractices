@@ -10,7 +10,7 @@ encoding practices, and techniques for minimizing payload size to optimise perfo
 
 ## ...
 
-## Use JSON as the Default Data Format for Responses
+## Use JSON as the default fata format for responses
 JSON is widely supported, lightweight, and easy to read, making it the preferred data format for REST API
 responses. Using JSON as the default ensures compatibility with most modern programming languages and
 tools, streamlining client integration and simplifying data processing.
