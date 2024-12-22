@@ -315,5 +315,85 @@ Accept: application/json
 
 
 ## Validate Input Data Against a Schema (e.g., JSON Schema)
+Input validation ensures that incoming data adheres to expected formats, types, and constraints. By using
+schemas such as JSON Schema, APIs can systematically enforce these rules, reducing the risk of invalid data
+corrupting systems or causing errors.
+
+- Validating input data improves API reliability by ensuring only well-formed requests are processed.
+- Schema-based validation provides a standardised, reusable way to handle input constraints, simplifying development and maintenance.
+- Preventing invalid data at the boundary reduces the likelihood of internal failures or security vulnerabilities like injection attacks.
+
+**Sample JSON schema**
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 3
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": ["username", "email", "age"],
+  "additionalProperties": false
+}
+```
+
+**Example Request Using Schema Validation**
+
+**Request Body**
+```json
+{
+  "username": "JohnDoe",
+  "email": "john.doe@example.com",
+  "age": 25
+}
+```
+
+**Validation Result**
+- Passes validation: all required fields are present and meet the defined constraints.
+
+**Invalid Request Body**
+```json
+{
+  "username": "JD",
+  "email": "not-an-email"
+}
+```
+
+**Validation Errors**
+- `username` fails `minLength` validation.
+- `email` fails `format` validation.
+
+**HTTP Response**
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "errors": [
+    { "field": "username", "message": "Must be at least 3 characters long." },
+    { "field": "email", "message": "Must be a valid email address." }
+  ]
+}
+```
+
+**Implementation considerations**
+- Use robust schema validation libraries (e.g., AJV for JSON Schema) for server-side validation.
+- Provide meaningful error messages to guide clients in correcting their requests.
+- Extend schemas to handle dynamic requirements or complex nested structures when necessary.
+- Validate against schemas both during development (e.g., unit tests) and runtime.
+
+Schema validation should always be applied to any API endpoint that accepts structured data. It is especially important
+for endpoints handling user-generated input or integrations with external systems.
+<br><br>
 
 ## Support Data Compression for Large Payloads (e.g., gzip)
