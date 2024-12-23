@@ -24,7 +24,7 @@ This project is a collection of best practices and guidelines for REST API desig
 - [Pagination](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Pagination.md)
 - [Data Formats](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/DataFormats.md)
 - [HTTP Headers](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/HTTPHeaders.md)
-- [Compatibility](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Compatibility.md)
+- [Compatibility and Versioning](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/CompatibilityAndVersioning.md)
 - [Caching](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Caching.md)
 - [Performance](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/Performance.md)
 - [Rate Limiting](https://github.com/sfvicente/RESTAPIBestPractices/blob/master/Docs/RateLimiting.md)
