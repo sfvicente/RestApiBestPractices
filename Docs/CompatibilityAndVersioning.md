@@ -399,21 +399,42 @@ A change in the behavior of existing service operations is a breaking change.
 
 
 ### Always increment the version number of services when there are changes in error codes of existing service operations
+Modifying error codes for existing service operations constitutes a breaking change. Such changes disrupt the contract
+between the service and its clients, potentially leading to misinterpretation of errors and unintended client behaviour. To
+mitigate this, always increment the version number of the service when error codes are altered.
 
-A change in error codes of existing service operations is a breaking change.
+Error codes serve as a critical mechanism for communicating issues to clients. Updates such as introducing new error codes,
+removing existing ones, or altering their meanings require careful handling to maintain clarity and stability in client integrations.  
 
-// TODO: complement description
+**Original error code example**  
+```json
+{
+  "errorCode": "INVALID_INPUT",
+  "message": "The provided input is invalid."
+}
+```  
 
-```http
-// TODO: add example
-```
+**Modified error code example (breaking change)**  
+```json
+{
+  "error": {
+    "code": "INPUT_ERROR",
+    "description": "The provided input failed validation."
+  }
+}
+```  
 
-// TODO: complement description
+**Versioned endpoint examples**  
+- `/v1/resource` (original error code structure)  
+- `/v2/resource` (updated error code structure)  
 
-```http
-// TODO: add example
-```
+**Recommendations**  
+- **Versioning**: Increment the version number to reflect changes in error codes. Use major version increments for significant changes, such as modifying the structure or semantics, and minor increments for adding new error codes.  
+- **Client Communication**: Clearly notify API consumers of the updated version, detailing changes and their implications in release notes or changelogs.  
+- **Backward Compatibility**: Maintain older service versions to support existing error codes where feasible, ensuring a smooth transition for clients.  
+- **Testing**: Provide a staging environment to help clients validate their integrations against the updated version before migrating.  
 
+By versioning services appropriately, you uphold the reliability of client integrations and foster trust in the evolution of your API.
 <br><br>
 
 
