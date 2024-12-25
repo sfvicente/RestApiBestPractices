@@ -380,21 +380,33 @@ Renaming a service operation parameters is a breaking change.
 
 
 ### Always increment the version number of services when there are changes in the behavior of an existing service operations
+Changes to the behaviour of a service operation—such as modifying its logic, altering default values, or adjusting response
+timing—constitute breaking changes. These updates can lead to unexpected outcomes for clients relying on the original behaviour,
+necessitating an increment in the version number.  
 
-A change in the behavior of existing service operations is a breaking change.
+Behaviour defines how a service processes requests and delivers responses. Alterations to this behaviour can affect client
+workflows, assumptions, or processing logic, making it critical to communicate such changes through versioning.  
 
-// TODO: complement description
+**Original behaviour example**  
+- **Request**: `/v1/resource?status=active`  
+- **Response**: Returns all active items, sorted by creation date.  
 
-```http
-// TODO: add example
-```
+**Modified behaviour example (breaking change)**  
+- **Request**: `/v2/resource?status=active`  
+- **Response**: Returns only active items created in the last 30 days, sorted by relevance.  
 
-// TODO: complement description
+**Versioned endpoint examples**  
+- `/v1/resource` (original behaviour)  
+- `/v2/resource` (updated behaviour)  
 
-```http
-// TODO: add example
-```
+**Recommendations**  
+- **Versioning**: Increment the major version for significant behavioural changes. For minor adjustments with minimal client impact, consider a minor version increment if backward compatibility is preserved.  
+- **Documentation**: Clearly describe behavioural changes in release notes, including the rationale, affected operations, and expected client impact.  
+- **Backward Compatibility**: Where possible, maintain support for the original behaviour through the older version to allow clients time for adaptation.  
+- **Transition Support**: Provide guidance, examples, and test environments to assist clients in updating their integrations to the new behaviour.  
 
+By versioning behavioural changes, you ensure transparency, minimise disruptions to client applications, and maintain
+a predictable and reliable API evolution process.  
 <br><br>
 
 
