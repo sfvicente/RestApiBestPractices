@@ -361,21 +361,42 @@ Incrementing the version number when removing parameters ensures a transparent A
 
 
 ### Always increment the version number of services when renaming operation parameters
+Renaming operation parameters, whether in requests or responses, constitutes a breaking change. This
+alteration can disrupt client applications relying on the original parameter names, leading to unexpected
+failures or misinterpretations. Incrementing the version number ensures clients are aware of the change
+and can update their implementations accordingly.  
 
-Renaming a service operation parameters is a breaking change.
+Operation parameters are the inputs and outputs that define how a service communicates with clients. Renaming
+these parameters, even with a minor adjustment, can break existing integrations by causing issues such as
+invalid requests or missing data in responses.  
 
-// TODO: complement description
+**Original request example**  
+```json
+{
+  "userId": 123,
+  "email": "example@example.com"
+}
+```  
 
-```http
-// TODO: add example
-```
+**Modified request example (breaking change)**  
+```json
+{
+  "user_id": 123,
+  "email_address": "example@example.com"
+}
+```  
 
-// TODO: complement description
+**Versioned endpoint examples**  
+- `/v1/resource` (uses `userId` and `email`)  
+- `/v2/resource` (uses `user_id` and `email_address`)  
 
-```http
-// TODO: add example
-```
+**Recommendations**  
+- **Versioning**: Increment the major version whenever parameter names are changed, regardless of how minor the adjustment may seem.  
+- **Documentation**: Clearly detail parameter name changes in release notes, including a mapping between old and new names to assist clients in updating their requests and responses.  
+- **Backward Compatibility**: Maintain support for the old parameter names in the previous version to provide a transition period for clients.  
+- **Communication**: Notify clients in advance of planned parameter renaming, offering detailed guidance and example implementations for the new version.  
 
+By versioning changes to parameter names, you safeguard client applications from unexpected disruptions and uphold the integrity of your service’s API.  
 <br><br>
 
 
