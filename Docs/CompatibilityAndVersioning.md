@@ -201,21 +201,28 @@ while maintaining backward compatibility.
 
 
 ### Consider incrementing the version number to new major version in response to a future deprecation of services
+Deprecating a service or endpoint is a significant change that can disrupt client applications reliant on the affected
+functionality. While the service may remain temporarily available, announcing its deprecation with a planned removal
+date warrants careful handling. Incrementing the major version number provides a clear signal to clients that they must
+migrate to updated endpoints or services before the deprecation is enforced.  
 
-By increasing the major version, it notifies clients that services will be deprecated and there will be no future support.
+Service deprecation is often accompanied by the introduction of new or alternative services, necessitating clear
+communication to clients about the timeline and steps required for migration.  
 
-// TODO: complement description
+**Example: Deprecation Announcement in API Documentation**  
+- **Deprecated Service**: `/v1/resource`  
+  - **Deprecation Notice**: "This endpoint will be retired on 2025-12-31. Please migrate to `/v2/resource`."  
 
-```http
-// TODO: add example
-```
+**New Service**  
+- `/v2/resource` (provides equivalent or improved functionality)  
 
-// TODO: complement description
+**Recommendations**  
+- **Versioning**: Introduce a new major version alongside the announcement of deprecation to mark the availability of alternative endpoints or services.  
+- **Communication**: Include a clear deprecation timeline in API documentation, specifying the removal date and migration instructions.  
+- **Backward Compatibility**: Maintain the deprecated service in its current state until the removal date, ensuring clients have sufficient time to transition.  
+- **Monitoring**: Track usage of the deprecated service to understand client migration progress and provide additional support if necessary.  
 
-```http
-// TODO: add example
-```
-
+By incrementing the version number and planning service deprecation thoughtfully, you minimise disruption to clients and maintain trust in the API’s reliability.  
 <br><br>
 
 
