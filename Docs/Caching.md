@@ -14,6 +14,51 @@ distinguishing between public and private caches, and maintaining data freshness
 ## Define Cache-Control Headers to Manage Caching Behavior
 
 ## Use ETags for Conditional Requests and Cache Validation
+ETags (Entity Tags) provide a mechanism for validating the state of a resource and enabling efficient cache
+management. By including ETags in responses, APIs allow clients to determine whether a resource has changed
+since it was last fetched, reducing unnecessary data transfer and improving performance.  
+
+ETags are particularly useful for conditional requests, where clients can include the ETag value in headers
+like `If-None-Match` or `If-Match` to check resource validity before fetching or updating.  
+
+**Example: ETag in a Response**  
+```http
+HTTP/1.1 200 OK  
+ETag: "abc123"  
+Content-Type: application/json  
+
+{ "id": 1, "name": "example", "status": "active" }  
+```  
+
+**Example: Conditional GET Request**  
+```http
+GET /resource/1 HTTP/1.1  
+If-None-Match: "abc123"  
+```  
+
+**Example: Conditional GET Response (Not Modified)**  
+```http
+HTTP/1.1 304 Not Modified  
+ETag: "abc123"  
+```  
+
+**Benefits of Using ETags**  
+- **Bandwidth Optimization**: Avoids resending unchanged resources, reducing server and client data usage.  
+- **Performance Improvement**: Minimises latency by responding with `304 Not Modified` for unchanged resources.  
+- **Concurrent Updates**: Detects and prevents overwriting changes made by others, ensuring consistency.  
+
+**Recommendations**  
+- Generate strong or weak ETags based on the use case:  
+  - **Strong ETags**: Reflect precise resource state changes (e.g., checksum of content).  
+  - **Weak ETags**: Consider semantic equivalence and ignore minor differences (e.g., formatting).  
+- Ensure ETags are unique and update them whenever the resource changes.  
+- Include ETags in responses for resources with caching potential or frequent updates.  
+- Validate client operations (e.g., updates or deletions) using conditional headers to detect conflicts.  
+- Document ETag usage and examples in API specifications to ensure consistent client implementation.  
+
+By leveraging ETags for conditional requests and cache validation, APIs can enhance efficiency, improve performance, and ensure reliable interactions between clients and services.  
+<br><br>
+
 
 ## Always define resource expiry using the `expires` header
 Use the `Expires` header to communicate the precise expiration time of cached resources, ensuring that clients
