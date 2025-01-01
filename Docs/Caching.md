@@ -160,6 +160,52 @@ Expires: Mon, 18 Dec 2024 12:00:00 GMT
 ## Avoid caching for sensitive data
 
 ## Avoid caching for dynamic data
+Dynamic data represents frequently changing information that may lose relevance or accuracy quickly if cached. Avoid
+caching such data to ensure clients always receive up-to-date responses, maintaining the integrity and timeliness of the API’s output.  
+
+**Examples of Dynamic Data**  
+- Real-time stock prices  
+- Live sports scores  
+- Current user session details  
+- Order statuses in progress  
+
+**Risks of Caching Dynamic Data**  
+1. **Stale Information**: Cached responses might provide outdated data, leading to incorrect client actions or decisions.  
+2. **Inconsistent Behaviour**: Users may observe discrepancies between cached data and the actual state, creating confusion or undermining trust.  
+3. **Reduced Reliability**: Time-sensitive applications relying on outdated data may fail to perform as expected.  
+
+**Implementation Guidelines**  
+1. **Set Cache-Control Headers**  
+   - Use headers such as `Cache-Control: no-cache, no-store, must-revalidate` to prevent caching by clients and intermediaries.  
+   - Example:  
+     ```http
+     Cache-Control: no-cache, no-store, must-revalidate
+     Pragma: no-cache
+     Expires: 0
+     ```  
+
+2. **Mark Responses as Non-Cacheable**  
+   - Use HTTP status codes (e.g., 200) with headers explicitly indicating no caching for dynamic endpoints.  
+
+3. **Validate Responses on Each Request**  
+   - Ensure servers process each request afresh without relying on prior responses, even when intermediaries attempt to cache.  
+
+4. **Document Dynamic Endpoints**  
+   - Clearly specify which endpoints provide dynamic data and should not be cached, ensuring proper client and integrator understanding.  
+
+**Recommendations**  
+- Separate dynamic and static endpoints to enable tailored caching strategies.  
+- Regularly review API behaviour to identify endpoints with inadvertently cached responses.  
+- Monitor and log response freshness to detect and address caching-related issues.  
+
+**Key Benefits of Disabling Caching for Dynamic Data**  
+- Ensures real-time accuracy, critical for decision-making applications.  
+- Prevents user-facing inconsistencies and enhances trust in the API.  
+- Reduces the risk of operational errors stemming from stale data.  
+
+By avoiding caching for dynamic data, APIs can deliver timely, accurate information, ensuring consistency and reliability in applications handling sensitive or real-time workflows.
+<br><br>
+
 
 ## Enable Client-Side Caching for Static Resources
 
