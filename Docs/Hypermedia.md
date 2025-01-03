@@ -268,6 +268,63 @@ Embedding hypermedia controls in pagination ensures intuitive navigation and sim
 ## Provide Forms or Templates for Actionable Resources
 
 ## Document Hypermedia Controls and Link Relations Clearly
+Hypermedia controls and link relations provide clients with the ability to navigate, discover, and interact
+with your API dynamically. Clear documentation of these elements ensures that clients can fully leverage the
+hypermedia capabilities of your API while maintaining consistent and predictable behaviour.  
+
+**Documentation Guidelines**  
+
+1. **Define Standard and Custom Link Relations**  
+   - Use standard link relations from established vocabularies (e.g., IANA Link Relations) whenever possible.  
+   - Clearly document any custom link relations, including their purpose and usage.  
+   - Example:  
+     | Relation  | Description                        | Example Usage         |  
+     |-----------|------------------------------------|-----------------------|  
+     | `self`    | Current resource link             | `/items/123`          |  
+     | `archive` | Custom link to archived versions  | `/items/123/archive`  |  
+
+2. **Describe Hypermedia Controls**  
+   - Detail the meaning and expected actions for each hypermedia control provided in API responses.  
+   - Specify HTTP methods and required payloads for actions.  
+   - Example:  
+     | Action      | Method  | Description             | Example Endpoint |  
+     |-------------|---------|-------------------------|------------------|  
+     | `delete`    | `DELETE`| Deletes a resource      | `/items/123`     |  
+     | `create`    | `POST`  | Creates a new resource  | `/items`         |  
+
+3. **Include Sample Payloads**  
+   - Provide example responses with hypermedia controls and links to clarify their structure and usage.  
+   - Example:  
+     ```json
+     {
+       "id": 456,
+       "name": "New Item",
+       "_links": {
+         "self": { "href": "/items/456" },
+         "delete": { "href": "/items/456", "method": "DELETE" }
+       }
+     }
+     ```  
+
+4. **Clarify Navigation Patterns**  
+   - Document how clients can traverse links to achieve specific workflows or operations (e.g., pagination, resource discovery).  
+
+5. **Emphasize Consistency**  
+   - Ensure that link relations and hypermedia controls follow a consistent structure and naming conventions across the API.  
+
+**Recommendations**  
+- Align documentation with the actual implementation to prevent mismatches.  
+- Reference standardized vocabularies such as [IANA Link Relations](https://www.iana.org/assignments/link-relations/link-relations.xhtml).  
+- Provide a glossary of link relations and their expected behaviours in API documentation.  
+
+**Benefits of Clear Hypermedia Control Documentation**  
+- Enhances the discoverability of API features and workflows.  
+- Reduces the learning curve for developers by providing clear navigation guidance.  
+- Encourages adoption of best practices for hypermedia-driven APIs.  
+
+By clearly documenting hypermedia controls and link relations, you empower clients to interact with your API effectively, leading to more intuitive and self-descriptive integrations.
+<br><br>
+
 
 ## Embed Links for Optional Operations Based on User Roles or State
 Including links for optional operations, tailored to user roles or the resource state, enables clients to discover
