@@ -156,6 +156,48 @@ Expires: Mon, 18 Dec 2024 12:00:00 GMT
 
 
 ## Leverage 304 Not Modified Responses to Save Bandwidth
+Efficient use of `304 Not Modified` responses reduces bandwidth usage and improves client performance by avoiding
+the retransmission of unchanged resources. Implementing this feature ensures clients receive updated data only
+when necessary, optimising resource consumption.
+
+**Examples**  
+1. **Conditional GET Request with ETag**  
+   **Request**:  
+   ```http
+   GET /items/123 HTTP/1.1  
+   If-None-Match: "abc123"  
+   ```  
+   **Response** (unchanged resource):  
+   ```http
+   HTTP/1.1 304 Not Modified  
+   ```  
+
+2. **Conditional Request with Last-Modified**  
+   **Request**:  
+   ```http
+   GET /items/123 HTTP/1.1  
+   If-Modified-Since: Wed, 20 Dec 2023 12:00:00 GMT  
+   ```  
+   **Response** (updated resource):  
+   ```http
+   HTTP/1.1 200 OK  
+   Content-Type: application/json  
+   ...  
+   ```  
+
+**Implementation Guidelines**  
+1. Ensure `ETag` or `Last-Modified` headers are included in responses.  
+2. Validate incoming conditional headers (`If-None-Match`, `If-Modified-Since`).  
+3. Return `304 Not Modified` when appropriate to indicate no resource changes.  
+
+**Benefits**  
+- Reduces redundant data transmission.  
+- Enhances client performance by leveraging cached resources.  
+- Improves overall scalability of API services.  
+
+Proper implementation of `304 Not Modified` responses ensures efficient bandwidth usage and seamless integration for client applications.
+<br><br>
+
 
 ## Avoid caching for sensitive data
 
