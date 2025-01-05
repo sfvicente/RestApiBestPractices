@@ -397,3 +397,42 @@ for endpoints handling user-generated input or integrations with external system
 <br><br>
 
 ## Support Data Compression for Large Payloads (e.g., gzip)
+Enable data compression, such as `gzip`, to reduce payload size for large responses, improving performance
+and reducing bandwidth usage. Clients and servers must negotiate supported compression formats via the `Accept-Encoding` header.
+
+**Examples**  
+1. **Client Request with Compression**  
+   **Request**:  
+   ```http
+   GET /large-resource HTTP/1.1  
+   Accept-Encoding: gzip  
+   ```  
+   **Response** (compressed payload):  
+   ```http
+   HTTP/1.1 200 OK  
+   Content-Encoding: gzip  
+   ```  
+
+2. **Uncompressed Response for Unsupported Clients**  
+   **Request**:  
+   ```http
+   GET /large-resource HTTP/1.1  
+   Accept-Encoding: identity  
+   ```  
+   **Response**:  
+   ```http
+   HTTP/1.1 200 OK  
+   Content-Type: application/json  
+   ```  
+
+**Implementation Guidelines**  
+1. Use common compression formats (`gzip`, `brotli`) for broad compatibility.  
+2. Validate the `Accept-Encoding` header and adjust responses accordingly.  
+3. Ensure compression is applied only to compressible content types (e.g., JSON, XML).  
+4. Monitor CPU usage and response time to balance compression benefits with server load.  
+
+**Benefits**  
+- Reduces response sizes for large payloads.  
+- Optimizes network performance, especially for low-bandwidth environments.  
+- Enhances user experience by speeding up data delivery.
+<br><br>
